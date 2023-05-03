@@ -26,6 +26,38 @@ featured_image: images/featured/SquircleLogoInkan.webp
  Inkan est un mot japonais pour la signature avec un sceau. Il représente notre approche pour générer des données vérifiables et entièrement privées, puis les utiliser pour le compte du propriétaire des données pour les services numérique directs.
 
  Notre premier produit [Sealfie](https://sealf.ie/fr) est un jeu sur les mots entre le sceau pour signer les choses et le selfie. Vos données sur n'importe quel système font une signature vérifiable, plus de griffonnage.
+ 
+ ## l'équipe Inkan
+ 
+Nicolas Thomas (Fondateur)
+entrepreneur polyvalent, conférencier, investisseur, stratège et éditeur dans l'industrie des télécommunications.
+
+Nicolas Thomas est à l'origine de l'idée d'Inkan.link et des services qu'elle propose. l'absence de solutions dans le domaine de la cybersécurité traditionnelle.
+Depuis plus de 20 ans, Nicolas a identifié et soutenu plusieurs transformations majeures dans l'industrie en tant qu'architecte de solutions.
+solutions, y compris x86/Linux, plateformes, Clouds, devops, sécurité, et a dirigé la standardisation de la sécurité au sein du MEF (MSSP, ZIP).
+MEF (MSSP, ZTA, et SASE)".
+
+Vincent Courgibet (VP business development)
+
+Vincent a près de 25 ans d'expérience dans la vente et le développement commercial. Il a précédemment occupé plusieurs
+plusieurs postes influents au sein d'entreprises internationales telles que Sun Microsystems, Dell/EMC, Checkpoint et plusieurs start-ups israéliennes de cybersécurité.
+plusieurs startups israéliennes dans le domaine de la cybersécurité.
+Vincent a une connaissance approfondie de plusieurs technologies, telles que les applications de sécurité et les solutions d'intégration de systèmes pour les secteurs des télécommunications, de la finance et de l'industrie.
+
+
+## Investisseurs et conseillers
+
+Richard Klieman - Investisseur
+
+Richard est un avocat anglais et un juriste français. Il a acquis son expérience dans la Silicon Valley et dans le secteur de l'énergie,
+il a été membre du comité exécutif européen d'une société cotée au NASDAQ avec un chiffre d'affaires de 9 milliards de dollars pendant 10 ans.
+pendant 10 ans.
+Richard est spécialisé dans les technologies, le droit de la protection des données personnelles, le droit de la conformité, le droit des sociétés, les fusions et acquisitions et la gouvernance d'entreprise.
+
+Joan Ross - Conseiller
+
+joan a une grande expérience en tant que responsable de la sécurité de l'information (CISO) dans plusieurs entreprises et représentation universitaire dans le domaine de la cybersécurité.Ancien RSSI de DocuSign.
+
 
  ***
 
