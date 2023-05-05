@@ -4,8 +4,8 @@ date: 2023-01-24T09:21:16+01:00
 draft: false
 featured_image: images/posts/cso_nw_impersonation_disguise_fraud_false_identity_theft_by_alphaspirit_gettyimages-538465604_2400x1600-100811607-large.webp
 language: en
-summary: Presentation of Sealfie The first digital companion to protect against the false ceo scam .The most damageable type of fraud targeting companies.
-description: SEALFIE The first digital companion to protect against the false ceo scam. The most damageable type of fraud targeting companies.
+summary: Discover how to safeguard your business from the growing threat of Business Email Compromise (BEC) fraud, commonly known as the Fake CEO Scam. Learn about effective prevention strategies and innovative solutions like Sealfie to ensure secure financial transactions.
+description: Protect your business from Business Email Compromise (BEC) fraud, also known as the Fake CEO Scam, with effective solutions like employee education, multi-factor authentication, and Sealfie, a user-friendly SaaS and mobile app for secure transactions. Stay vigilant against evolving cyber threats.
 author: Nicolas Thomas
 authorimage: images/global/NicolasHeadShot.webp
 tags:
@@ -13,53 +13,54 @@ tags:
   - Sealfie
 ---
 
-## [Sealfie](https://sealf.ie/en) Protection against the fake CEO scam
+## How to Protect Against the Fake CEO Scam, Also Known as Business Email Compromise (BEC)
 
- The fake ceo scam is the most used method in the TOP5 attempts at fraud targeting companies.
- [![FBI IC3 Report 2021](/images/FBI_IC3_Chart.png)](https://www.ic3.gov/Media/PDF/AnnualReport/2021_IC3Report.pdf)
- Companies undergo 1/4 of the proven frauds, 2/3 at least one attempt according to [Study on the 2021 fraud of Allianz Trade (in french)](https://www.ic3.gov/Media/PDF/AnnualReport/2021_IC3Report.pdf).
+Business Email Compromise (BEC) fraud, often referred to as the "Fake CEO Scam," has been a rapidly growing threat to businesses worldwide. [The FBI’s Internet Crime Complaint Center (IC3)](https://www.ic3.gov/Media/PDF/AnnualReport/2021_IC3Report.pdf) has highlighted the increasing prevalence of these cyberattacks, which rely heavily on social engineering and impersonation tactics. While there are solutions available to protect against BEC fraud, it is essential to recognize that their effectiveness depends on human behavior and awareness.
 
-<!-- <img src="/images/sealfie-logo.svg"
-     alt="Sealfie Logo"
-     style="margin-right: 5px; size: 20px;"  /> -->
-[Sealfie](https://sealf.ie/en) was created to protect identity usurpations, first of all, the fake ceo scam.
+### The BEC Fraud Landscape
 
-## The extent of the fraud
+Business Email Compromise (BEC) fraud is a sophisticated scam that primarily targets businesses working with foreign suppliers or those that regularly perform wire transfer payments. Cybercriminals utilize social engineering and hacking techniques to compromise legitimate business email accounts, impersonate key personnel such as CEOs, and ultimately redirect funds to their own bank accounts. These scams have evolved over time, with fraudsters now employing various tactics, including payroll diversion and gift card schemes.
 
- The "fraud to the president" or "rib" scams have made many victims among French companies. Fraud amounts to millions of euros and also has a dramatic psychological impact on the victims.
+### IC3 Report Highlights
 
- State agencies speak of it: [CEO fraud: How to protect your organisation from fraudsters(Barclays)](https://www.barclayscorporate.com/insights/fraud-protection/ceo-fraud/)
- Criminals use old usurpation techniques, they have made their digital transitions. No more mission-impossible masks, criminals use technology, usurped emails, telephone numbers, imitate the way and even the video. They are very well informed about the company and their speeches are credible.
+ [![FBI IC3 Report 2021](/images/IC3_2021_ByVictimLoss.png)](https://www.ic3.gov/Media/PDF/AnnualReport/2021_IC3Report.pdf)
 
-## Human in the heart
+The [FBI's IC3 report](https://www.ic3.gov/Media/PDF/AnnualReport/2021_IC3Report.pdf) reveals the alarming scale of BEC fraud across the globe. Key takeaways from the report include:
 
- This very targeted attack is long prepared, criminals have risen a credible scenario. Human is their main target. All psychological springs are used to convince the accountant to make an emergency a transfer. These attacks are almost always accompanied by attacks by email systems to set up a credible speech. The attack is much more elaborate than basic phishing, type Nigerian prince, cybersecurity professionals can be caught.
+- Rising financial losses: In 2021 alone, the IC3 received 19,954 BEC fraud complaints, resulting in an estimated $2.4 billion in financial losses. This figure accounts for nearly half of the total reported cybercrime financial losses in the same year.
 
- The  Federal Trade Commission makes recommendations [here](https://www.ftc.gov/business-guidance/small-businesses/cybersecurity/business)which are summed up as follows:
+- Global reach: BEC fraud is not limited to the United States. The IC3 report indicates that victims from 177 countries reported BEC scams, demonstrating the international nature of these crimes.
 
-- Remind all employees alert them on the importance of not disclosing information concerning the operation of the company on social networks
-- Regularly aware of all employees of accounting services, cash, secretariats, standards, of this type of scam.
-- Get into the habit of systematically informing replacements on these positions.
-- Establish multiple checks and signatures for international payments.
-- Break the email chain for letters relating to international transfers by entering the usual address of the principal.
-- Maintain the computer security system up to date.
+- Diverse targets: While small and medium-sized businesses remain primary targets, BEC fraudsters have also set their sights on larger corporations, non-profit organizations, and even individuals.
 
-[40 percent of entreprises have been targeted](https://www.funk-gruppe.de/en/corporate-blog/insurance-management/fidelity-insurance), And many others didn't disclose attacks to preserve their reputations. Protection by human's discipline and training does not work over time or without constant efforts. This is why we created [Sealfie](https://sealf.ie/en)
+- Evolving tactics: Cybercriminals are continuously adapting their methods to bypass security protocols and prey on unsuspecting victims. The IC3 report highlights an increase in the use of cloud-based email services, allowing for more sophisticated spear-phishing campaigns and email account compromises.
 
-## [![Sealfie](/images/sealfie-landscape.png)](https://sealf.ie/en)
+### Protecting Your Business from BEC Fraud
 
-[Sealfie](https://sealf.ie/en) is a SaaS and a mobile application. It makes it possible to ensure and be able to verify that people in the transaction are authorized, each time. The application is simple to use, without training, we take care of the technological aspects.
+Given the scale and sophistication of BEC fraud, it's crucial for businesses to prioritize cybersecurity measures. However, it's essential to recognize that these solutions have their limits as they depend on human vigilance and behavior. Some recommendations include:
 
- When an order of transfer is initiated one of the recorded people, the CEO or the accountant, creates a list of digital certificates, takes a photo describing the transaction, a selfie and uses biometrics. Another authorized person checks adds his selfie and biometrics. We take care of collecting the certificates of other systems if available, such as the wifi of the company for example.
+- Employee education: Ensure employees are aware of the risks associated with BEC fraud and provide regular training on how to identify and report suspicious emails. However, be aware that well-crafted phishing emails can still deceive even the most vigilant employees.
 
- We guide people on what they have to do, including in the event of suspected fraud. The digital process becomes the control point, the accountants no longer have to risk being fooled or being afraid of annoying their superiors.
+- Multi-factor authentication (MFA): Implement MFA for all business email accounts and other critical systems to reduce the risk of unauthorized access. Keep in mind that MFA is not foolproof and can be bypassed if employees are not careful with their authentication credentials.
 
-## The technology implemented
+- Verify changes in payment instructions: Establish a secondary means of communication, such as a phone call, to confirm any changes to payment instructions or account information. Be mindful that attackers can also compromise phone systems, so it is crucial to validate identities through multiple channels.
 
- The approach is to make the transactions of legitimate people reliable and verifiable instead of trying to detect all forms of usurper. The attestations of the maximum of systems used are encrypted, available on a ledger no one can repudiate and linked together on an open blockchain. This makes it possible to check which systems signed. The result is too complex for criminals to make an affordable fake.
+- Regularly monitor email accounts: Encourage employees to monitor their email accounts for any unusual activity, such as unauthorized forwarding rules or unexpected password reset requests. However, remember that attackers can hide their tracks, making it difficult to detect unauthorized access.
 
-## Go further
+- Implement intrusion detection systems: Utilize advanced threat detection solutions to monitor your network for signs of intrusion, such as unusual login attempts or changes to email settings. Be aware that skilled attackers may still be able to evade detection
 
- We fly over the issues in this introduction, follow us on [LinkedIn](https://www.linkedin.com/company/inkan-link/) Or this blog.
+## Sealfie - A User-Friendly SaaS and Mobile Application
 
- On the [Sealf.ie](https://sealf.ie/en) site you will find more details on the mobile application, contact us to try a test version and of course buy the peace of mind to have to worry about a sudden bankruptcy.
+[Sealfie](https://sealf.ie/en) is a simple yet effective solution designed to verify authorized individuals involved in financial transactions, minimizing the risk of BEC fraud. You don't need any special training to use the app if you know how to take a picture with your phone because it takes care of the technical stuff automatically.
+
+[![Sealfie](/images/sealfie-landscape.png)](https://sealf.ie/en)
+
+When initiating a transfer, one of the authorized individuals, such as the CEO or accountant, creates a list of digital certificates, takes a photo describing the transaction, a selfie, and uses biometrics. Another authorized person then verifies, adds their selfie, and provides biometric information. Sealfie can also collect certificates from other systems if available, such as a company's Wi-Fi.
+
+In case of suspected fraud, Sealfie guides users on the necessary steps to take. This digital process becomes a control point, alleviating accountants from the risk of being deceived or fearing to question their superiors.
+
+The technology behind Sealfie focuses on making legitimate transactions reliable and verifiable instead of attempting to detect all possible fraudulent activities. The attestations from various systems are encrypted and linked together on an open blockchain, making them available on a ledger that cannot be repudiated. This approach makes it too complex and costly for criminals to create convincing fakes.
+
+Take action now and visit [Sealfie](https://sealf.ie/en)to discover more about Sealfie! On our website, you can explore all the valuable information about the mobile application, contact us to test it out, and secure peace of mind for your business against the threat of sudden financial losses caused by BEC fraud. Don't miss out on the latest updates and developments—follow Sealfie on LinkedIn or this blog.
+
+## Get confident that one phone call won't lead to bankruptcy. [Act now!](https://sealf.ie/en)
