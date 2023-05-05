@@ -6,6 +6,9 @@ language: en
 summary: Main explanation of why we exist. Legal mention
 description: About Us
 featured_image: images/featured/SquircleLogoInkan.webp
+categories: Blog
+summary: Discover Inkan.link, an innovative cybersecurity startup offering digital certification services. Expert team and guaranteed success!
+description: Inkan.link, a cybersecurity-focused startup, offers digital certification services through chained attestations. Discover our team of experts and the innovative solutions provided to protect your data and strengthen online trust.
 ---
 ## Inkan.link SAS
  Inkan.link SAS is a startup founded in 2021 by experienced cybersecurity professionals and a lawyer.
