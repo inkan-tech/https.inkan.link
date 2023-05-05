@@ -61,6 +61,6 @@ In case of suspected fraud, Sealfie guides users on the necessary steps to take.
 
 The technology behind Sealfie focuses on making legitimate transactions reliable and verifiable instead of attempting to detect all possible fraudulent activities. The attestations from various systems are encrypted and linked together on an open blockchain, making them available on a ledger that cannot be repudiated. This approach makes it too complex and costly for criminals to create convincing fakes.
 
-Take action now and visit [Sealfie](https://sealf.ie/en)to discover more about Sealfie! On our website, you can explore all the valuable information about the mobile application, contact us to test it out, and secure peace of mind for your business against the threat of sudden financial losses caused by BEC fraud. Don't miss out on the latest updates and developments—follow Sealfie on LinkedIn or this blog.
+Take action now and visit [Sealfie](https://sealf.ie/en) to discover more about Sealfie! On our website, you can explore all the valuable information about the mobile application, contact us to test it out, and secure peace of mind for your business against the threat of sudden financial losses caused by BEC fraud. Don't miss out on the latest updates and developments—follow Sealfie on LinkedIn or this blog.
 
 ## Get confident that one phone call won't lead to bankruptcy. [Act now!](https://sealf.ie/en)
