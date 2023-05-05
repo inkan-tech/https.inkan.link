@@ -1,5 +1,5 @@
 ---
-title: "Il faut sauver le soldat comptable"
+title: Il faut sauver le soldat comptable
 date: 2023-04-27T11:10:36+08:00
 draft: true
 language: fr

@@ -1,6 +1,6 @@
 ---
 title:  Optimisez votre sécurité, protégez votre identité
-date: 2023-01-14T11:10:36+08:00
+date: 2023-04-04T11:10:36+08:00
 draft: false
 language: fr
 featured_image: images/posts/FIGARO_VIGNETTE_INKAN_LINK.jpg 
