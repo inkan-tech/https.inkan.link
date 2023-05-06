@@ -1,3 +1,4 @@
+{{ partial "seo_schema" . }}
 <title itemprop="name">{{if .IsHome}} {{ $.Site.Params.description }} | {{ .Title }}
     {{else}} {{ .Title }} | {{ .Site.Title }} {{end}}
 </title>
