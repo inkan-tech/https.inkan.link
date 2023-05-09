@@ -1,6 +1,6 @@
 ---
 title: Pebkac piss us off we should do better
-date: 2022-06-18T11:10:36+08:00
+date: 2023-06-18T11:10:36+08:00
 draft: true
 language: fr
 featured_image: images/posts/editorial-commision-animate.webp
@@ -12,8 +12,12 @@ description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus
 author: TailBliss
 authorimage: images/global/SquircleLogoInkan.webp
 categories: Blog
-tags: Blog
+tags: 
+  - Security
+  - Sealfie
+  - 
 ---
+
 __Advertisement :smile:__
 
 - __[pica](https://nodeca.github.io/pica/demo/)__ - high quality and fast image
@@ -23,7 +27,7 @@ __Advertisement :smile:__
 
 You will like those projects!
 
----
+
 
 # h1 Heading :blush:
 ## h2 Heading
