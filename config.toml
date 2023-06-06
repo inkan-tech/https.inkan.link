@@ -46,7 +46,7 @@ useSessionStorage = false
 disable = true
 simple = false
 [privacy.twitter]
-disable = false
+disable = true
 enableDNT = false
 simple = false
 [privacy.vimeo]
