@@ -23,6 +23,9 @@ twitter = "@inkan.link"
 description = "Inkan.link prevents identity theft consequences"
 [params.navigation]
       about = 'About'
+      team = 'Team'      
+      contacts = 'Contacts'
+      legal = 'Legal'
 [markup]
 [markup.goldmark]
 [markup.goldmark.renderer]
@@ -69,10 +72,12 @@ copyright = 'Inkan.link reserved'
     weight = 2
     [languages.fr.params]
       # linkedin = 'https://linkedin.com/fr/whoever'
-        description = "Inkan.link protége des usurpations d'identité " 
+        description = "Inkan.link être sûr de son interlocuteur " 
       [languages.fr.params.navigation]
         about = 'A propos'
-
+        team = "L'équipe"      
+        contacts = 'Contacts'
+        legal = 'Mentions légales'
 
 
 [module]
