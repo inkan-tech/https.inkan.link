@@ -9,7 +9,7 @@ description: Explorez comment les cybercriminels utilisent l'IA pour imiter le s
 author: Nicolas Thomas
 authorimage: images/global/NicolasHeadShot.webp
 categories: blog
-tags: [Cybersécurité, Intelligence Artificielle, Phishing, LLM, ANSSI, Sealfie, Falsification, Vol d'Identité, Cybercriminels, IA, E-mails de PDG]
+tags: [IAGenerative, FOVI, GPT, Cybersécurité,ClonageDeVoix,UsurpationDidentité]
 ---
 # Mon Patron est une IA (2ème Partie)
 

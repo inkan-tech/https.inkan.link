@@ -9,7 +9,7 @@ description: Explore how cybercriminals use AI to mimic the writing style of CEO
 author: Nicolas Thomas
 authorimage: images/global/NicolasHeadShot.webp
 categories: blog
-tags: [Cybersecurity, Artificial Intelligence, Phishing, LLM, FBI, Sealfie, Forgery, Identity Theft, Cybercriminals, AI, CEO Emails]
+tags: [ BEC, GPT, Cybersecurity,LLM,IdentityTheft]
 ---
 # My Boss is an AI (Part 2)
 
