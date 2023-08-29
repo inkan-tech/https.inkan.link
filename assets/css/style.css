@@ -2405,6 +2405,16 @@ EmojiSymbols;
   color: rgb(122 0 2 / 0.6);
 }
 
+:is(.dark .dark\:text-primary-light-900) {
+  --tw-text-opacity: 1;
+  color: rgb(128 8 0 / var(--tw-text-opacity));
+}
+
+:is(.dark .dark\:text-neutral-200) {
+  --tw-text-opacity: 1;
+  color: rgb(172 176 186 / var(--tw-text-opacity));
+}
+
 :is(.dark .dark\:shadow-neutral-800\/40) {
   --tw-shadow-color: rgb(30 32 36 / 0.4);
   --tw-shadow: var(--tw-shadow-colored);
