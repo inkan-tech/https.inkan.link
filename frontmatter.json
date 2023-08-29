@@ -61,28 +61,5 @@
       "title": "archetypes",
       "path": "[[workspace]]/archetypes"
     }
-  ],
-  "frontMatter.taxonomy.tags": [
-    "B",
-    "N",
-    "b",
-    "e",
-    "g",
-    "l",
-    "n",
-    "o",
-    "s",
-    "w"
-  ],
-  "frontMatter.taxonomy.categories": [
-    "B",
-    "N",
-    "b",
-    "e",
-    "g",
-    "l",
-    "o",
-    "s",
-    "w"
   ]
 }

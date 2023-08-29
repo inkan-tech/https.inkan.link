@@ -3,25 +3,25 @@
 <script src="{{ $alpine.RelPermalink }}" defer></script>
 {{ $js := resources.Get "js/darkmode.js" | js.Build }}
 <script src="{{ $js.RelPermalink }}" defer></script>
-<footer class="bg-red-900">
+<footer class="bg-primary-900">
     <div class="max-w-md px-4 py-12 mx-auto overflow-hidden sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8">
         <nav class="flex flex-wrap justify-center -mx-5 -my-2" aria-label="Footer">
             <div class="px-5 py-2">
-                <a href={{ relLangURL "contacts" }} class="text-base text-red-500 hover:text-red-200">Contacts</a>
+                <a href={{ relLangURL "contacts" }} class="text-base text-neutral-50 hover:text-white">Contacts</a>
             </div>
 
             <div class="px-5 py-2">
-                <a href={{ relLangURL "/categories/blog/" }} class="text-base text-red-500 hover:text-red-200">Blog</a>
+                <a href={{ relLangURL "/categories/blog/" }} class="text-base text-neutral-50 hover:text-white">Blog</a>
             </div>
 
             <div class="px-5 py-2">
-                <a href={{ relLangURL "/categories/news/" }} class="text-base text-red-500 hover:text-red-200">News</a>
+                <a href={{ relLangURL "/categories/news/" }} class="text-base text-neutral-50 hover:text-white">News</a>
             </div>
 
         </nav>
         <div class="flex justify-center mt-8 space-x-6">
 
-            <a href="https://www.linkedin.com/company/inkan-link/" class="text-red-500 hover:text-red-200">
+            <a href="https://www.linkedin.com/company/inkan-link/" class= "text-neutral-50 hover:text-white">
                 <span class="sr-only">Linkedin</span>
                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path fill-rule="evenodd"
@@ -30,7 +30,7 @@
                 </svg>
             </a>
 
-            <a href="https://twitter.com/SealfieApp" class="text-red-500 hover:text-red-200">
+            <a href="https://twitter.com/SealfieApp" class="text-neutral-50 hover:text-white">
                 <span class="sr-only">Twitter</span>
                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path
@@ -39,7 +39,7 @@
             </a>
 
         </div>
-        <p class="mt-8 text-base text-center text-red-500">&copy; {{ now.Format "2006" }}
+        <p class="mt-8 text-base text-center text-neutral-50">&copy; {{ now.Format "2006" }}
             {{ .Site.Title }}. All rights
             reserved.</p>
     </div>
