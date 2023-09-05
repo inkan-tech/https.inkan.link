@@ -56,18 +56,18 @@ module.exports = {
       },   
       // opposite of Japanise Carmine 
         'secondary': {
-        DEFAULT: '#299D93',
-        50: "#E0FFFF",
-        100: "#C2FFFE",
-        200: "#85FFFB",
-        300: "#42FFF6",
-        400: "#18ECDE",
-        500: "#299D93",
-        600: "#0EA59B",
-        700: "#009E96",
-        800: "#008F8A",
-        900: "#007A78",
-        950: "#007070"
+        DEFAULT: '#45818E',
+        50: "#CCE1E6",
+        100: "#BAD7DE",
+        200: "#9BC5CF",
+        300: "#79B1BE",
+        400: "#579DAD",
+        500: "#45818E",
+        600: "#417986",
+        700: "#3E737F",
+        800: "#3A6D78",
+        900: "#35636E",
+        950: "#34606A"
       }
       // To change these, use https://www.tailwindshades.com/ with https://tailwindcss.com/docs/customizing-colors or create your own custom colors.
 
