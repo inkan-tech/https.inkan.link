@@ -1,197 +1,223 @@
 <div class="top-0 z-50 w-full text-white bg-primary-900 border-2 border-primary-900 md:sticky border-b-neutral-200/10">
-    <div x-data="{ open: false }"
-         class="flex flex-col max-w-full px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
-        <div class="flex flex-row items-center justify-between p-4">
-            <a href={{ relLangURL "/" }} class="flex text-primary-100 transition duration-1000 ease-in-out group">
-                <img src="/favicon/favicon.svg"
-                     class="transition-opacity h-9 w-9 group-hover:opacity-50 group-focus:opacity-70"
-                     alt="{{ .Site.Title }} Logo" />
-                <div
-                     class="mt-1 ml-3 text-xl font-black tracking-tight text-primary-100 transition-colors group-hover:text-primary-400/60">
-                    {{ .Site.Title }}</div>
-            </a>
-            <button class="rounded-lg md:hidden focus:outline-none focus:shadow-outline" @click="open = !open" role="navigation" aria-expanded="false" aria-label="Main" aria-controls="menuItems">
-                <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
-                    <path x-show="!open" fill-rule="evenodd"
-                          d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
-                          clip-rule="evenodd"></path>
-                    <path x-show="open" fill-rule="evenodd"
-                          d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                          clip-rule="evenodd"></path>
-                </svg>
-            </button>
-        </div>
-        <nav :class="{'flex': open, 'hidden': !open}"
-             class="flex-col flex-grow hidden pb-4 md:pb-0 md:flex md:justify-end md:flex-row">
-
-            <div @click.away="open = false" class="relative" x-data="{ open: false }">
-                <button @click="open = !open"
-                        class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 md:ml-4 hover:text-white focus:text-white hover:bg-slate-600 focus:bg-slate-600 focus:outline-none focus:shadow-outline">
-                    <span>Categories</span>
-                    <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}"
-                         class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1">
-                        <path fill-rule="evenodd"
-                              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                              clip-rule="evenodd"></path>
-                    </svg>
-                </button>
-                <div x-show="open" x-transition:enter="transition ease-out duration-100"
-                     x-transition:enter-start="transform opacity-0 scale-95"
-                     x-transition:enter-end="transform opacity-100 scale-100"
-                     x-transition:leave="transition ease-in duration-75"
-                     x-transition:leave-start="transform opacity-100 scale-100"
-                     x-transition:leave-end="transform opacity-0 scale-95"
-                     class="absolute right-0 z-30 w-full mt-2 origin-top-right rounded-md shadow-lg ">
-                    <div class="px-2 py-2 text-white bg-primary-900 rounded-md shadow">
-                        <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 hover:text-white focus:text-white hover:bg-primary-600 focus:bg-primary-600 focus:outline-none focus:shadow-outline"
-                           href={{ relLangURL "/categories/news/" }} >News</a>
-                        <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 hover:text-white focus:text-white hover:bg-primary-600 focus:bg-slate-700 focus:outline-none focus:shadow-outline"
-                           href={{ relLangURL "/categories/blog/" }} >Blog</a>
-                    </div>
-                </div>
-            </div>
-            <div @click.away="open = false" class="relative" x-data="{ open: false }">
-                <button @click="open = !open"
-                        class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:focus:bg-primary-600 dark-mode:hover:bg-primary-600 md:w-auto md:inline md:mt-0 md:ml-4 hover:text-white focus:text-white hover:bg-primary-600 focus:bg-primary-600 focus:outline-none focus:shadow-outline">
-                    <span>{{ i18n "languages" }}</span>
-                    <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}"
-                         class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1">
-                        <path fill-rule="evenodd"
-                              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                              clip-rule="evenodd"></path>
-                    </svg>
-                </button>
-                <div x-show="open" x-transition:enter="transition ease-out duration-100"
-                     x-transition:enter-start="transform opacity-0 scale-95"
-                     x-transition:enter-end="transform opacity-100 scale-100"
-                     x-transition:leave="transition ease-in duration-75"
-                     x-transition:leave-start="transform opacity-100 scale-100"
-                     x-transition:leave-end="transform opacity-0 scale-95"
-                     class="absolute right-0 z-30 w-full mt-2 origin-top-right">
-                    <div class="px-2 pt-2 pb-4  bg-primary-900 rounded-md shadow-lg text-white">
-                        <div class="grid grid-cols-1 gap-1">
-                            <a class="flex items-start p-2 bg-transparent rounded-lg group row hover:text-white focus:text-white hover:bg-primary-600 focus:bg-slate-700 focus:outline-none focus:shadow-outline"
-                               href="/en">
-                               <div class="ml-3">
-                                    <svg xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg" xmlns:ns1="http://sozi.baierouge.fr" xmlns:xlink="http://www.w3.org/1999/xlink" id="svg1" inkscape:version="0.46" viewBox="0 0 1000 500" sodipodi:version="0.32" inkscape:output_extension="org.inkscape.output.svg.inkscape" sodipodi:docname="united_kingdom.svg">
-                                        <sodipodi:namedview id="base" inkscape:window-x="353" inkscape:window-y="389" inkscape:window-height="704" inkscape:zoom="0.544" showgrid="false" inkscape:current-layer="svg1" inkscape:cx="500" inkscape:cy="250" inkscape:window-width="952"/>
-                                        <g id="g578" transform="scale(16.667)">
-                                          <rect id="rect124" style="stroke-width:1pt;fill:#000066" height="30" width="60" y="0" x="0"/>
-                                          <g id="g584">
-                                            <path id="path146" style="stroke-width:1pt;fill:#ffffff" d="m0 0v3.3541l53.292 26.646h6.708v-3.354l-53.292-26.646h-6.708zm60 0v3.354l-53.292 26.646h-6.708v-3.354l53.292-26.646h6.708z"/>
-                                            <path id="path136" style="stroke-width:1pt;fill:#ffffff" d="m25 0v30h10v-30h-10zm-25 10v10h60v-10h-60z"/>
-                                            <path id="path141" style="stroke-width:1pt;fill:#cc0000" d="m0 12v6h60v-6h-60zm27-12v30h6v-30h-6z"/>
-                                            <path id="path150" style="stroke-width:1pt;fill:#cc0000" d="m0 30l20-10h4.472l-20 10h-4.472zm0-30l20 10h-4.472l-15.528-7.7639v-2.2361zm35.528 10l20-10h4.472l-20 10h-4.472zm24.472 20l-20-10h4.472l15.528 7.764v2.236z"/>
-                                          </g>
-                                        </g>
-                                        <metadata>
-                                          <rdf:RDF>
-                                            <cc:Work>
-                                              <dc:format>image/svg+xml</dc:format>
-                                              <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-                                              <cc:license rdf:resource="http://creativecommons.org/licenses/publicdomain/"/>
-                                              <dc:publisher>
-                                                <cc:Agent rdf:about="http://openclipart.org/">
-                                                  <dc:title>Openclipart</dc:title>
-                                                </cc:Agent>
-                                              </dc:publisher>
-                                              <dc:title>Flag of the United Kingdom</dc:title>
-                                              <dc:date>2008-07-12T12:27:21</dc:date>
-                                              <dc:description/>
-                                              <dc:source>https://openclipart.org/detail/17754/flag-of-the-united-kingdom-by-tobias</dc:source>
-                                              <dc:creator>
-                                                <cc:Agent>
-                                                  <dc:title>tobias</dc:title>
-                                                </cc:Agent>
-                                              </dc:creator>
-                                              <dc:subject>
-                                                <rdf:Bag>
-                                                  <rdf:li>country</rdf:li>
-                                                  <rdf:li>europe</rdf:li>
-                                                  <rdf:li>european union</rdf:li>
-                                                  <rdf:li>flag</rdf:li>
-                                                  <rdf:li>nation</rdf:li>
-                                                  <rdf:li>sign</rdf:li>
-                                                  <rdf:li>united nations member</rdf:li>
-                                                  <rdf:li>unitedkingdom</rdf:li>
-                                                </rdf:Bag>
-                                              </dc:subject>
-                                            </cc:Work>
-                                            <cc:License rdf:about="http://creativecommons.org/licenses/publicdomain/">
-                                              <cc:permits rdf:resource="http://creativecommons.org/ns#Reproduction"/>
-                                              <cc:permits rdf:resource="http://creativecommons.org/ns#Distribution"/>
-                                              <cc:permits rdf:resource="http://creativecommons.org/ns#DerivativeWorks"/>
-                                            </cc:License>
-                                          </rdf:RDF>
-                                        </metadata>
-                                      </svg>
-                                    <p class="font-semibold">{{ i18n "english" }}</p>
-                                </div>
-                            </a>
-
- 
-
-                            <a class="flex items-start p-2 bg-transparent rounded-lg group row hover:text-white focus:text-white hover:bg-primary-600 focus:bg-slate-700 focus:outline-none focus:shadow-outline"
-                               href="/fr" }}>
- 
-                                <div class="ml-3">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="60" height="30"><rect width="60" height="30" fill="#ED2939"/><rect width="40" height="30" fill="#fff"/><rect width="20" height="30" fill="#002395"/></svg>
-                                    <p class="font-semibold">{{ i18n "french" }}</p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        
-            <div @click.away="open = false" class="relative" x-data="{ open: false }">
-              <button @click="open = !open"
-                      class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 md:ml-4 hover:text-white focus:text-white hover:bg-slate-600 focus:bg-slate-600 focus:outline-none focus:shadow-outline">
-                  <span>  {{ .Site.Params.navigation.about }}</span>
-                  <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}"
-                       class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1">
-                      <path fill-rule="evenodd"
-                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                            clip-rule="evenodd"></path>
-                  </svg>
-              </button>
-              <div x-show="open" x-transition:enter="transition ease-out duration-100"
-                   x-transition:enter-start="transform opacity-0 scale-95"
-                   x-transition:enter-end="transform opacity-100 scale-100"
-                   x-transition:leave="transition ease-in duration-75"
-                   x-transition:leave-start="transform opacity-100 scale-100"
-                   x-transition:leave-end="transform opacity-0 scale-95"
-                   class="absolute right-0 z-30 w-full mt-2 origin-top-right rounded-md shadow-lg ">
-                  <div class="px-2 py-2 text-white bg-primary-900 rounded-md shadow">
-                      <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 hover:text-white focus:text-white hover:bg-primary-600 focus:bg-primary-600 focus:outline-none focus:shadow-outline"
-                         href={{ relLangURL "contacts" }}>  {{ .Site.Params.navigation.contacts }}</a>
-                      <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 hover:text-white focus:text-white hover:bg-primary-600 focus:bg-primary-600 focus:outline-none focus:shadow-outline"
-                         href={{ relLangURL "team" }} >{{ .Site.Params.navigation.team }}</a>
-                      <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 hover:text-white focus:text-white hover:bg-primary-600 focus:bg-slate-700 focus:outline-none focus:shadow-outline"
-                         href={{ relLangURL "legal" }} >{{ .Site.Params.navigation.legal }}</a>
-                  </div>
-              </div>
-          </div>
-            <div>
-                <ul class="flex">
-                    {{ range $.Site.Home.AllTranslations }}
-                    <li><a href="{{ .Permalink }}">{{ .Language.LanguageName }}</a></li>
-                    {{ end }}
-                </ul>
-            </div>
-            <button id="theme-toggle" type="button"
-                    class="p-2 text-sm text-primary-500 rounded-lg md: dark:text-primary-400 hover:bg-primary-100 dark:hover:bg-primary-700 focus:outline-none focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-700 md:ml-2 max-w-5 xs:hidden">
-                <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
-                     xmlns="http://www.w3.org/2000/svg">
-                    <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z">
-                    </path>
-                </svg>
-                <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
-                     aria-label="Dark or Light Mode" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
-                          fill-rule="evenodd" clip-rule="evenodd"></path>
-                </svg>
-            </button>
-        </nav>
+  <div x-data="{ open: false }"
+    class="flex flex-col max-w-full px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
+    <div class="flex flex-row items-center justify-between p-4">
+      <a href={{ relLangURL "/" }}
+        class="flex  transition duration-1000 ease-in-out group group-hover:text-primary-900">
+        <img src="/favicon/favicon.svg" class="transition-opacity h-9 w-9 group-hover:opacity-50 group-focus:opacity-70"
+          alt="{{ .Site.Title }} Logo" />
+        <div
+          class="mt-1 ml-3 text-xl font-black tracking-tight text-white transition-colors group-hover:text-primary-900">
+          {{ .Site.Title }}</div>
+      </a>
+      <button class="rounded-lg md:hidden focus:outline-none focus:shadow-outline" @click="open = !open"
+        role="navigation" aria-expanded="false" aria-label="Main" aria-controls="menuItems">
+        <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+          <path x-show="!open" fill-rule="evenodd"
+            d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
+            clip-rule="evenodd"></path>
+          <path x-show="open" fill-rule="evenodd"
+            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </button>
     </div>
+    <nav :class="{'flex': open, 'hidden': !open}"
+      class="flex-col flex-grow hidden pb-4 md:pb-0 md:flex md:justify-end md:flex-row">
+
+      <div  class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 md:ml-4 hover:text-white focus:text-white hover:bg-slate-600 focus:bg-slate-600 focus:outline-none focus:shadow-outline">
+
+          <a href="https://sealf.ie/">
+            {{ i18n "product" }}
+          </a>
+      
+      </div>
+
+      <div @click.away="open = false" class="relative" x-data="{ open: false }">
+        <button @click="open = !open"
+          class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 md:ml-4 hover:text-white focus:text-white hover:bg-slate-600 focus:bg-slate-600 focus:outline-none focus:shadow-outline">
+          <span>Articles</span>
+          <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}"
+            class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1">
+            <path fill-rule="evenodd"
+              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+              clip-rule="evenodd"></path>
+          </svg>
+        </button>
+        <div x-show="open" x-transition:enter="transition ease-out duration-100"
+          x-transition:enter-start="transform opacity-0 scale-95"
+          x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75"
+          x-transition:leave-start="transform opacity-100 scale-100"
+          x-transition:leave-end="transform opacity-0 scale-95"
+          class="absolute right-0 z-30 w-full mt-2 origin-top-right rounded-md shadow-lg ">
+          <div class="px-2 py-2 text-white bg-primary-900 rounded-md shadow">
+            <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 hover:text-white focus:text-white hover:bg-primary-600 focus:bg-primary-600 focus:outline-none focus:shadow-outline"
+              href={{ relLangURL "/categories/news/" }}>{{ i18n "news" }}</a>
+            <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 hover:text-white focus:text-white hover:bg-primary-600 focus:bg-slate-700 focus:outline-none focus:shadow-outline"
+              href={{ relLangURL "/categories/blog/" }}>Blog</a>
+          </div>
+        </div>
+      </div>
+
+      <div @click.away="open = false" class="relative" x-data="{ open: false }">
+        <button @click="open = !open"
+          class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:focus:bg-primary-600 dark-mode:hover:bg-primary-600 md:w-auto md:inline md:mt-0 md:ml-4 hover:text-white focus:text-white hover:bg-primary-600 focus:bg-primary-600 focus:outline-none focus:shadow-outline">
+          <span>{{ i18n "languages" }}</span>
+          <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}"
+            class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1">
+            <path fill-rule="evenodd"
+              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+              clip-rule="evenodd"></path>
+          </svg>
+        </button>
+        <div x-show="open" x-transition:enter="transition ease-out duration-100"
+          x-transition:enter-start="transform opacity-0 scale-95"
+          x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75"
+          x-transition:leave-start="transform opacity-100 scale-100"
+          x-transition:leave-end="transform opacity-0 scale-95"
+          class="absolute right-0 z-30 w-full mt-2 origin-top-right">
+          <div class="px-2 pt-2 pb-4  bg-primary-900 rounded-md shadow-lg text-white">
+            <div class="grid grid-cols-1 gap-1">
+              <a class="flex items-start p-2 bg-transparent rounded-lg group row hover:text-white focus:text-white hover:bg-primary-600 focus:bg-slate-700 focus:outline-none focus:shadow-outline"
+                href="/en">
+                <div class="ml-3">
+                  <svg xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+                    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/"
+                    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+                    xmlns:svg="http://www.w3.org/2000/svg" xmlns:ns1="http://sozi.baierouge.fr"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" id="svg1" inkscape:version="0.46" viewBox="0 0 1000 500"
+                    sodipodi:version="0.32" inkscape:output_extension="org.inkscape.output.svg.inkscape"
+                    sodipodi:docname="united_kingdom.svg">
+                    <sodipodi:namedview id="base" inkscape:window-x="353" inkscape:window-y="389"
+                      inkscape:window-height="704" inkscape:zoom="0.544" showgrid="false" inkscape:current-layer="svg1"
+                      inkscape:cx="500" inkscape:cy="250" inkscape:window-width="952" />
+                    <g id="g578" transform="scale(16.667)">
+                      <rect id="rect124" style="stroke-width:1pt;fill:#000066" height="30" width="60" y="0" x="0" />
+                      <g id="g584">
+                        <path id="path146" style="stroke-width:1pt;fill:#ffffff"
+                          d="m0 0v3.3541l53.292 26.646h6.708v-3.354l-53.292-26.646h-6.708zm60 0v3.354l-53.292 26.646h-6.708v-3.354l53.292-26.646h6.708z" />
+                        <path id="path136" style="stroke-width:1pt;fill:#ffffff"
+                          d="m25 0v30h10v-30h-10zm-25 10v10h60v-10h-60z" />
+                        <path id="path141" style="stroke-width:1pt;fill:#cc0000"
+                          d="m0 12v6h60v-6h-60zm27-12v30h6v-30h-6z" />
+                        <path id="path150" style="stroke-width:1pt;fill:#cc0000"
+                          d="m0 30l20-10h4.472l-20 10h-4.472zm0-30l20 10h-4.472l-15.528-7.7639v-2.2361zm35.528 10l20-10h4.472l-20 10h-4.472zm24.472 20l-20-10h4.472l15.528 7.764v2.236z" />
+                      </g>
+                    </g>
+                    <metadata>
+                      <rdf:RDF>
+                        <cc:Work>
+                          <dc:format>image/svg+xml</dc:format>
+                          <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+                          <cc:license rdf:resource="http://creativecommons.org/licenses/publicdomain/" />
+                          <dc:publisher>
+                            <cc:Agent rdf:about="http://openclipart.org/">
+                              <dc:title>Openclipart</dc:title>
+                            </cc:Agent>
+                          </dc:publisher>
+                          <dc:title>Flag of the United Kingdom</dc:title>
+                          <dc:date>2008-07-12T12:27:21</dc:date>
+                          <dc:description />
+                          <dc:source>https://openclipart.org/detail/17754/flag-of-the-united-kingdom-by-tobias
+                          </dc:source>
+                          <dc:creator>
+                            <cc:Agent>
+                              <dc:title>tobias</dc:title>
+                            </cc:Agent>
+                          </dc:creator>
+                          <dc:subject>
+                            <rdf:Bag>
+                              <rdf:li>country</rdf:li>
+                              <rdf:li>europe</rdf:li>
+                              <rdf:li>european union</rdf:li>
+                              <rdf:li>flag</rdf:li>
+                              <rdf:li>nation</rdf:li>
+                              <rdf:li>sign</rdf:li>
+                              <rdf:li>united nations member</rdf:li>
+                              <rdf:li>unitedkingdom</rdf:li>
+                            </rdf:Bag>
+                          </dc:subject>
+                        </cc:Work>
+                        <cc:License rdf:about="http://creativecommons.org/licenses/publicdomain/">
+                          <cc:permits rdf:resource="http://creativecommons.org/ns#Reproduction" />
+                          <cc:permits rdf:resource="http://creativecommons.org/ns#Distribution" />
+                          <cc:permits rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
+                        </cc:License>
+                      </rdf:RDF>
+                    </metadata>
+                  </svg>
+                  <p class="font-semibold">{{ i18n "english" }}</p>
+                </div>
+              </a>
+
+
+
+              <a class="flex items-start p-2 bg-transparent rounded-lg group row hover:text-white focus:text-white hover:bg-primary-600 focus:bg-slate-700 focus:outline-none focus:shadow-outline"
+                href="/fr" }}>
+
+                <div class="ml-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="60" height="30">
+                    <rect width="60" height="30" fill="#ED2939" />
+                    <rect width="40" height="30" fill="#fff" />
+                    <rect width="20" height="30" fill="#002395" />
+                  </svg>
+                  <p class="font-semibold">{{ i18n "french" }}</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div @click.away="open = false" class="relative" x-data="{ open: false }">
+        <button @click="open = !open"
+          class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 md:ml-4 hover:text-white focus:text-white hover:bg-slate-600 focus:bg-slate-600 focus:outline-none focus:shadow-outline">
+          <span> {{ .Site.Params.navigation.about }}</span>
+          <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}"
+            class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1">
+            <path fill-rule="evenodd"
+              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+              clip-rule="evenodd"></path>
+          </svg>
+        </button>
+        <div x-show="open" x-transition:enter="transition ease-out duration-100"
+          x-transition:enter-start="transform opacity-0 scale-95"
+          x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75"
+          x-transition:leave-start="transform opacity-100 scale-100"
+          x-transition:leave-end="transform opacity-0 scale-95"
+          class="absolute right-0 z-30 w-full mt-2 origin-top-right rounded-md shadow-lg ">
+          <div class="px-2 py-2 text-white bg-primary-900 rounded-md shadow">
+            <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 hover:text-white focus:text-white hover:bg-primary-600 focus:bg-primary-600 focus:outline-none focus:shadow-outline"
+              href={{ relLangURL "contacts" }}> {{ .Site.Params.navigation.contacts }}</a>
+            <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 hover:text-white focus:text-white hover:bg-primary-600 focus:bg-primary-600 focus:outline-none focus:shadow-outline"
+              href={{ relLangURL "team" }}>{{ .Site.Params.navigation.team }}</a>
+            <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 hover:text-white focus:text-white hover:bg-primary-600 focus:bg-slate-700 focus:outline-none focus:shadow-outline"
+              href={{ relLangURL "legal" }}>{{ .Site.Params.navigation.legal }}</a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <ul class="flex">
+          {{ range $.Site.Home.AllTranslations }}
+          <li><a href="{{ .Permalink }}">{{ .Language.LanguageName }}</a></li>
+          {{ end }}
+        </ul>
+      </div>
+      <button id="theme-toggle" type="button"
+        class="p-2 text-sm text-primary-500 rounded-lg md: dark:text-primary-400 hover:bg-primary-100 dark:hover:bg-primary-700 focus:outline-none focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-700 md:ml-2 max-w-5 xs:hidden">
+        <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg">
+          <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z">
+          </path>
+        </svg>
+        <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+          aria-label="Dark or Light Mode" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+            fill-rule="evenodd" clip-rule="evenodd"></path>
+        </svg>
+      </button>
+    </nav>
+  </div>
 </div>
