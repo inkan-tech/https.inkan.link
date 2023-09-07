@@ -1,10 +1,11 @@
 ---
 title: My Boss is an AI (Part 2)
+fronttitle: Generative AI for mimicking style.
 date: 2023-07-18T09:48:50+02:00
 draft: false
 language: en
 featured_image: images/posts/mail-gpt.jpg
-summary: In the second part of our series "My Boss is an AI", we explore how cybercriminals can access CEO's emails and use AI to mimic their writing style. We also discuss why standard security recommendations are no longer sufficient in the face of these new threats. Finally, we present how Sealfie, an innovative cybersecurity solution, can help businesses detect forgery and identity theft.
+summary: Cybercriminals gain access to CEOs' emails and use AI to mimic their writing style for free. Standard security recommendations advise caution and looking for anomalies, such as spelling mistakes or language errors. It's easy to see why these recommendations are no longer sufficient. Criminals can create convincing forgeries, even with dedicated AI like fakeGPT. Sealfie supports the most targeted individuals by providing peace of mind during crucial financial transactions.
 description: Explore how cybercriminals use AI to mimic the writing style of CEOs and why standard security recommendations are no longer sufficient. Discover how Sealfie can help detect forgery and identity theft. Read "My Boss is an AI (Part 2)" to learn more about these cybersecurity threats and how to combat them.
 author: Nicolas Thomas
 authorimage: images/global/NicolasHeadShot.webp

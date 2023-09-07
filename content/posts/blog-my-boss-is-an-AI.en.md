@@ -1,10 +1,11 @@
 ---
 title: My boss is an AI
+fronttitle: IA générative pour usurper la voix
 date: 2023-06-06T14:41:40+02:00
 draft: false
 language: en
 featured_image: images/posts/cyborg_ceo.webp
-summary: Uncover the transformative power of AI in our latest piece, focusing on voice cloning and its impact on identity theft. Discover how AI is making voice cloning accessible, the potential cybersecurity threats it poses, and how solutions like Sealfie are stepping up to protect businesses. Also, get insights into the future of AI leadership with the intriguing case of Madame Tang Yu, an AI CEO in China.
+summary: The business email compromise (BEC) fraud is indeed associated with emails, serving as the preferred entry point for attackers who then move on to other channels, notably voice. The democratization of generative AI allows a criminal to obtain real-time voice cloning software for less than 100 euros. Protection based on human detection of a fake voice is destined to fail. Nevertheless, these are the classic recommendations for safeguarding against this fraud. We offer an innovative approach with Sealfie that requires no training.
 description: Explore the cutting-edge intersection of AI, voice cloning, and cybersecurity in our latest article. Learn how AI is revolutionizing voice cloning, its implications for identity theft, and the role of innovative solutions like Sealfie in safeguarding businesses. Delve into the future of AI leadership with the case of Madame Tang Yu, the AI CEO in China.
 author: Nicolas Thomas
 authorimage: images/global/NicolasHeadShot.webp

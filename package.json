@@ -38,8 +38,6 @@
   ],
   "author": "Inkan.link SAS",
   "license": "Apache-2.0",
-  "bugs": {
-    "url": "https://github.com/nusserstudios/tailbliss/issues"
-  },
-  "homepage": "https://github.com/nusserstudios/tailbliss"
+
+  "homepage": "https://inkan.link"
 }

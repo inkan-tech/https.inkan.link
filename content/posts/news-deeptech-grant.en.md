@@ -1,10 +1,10 @@
 ---
-title: Deeptech Labelling with L3i
+title: Deeptech grant with L3i
 date: 2023-07-11T12:09:21+02:00
 draft: false
 language: en
 featured_image: images/posts/IllustrationDeepTech.webp
-summary: The Computer Science, Image and Interaction Laboratory (L3i) of the University of La Rochelle and Inkan.link have received a Deeptech Emergence grant from BPI. This funding aims to unlock the attractiveness of open blockchains for businesses, by increasing trust and efficiency in digital interactions. The two entities will work together to develop innovative solutions, with the goal of transforming how businesses interact with blockchains.
+summary: The L3i of the University of La Rochelle and Inkan.link have been awarded a Deeptech Emergence grant from BPI. This funding will enable us to overcome the barriers to the adoption of open blockchains by businesses.
 description: Discover how L3i and Inkan.link, thanks to a Deeptech Emergence grant from BPI, are committed to unlocking the attractiveness of open blockchains for businesses. By combining expertise in digital sciences and innovation in digital attestations, they aim to transform the interaction of businesses with blockchains.
 author: Nicolas Thomas
 authorimage: images/global/NicolasHeadShot.webp

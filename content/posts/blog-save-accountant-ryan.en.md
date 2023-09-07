@@ -1,10 +1,11 @@
 ---
 title: Save accountant Ryan
+fronttitle: Finance Professionals on the Frontline.
 date: 2023-05-02T11:10:36+08:00
 draft: false
 language: fr
 featured_image: images/posts/Comptable-1ere-ligne.jpeg
-summary: In the spirit of "Saving Private Ryan," this blog post highlights the emotional and psychological impact of Business Email Compromise (BEC) fraud on accountants and finance controllers. It introduces Sealfie, a frontline squad providing support, guidance, and advanced tools to protect these professionals from BEC scams, allowing them to work with confidence and peace of mind, knowing they have a reliable chain of command.
+summary: The psychological and emotional impact of BEC (Business Email Compromise) scams on accountants and financial controllers is immense. They are literally on the frontlines, drawing a parallel with the movie 'Saving Private Ryan.' Beyond the financial aspect, accountants are often viewed as suspects, reported as unreliable to authorities, and frequently terminated for negligence. Meanwhile, criminals can create convincing forgeries at minimal cost. We enable these finance professionals to supplement their vigilance with irrefutable evidence of their good faith, without forcing them to be seen as overly meticulous.
 description: Discover the psychological impact of BEC fraud on accountants, and learn how Sealfie, a frontline support squad, offers protection and guidance against these scams, empowering finance professionals to work with confidence.
 author: Nicolas Thomas
 authorimage: images/global/NicolasHeadShot.webp
