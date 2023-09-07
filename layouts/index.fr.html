@@ -274,11 +274,11 @@
     <div class="row relative my-4 bg-secondary-500">
         <p></p>
     </div>
-
+ <!-- Testimonial/stats section -->
 
     <!-- Inifinte Blog : kept simple on desktop to accomodate mobile better -->
 
-    <!-- Testimonial/stats section -->
+   
     {{ range first 12 (where (where ( .Paginator.Pages ) ".Params.categories" "like" "(B|b)log") ".Language.Lang" "fr"
     )}}
 
@@ -347,11 +347,6 @@
             </div>
         </div>
 
-
-        <!-- Actually flip the left/right -->
-        {{ $flip := not ($.Scratch.Get "flipflop") }}
-
-        {{ $.Scratch.Set "flipflop" $flip }}
 
 
         {{ end }} <!-- end of range -->
