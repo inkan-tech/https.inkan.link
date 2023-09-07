@@ -21,7 +21,7 @@
                         <rect width="404" height="392" fill="url(#02f20b47-fd69-4224-a62a-4c9de5c763f7)" />
                     </svg>
                 </div>
-                <div class="relative max-w-md px-4 py-6 mx-auto sm:max-w-3xl sm:px-6 lg:max-w-none lg:px-0 lg:py-20">
+                <div class="relative max-w-fit px-4 py-6 mx-auto sm:max-w-fit sm:px-6 lg:max-w-fit lg:px-0 lg:py-20">
                     <!-- Testimonial card-->
                     <div class="relative pt-64 pb-10 overflow-hidden shadow-xl rounded-2xl">
                         {{ $missionimage := resources.Get "images/pages/sealfie-landscape.png" }}
@@ -41,10 +41,10 @@
 
                 <div class="md:pt-24 sm:pt-12 lg:pt-20">
                     <h1
-                        class="mb-2 text-4xl font-extrabold leading-none tracking-tight text-primary-600 md:text-5xl xl:text-6xl dark:text-white hover:underline hover:text-primary-light-600 ">
+                        class="mb-2 text-4xl font-extrabold leading-2 tracking-tight text-primary-600 md:text-5xl xl:text-6xl dark:text-white hover:underline hover:text-primary-light-600 ">
                         <a href="https://sealf.ie"
                             class="block py-4 mx-auto space-x-4 sm:inline-flex md:inline-flex sm:text-center">
-                            <img src="https://sealf.ie/assets/favicon.svg" width=60 alt="Sealfie logo">
+
                             <p> Sealfie </p>
                         </a>
 
@@ -52,19 +52,20 @@
                     <div class="mt-6 space-y-6 ">
 
                         <p class="text-lg leading-7"> Sealfie offre une protection quotidienne contre la fraude au
-                            président, aux faux fournisseurs et à l'usurpation d'identité.
+                            président, aux faux fournisseurs et aux usurpation d'identité.
                         </p>
                         <p class="text-lg leading-7 hover:underline hover:text-primary-light-600"> Rendez-vous sur le
-                            site <a href="https://sealf.ie/fr"> https://sealf.ie/fr/ </a> pour découvrir notre offre de
-                            protection.
+                            site <a href="https://sealf.ie/fr"> https://sealf.ie/fr/ </a> pour découvrir notre offre en
+                            détails.
                         </p>
-                        <p class="text-lg leading-7 hover:underline hover:text-primary-light-600"> Comprendre l'approche
-                            avec l'interview de notre fondateur sur <a
-                                href="https://www.lefigaro.fr/economie/inkan-link-optimisez-votre-securite-protegez-votre-identite-20230330">
-                                Itinéraire Entreprise du Figaro </a>.
+                        <p class="text-lg leading-7 hover:underline hover:text-primary-light-600 "
+                            href="https://www.lefigaro.fr/economie/inkan-link-optimisez-votre-securite-protegez-votre-identite-20230330">
+                            Comprendre l'approche
+                            avec l'interview de notre fondateur sur
+                            Itinéraire Entreprise du Figaro (10 minutes).
                         </p>
 
-                        <p class="text-lg leading-7">
+
                     </div>
                 </div>
             </div>
@@ -87,13 +88,9 @@
 
 
                     <p class="max-w-xl mx-auto mb-6 font-normal lg:mx-0 xl:mb-2 md:text-lg xl:text-xl">
-                        Nous sommes une startup DeepTech crée en octobre 2021, par des vétérans de la cybersécurité.
+                        Inkan.link une startup DeepTech crée en octobre 2021, par des vétérans de la cybersécurité.
                     </p>
-                    <p class="max-w-xl mx-auto mb-6 font-normal lg:mx-0 xl:mb-2 md:text-lg xl:text-xl">
-                        Notre approche innovante est de rassembler dans un faisceau de preuves
-                        validant les dires des utilisateurs. Ce faisceau appartient dès le départ a son auteur grace aux
-                        blockchain ouvertes.
-                    </p>
+                 
 
                     <p class="max-w-xl mx-auto mb-6 font-normal lg:mx-0 xl:mb-2 md:text-lg xl:text-xl">
                         Vous trouverez en scrollant nos actualités, des explications sur les fraudes que nous prévenons.
@@ -125,7 +122,7 @@
 
     <div class="relative px-1 pt-8 pb-4 bg-transparent lg:px-8 lg:pt-12 lg:mb-4 md:mt-12">
         <div class="absolute inset-0">
-            <div class="bg-secondary-900 dark:bg-secondary-900/50 h-1/3 sm:h-2/3"></div>
+            <div class="bg-secondary-900 dark:bg-secondary-900/50 h-2/3 sm:h-2/3"></div>
         </div>
         <div class="relative px-2 mx-auto max-w-7xl">
             <div class="text-center">
@@ -163,7 +160,7 @@
                                     </p>
                                     <a href="{{.Permalink}}"
                                         class="block mt-2 text-base underline dark:text-neutral-400 hover:text-primary-500 dark:hover:text-white hover:underline">
-                                        Lien vers l'article
+                                        En savoir plus...
                                     </a>
                                 </div>
                             </div>
@@ -198,7 +195,7 @@
                 <div class="relative max-w-md px-4 py-6 mx-auto sm:max-w-3xl sm:px-6 lg:max-w-none lg:px-0 lg:py-20">
                     <!-- Testimonial card-->
                     <div class="relative pt-64 pb-10 overflow-hidden shadow-xl rounded-2xl">
-                        {{ $missionimage := resources.Get "images/pages/our-mission.png" }}
+                        {{ $missionimage := resources.Get "images/pages/vision.jpeg" }}
                         {{ with $missionimage }}
                         {{ with .Resize (printf "%dx%d webp q50" .Width .Height) }}
                         <img imgh src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}"
@@ -218,9 +215,10 @@
                                         <path
                                             d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
                                     </svg>
-                                    <p class="relative"> Nous voulons un espace numérique où la confiance est la
-                                        norme, où nos données ne servent pas qu'au ciblage publicitaire en échange
-                                        de messages douteux.
+                                    <p class="relative">Nous construisons un écosystème des solutions numériques où la
+                                        sécurité est ouvertement partagée avec l'utilisateur, intégrée et dans un cercle
+                                        vertueux.
+
                                     </p>
                                 </div>
 
@@ -240,26 +238,31 @@
                 <div class="md:pt-12 sm:pt-6 lg:pt-20">
                     <h2
                         class="text-3xl font-bold tracking-tight text-primary-900 capitalize dark:text-primary-50 sm:text-4xl">
-                        Notre mission</h2>
+                        Notre vision</h2>
                     <div class="mt-6 space-y-6 text-neutral-900 dark:text-white">
-                        <p class="text-lg leading-7">Rendre les traces numériques utiles à ceux qui les ont données
-                            en créant de la confiance.
+                        <p class="text-lg leading-7">
+                            Notre vision est celle d'un ensemble de services et d'acteurs du numérique qui fournissent à
+                            leurs clients des gages vérifiables de sécurité.
 
                         </p>
-                        <p class="text-lg leading-7">L'analogie la plus proche est le Paypal des preuves numériques.
-                            Imaginez fournir automatiquement le faisceau de preuves permettant à une entreprise
-                            d'avoir une grande confiance dans vos dires, sans ce noyer dans la paperasse.
+                        <p class="text-lg leading-7">Les utilisateurs possèdent des certificats émient par leurs
+                            interlocuteurs, entreprises ou particuliers, qu’ils peuvent utiliser à leur guise pour
+                            prouver leurs dires : présence, achat, domicile, certification etc..
+
                         </p>
                         <p class="text-lg leading-7">
-                            La vie privée est au cœur de nos préoccupations. Elle est intimement liée aux données de
-                            confiance. Pour s'assurer de la véracité des dires de leurs clients les entreprises ont
-                            un besoin technique de collecter toujours plus d'informations. Nous cassons cette
-                            spirale en établissant la confiance initiale avec la même rigueur que les enquêteurs
-                            criminels.
+                            Notre différenciation est que nous relions ces attestations pour créer un moyen vérifiable,
+                            de multiples sources de vérifier les déclarations des utilisateurs.
+
                         </p>
-                        <p class="text-lg leading-7">
-                            Nos clients sont propriétaires de leurs données et des certificats dès leur création.
-                            Nous rendons la technologie "invisible" par default et toujours vérifiable.
+                        <p class="text-lg leading-7">Notre partenariat DeepTech avec le L3i vise à permettre aux
+                            entreprises de gérer pleinement l'émission de certificats sur blockchain ouvertes à
+                            destination de leurs clients.
+
+                        </p>
+                        <p class="text-lg leading-7">Le résultat est des services numériques basés sur la confiance dès
+                            le départ et très complexes à attaquer de par la multiplication des sources d'information.
+
                         </p>
                     </div>
                 </div>
@@ -267,141 +270,91 @@
         </div>
     </div>
 
-    <!-- Inifinte Blog -->
-    {{ .Scratch.Set "flipflop" false }}
+    <!-- Title before infinite blog section -->
+    <div class="row relative my-4 bg-secondary-500">
+        <p></p>
+    </div>
+
+
+    <!-- Inifinte Blog : kept simple on desktop to accomodate mobile better -->
+
     <!-- Testimonial/stats section -->
     {{ range first 12 (where (where ( .Paginator.Pages ) ".Params.categories" "like" "(B|b)log") ".Language.Lang" "fr"
     )}}
-    
-    
+
+
     <div class="row relative my-4">
-            <div class=" lg:mx-auto lg:grid lg:max-w-xl lg:grid-cols-2 lg:items-start lg:gap-24 lg:px-8 ">
-                {{ if eq ($.Scratch.Get "flipflop") false }}
-                <!-- display image on left based on "flipflop" variable -->
-                <div class="relative sm:py-8 lg:py-0">
-                    <div aria-hidden="true" class="hidden sm:block lg:absolute lg:inset-y-0 lg:right-0 lg:w-screen">
-                        <div
-                            class="relative inset-y-0 w-full bg-neutral-50 dark:bg-neutral-900/10 right-1/2 rounded-r-3xl lg:right-72">
-                        </div>
-                        <svg class="absolute -ml-3 top-8 left-1/2 lg:-right-8 lg:left-auto lg:top-12" width="404"
-                            height="392" fill="none" viewBox="0 0 404 392" loading="lazy">
-                            <defs>
-                                <pattern id="02f20b47-fd69-4224-a62a-4c9de5c763f7" x="0" y="0" width="20" height="20"
-                                    patternUnits="userSpaceOnUse">
-                                    <rect x="0" y="0" width="4" height="4"
-                                        class="text-primary-200 dark:text-primary-900/60" fill="currentColor" />
-                                </pattern>
-                            </defs>
-                            <rect width="404" height="392" fill="url(#02f20b47-fd69-4224-a62a-4c9de5c763f7)" />
-                        </svg>
-                    </div>
-                    <div
-                        class="relative max-w-md px-4 py-6 mx-auto sm:max-w-3xl sm:px-6 lg:max-w-none lg:px-0 lg:py-20 href={{ .Permalink }}">
-                        <!-- Testimonial card-->
-                        <div class="relative pt-64 pb-10 overflow-hidden shadow-xl rounded-2xl href={{ .Permalink }}">
-                            {{ with .Params.featured_image }}
-                            {{ with resources.Get . }}
-                            {{ $postimage := (.Resize "500x webp q90").RelPermalink }}
-                            <img imgh src="{{ $postimage  }}" width="{{ .Width }}" height="{{ .Height }}"
-                                class="absolute inset-0 object-cover w-full h-full" alt={{.Title}} loading="lazy" />
-                            {{ end }}>
-                            {{ end }}
-                            <div class="relative px-8">
-                                <div>
-                                    {{ with .Params.authorimage }}
-                                    {{ with resources.Get . }}
-                                    {{ $authorimage := (.Resize "400x webp").RelPermalink }}
-                                    <img class="w-10 h-10 rounded-full" src="{{ $authorimage }}" alt="">
-                                    {{ end }}
-                                    {{ end }}
-                                </div>
+        <div class=" lg:mx-auto lg:grid lg:max-w-xl lg:grid-cols-2 lg:items-start lg:gap-24 lg:px-8 ">
 
-                                <div class="relative text-lg font-medium text-white  md:flex-grow">
-                                    <svg class="absolute top-0 left-0 w-8 h-8 transform -translate-x-3 -translate-y-2"
-                                        fill="currentColor" viewBox="0 0 32 32" aria-hidden="true">
-                                        <path
-                                            d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
-                                    </svg>
-                                </div>
-                                <footer class="mt-8">
-                                    <p class="text-base font-semibold text-white">
-                                        {{ .Params.author }}
-                                    </p>
-                                </footer>
+            <!-- Content area -->
+            <div class="relative max-w-md px-4 mx-auto sm:max-w-3xl sm:px-6 lg:px-0">
 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                {{end}}
-
-                <!-- Content area -->
-                <div class="relative max-w-md px-4 mx-auto sm:max-w-3xl sm:px-6 lg:px-0">
-
-                    <div class="p-6">
-                        <div class="flex-1">
-                            <a href="{{.Permalink}}"
-                                class="block mt-2 text-2xl  text-primary-900 hover:text-primary-light-600 dark:hover:text-white  hover:underline">
-                                {{.Title}}
-                            </a>
-                            <p class="mt-3 text-lg leading-7 text-neutral-900">
-                                {{ .Params.summary }}
-                            </p>
-                        </div>
-
-
-                    </div>
-                </div>
-                {{ if eq ($.Scratch.Get "flipflop") true }}
-                <div class=" sm:py-8 lg:py-0">
-                    <div aria-hidden="true" class="hidden sm:block lg:relative lg:inset-y-0 lg:right-0 lg:w-screen">
-                        <div
-                            class="absolute inset-y-0  left-1/2 rounded-l-3xl bg-neutral-50 dark:bg-secondary-900/10 lg:left-20 lg:right-0 lg:w-fit">
-                        </div>
-                        <svg class="absolute -mr-1 top-1 right-2/3 lg:left-1 lg:m-12" width="404" height="292"
-                            fill="none" viewBox="0 0 404 292" loading="lazy">
-                            <defs>
-                                <pattern id="837c3e70-6c3a-44e6-8854-cc48c737b659" x="0" y="0" width="20" height="20"
-                                    patternUnits="userSpaceOnUse">
-                                    <rect x="0" y="0" width="4" height="4"
-                                        class="text-secondary-900 dark:text-secondary-900/60" fill="currentcolor">
-                                    </rect>
-                                </pattern>
-                            </defs>
-                            <rect width="404" height="392" fill="url(#837c3e70-6c3a-44e6-8854-cc48c737b659)"></rect>
-                        </svg>
-                    </div>
-                    <div class="relative max-w-md px-4 py-6 mx-auto sm:max-w-3xl sm:px-6 lg:max-w-3xl lg:px-2 lg:py-6"
-                        href="{{ .Permalink }}">
-                        <div
-                            class="relative pl-4 -mr-40 sm:mx-auto sm:max-w-3xl sm:px-0 lg:h-full lg:max-w-none lg:pl-12">
-                            {{ $p2image := resources.Get .Params.featured_image}}
-                            {{ with $p2image }}
-                            {{ with .Resize (printf "%dx%d webp q90" .Width .Height) }}
-                            <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="p2"
-                                class="w-full rounded-lg shadow-xl lg:h-full lg:w-auto lg:max-w-none" loading="lazy" />
-                            {{ end }}
-                            {{ end }}
-
-
-
-                        </div>
+                <div class="p-6">
+                    <div class="flex-1">
+                        <a href="{{.Permalink}}"
+                            class="block mt-2 text-2xl  text-primary-900 hover:text-primary-light-600 dark:hover:text-white  hover:underline">
+                            {{ if isset .Params "fronttitle" }} {{ .Param "fronttitle"}} {{else}} {{ .Title }} {{end}}
+                        </a>
+                        <p class="mt-3 text-lg leading-7 text-neutral-900">
+                            {{ .Params.summary }}
+                        </p>
+                        <a href="{{.Permalink}}"
+                        class="block mt-2 text-base underline dark:text-neutral-400 hover:text-primary-500 dark:hover:text-white hover:underline">
+                        En savoir plus...
+                    </a>
                     </div>
 
 
-                    {{end}}
                 </div>
             </div>
 
+            <div class=" sm:py-8 lg:py-0">
+                <div aria-hidden="true" class="hidden sm:block lg:relative lg:inset-y-0 lg:right-0 lg:w-screen">
+                    <div
+                        class="absolute inset-y-0  left-1/2 rounded-l-3xl bg-neutral-50 dark:bg-secondary-900/10 lg:left-20 lg:right-0 lg:w-fit">
+                    </div>
+                    <svg class="absolute -mr-1 top-1 right-2/3 lg:left-1 lg:m-12" width="404" height="292" fill="none"
+                        viewBox="0 0 404 292" loading="lazy">
+                        <defs>
+                            <pattern id="837c3e70-6c3a-44e6-8854-cc48c737b659" x="0" y="0" width="20" height="20"
+                                patternUnits="userSpaceOnUse">
+                                <rect x="0" y="0" width="4" height="4"
+                                    class="text-secondary-900 dark:text-secondary-900/60" fill="currentcolor">
+                                </rect>
+                            </pattern>
+                        </defs>
+                        <rect width="404" height="392" fill="url(#837c3e70-6c3a-44e6-8854-cc48c737b659)"></rect>
+                    </svg>
+                </div>
+                <div class="relative max-w-md px-4 py-6 mx-auto sm:max-w-3xl sm:px-6 lg:max-w-3xl lg:px-2 lg:py-6"
+                    href="{{ .Permalink }}">
+                    <div class="relative pl-4 mr-0 sm:mx-auto sm:max-w-3xl sm:px-0 lg:h-full lg:max-w-none lg:pl-12">
+                        {{ with .Params.featured_image }}
+                        {{ with resources.Get . }}
+                        {{ $postimage := (.Resize "400x webp q90").RelPermalink }}
+                        <img src="{{ $postimage }}" alt="Illustration: {{ .Title }}"
+                            class="w-fit rounded-lg shadow-xl lg:h-full lg:max-w-fit" loading="lazy" />
+                        {{ end }}
+                        {{ end }}
 
-            <!-- Actually flip the left/right -->
-            {{ $flip := not ($.Scratch.Get "flipflop") }}
-
-            {{ $.Scratch.Set "flipflop" $flip }}
 
 
-            {{ end }} <!-- end of range -->
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+        <!-- Actually flip the left/right -->
+        {{ $flip := not ($.Scratch.Get "flipflop") }}
+
+        {{ $.Scratch.Set "flipflop" $flip }}
+
+
+        {{ end }} <!-- end of range -->
 
 
 

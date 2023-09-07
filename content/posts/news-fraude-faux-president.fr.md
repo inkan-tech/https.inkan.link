@@ -8,9 +8,7 @@ summary: Présentation de Sealfie le premier compagnon digital de protection con
 description: Sealfie le premier compagnon digital de protection contre l'arnaque au faux président. Le premier type de fraude visant les entreprises.
 author: Nicolas Thomas
 authorimage: images/global/NicolasHeadShot.webp
-categories: 
-  - News
-  - Blog
+categories: news
 tags:
   - News
   - Sealfie

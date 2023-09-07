@@ -1,10 +1,11 @@
 ---
 title: Mon patron est une IA (2eme partie)
+fronttitle: IA générative pour imiter le style
 date: 2023-07-18T09:48:50+02:00
 draft: false
 language: fr
 featured_image: images/posts/mail-gpt.jpg
-summary: Dans la deuxième partie de notre série "Mon Patron est une IA", nous explorons comment les cybercriminels peuvent accéder aux e-mails des PDG et utiliser l'IA pour imiter leur style d'écriture. Nous discutons également de pourquoi les recommandations de sécurité standard ne sont plus suffisantes face à ces nouvelles menaces. Enfin, nous présentons comment Sealfie, une solution innovante de cybersécurité, peut aider les entreprises à détecter la falsification et le vol d'identité.
+summary: Les cybercriminels accèdent aux e-mails des P.-D.G. et utiliser l'IA pour imiter leur style d'écriture, gratuitement. Les recommandations de sécurité standards sont d'être prudent, de chercher une anomalie, faute d'orthographe, ou de français. Il est aisé de comprendre en quoi ces recommandations ne sont plus suffisantes. Les criminels peuvent faire des faux crédibles, ils ont même une IA dédiée fakeGPT. Sealfie accompagne les personnes les plus ciblées par les criminels pour offrir une tranquillité d'esprit ou moment des virements bancaires les plus important pour vous.
 description: Explorez comment les cybercriminels utilisent l'IA pour imiter le style d'écriture des PDG et pourquoi les recommandations de sécurité standard ne suffisent plus. Découvrez comment Sealfie peut aider à détecter la falsification et le vol d'identité. Lisez "Mon Patron est une IA (2ème Partie)" pour en savoir plus sur ces menaces de cybersécurité et comment les combattre.
 author: Nicolas Thomas
 authorimage: images/global/NicolasHeadShot.webp

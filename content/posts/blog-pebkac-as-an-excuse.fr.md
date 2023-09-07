@@ -11,7 +11,7 @@ description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus
   Vestibulum vel convallis felis. Ut finibus lorem vestibulum lobortis rhoncus.
 author: TailBliss
 authorimage: images/global/SquircleLogoInkan.webp
-categories: Blog
+categories: blog
 tags: 
   - Security
   - Sealfie

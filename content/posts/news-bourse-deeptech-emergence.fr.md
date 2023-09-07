@@ -1,10 +1,10 @@
 ---
-title:  Labellisation Deeptech avec le L3i
+title:  Obtention d'une bourse Deeptech avec le L3i
 date: 2023-07-11T12:09:21+02:00
 draft: false
 language: fr
 featured_image: images/posts/IllustrationDeepTech.webp
-summary: Le Laboratoire Informatique, Image et Interaction (L3i) de l'Université de La Rochelle et Inkan.link ont obtenu une bourse Deeptech Emergence de la BPI. Ce financement vise à lever les verrous de l'attractivité des blockchains ouvertes pour les entreprises, en augmentant la confiance et l'efficacité dans les interactions numériques. Les deux entités travailleront ensemble pour développer des solutions innovantes, avec l'objectif de transformer la façon dont les entreprises interagissent avec les blockchains.
+summary: Le L3i de l'Université de La Rochelle et Inkan.link ont obtenu une bourse Deeptech Emergence de la BPI. Ce financement nous permettra de lever les verrous de l'attractivité des blockchains ouvertes pour les entreprises.
 description: Découvrez comment le L3i et Inkan.link, grâce à une bourse Deeptech Emergence de la BPI, s'engagent à lever les verrous de l'attractivité des blockchains ouvertes pour les entreprises. En combinant expertise en sciences du numérique et innovation en attestations numériques, ils visent à transformer l'interaction des entreprises avec les blockchains.
 author: Nicolas Thomas
 authorimage: images/global/NicolasHeadShot.webp

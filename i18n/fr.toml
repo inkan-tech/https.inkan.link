@@ -2,6 +2,8 @@ about = "A propos"
 languages = "Langues"
 english = 'anglais'
 french = 'français'
+news = 'Actualités'
+product = 'Produit'
 
 [wordCount]
 other = "{{ .WordCount }} mots"

@@ -1,10 +1,11 @@
 ---
 title: Mon patron est une IA (1ere partie)
+fronttitle: IA générative pour usurper la voix
 date: 2023-06-06T14:41:40+02:00
 draft: false
 language: fr
 featured_image: images/posts/cyborg_ceo.webp
-summary: Cet article explore l'usurpation d'identité dans l'ère de l'IA, en mettant l'accent sur le clonage de voix et son impact sur la cybersécurité. Il souligne l'importance de solutions avancées comme Sealfie pour protéger les entreprises contre les usurpateurs.
+summary: La fraude au faux président (FOVI) est associée aux e-mails. C'est le point d'entrée privilégier pour les attaquants, ils passent ensuite à d'autres canaux et notamment la voix. La démocratisation des IA génératives permet à un criminel pour moins de 100 euros d'avoir un logiciel temps réel de clonage effectif de voix. Une protection basée sur la détection d'une fausse voix par un humain est vouée à l'échec. Ce sont néanmoins les recommandations classiques pour se prémunir de cette fraude. Nous proposons une approche innovante et sans besoin de formations avec Sealfie.
 description: Découvrez comment l'IA facilite le clonage de voix et comment cela impacte la cybersécurité. Apprenez comment Sealfie arme les entreprises avec la technologie nécessaire pour se protéger contre les usurpateurs. Explorez l'usurpation d'identité dans l'ère de l'IA et comment se préparer pour l'avenir.
 author: Nicolas Thomas
 authorimage: images/global/NicolasHeadShot.webp

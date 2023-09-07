@@ -1,10 +1,11 @@
 ---
 title: Il faut sauver le soldat comptable
+fronttitle: Les financiers en premiere ligne.
 date: 2023-05-02T11:10:36+08:00
 draft: false
 language: fr
 featured_image: images/posts/Comptable-1ere-ligne.jpeg
-summary: Cet article explore l'impact psychologique et émotionnel des escroqueries FOVI (Faux Ordre de Virement International) sur les comptables et les contrôleurs financiers, en établissant un parallèle avec le film "Il faut sauver le soldat Ryan". Il présente également Sealfie comme une solution pour protéger et soutenir ces professionnels.
+summary: L’impact psychologique et émotionnel des escroqueries FOVI (Faux Ordre de Virement International) sur les comptables et les contrôleurs financiers est énorme. Ils sont littéralement en première ligne d’où parallèle avec le film "Il faut sauver le soldat Ryan". Outre l’aspect financier, les comptables sont considérés comme suspects, signalés non fiables aux autorités et souvent licencier pour négligences. Les criminels eux sont capables à moindres frais de faire des faux crédibles. Nous permettons à ces professionnels de la finance d’avoir en plus de leur vigilance, des preuves irréfutables de leur bonne foi sans les forcer à être perçus comme trop pointilleux.
 description: Découvrez comment les escroqueries FOVI affectent les comptables et contrôleurs financiers et comment Sealfie offre protection et soutien, en établissant une analogie avec le célèbre film "Il faut sauver le soldat Ryan".
 author: Nicolas Thomas
 authorimage: images/global/NicolasHeadShot.webp

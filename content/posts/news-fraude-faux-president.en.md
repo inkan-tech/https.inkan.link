@@ -8,9 +8,7 @@ summary: Discover how to safeguard your business from the growing threat of Busi
 description: Protect your business from Business Email Compromise (BEC) fraud, also known as the Fake CEO Scam, with effective solutions like employee education, multi-factor authentication, and Sealfie, a user-friendly SaaS and mobile app for secure transactions. Stay vigilant against evolving cyber threats.
 author: Nicolas Thomas
 authorimage: images/global/NicolasHeadShot.webp
-categories:
-  - News
-  - Blog
+categories: blog
 tags:
   - News
   - Sealfie
