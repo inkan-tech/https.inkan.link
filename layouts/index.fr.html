@@ -151,7 +151,7 @@
                                 {{ end }}
                             </a>
                             <div class="p-6">
-                                <div class="flex-1">
+                                <div class="flex-row">
                                     <a href="{{.Permalink}}"
                                         class="block mt-2 text-2xl font-black text-primary-900 hover:text-neutral-600 dark:hover:text-neutral-500 hover:underline">
                                         {{.Title}}
@@ -160,7 +160,7 @@
                                         {{ .Params.summary }}
                                     </p>
                                     <a href="{{.Permalink}}"
-                                        class="block mt-2 text-base underline dark:text-neutral-400 hover:text-primary-500 dark:hover:text-white hover:underline">
+                                        class="block mt-2 text-base  dark:text-neutral-400 hover:text-primary-500 dark:hover:text-white hover:underline">
                                         En savoir plus...
                                     </a>
                                 </div>
@@ -173,7 +173,7 @@
         </div>
     </div>
 
-    <!-- Our mission section -->
+    <!-- Our vision section -->
     <div class="relative my-4">
         <div class="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-cols-2 lg:items-start lg:gap-24 lg:px-8">
             <div class="relative sm:py-8 lg:py-0">
@@ -238,7 +238,7 @@
                 <!-- Content area -->
                 <div class="md:pt-12 sm:pt-6 lg:pt-20">
                     <h2
-                        class="text-3xl font-bold tracking-tight text-primary-900 capitalize dark:text-primary-50 sm:text-4xl">
+                        class="text-3xl font-bold tracking-tight text-primary-900 capitalize dark:text-primary-light-500 sm:text-4xl">
                         Notre vision</h2>
                     <div class="mt-6 space-y-6 text-neutral-900 dark:text-white">
                         <p class="text-lg leading-7">
@@ -296,7 +296,7 @@
                             class="block mt-2 text-2xl  text-primary-900 hover:text-primary-light-600 dark:hover:text-white  hover:underline">
                             {{ if isset .Params "fronttitle" }} {{ .Param "fronttitle"}} {{else}} {{ .Title }} {{end}}
                         </a>
-                        <p class="mt-3 text-lg leading-7 text-neutral-900">
+                        <p class="mt-3 text-lg leading-7 text-neutral-900 dark:text-white">
                             {{ .Params.summary }}
                         </p>
                         <a href="{{.Permalink}}"
