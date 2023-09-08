@@ -1,6 +1,6 @@
 ---
 title: My boss is an AI
-fronttitle: IA générative pour usurper la voix
+fronttitle: Generative AI for voice impersonation.
 date: 2023-06-06T14:41:40+02:00
 draft: false
 language: en
