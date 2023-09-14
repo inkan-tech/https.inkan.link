@@ -20,7 +20,7 @@ facebook = "https://facebook.com/"
 og_image = "/images/InkanLogo.webp"
 sitename = "Inkan.link"
 twitter = "@inkan.link"
-description = "Inkan.link prevents identity theft consequences"
+description = "Inkan.link have confidence in who you are communicating with"
 [params.navigation]
       about = 'About'
       team = 'Team'      
