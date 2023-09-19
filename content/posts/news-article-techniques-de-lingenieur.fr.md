@@ -3,7 +3,7 @@ title:  Interview dans Techniques de l’ingénieur
 date: 2023-09-19T11:10:07+02:00
 draft: false
 language: fr
-featured_image: images/posts/techniques-ingénieur-dlt.jpg
+featured_image: images/posts/techniques-ingenieur-dlt.webp
 summary: Dans une interview exclusive avec Techniques de l'Ingénieur, l'équipe d'Inkan.link discute de l'innovation derrière Sealfie, une application qui simplifie et sécurise les échanges numériques en agrégeant les traces de chaque système impliqué. Découvrez comment Inkan.link s'engage à créer un environnement numérique plus sûr et plus fiable.
 description: Découvrez l'interview exclusive d'Inkan.link par Techniques de l'Ingénieur, mettant en lumière Sealfie, l'outil qui révolutionne la sécurité des échanges numériques. Apprenez comment Sealfie simplifie la validation des échanges en agrégeant les données de chaque système, offrant ainsi une solution robuste pour un monde numérique plus sûr.
 author: Nicolas Thomas
