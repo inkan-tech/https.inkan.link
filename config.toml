@@ -3,7 +3,7 @@ title = "Inkan.link"
 
 languageCode = "fr-fr"
 DefaultContentLanguage = "fr"
-defaultContentLanguageInSubdir = true # must stay that way for image in posts. 
+defaultContentLanguageInSubdir = false # must stay that way for image in posts. 
 enableEmoji = true
 enableGitInfo = false
 enableRobotsTXT = true
