@@ -4,13 +4,19 @@ date: 2023-09-19T11:10:07+02:00
 draft: false
 language: fr
 featured_image: images/posts/techniques-ingénieur-dlt.jpg
-summary: Le L3i de l'Université de La Rochelle et Inkan.link ont obtenu une bourse Deeptech Emergence de la BPI. Ce financement nous permettra de lever les verrous de l'attractivité des blockchains ouvertes pour les entreprises.
-description: Découvrez comment le L3i et Inkan.link, grâce à une bourse Deeptech Emergence de la BPI, s'engagent à lever les verrous de l'attractivité des blockchains ouvertes pour les entreprises. En combinant expertise en sciences du numérique et innovation en attestations numériques, ils visent à transformer l'interaction des entreprises avec les blockchains.
+summary: Dans une interview exclusive avec Techniques de l'Ingénieur, l'équipe d'Inkan.link discute de l'innovation derrière Sealfie, une application qui simplifie et sécurise les échanges numériques en agrégeant les traces de chaque système impliqué. Découvrez comment Inkan.link s'engage à créer un environnement numérique plus sûr et plus fiable.
+description: Découvrez l'interview exclusive d'Inkan.link par Techniques de l'Ingénieur, mettant en lumière Sealfie, l'outil qui révolutionne la sécurité des échanges numériques. Apprenez comment Sealfie simplifie la validation des échanges en agrégeant les données de chaque système, offrant ainsi une solution robuste pour un monde numérique plus sûr.
 author: Nicolas Thomas
 authorimage: images/global/NicolasHeadShot.webp
 categories: News
 tags:
   - News
+  - Sealfie
+  - sécurité numérique
+  - blockchain
+  - validation des échanges
+  - environnement numérique fiable
+  - Techniques de l'Ingénieur
 ---
 
 ## Découvrez Notre Interview Exclusive dans Techniques de l'Ingénieur
