@@ -18,17 +18,18 @@ tags:
 
 ## Discover our solution
 
-We're excited to announce that Inkan.link will be part of the Startup Alpha program at Web Summit 2023. 
+We're thrilled to announce that Inkan.link is part of the esteemed Startup Alpha program at Web Summit 2023.
 
-Catch us in Lisbon from November 13-16 as we showcase Sealfie the unique protection against deepfake for payment approval. 
+Join us in Lisbon from November 13-16 as we unveil Sealfie, our unique protection mechanism against deepfake threats for payment approval.
 
-On Wednesday the 15th, we will have a booth where you will find us easily. This initiative is a significant step towards ensuring safer digital transactions in an era marred by sophisticated cyber threats.
+On Wednesday the 15th, drop by our booth to learn more about our initiative aimed at fortifying digital transactions in a world rife with sophisticated cyber threats.
 
-## Invest
+## Invest in Our Vision
 
-As we gear up for our upcoming seed funding round, we are eager to engage with interested investors and discuss the robust security features that set Inkan.link apart in the fintech space. We invite you to reach out and schedule a meeting with us in person at the event, to delve deeper into the potential and the promise that Inkan.link holds in tackling contemporary cybersecurity challenges.
+As we approach our forthcoming seed funding round, we are keen to connect with interested investors to explore the robust security features that distinguish Inkan.link in the fintech arena. We extend an invitation for you to arrange a meeting with us in person during the event, to further discuss the potential and promise that Inkan.link presents in addressing modern-day cybersecurity challenges.
 
-Contact: nicolas.thomas@inkan.link for meeting inquiries.
+For meeting inquiries, feel free to reach out to nicolas.thomas@inkan.link.
 
-Check out our feature on the [Web Summit's Featured Startups page](https://websummit.com/startups/featured-startups?q=eyJxdWVyeSI6Imlua2FuLmxpbmsiLCJwYWdlIjoxLCJjb25maWd1cmUiOnsiaGl0c1BlclBhZ2UiOjQ4LCJ0YWdGaWx0ZXJzIjpbIndzMjMiXX19).
+Discover more about us on the [Web Summit's Featured Startups page](https://websummit.com/startups/featured-startups?q=eyJxdWVyeSI6Imlua2FuLmxpbmsiLCJwYWdlIjoxLCJjb25maWd1cmUiOnsiaGl0c1BlclBhZ2UiOjQ4LCJ0YWdGaWx0ZXJzIjpbIndzMjMiXX19).
 
+Eager to see you in Lisbon.
