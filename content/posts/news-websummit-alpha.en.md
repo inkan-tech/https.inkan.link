@@ -4,8 +4,8 @@ date: 2023-10-26T16:08:12+02:00
 draft: false
 language: en
 featured_image: images/posts/websummit-logo.png
-summary: 
-description: 
+summary: Inkan.link is set to participate in the Startup Alpha program at Web Summit 2023 from November 13-16 in Lisbon. They will showcase Sealfie, their unique deepfake protection mechanism for payment approval, at their booth on November 15. As they prepare for their seed funding round, they invite interested investors for discussions on the robust security features that Inkan.link offers in the fintech domain.
+description: Join Inkan.link at Web Summit 2023 as they unveil Sealfie, a cutting-edge deepfake protection solution for secure payment approvals. Part of the prestigious Startup Alpha program, Inkan.link invites investors to explore collaboration opportunities in enhancing digital transaction security in the fintech sector. Visit their booth on November 15 to learn more about their innovative approach to combating modern cybersecurity challenges.
 author: Nicolas Thomas
 authorimage: images/global/NicolasHeadShot.webp
 categories: News
