@@ -2,6 +2,7 @@
 <html lang="{{.Site.Language.Lang }}" xml:lang="{{.Site.Language.Lang }}">
 
 <head>
+
     {{ partial "head.html" . }}
     {{- if .IsHome -}}
     <meta name="description" content="{{ site.Params.Description }}" />
@@ -28,6 +29,7 @@
     var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
     g.async=true; g.src='https://cdn.matomo.cloud/sealfie.matomo.cloud/container_yiFlgfbh.js'; s.parentNode.insertBefore(g,s);
     </script> <!-- End Matomo Code -->
+
 
 </head>
 
