@@ -14,7 +14,7 @@ tags: [IAGenerative, FOVI, GPT, Cybersécurité,ClonageDeVoix,UsurpationDidentit
 ---
 # Mon Patron est une IA (2ème Partie)
 
-Dans la première partie de cette série, ["Mon Patron est une IA"](https://inkan.link/fr/posts/blog-mon-patron-est-une-ia/), nous avons exploré comment l'intelligence artificielle (IA) a facilité le clonage de voix et comment cela a impacté la cybersécurité. Aujourd'hui, nous allons plus loin en examinant comment les criminels informatiques peuvent accéder aux e-mails des PDG et utiliser l'IA pour imiter leur style d'écriture.
+Dans la première partie de cette série, ["Mon Patron est une IA"](https://inkan.link/posts/blog-mon-patron-est-une-ia/), nous avons exploré comment l'intelligence artificielle (IA) a facilité le clonage de voix et comment cela a impacté la cybersécurité. Aujourd'hui, nous allons plus loin en examinant comment les criminels informatiques peuvent accéder aux e-mails des PDG et utiliser l'IA pour imiter leur style d'écriture.
 
 ## Comment un criminel peut accéder à l'e-mail d'un PDG ?
 
@@ -34,6 +34,6 @@ Face à ces défis, les entreprises peuvent se tourner vers des solutions comme 
 
 ## Conclusion
 
-Seulement en adoptant des solutions proactives et sophistiquées comme Sealfie, les entreprises pourront rester un pas en avant des criminels informatiques et protéger leurs actifs numériques précieux. L'approche innovante de [Inkan.link](https://inkan.link/fr/posts/blog-mon-patron-est-une-ia/), labélisée deeptech et radicalement simple d'utilisation, rend la vie des criminels plus complexe, tout en simplifiant la protection de la cybersécurité pour les entreprises.
+Seulement en adoptant des solutions proactives et sophistiquées comme Sealfie, les entreprises pourront rester un pas en avant des criminels informatiques et protéger leurs actifs numériques précieux. L'approche innovante de [Inkan.link](https://inkan.link/posts/blog-mon-patron-est-une-ia/), labélisée deeptech et radicalement simple d'utilisation, rend la vie des criminels plus complexe, tout en simplifiant la protection de la cybersécurité pour les entreprises.
 
 
