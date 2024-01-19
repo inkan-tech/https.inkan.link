@@ -3,6 +3,12 @@
     {{else}} {{ .Title }} | {{ .Site.Title }} {{end}}
 </title>
 {{ if .Description }}
+<!-- can force a canonical description as a param in the md -->
+{{- if isset .Params "canonical" -}}
+  <link rel="canonical" href="{{ .Params.canonical }}" />
+{{- else -}}
+  <link rel="canonical" href="{{ .Permalink }}" />
+{{- end }}
 <meta name="description" content="{{ .Description }}" />
 <meta property="og:description" content="{{ .Description }}" />
 {{end}}
