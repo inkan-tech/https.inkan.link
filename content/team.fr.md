@@ -17,10 +17,6 @@ Entrepreneur polyvalent, conférencier, investisseur, stratège et éditeur dans
 
 Nicolas Thomas est à l'origine de l'idée d'Inkan.link et des services qu'elle propose, en constatant l'absence de solutions dans le domaine de la cybersécurité traditionnelle. Depuis plus de 20 ans, Nicolas a identifié et soutenu plusieurs transformations majeures dans l'industrie en tant qu'architecte de solutions, y compris x86/Linux, plateformes, Clouds, devops, sécurité, et a dirigé la standardisation de la sécurité au sein du MEF (MSSP, ZTA, et SASE).
 
-### [Vincent Courgibet](https://www.linkedin.com/in/vcourgibet/) - CRO
-
-Vincent a près de 25 ans d'expérience dans la vente et le développement commercial. Il a précédemment occupé plusieurs postes influents au sein d'entreprises internationales telles que Sun Microsystems, Dell/EMC, Checkpoint et plusieurs startups israéliennes de cybersécurité. Vincent a une connaissance approfondie de plusieurs technologies, telles que les applications de sécurité et les solutions d'intégration de systèmes pour les secteurs des télécommunications, de la finance et de l'industrie.
-
 ***
 
 ## Investisseurs et conseillers
