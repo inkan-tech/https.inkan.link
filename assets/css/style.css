@@ -1604,12 +1604,12 @@ video {
 
 .bg-secondary-500 {
   --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+  background-color: rgb(107 107 111 / var(--tw-bg-opacity));
 }
 
 .bg-secondary-900 {
   --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+  background-color: rgb(60 60 61 / var(--tw-bg-opacity));
 }
 
 .bg-transparent {
@@ -1920,7 +1920,7 @@ video {
 
 .text-secondary-900 {
   --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity));
+  color: rgb(60 60 61 / var(--tw-text-opacity));
 }
 
 .text-white {
@@ -1974,7 +1974,7 @@ video {
 }
 
 .ring-secondary-800\/40 {
-  --tw-ring-color: rgb(0 0 0 / 0.4);
+  --tw-ring-color: rgb(68 68 70 / 0.4);
 }
 
 .transition {
@@ -2093,8 +2093,7 @@ EmojiSymbols;
 }
 
 .hover\:text-black:hover {
-  --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity));
+  color: dark;
 }
 
 .hover\:text-neutral-600:hover {
@@ -2166,20 +2165,20 @@ EmojiSymbols;
 
 :is(.dark .dark\:bg-secondary-500) {
   --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+  background-color: rgb(107 107 111 / var(--tw-bg-opacity));
 }
 
 :is(.dark .dark\:bg-secondary-900) {
   --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+  background-color: rgb(60 60 61 / var(--tw-bg-opacity));
 }
 
 :is(.dark .dark\:bg-secondary-900\/10) {
-  background-color: rgb(0 0 0 / 0.1);
+  background-color: rgb(60 60 61 / 0.1);
 }
 
 :is(.dark .dark\:bg-secondary-900\/50) {
-  background-color: rgb(0 0 0 / 0.5);
+  background-color: rgb(60 60 61 / 0.5);
 }
 
 :is(.dark .dark\:text-neutral-100) {
@@ -2222,7 +2221,7 @@ EmojiSymbols;
 }
 
 :is(.dark .dark\:text-secondary-900\/60) {
-  color: rgb(0 0 0 / 0.6);
+  color: rgb(60 60 61 / 0.6);
 }
 
 :is(.dark .dark\:text-white) {
@@ -2237,7 +2236,7 @@ EmojiSymbols;
 
 :is(.dark .dark\:ring-secondary-600) {
   --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(0 0 0 / var(--tw-ring-opacity));
+  --tw-ring-color: rgb(91 91 95 / var(--tw-ring-opacity));
 }
 
 :is(.dark .dark\:hover\:bg-primary-700:hover) {
