@@ -9,7 +9,7 @@ module.exports = {
       colors: {      
       transparent: 'transparent',
       current: 'currentColor',
-      black: colors.black,
+      black: 'dark',
       white: colors.white,
  // Japanese Carmine 9d2933
       'primary': {
@@ -53,22 +53,34 @@ module.exports = {
         700: '#383C43',
         800: '#1E2024',
         900: '#050506'
-      },   
+      },   'dark': {   DEFAULT: '#212122',
+        '50': '#f5f5f6',
+        '100': '#e6e6e7',
+        '200': '#d0d0d1',
+        '300': '#afb0b1',
+        '400': '#86868a',
+        '500': '#6b6b6f',
+        '600': '#5b5b5f',
+        '700': '#4e4f50',
+        '800': '#444446',
+        '900': '#3c3c3d',
+        '950': '#212122',
+    },
+    
       // paint it black
-        'secondary': {
-          DEFAULT: '#000000',
-          50: '#5C5C5C',
-          100: '#525252',
-          200: '#3D3D3D',
-          300: '#292929',
-          400: '#141414',
-          500: '#000000',
-          600: '#000000',
-          700: '#000000',
-          800: '#000000',
-          900: '#000000',
-          950: '#000000'
-        }
+        'secondary':  {   DEFAULT: '#212122',
+        '50': '#f5f5f6',
+        '100': '#e6e6e7',
+        '200': '#d0d0d1',
+        '300': '#afb0b1',
+        '400': '#86868a',
+        '500': '#6b6b6f',
+        '600': '#5b5b5f',
+        '700': '#4e4f50',
+        '800': '#444446',
+        '900': '#3c3c3d',
+        '950': '#212122',
+    },
       // To change these, use https://www.tailwindshades.com/ with https://tailwindcss.com/docs/customizing-colors or create your own custom colors.
 
       }, 

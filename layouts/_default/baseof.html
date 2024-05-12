@@ -6,9 +6,8 @@
     {{ partial "head.html" . }}
     {{- if .IsHome -}}
     <meta name="description" content="{{ site.Params.Description }}" />
-    {{- else -}}
-    <meta name="description" content="{{ .Params.Description }}" />
     {{- end }}
+    
     <!-- Matomo -->
 <script>
     var _paq = window._paq = window._paq || [];
