@@ -21,7 +21,7 @@
 <meta property="og:title" content="{{ .Site.Title }}" />
 
 <meta property="og:site_name" content="{{ .Site.Title }}" />
-<meta property="og:url" content="{{ .Permalink }}" />
+<link property="og:url" href="{{ .Permalink }}" />
 <meta property="og:locale" content="{{ .Language.LanguageName }}">
 {{ if .Params.og_image }}
 <meta property="og:image" content="{{ .Params.Site.BaseURL }}{{ .Params.og_image | relURL }}" />
