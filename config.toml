@@ -84,4 +84,4 @@ copyright = 'Inkan.link reserved'
   [module.hugoVersion]
     extended = true
     min = "0.107.0"
-    max = "0.109.0"
+    max = "0.126.1"

@@ -2201,9 +2201,19 @@ EmojiSymbols;
   color: rgb(172 176 186 / var(--tw-text-opacity));
 }
 
+.dark\:text-neutral-300:is(.dark *) {
+  --tw-text-opacity: 1;
+  color: rgb(150 155 167 / var(--tw-text-opacity));
+}
+
 .dark\:text-neutral-400:is(.dark *) {
   --tw-text-opacity: 1;
   color: rgb(127 134 148 / var(--tw-text-opacity));
+}
+
+.dark\:text-neutral-50:is(.dark *) {
+  --tw-text-opacity: 1;
+  color: rgb(205 208 213 / var(--tw-text-opacity));
 }
 
 .dark\:text-primary-400:is(.dark *) {
@@ -2218,16 +2228,6 @@ EmojiSymbols;
 
 .dark\:text-primary-900\/60:is(.dark *) {
   color: rgb(122 0 2 / 0.6);
-}
-
-.dark\:text-primary-light-500:is(.dark *) {
-  --tw-text-opacity: 1;
-  color: rgb(217 11 11 / var(--tw-text-opacity));
-}
-
-.dark\:text-primary-light-900:is(.dark *) {
-  --tw-text-opacity: 1;
-  color: rgb(128 8 0 / var(--tw-text-opacity));
 }
 
 .dark\:text-secondary-900\/60:is(.dark *) {
