@@ -3,7 +3,7 @@ title: L'arnaque au faux président
 date: 2023-01-24T09:21:16+01:00
 draft: false
 language: fr
-featured_image: images/posts/cso_nw_impersonation_disguise_fraud_false_identity_theft_by_alphaspirit_gettyimages-538465604_2400x1600-100811607-large.webp
+featured_image: images/posts/Cyborg_CEO_DAALE.webp
 summary: Présentation de Sealfie le premier compagnon digital de protection contre l'arnaque au faux président qui est le premier type de tentative de fraude visant les entreprises.
 description: Sealfie le premier compagnon digital de protection contre l'arnaque au faux président. Le premier type de fraude visant les entreprises.
 author: Nicolas Thomas

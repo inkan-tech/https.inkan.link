@@ -2,7 +2,7 @@
 title: Fake CEO Fraud (BEC)
 date: 2023-01-24T09:21:16+01:00
 draft: false
-featured_image: images/posts/cso_nw_impersonation_disguise_fraud_false_identity_theft_by_alphaspirit_gettyimages-538465604_2400x1600-100811607-large.webp
+featured_image: images/posts/Cyborg_CEO_DAALE.webp
 language: en
 summary: Discover how to safeguard your business from the growing threat of Business Email Compromise (BEC) fraud, commonly known as the Fake CEO Scam. Learn about effective prevention strategies and innovative solutions like Sealfie to ensure secure financial transactions.
 description: Protect your business from Business Email Compromise (BEC) fraud, also known as the Fake CEO Scam, with effective solutions like employee education, multi-factor authentication, and Sealfie, a user-friendly SaaS and mobile app for secure transactions. Stay vigilant against evolving cyber threats.
