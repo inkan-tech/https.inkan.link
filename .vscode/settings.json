@@ -1,4 +1,7 @@
 {
     "codeQL.createQuery.qlPackLocation": "/Users/nicolasthomas/inkan/https.inkan.link",
-    "CodeGPT.apiKey": "CodeGPT Plus Beta"
+    "CodeGPT.apiKey": "CodeGPT Plus Beta",
+    "CodeGPT.Autocomplete.provider": "Ollama - codestral:latest",
+    "CodeGPT.Autocomplete.maxTokens": 760,
+    "CodeGPT.Autocomplete.suggestionDelay": 2500
 }
