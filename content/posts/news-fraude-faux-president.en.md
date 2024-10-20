@@ -16,7 +16,7 @@ tags:
 
 ## How to Protect Against the Fake CEO Scam, Also Known as Business Email Compromise (BEC)
 
-Business Email Compromise (BEC) fraud, often referred to as the "Fake CEO Scam," has been a rapidly growing threat to businesses worldwide. [The FBI’s Internet Crime Complaint Center (IC3)](https://www.ic3.gov/Media/PDF/AnnualReport/2021_IC3Report.pdf) has highlighted the increasing prevalence of these cyberattacks, which rely heavily on social engineering and impersonation tactics. While there are solutions available to protect against BEC fraud, it is essential to recognize that their effectiveness depends on human behavior and awareness.
+Business Email Compromise (BEC) fraud, often referred to as the "Fake CEO Scam," has been a rapidly growing threat to businesses worldwide. [The FBI’s Internet Crime Complaint Center (IC3)](https://www.ic3.gov/AnnualReport/Reports/2021_IC3Report.pdf) has highlighted the increasing prevalence of these cyberattacks, which rely heavily on social engineering and impersonation tactics. While there are solutions available to protect against BEC fraud, it is essential to recognize that their effectiveness depends on human behavior and awareness.
 
 ### The BEC Fraud Landscape
 
@@ -24,9 +24,9 @@ Business Email Compromise (BEC) fraud is a sophisticated scam that primarily tar
 
 ### IC3 Report Highlights
 
- [![FBI IC3 Report 2021](/images/IC3_2021_ByVictimLoss.png)](https://www.ic3.gov/Media/PDF/AnnualReport/2021_IC3Report.pdf)
+ [![FBI IC3 Report 2021](/images/IC3_2021_ByVictimLoss.png)](https://www.ic3.gov/AnnualReport/Reports/2021_IC3Report.pdf)
 
-The [FBI's IC3 report](https://www.ic3.gov/Media/PDF/AnnualReport/2021_IC3Report.pdf) reveals the alarming scale of BEC fraud across the globe. Key takeaways from the report include:
+The [FBI's IC3 report](https://www.ic3.gov/AnnualReport/Reports/2021_IC3Report.pdf) reveals the alarming scale of BEC fraud across the globe. Key takeaways from the report include:
 
 - Rising financial losses: In 2021 alone, the IC3 received 19,954 BEC fraud complaints, resulting in an estimated $2.4 billion in financial losses. This figure accounts for nearly half of the total reported cybercrime financial losses in the same year.
 
