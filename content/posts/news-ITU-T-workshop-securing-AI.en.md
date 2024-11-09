@@ -26,6 +26,8 @@ In a presentation at the [ITU-T workshop on securing AI](https://www.itu.int/en/
 You can watch the full presentation on the [Inkan.link YouTube channel](https://youtu.be/8J-U8AMHBnI). The session provides detailed examples and demonstrations of how criminals are exploiting AI technologies, along with practical insights on protecting against these emerging threats.
 
 
+{{< youtube 8J-U8AMHBnI >}}
+
 ## The Rise of AI-Powered Fraud
 
 Nicolas revealed that criminals are now leveraging large language models (LLMs) and generative AI to create highly convincing fraudulent content. He highlighted the existence of specialized tools like "fraud GPT" and "Only Fake," which assist in forging identity documents that are nearly indistinguishable from genuine ones. 
