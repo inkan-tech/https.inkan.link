@@ -6,7 +6,7 @@ draft: false
 language: en
 featured_image: images/posts/cyborg_ceo.webp
 summary: The business email compromise (BEC) fraud is indeed associated with emails, serving as the preferred entry point for attackers who then move on to other channels, notably voice. The democratization of generative AI allows a criminal to obtain real-time voice cloning software for less than 100 euros. Protection based on human detection of a fake voice is destined to fail. Nevertheless, these are the classic recommendations for safeguarding against this fraud. We offer an innovative approach with Sealfie that requires no training.
-description: Explore the cutting-edge intersection of AI, voice cloning, and cybersecurity in our latest article. Learn how AI is revolutionizing voice cloning, its implications for identity theft, and the role of innovative solutions like Sealfie in safeguarding businesses. Delve into the future of AI leadership with the case of Madame Tang Yu, the AI CEO in China.
+description: Discover the intersection of AI, voice cloning, and cybersecurity. Learn how AI-powered voice cloning impacts identity theft and explore innovative solutions for business protection. Read about the future of AI leadership and the pioneering case of Madame Tang Yu, China's AI CEO.
 author: Nicolas Thomas
 authorimage: images/global/NicolasHeadShot.webp
 categories: blog
@@ -15,7 +15,7 @@ tags: [ BEC, GPT, Cybersecurity,VoiceCloning,IdentityTheft]
 
 ## Do you remember the CEO who is an AI in China?
 
-This article is not a recycling of old news, but rather an exploration of identity theft in the era of AI. You may remember [Madame Tang Yu, the humanoid robot](https://newsrnd.com/business/2022-09-21-%E2%80%9Cmadame-tang-yu%E2%80%9D--a-female-robot-named-ceo-of-a-video-game-company-in-china.B1lc0q_uZi.html), who became the CEO of a publicly traded company in China. This technological advancement has shown that artificial intelligence (AI) can now make important business decisions, thus replacing humans in leadership roles. However, today, we are not going to dwell on Tang Yu, but rather on a subject just as important and worrying: voice cloning.
+This article is not a recycling of old news, but rather an exploration of identity theft in the era of AI. You may remember [Madame Tang Yu, the humanoid robot](https://www.tbsnews.net/tech/meet-worlds-first-humanoid-robot-ceo-ms-tang-yu-492174), who became the CEO of a publicly traded company in China. This technological advancement has shown that artificial intelligence (AI) can now make important business decisions, thus replacing humans in leadership roles. However, today, we are not going to dwell on Tang Yu, but rather on a subject just as important and worrying: voice cloning.
 
 ## The technological ease of cloning voices
 
