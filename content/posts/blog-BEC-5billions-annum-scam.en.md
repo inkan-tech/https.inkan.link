@@ -16,7 +16,7 @@ tags: [IAGenerative, CEO Fraud, GPT, Cybersecurity, Voice Cloning, IdentityTheft
 
 ### Did you know that every year, $5 billion is stolen through CEO fraud?
 
-This alarming figure comes directly from FBI data over the past 10 years: [Business Email Compromise: The $55 Billion Scam](https://www.ic3.gov/Media/Y2024/PSA240911)
+This alarming figure comes directly from FBI data over the past 10 years: [Business Email Compromise: The $55 Billion Scam](https://www.ic3.gov/PSA/2024/PSA240911)
 
 This threat, amplified by the emergence of deepfakes, poses an invisible yet very real danger to your business. Deepfakes, digital manipulations that create incredibly realistic videos and audio, have become the weapon of choice for cybercriminals. Imagine this: a simple phone call from your CEO, the voice, the intonation, everything is perfectly imitated. They ask you to make an urgent transfer for a confidential operation. How can you not fall into the trap?
 

@@ -16,7 +16,7 @@ tags: [IAGenerative, FOVI, GPT, Cybersécurité,ClonageDeVoix,UsurpationDidentit
 
 ### Savez-vous que chaque année, ce sont 5 milliards de dollars qui sont volés à cause de la fraude au président ?
 
-Ce sont les données partagées par le FBI sur les 10 dernieres années: [Business Email Compromise: The $55 Billion Scam](https://www.ic3.gov/Media/Y2024/PSA240911)
+Ce sont les données partagées par le FBI sur les 10 dernieres années: [Business Email Compromise: The $55 Billion Scam](https://www.ic3.gov/PSA/2024/PSA240911)
 
 Ce fléau, amplifié par l'émergence des deepfakes, représente une menace invisible mais bien réelle pour votre entreprise. Les deepfakes, ces manipulations numériques permettant de créer des vidéos et des sons plus vrais que nature, sont devenus l'arme privilégiée des cybercriminels. Imaginez un instant : un simple appel téléphonique de votre PDG, la voix, l'intonation, tout est parfaitement imité. Il vous demande d'effectuer un virement urgent pour une opération confidentielle. Comment ne pas tomber dans le piège ?
 
