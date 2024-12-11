@@ -3,7 +3,7 @@ title: Inkan.link fait la une dans le dauphiné libéré
 date: 2024-12-09T19:16:57+01:00
 draft: false
 language: fr
-featured_image: images/posts/Daubé-CES-Inkan.png
+featured_image: images/posts/Daubé-CES-Inkan.png
 summary: " Inkan.link fait la une : Notre solution innovante contre la fraude au président mise en lumière"
 description: "Inkan.link, startup basée à Crolles, développe Sealfie, une solution innovante de lutte contre la fraude au président. Cette technologie brevetée sécurise les transactions via une authentification par selfie"
 author: Nicolas Thomas
