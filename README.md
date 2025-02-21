@@ -15,3 +15,7 @@ run ```hugo serve```
 ## Github actions
 
 Using act to run actions locally (Docker) installed with ```brew install act```
+
+Might come handy for some scripts
+
+```brew install tailwindcss```
