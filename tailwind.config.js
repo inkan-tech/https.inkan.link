@@ -1,4 +1,4 @@
--const defaultTheme = require('tailwindcss/defaultTheme')
+const defaultTheme = require('tailwindcss/defaultTheme')
 const colors = require('tailwindcss/colors')
 
 /** @type {import('tailwindcss').Config} */
@@ -17,112 +17,186 @@ module.exports = {
         black: colors.black,
         white: colors.white,
         
-        // Japanese Carmine (Primary)
+        // Aka - Japanese Red (Primary)
         primary: {
-          DEFAULT: '#9d2933',
-          50: 'oklch(0.971 0.013 17.38)',
-          100: 'oklch(0.936 0.032 17.717)',
-          200: 'oklch(0.885 0.062 18.334)',
-          300: 'oklch(0.808 0.114 19.571)',
-          400: 'oklch(0.704 0.191 22.216)',
-          500: 'oklch(0.637 0.237 25.331)',
-          600: 'oklch(0.577 0.245 27.325)',
-          700: 'oklch(0.505 0.213 27.518)',
-          800: 'oklch(0.444 0.177 26.899)',
-          900: 'oklch(0.396 0.141 25.723)',
-          950: 'oklch(0.258 0.092 26.042)',
+          DEFAULT: '#D05A6E',
+          50: '#FCF7F8',
+          100: '#F9EEF0',
+          200: '#F2D0D6',
+          300: '#EBB3BC',
+          400: '#DD7889',
+          500: '#D05A6E',
+          600: '#BC4052',
+          700: '#9B3543',
+          800: '#7A2935',
+          900: '#591E27',
+          950: '#3D1419',
         },
 
-        // Rosso Corsa (Primary Light)
+        // Beni - Safflower Red (Primary Light - for dark mode)
         'primary-light': {
-          DEFAULT: '#D90B0B',
-          50: 'oklch(0.969 0.015 12.422)',
-          100: 'oklch(0.941 0.03 12.58)',
-          200: 'oklch(0.892 0.058 10.001)',
-          300: 'oklch(0.81 0.117 11.638)',
-          400: 'oklch(0.712 0.194 13.428)',
-          500: 'oklch(0.645 0.246 16.439)',
-          600: 'oklch(0.586 0.253 17.585)',
-          700: 'oklch(0.514 0.222 16.935)',
-          800: 'oklch(0.455 0.188 13.697)',
-          900: 'oklch(0.41 0.159 10.272)',
-          950: 'oklch(0.271 0.105 12.094)',
+          DEFAULT: '#E83015',
+          50: '#FDE9E5',
+          100: '#FBD3CC',
+          200: '#F7A799',
+          300: '#F27B66',
+          400: '#EE4F33',
+          500: '#E83015',
+          600: '#BC2410',
+          700: '#8F1B0C',
+          800: '#631308',
+          900: '#360A04',
+          950: '#1F0602',
         },
 
-        // Neutral
+        // Enhanced Neutral with better contrast
         neutral: {
-          DEFAULT: '#6B7280',
-          50: 'oklch(0.985 0.002 247.839)',
-          100: 'oklch(0.967 0.003 264.542)',
-          200: 'oklch(0.928 0.006 264.531)',
-          300: 'oklch(0.872 0.01 258.338)',
-          400: 'oklch(0.707 0.022 261.325)',
-          500: 'oklch(0.551 0.027 264.364)',
-          600: 'oklch(0.446 0.03 256.802)',
-          700: 'oklch(0.373 0.034 259.733)',
-          800: 'oklch(0.278 0.033 256.848)',
-          900: 'oklch(0.21 0.034 264.665)',
-          950: 'oklch(0.13 0.028 261.692)',
+          DEFAULT: '#5C6272',
+          50: '#FCFCFD',
+          100: '#F0F1F4',
+          200: '#E5E7ED',
+          300: '#CED1DB',
+          400: '#A6ABBF',
+          500: '#7C839D',
+          600: '#5C6272',
+          700: '#474C5A',
+          800: '#333742',
+          900: '#21232A',
+          950: '#15161B',
         },
 
-        // Dark Theme Colors
+        // Sumi - Japanese Black (Dark Theme)
         dark: {
-          DEFAULT: '#212122',
-          50: 'oklch(0.984 0.003 247.858)',
-          100: 'oklch(0.968 0.007 247.896)',
-          200: 'oklch(0.929 0.013 255.508)',
-          300: 'oklch(0.869 0.022 252.894)',
-          400: 'oklch(0.704 0.04 256.788)',
-          500: 'oklch(0.554 0.046 257.417)',
-          600: 'oklch(0.446 0.043 257.281)',
-          700: 'oklch(0.372 0.044 257.287)',
-          800: 'oklch(0.279 0.041 260.031)',
-          900: 'oklch(0.208 0.042 265.755)',
-          950: 'oklch(0.129 0.042 264.695)',
+          DEFAULT: '#1A1A1A',
+          50: '#E6E6E6',
+          100: '#CCCCCC',
+          200: '#999999',
+          300: '#666666',
+          400: '#333333',
+          500: '#1A1A1A',
+          600: '#171717',
+          700: '#141414',
+          800: '#101010',
+          900: '#0D0D0D',
+          950: '#080808',
         },
 
-        // Secondary (Black Theme)
+        // Nando - Dark Navy (Secondary)
         secondary: {
-          DEFAULT: '#212122',
-          50: 'oklch(0.984 0.003 247.858)',
-          100: 'oklch(0.968 0.007 247.896)',
-          200: 'oklch(0.929 0.013 255.508)',
-          300: 'oklch(0.869 0.022 252.894)',
-          400: 'oklch(0.704 0.04 256.788)',
-          500: 'oklch(0.554 0.046 257.417)',
-          600: 'oklch(0.446 0.043 257.281)',
-          700: 'oklch(0.372 0.044 257.287)',
-          800: 'oklch(0.279 0.041 260.031)',
-          900: 'oklch(0.208 0.042 265.755)',
-          950: 'oklch(0.129 0.042 264.695)',
+          DEFAULT: '#192F60',
+          50: '#E8ECF5',
+          100: '#D1D9EB',
+          200: '#A3B3D7',
+          300: '#758EC3',
+          400: '#4768AF',
+          500: '#2F4780',
+          600: '#192F60',
+          700: '#142751',
+          800: '#0F1F42',
+          900: '#0A1732',
+          950: '#051023',
+        },
+        
+        // Additional Japanese colors
+        shu: {
+          DEFAULT: '#BC002D',
+          light: '#E60033',
+          dark: '#8C0023',
+        },
+        kurenai: {
+          DEFAULT: '#CB1B45',
+          light: '#DB3D61',
+          dark: '#A7152D',
+        },
+        enji: {
+          DEFAULT: '#B94047',
+          light: '#CF5D63',
+          dark: '#9A3239',
+        },
+        shironeri: {
+          DEFAULT: '#FCFAF2',
+        },
+        kinari: {
+          DEFAULT: '#F8F4E6',
         },
       },
 
       fontFamily: {
-        sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+        sans: ['Noto Sans JP', 'Inter var', ...defaultTheme.fontFamily.sans],
+        serif: ['Noto Serif JP', ...defaultTheme.fontFamily.serif],
         mono: ['JetBrains Mono', ...defaultTheme.fontFamily.mono],
       },
 
       typography: (theme) => ({
         DEFAULT: {
           css: {
-            color: theme('colors.neutral.900'),
+            color: theme('colors.neutral.800'),
             a: {
-              color: theme('colors.primary.500'),
+              color: theme('colors.primary.600'),
               '&:hover': {
-                color: theme('colors.primary.700'),
+                color: theme('colors.primary.800'),
               },
+            },
+            h1: {
+              color: theme('colors.primary.900'),
+              fontFamily: theme('fontFamily.serif'),
+            },
+            h2: {
+              color: theme('colors.primary.800'),
+              fontFamily: theme('fontFamily.serif'),
+            },
+            h3: {
+              color: theme('colors.primary.700'),
+              fontFamily: theme('fontFamily.serif'),
+            },
+            h4: {
+              color: theme('colors.primary.600'),
+              fontFamily: theme('fontFamily.serif'),
+            },
+            strong: {
+              color: theme('colors.primary.900'),
+            },
+            blockquote: {
+              borderLeftColor: theme('colors.primary.300'),
+              color: theme('colors.neutral.700'),
+              fontStyle: 'normal',
+              fontFamily: theme('fontFamily.serif'),
             },
           },
         },
         dark: {
           css: {
-            color: theme('colors.neutral.200'),
+            color: theme('colors.neutral.100'),
             a: {
               color: theme('colors.primary-light.500'),
               '&:hover': {
                 color: theme('colors.primary-light.300'),
               },
+            },
+            h1: {
+              color: theme('colors.primary-light.300'),
+              fontFamily: theme('fontFamily.serif'),
+            },
+            h2: {
+              color: theme('colors.primary-light.300'),
+              fontFamily: theme('fontFamily.serif'),
+            },
+            h3: {
+              color: theme('colors.primary-light.400'),
+              fontFamily: theme('fontFamily.serif'),
+            },
+            h4: {
+              color: theme('colors.primary-light.400'),
+              fontFamily: theme('fontFamily.serif'),
+            },
+            strong: {
+              color: theme('colors.primary-light.200'),
+            },
+            blockquote: {
+              borderLeftColor: theme('colors.primary-light.700'),
+              color: theme('colors.neutral.200'),
+              fontStyle: 'normal',
+              fontFamily: theme('fontFamily.serif'),
             },
           },
         },
@@ -140,6 +214,23 @@ module.exports = {
       screens: {
         'xs': '475px',
         ...defaultTheme.screens,
+      },
+
+      // Japanese-inspired design elements
+      borderRadius: {
+        'hanko': '50%',
+        'wabi-sabi': '2px 4px 3px 5px',
+      },
+      
+      boxShadow: {
+        'hanko': '0 2px 4px rgba(0, 0, 0, 0.2)',
+        'inkan': '2px 2px 0 rgba(0, 0, 0, 0.2)',
+      },
+      
+      backgroundImage: {
+        'washi': "url('/assets/images/patterns/washi-texture.webp')",
+        'seigaiha': "url('/assets/images/patterns/seigaiha.svg')",
+        'asanoha': "url('/assets/images/patterns/asanoha.svg')",
       },
     },
   },
