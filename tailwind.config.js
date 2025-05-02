@@ -7,6 +7,7 @@ module.exports = {
     './layouts/**/*.{html,js,jsx,ts,tsx}',
     './content/**/*.{md,mdx}',
     './components/**/*.{js,jsx,ts,tsx}',
+    './assets/**/*.{css,js}',
   ],
   darkMode: 'class',
   theme: {
