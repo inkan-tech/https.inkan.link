@@ -1,11 +1,154 @@
 /* ! tailwindcss v3.4.14 | MIT License | https://tailwindcss.com */
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
 /* Japanese Inspired Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;500;600;700&display=swap')
+layer(utilities);
+
+@config '../../tailwind.config.js';
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+/* Custom CSS for Japanese-inspired components */
+@utility inkan-button {
+  /* Inkan (Traditional Japanese Stamp) Button */
+  @apply bg-primary-500 text-white font-serif px-6 py-2 rounded-xs 
+           rotate-[-1deg] shadow-sm border border-primary-700 
+           hover:bg-primary-600 focus:outline-hidden focus:ring-2 
+           focus:ring-primary-400 focus:ring-offset-2 transition-all duration-200;
+
+  /* Dark mode styles */
+  .dark & {
+    @apply bg-primary-light-500 border-primary-light-700 
+           hover:bg-primary-light-600 focus:ring-primary-light-400;
+  }
+}
+@utility dark {
+  /* Dark mode styles */
+  & .inkan-button {
+    @apply bg-primary-light-500 border-primary-light-700 
+           hover:bg-primary-light-600 focus:ring-primary-light-400;
+  }
+
+  /* Dark mode styles */
+  & .hanko-badge {
+    @apply bg-primary-light-600 border-primary-light-700;
+  }
+
+  /* Dark mode styles */
+  & .paper-container {
+    @apply bg-dark-700;
+    background-image: url('/assets/images/patterns/washi-texture.svg');
+    background-blend-mode: soft-light;
+  }
+
+  /* Dark mode styles */
+  & .seigaiha-bg {
+    @apply bg-dark-800/95;
+  }
+
+  /* Dark mode styles */
+  & .asanoha-bg {
+    @apply bg-dark-700/95;
+  }
+
+  /* Dark mode styles */
+  & .nav-link {
+    @apply text-neutral-100 hover:text-primary-light-400;
+  }
+
+  /* Dark mode styles */
+  & .focus-visible {
+    @apply ring-primary-light-400 ring-offset-dark-800;
+  }
+}
+@utility hanko-badge {
+  /* Hanko Badge (Seal-like element) */
+  @apply w-16 h-16 rounded-full bg-primary-600 flex items-center 
+           justify-center text-white font-serif text-sm rotate-[5deg] 
+           shadow-sm border border-primary-700;
+
+  /* Dark mode styles */
+  .dark & {
+    @apply bg-primary-light-600 border-primary-light-700;
+  }
+}
+@utility wabi-sabi-container {
+  /* Wabi-Sabi Container (Embracing imperfection) */
+  @apply rounded-md border border-neutral-200 bg-white p-4 
+           shadow-xs dark:border-neutral-700 dark:bg-dark-700;
+}
+@utility paper-container {
+  /* Paper-like container with texture */
+  @apply bg-neutral-50 p-6 relative overflow-hidden;
+  background-image: url('/assets/images/patterns/washi-texture.svg');
+  background-blend-mode: overlay;
+
+  /* Dark mode styles */
+  .dark & {
+    @apply bg-dark-700;
+    background-image: url('/assets/images/patterns/washi-texture.svg');
+    background-blend-mode: soft-light;
+  }
+}
+@utility seigaiha-bg {
+  /* Traditional Japanese pattern backgrounds */
+  background-image: url('/assets/images/patterns/seigaiha.svg');
+  background-size: 80px 80px;
+  @apply bg-neutral-50/95;
+
+  /* Dark mode styles */
+  .dark & {
+    @apply bg-dark-800/95;
+  }
+}
+@utility asanoha-bg {
+  background-image: url('/assets/images/patterns/asanoha.svg');
+  background-size: 60px 60px;
+  @apply bg-neutral-100/95;
+
+  /* Dark mode styles */
+  .dark & {
+    @apply bg-dark-700/95;
+  }
+}
+@utility nav-link {
+  /* Enhanced contrast navigation */
+  @apply text-neutral-700 hover:text-primary-600 font-medium transition-colors;
+
+  /* Dark mode styles */
+  .dark & {
+    @apply text-neutral-100 hover:text-primary-light-400;
+  }
+}
+@utility focus-visible {
+  /* Accessibility focus styles */
+  @apply outline-hidden ring-2 ring-primary-400 ring-offset-2 ring-offset-neutral-50;
+
+  /* Dark mode styles */
+  .dark & {
+    @apply ring-primary-light-400 ring-offset-dark-800;
+  }
+}
+
+/* Additional Custom CSS */
 
 /* assets */
 @layer base {
@@ -32,100 +175,6 @@
     font-family: "Noto Serif JP", serif;
   }
 }
-
-/* Custom CSS for Japanese-inspired components */
-@layer components {
-  /* Inkan (Traditional Japanese Stamp) Button */
-  .inkan-button {
-    @apply bg-primary-500 text-white font-serif px-6 py-2 rounded-sm 
-           rotate-[-1deg] shadow border border-primary-700 
-           hover:bg-primary-600 focus:outline-none focus:ring-2 
-           focus:ring-primary-400 focus:ring-offset-2 transition-all duration-200;
-  }
-  
-  /* Dark mode styles */
-  .dark .inkan-button {
-    @apply bg-primary-light-500 border-primary-light-700 
-           hover:bg-primary-light-600 focus:ring-primary-light-400;
-  }
-  
-  /* Hanko Badge (Seal-like element) */
-  .hanko-badge {
-    @apply w-16 h-16 rounded-full bg-primary-600 flex items-center 
-           justify-center text-white font-serif text-sm rotate-[5deg] 
-           shadow border border-primary-700;
-  }
-  
-  /* Dark mode styles */
-  .dark .hanko-badge {
-    @apply bg-primary-light-600 border-primary-light-700;
-  }
-  
-  /* Wabi-Sabi Container (Embracing imperfection) */
-  .wabi-sabi-container {
-    @apply rounded-md border border-neutral-200 bg-white p-4 
-           shadow-sm dark:border-neutral-700 dark:bg-dark-700;
-  }
-  
-  /* Paper-like container with texture */
-  .paper-container {
-    @apply bg-neutral-50 p-6 relative overflow-hidden;
-    background-image: url('/assets/images/patterns/washi-texture.svg');
-    background-blend-mode: overlay;
-  }
-  
-  /* Dark mode styles */
-  .dark .paper-container {
-    @apply bg-dark-700;
-    background-image: url('/assets/images/patterns/washi-texture.svg');
-    background-blend-mode: soft-light;
-  }
-  
-  /* Traditional Japanese pattern backgrounds */
-  .seigaiha-bg {
-    background-image: url('/assets/images/patterns/seigaiha.svg');
-    background-size: 80px 80px;
-    @apply bg-neutral-50 bg-opacity-95;
-  }
-  
-  /* Dark mode styles */
-  .dark .seigaiha-bg {
-    @apply bg-dark-800 bg-opacity-95;
-  }
-  
-  .asanoha-bg {
-    background-image: url('/assets/images/patterns/asanoha.svg');
-    background-size: 60px 60px;
-    @apply bg-neutral-100 bg-opacity-95;
-  }
-  
-  /* Dark mode styles */
-  .dark .asanoha-bg {
-    @apply bg-dark-700 bg-opacity-95;
-  }
-  
-  /* Enhanced contrast navigation */
-  .nav-link {
-    @apply text-neutral-700 hover:text-primary-600 font-medium transition-colors;
-  }
-  
-  /* Dark mode styles */
-  .dark .nav-link {
-    @apply text-neutral-100 hover:text-primary-light-400;
-  }
-  
-  /* Accessibility focus styles */
-  .focus-visible {
-    @apply outline-none ring-2 ring-primary-400 ring-offset-2 ring-offset-neutral-50;
-  }
-  
-  /* Dark mode styles */
-  .dark .focus-visible {
-    @apply ring-primary-light-400 ring-offset-dark-800;
-  }
-}
-
-/* Additional Custom CSS */
 
 
 
@@ -2210,12 +2259,12 @@ video {
 }
 
 .prose :where(blockquote):not(:where([class~="not-prose"] *)) {
-  @apply border-l-4 border-primary-300 bg-kinari bg-opacity-50 
+  @apply border-l-4 border-primary-300 bg-kinari/50
          py-2 pl-4 italic text-neutral-700 font-serif;
 }
 
 .dark .prose :where(blockquote):not(:where([class~="not-prose"] *)) {
-  @apply border-primary-light-700 bg-dark-800 bg-opacity-50 text-neutral-300;
+  @apply border-primary-light-700 bg-dark-800/50 text-neutral-300;
 }
 
 /* Custom CSS end */
