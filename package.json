@@ -19,6 +19,7 @@
   },
   "scripts": {
     "start": "concurrently npm:watch:*",
+    "tw": "npx tailwindcss -i ./assets/css/main.css -o ./assets/css/style.css ",
     "watch:tw": "npx tailwindcss -i ./assets/css/main.css -o ./assets/css/style.css --watch",
     "watch:hugo": "hugo server -O",
     "build": "hugo --minify",
