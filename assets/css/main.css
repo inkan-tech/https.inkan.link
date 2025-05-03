@@ -6,7 +6,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;500;600;700&display=swap')
 layer(utilities);
 
-@config '../../tailwind.config.js';
+/* Configuration is automatically loaded from tailwind.config.js */
 
 /*
   The default border color has changed to `currentcolor` in Tailwind CSS v4,
@@ -27,126 +27,171 @@ layer(utilities);
 }
 
 /* Custom CSS for Japanese-inspired components */
-@utility inkan-button {
+.inkan-button {
   /* Inkan (Traditional Japanese Stamp) Button */
-  @apply bg-primary-500 text-white font-serif px-6 py-2 rounded-xs 
-           rotate-[-1deg] shadow-sm border border-primary-700 
-           hover:bg-primary-600 focus:outline-hidden focus:ring-2 
-           focus:ring-primary-400 focus:ring-offset-2 transition-all duration-200;
-
-  /* Dark mode styles */
-  .dark & {
-    @apply bg-primary-light-500 border-primary-light-700 
-           hover:bg-primary-light-600 focus:ring-primary-light-400;
-  }
+  background-color: var(--color-primary-500);
+  color: white;
+  font-family: var(--font-serif);
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-radius: 0.125rem;
+  transform: rotate(-1deg);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  border-width: 1px;
+  border-color: var(--color-primary-700);
+  transition-property: all;
+  transition-duration: 200ms;
 }
-@utility dark {
-  /* Dark mode styles */
-  & .inkan-button {
-    @apply bg-primary-light-500 border-primary-light-700 
-           hover:bg-primary-light-600 focus:ring-primary-light-400;
-  }
 
-  /* Dark mode styles */
-  & .hanko-badge {
-    @apply bg-primary-light-600 border-primary-light-700;
-  }
-
-  /* Dark mode styles */
-  & .paper-container {
-    @apply bg-dark-700;
-    background-image: url('/assets/images/patterns/washi-texture.svg');
-    background-blend-mode: soft-light;
-  }
-
-  /* Dark mode styles */
-  & .seigaiha-bg {
-    @apply bg-dark-800/95;
-  }
-
-  /* Dark mode styles */
-  & .asanoha-bg {
-    @apply bg-dark-700/95;
-  }
-
-  /* Dark mode styles */
-  & .nav-link {
-    @apply text-neutral-100 hover:text-primary-light-400;
-  }
-
-  /* Dark mode styles */
-  & .focus-visible {
-    @apply ring-primary-light-400 ring-offset-dark-800;
-  }
+.inkan-button:hover {
+  background-color: var(--color-primary-600);
 }
-@utility hanko-badge {
+
+.inkan-button:focus {
+  outline: none;
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  --tw-ring-color: var(--color-primary-400);
+  --tw-ring-offset-width: 2px;
+}
+
+/* Dark mode styles */
+.dark .inkan-button {
+  background-color: var(--color-primary-light-500);
+  border-color: var(--color-primary-light-700);
+}
+
+.dark .inkan-button:hover {
+  background-color: var(--color-primary-light-600);
+}
+
+.dark .inkan-button:focus {
+  --tw-ring-color: var(--color-primary-light-400);
+}
+/* Dark Mode Styles */
+.dark .inkan-button {
+  /* Handled in inkan-button class */
+}
+
+.dark .hanko-badge {
+  background-color: var(--color-primary-light-600);
+  border-color: var(--color-primary-light-700);
+}
+
+.dark .paper-container {
+  background-color: var(--color-dark-700);
+  background-image: url('/assets/images/patterns/washi-texture.svg');
+  background-blend-mode: soft-light;
+}
+
+.dark .seigaiha-bg {
+  background-color: rgba(16, 16, 16, 0.95);
+}
+
+.dark .asanoha-bg {
+  background-color: rgba(20, 20, 20, 0.95);
+}
+
+.dark .nav-link {
+  color: var(--color-neutral-100);
+}
+
+.dark .nav-link:hover {
+  color: var(--color-primary-light-400);
+}
+
+.dark .focus-visible {
+  --tw-ring-color: var(--color-primary-light-400);
+  --tw-ring-offset-color: var(--color-dark-800);
+}
+.hanko-badge {
   /* Hanko Badge (Seal-like element) */
-  @apply w-16 h-16 rounded-full bg-primary-600 flex items-center 
-           justify-center text-white font-serif text-sm rotate-[5deg] 
-           shadow-sm border border-primary-700;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 9999px;
+  background-color: var(--color-primary-600);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: var(--font-serif);
+  font-size: 0.875rem;
+  transform: rotate(5deg);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  border-width: 1px;
+  border-color: var(--color-primary-700);
+}
 
-  /* Dark mode styles */
-  .dark & {
-    @apply bg-primary-light-600 border-primary-light-700;
-  }
-}
-@utility wabi-sabi-container {
+/* Dark mode styles handled in dark mode section above */
+.wabi-sabi-container {
   /* Wabi-Sabi Container (Embracing imperfection) */
-  @apply rounded-md border border-neutral-200 bg-white p-4 
-           shadow-xs dark:border-neutral-700 dark:bg-dark-700;
+  border-radius: 0.375rem;
+  border-width: 1px;
+  border-color: var(--color-neutral-200);
+  background-color: white;
+  padding: 1rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 }
-@utility paper-container {
+
+.dark .wabi-sabi-container {
+  border-color: var(--color-neutral-700);
+  background-color: var(--color-dark-700);
+}
+.paper-container {
   /* Paper-like container with texture */
-  @apply bg-neutral-50 p-6 relative overflow-hidden;
+  background-color: var(--color-neutral-50);
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
   background-image: url('/assets/images/patterns/washi-texture.svg');
   background-blend-mode: overlay;
-
-  /* Dark mode styles */
-  .dark & {
-    @apply bg-dark-700;
-    background-image: url('/assets/images/patterns/washi-texture.svg');
-    background-blend-mode: soft-light;
-  }
 }
-@utility seigaiha-bg {
+
+/* Dark mode styles for paper-container are already in the dark mode section above */
+.seigaiha-bg {
   /* Traditional Japanese pattern backgrounds */
   background-image: url('/assets/images/patterns/seigaiha.svg');
   background-size: 80px 80px;
-  @apply bg-neutral-50/95;
-
-  /* Dark mode styles */
-  .dark & {
-    @apply bg-dark-800/95;
-  }
+  background-color: rgba(205, 208, 213, 0.95); /* bg-neutral-50/95 */
 }
-@utility asanoha-bg {
+
+/* Dark mode styles for seigaiha-bg are already in the dark mode section above */
+.asanoha-bg {
   background-image: url('/assets/images/patterns/asanoha.svg');
   background-size: 60px 60px;
-  @apply bg-neutral-100/95;
-
-  /* Dark mode styles */
-  .dark & {
-    @apply bg-dark-700/95;
-  }
+  background-color: rgba(194, 197, 204, 0.95); /* bg-neutral-100/95 */
 }
-@utility nav-link {
+
+/* Dark mode styles for asanoha-bg are already in the dark mode section above */
+.nav-link {
   /* Enhanced contrast navigation */
-  @apply text-neutral-700 hover:text-primary-600 font-medium transition-colors;
-
-  /* Dark mode styles */
-  .dark & {
-    @apply text-neutral-100 hover:text-primary-light-400;
-  }
+  color: var(--color-neutral-700);
+  font-weight: 500;
+  transition-property: color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }
-@utility focus-visible {
+
+.nav-link:hover {
+  color: var(--color-primary-600);
+}
+
+/* Dark mode styles for nav-link are already in the dark mode section above */
+.focus-visible {
   /* Accessibility focus styles */
-  @apply outline-hidden ring-2 ring-primary-400 ring-offset-2 ring-offset-neutral-50;
-
-  /* Dark mode styles */
-  .dark & {
-    @apply ring-primary-light-400 ring-offset-dark-800;
-  }
+  outline: none;
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  --tw-ring-color: var(--color-primary-400);
+  --tw-ring-offset-width: 2px;
+  --tw-ring-offset-color: var(--color-neutral-50);
 }
+
+/* Dark mode styles for focus-visible are already in the dark mode section above */
 
 /* Additional Custom CSS */
 
@@ -2225,46 +2270,74 @@ video {
 
 /* Enhanced Typography Styles */
 .prose :where(h1):not(:where([class~="not-prose"] *)) {
-  @apply text-primary-900 font-serif font-bold border-b-2 border-primary-200 pb-2;
+  color: var(--color-primary-900);
+  font-family: var(--font-serif);
+  font-weight: 700;
+  border-bottom-width: 2px;
+  border-color: var(--color-primary-200);
+  padding-bottom: 0.5rem;
 }
 
 .dark .prose :where(h1):not(:where([class~="not-prose"] *)) {
-  @apply text-primary-light-300 border-primary-light-800;
+  color: var(--color-primary-light-300);
+  border-color: var(--color-primary-light-800);
 }
 
 .prose :where(h2):not(:where([class~="not-prose"] *)) {
-  @apply text-primary-800 font-serif;
+  color: var(--color-primary-800);
+  font-family: var(--font-serif);
 }
 
 .dark .prose :where(h2):not(:where([class~="not-prose"] *)) {
-  @apply text-primary-light-400;
+  color: var(--color-primary-light-400);
 }
 
 .prose :where(a):not(:where([class~="not-prose"] *)) {
-  @apply text-primary-700 hover:text-primary-900 underline decoration-primary-300 
-         decoration-2 underline-offset-2;
+  color: var(--color-primary-700);
+  text-decoration: underline;
+  text-decoration-color: var(--color-primary-300);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 2px;
+}
+
+.prose :where(a):not(:where([class~="not-prose"] *)):hover {
+  color: var(--color-primary-900);
 }
 
 .dark .prose :where(a):not(:where([class~="not-prose"] *)) {
-  @apply text-primary-light-400 hover:text-primary-light-300 
-         decoration-primary-light-700;
+  color: var(--color-primary-light-400);
+  text-decoration-color: var(--color-primary-light-700);
+}
+
+.dark .prose :where(a):not(:where([class~="not-prose"] *)):hover {
+  color: var(--color-primary-light-300);
 }
 
 .prose :where(strong):not(:where([class~="not-prose"] *)) {
-  @apply text-primary-900 font-bold;
+  color: var(--color-primary-900);
+  font-weight: 700;
 }
 
 .dark .prose :where(strong):not(:where([class~="not-prose"] *)) {
-  @apply text-primary-light-200;
+  color: var(--color-primary-light-200);
 }
 
 .prose :where(blockquote):not(:where([class~="not-prose"] *)) {
-  @apply border-l-4 border-primary-300 bg-kinari/50
-         py-2 pl-4 italic text-neutral-700 font-serif;
+  border-left-width: 4px;
+  border-color: var(--color-primary-300);
+  background-color: rgba(248, 244, 230, 0.5); /* bg-kinari/50 */
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  font-style: italic;
+  color: var(--color-neutral-700);
+  font-family: var(--font-serif);
 }
 
 .dark .prose :where(blockquote):not(:where([class~="not-prose"] *)) {
-  @apply border-primary-light-700 bg-dark-800/50 text-neutral-300;
+  border-color: var(--primary-light-700);
+  background-color: rgba(30, 32, 36, 0.5);
+  color: rgb(150, 155, 167);
 }
 
 /* Custom CSS end */
