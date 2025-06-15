@@ -50,7 +50,7 @@ jobs:
       - name: Build Tailwind CSS
         run: |
           # Process the CSS with Tailwind
-          npm run tw
+          npx @tailwindcss/cli   -i ./assets/css/main.css -o ./assets/css/style.css
       - name: Build with Hugo
         env:
           # For maximum backward compatibility with Hugo modules
