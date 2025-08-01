@@ -1,0 +1,49 @@
+{{/* Reading progress indicator for better user experience */}}
+<div id="reading-progress" class="fixed top-0 left-0 w-full h-1 bg-neutral-200 dark:bg-neutral-700 z-40 hidden">
+  <div id="progress-bar" class="h-full bg-gradient-to-r from-primary-500 to-primary-600 transition-all duration-150 ease-out" style="width: 0%"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const progressContainer = document.getElementById('reading-progress');
+  const progressBar = document.getElementById('progress-bar');
+  const article = document.getElementById('article-content');
+  
+  if (!article || !progressBar || !progressContainer) return;
+  
+  // Show progress bar only for blog posts
+  const isArticle = window.location.pathname.includes('/posts/');
+  if (!isArticle) return;
+  
+  progressContainer.classList.remove('hidden');
+  
+  function updateProgress() {
+    const articleTop = article.offsetTop;
+    const articleHeight = article.offsetHeight;
+    const windowHeight = window.innerHeight;
+    const scrollTop = window.pageYOffset;
+    
+    // Calculate progress (0-100%)
+    const articleEnd = articleTop + articleHeight - windowHeight;
+    const progress = Math.min(Math.max((scrollTop - articleTop) / (articleEnd - articleTop), 0), 1);
+    
+    // Update progress bar width
+    progressBar.style.width = (progress * 100) + '%';
+    
+    // Add completed class when finished reading
+    if (progress >= 0.95) {
+      progressBar.classList.add('bg-gradient-to-r', 'from-green-500', 'to-green-600');
+      progressBar.classList.remove('from-primary-500', 'to-primary-600');
+    } else {
+      progressBar.classList.add('from-primary-500', 'to-primary-600');
+      progressBar.classList.remove('from-green-500', 'to-green-600');
+    }
+  }
+  
+  // Update progress on scroll
+  window.addEventListener('scroll', updateProgress);
+  
+  // Initial update
+  updateProgress();
+});
+</script>

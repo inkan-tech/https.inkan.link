@@ -1,0 +1,72 @@
+{{/* Related posts partial for better content discovery */}}
+{{- $related := .Site.RegularPages.Related . | first 3 -}}
+{{- $sameLang := where $related "Language.Lang" .Language.Lang -}}
+
+{{ if $sameLang }}
+<section class="mt-12 py-8 border-t border-neutral-200 dark:border-neutral-700">
+  <div class="max-w-4xl mx-auto px-6">
+    <h3 class="text-2xl font-bold text-neutral-900 dark:text-white mb-6">
+      {{ i18n "relatedPosts" }}
+    </h3>
+    
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {{ range $sameLang }}
+      <article class="group">
+        <a href="{{ .RelPermalink }}" class="block">
+          {{/* Featured image */}}
+          {{ with .Params.featured_image }}
+          {{ with resources.Get . }}
+          {{ $thumb := .Resize "400x200 webp q80" }}
+          <div class="aspect-w-16 aspect-h-9 mb-4 overflow-hidden rounded-lg bg-neutral-100 dark:bg-neutral-800">
+            <img src="{{ $thumb.RelPermalink }}" 
+                 alt="{{ $.Title }}"
+                 class="object-cover w-full h-full transition-transform duration-200 group-hover:scale-105"
+                 loading="lazy" />
+          </div>
+          {{ end }}
+          {{ end }}
+          
+          {{/* Post metadata */}}
+          <div class="space-y-2">
+            {{/* Category badge */}}
+            {{ with .Params.categories }}
+            <span class="inline-block px-2 py-1 text-xs font-medium rounded-full bg-primary-100 text-primary-800 dark:bg-primary-900/30 dark:text-primary-300">
+              {{ index . 0 | humanize }}
+            </span>
+            {{ end }}
+            
+            {{/* Title */}}
+            <h4 class="text-lg font-semibold text-neutral-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors line-clamp-2">
+              {{ .Title }}
+            </h4>
+            
+            {{/* Summary */}}
+            {{ with .Params.summary }}
+            <p class="text-sm text-neutral-600 dark:text-neutral-400 line-clamp-3">
+              {{ . }}
+            </p>
+            {{ end }}
+            
+            {{/* Reading time and date */}}
+            <div class="flex items-center text-xs text-neutral-500 dark:text-neutral-500 space-x-4">
+              <span>{{ partial "date-format" . }}</span>
+              <span>{{ partial "reading-time" . }}</span>
+            </div>
+          </div>
+        </a>
+      </article>
+      {{ end }}
+    </div>
+    
+    {{/* View all posts link */}}
+    <div class="mt-8 text-center">
+      {{ partial "cta-button" (dict 
+        "text" (i18n "viewAll")
+        "url" (relLangURL "/categories/blog/")
+        "style" "outline"
+        "icon" "arrow"
+      ) }}
+    </div>
+  </div>
+</section>
+{{ end }}

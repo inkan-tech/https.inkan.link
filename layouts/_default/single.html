@@ -28,6 +28,11 @@
             </svg>
             {{ partial "date-format" . }}
           </span>
+          
+          {{/* Reading time estimate */}}
+          <span>
+            {{ partial "reading-time" . }}
+          </span>
           {{- if .Params.categories }}
           <span>
             <svg class="w-4 h-4 inline mr-1" fill="currentColor" viewBox="0 0 20 20">
@@ -70,8 +75,46 @@
     </div>
   </div>
   <!-- " {{.Content}}" pulls from the markdown content of the corresponding _index.md -->
-  <div class="max-w-2xl px-6 pt-6 pb-16 mx-auto prose dark:prose-invert dark:text-white">
-    {{.Content}}
+  <div class="max-w-2xl px-6 pt-6 pb-8 mx-auto">
+    {{/* Table of contents for blog posts */}}
+    {{- if and (eq .Type "posts") .TableOfContents }}
+    {{ partial "table-of-contents" . }}
+    {{- end }}
+    
+    <div class="prose dark:prose-invert dark:text-white max-w-none" id="article-content">
+      {{.Content}}
+    </div>
   </div>
+  
+  {{/* Call-to-action section for blog posts */}}
+  {{- if eq .Type "posts" }}
+  <div class="max-w-2xl px-6 py-8 mx-auto text-center border-t border-neutral-200 dark:border-neutral-700">
+    <h3 class="text-lg font-semibold text-neutral-900 dark:text-white mb-4">
+      {{ if eq .Language.Lang "fr" }}
+      Découvrez Sealfie pour protéger votre entreprise
+      {{ else }}
+      Discover Sealfie to protect your business
+      {{ end }}
+    </h3>
+    <p class="text-neutral-600 dark:text-neutral-400 mb-6">
+      {{ if eq .Language.Lang "fr" }}
+      Éliminez le stress des attaques au faux PDG avec notre solution révolutionnaire.
+      {{ else }}
+      Eliminate the stress of fake CEO attacks with our revolutionary solution.
+      {{ end }}
+    </p>
+    {{ partial "cta-button" (dict 
+      "text" (cond (eq .Language.Lang "fr") "Découvrir Sealfie" "Discover Sealfie")
+      "url" "https://sealf.ie"
+      "style" "primary"
+      "size" "lg"
+      "icon" "external"
+      "external" true
+    ) }}
+  </div>
+  {{- end }}
+  
+  {{/* Related posts section */}}
+  {{ partial "related-posts" . }}
 </article>
 {{end}}

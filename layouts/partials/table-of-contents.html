@@ -1,0 +1,72 @@
+{{/* Table of Contents for better article navigation */}}
+{{- $toc := .TableOfContents -}}
+{{- if $toc -}}
+<div class="mb-8 p-6 bg-neutral-50 dark:bg-neutral-800/50 rounded-lg border border-neutral-200 dark:border-neutral-700">
+  <h3 class="text-lg font-semibold text-neutral-900 dark:text-white mb-4 flex items-center">
+    <svg class="w-5 h-5 mr-2 text-primary-600 dark:text-primary-400" fill="currentColor" viewBox="0 0 20 20">
+      <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+    </svg>
+    {{ if eq .Language.Lang "fr" }}Table des matières{{ else }}Table of Contents{{ end }}
+  </h3>
+  
+  <nav class="toc prose prose-sm dark:prose-invert max-w-none">
+    {{ $toc | safeHTML }}
+  </nav>
+</div>
+
+<style>
+/* Enhanced TOC styling */
+.toc ol {
+  counter-reset: toc-counter;
+  padding-left: 0;
+  list-style: none;
+}
+
+.toc ol li {
+  counter-increment: toc-counter;
+  margin: 0.5rem 0;
+  padding-left: 2rem;
+  position: relative;
+}
+
+.toc ol li::before {
+  content: counter(toc-counter);
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: var(--color-primary-600);
+  color: white;
+  border-radius: 50%;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.toc ol ol li::before {
+  background-color: var(--color-primary-400);
+  font-size: 0.7rem;
+}
+
+.toc a {
+  text-decoration: none;
+  color: var(--color-neutral-700);
+  transition: color 0.2s ease;
+}
+
+.toc a:hover {
+  color: var(--color-primary-600);
+}
+
+.dark .toc a {
+  color: var(--color-neutral-300);
+}
+
+.dark .toc a:hover {
+  color: var(--color-primary-400);
+}
+</style>
+{{- end -}}

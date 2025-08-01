@@ -2347,6 +2347,93 @@ video {
 
 .dark .prose :where(blockquote):not(:where([class~="not-prose"] *)) {
   border-color: var(--primary-light-700);
+}
+
+/* Content Optimization and Readability Enhancements */
+
+/* Line clamping utilities for better content previews */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Enhanced aspect ratio utilities */
+.aspect-w-16 {
+  position: relative;
+  padding-bottom: calc(var(--tw-aspect-h) / var(--tw-aspect-w) * 100%);
+}
+
+.aspect-w-16 > * {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.aspect-h-9 {
+  --tw-aspect-h: 9;
+}
+
+.aspect-w-16 {
+  --tw-aspect-w: 16;
+}
+
+/* Smooth scroll behavior for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Enhanced focus indicators for better accessibility */
+.focus-visible {
+  outline: 2px solid var(--color-primary-500);
+  outline-offset: 2px;
+}
+
+/* Reading progress bar styling */
+#reading-progress {
+  transition: opacity 0.3s ease;
+}
+
+/* Table of contents smooth scrolling */
+.toc a[href^="#"]:hover {
+  transform: translateX(4px);
+  transition: transform 0.2s ease;
+}
+
+/* Content callout boxes spacing */
+.callout + .callout {
+  margin-top: 1rem;
+}
+
+/* Enhanced prose styling for better readability */
+.prose {
+  line-height: 1.7;
+}
+
+.prose h2, .prose h3, .prose h4 {
+  scroll-margin-top: 2rem;
+}
+
+.prose img {
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.dark .prose img {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+}
   background-color: rgba(30, 32, 36, 0.5);
   color: rgb(150, 155, 167);
 }
