@@ -329,3 +329,23 @@ rm -f analysis-* lighthouse-* accessibility-*.json COMPREHENSIVE-WEBSITE-ANALYSI
 # Clean up before Git operations
 git status  # Should show clean working directory after cleanup
 ```
+
+## Internationalization (i18n)
+
+### Enhanced Language Features
+- **Modern Language Switcher**: Accessible dropdown with flag icons and visual feedback
+- **Comprehensive Translations**: Complete UI element coverage in French and English
+- **Language-Specific Formatting**: Dates formatted correctly for each locale
+- **Language Detection**: Automatic browser language detection with user preference storage
+- **Accessibility**: Skip links, proper ARIA labels, and keyboard navigation
+
+### Language Management
+- French translations: `i18n/fr.toml`
+- English translations: `i18n/en.toml`
+- Language switcher partial: `layouts/partials/language-switcher.html`
+- Date formatting partial: `layouts/partials/date-format.html`
+
+### CSS Color Variables
+- **Flag Colors**: Never hardcode flag colors in HTML, always use CSS variables
+- Flag color variables defined in `assets/css/main.css` under `:root`
+- Example: `--color-flag-blue`, `--color-flag-red`, `--color-flag-white`

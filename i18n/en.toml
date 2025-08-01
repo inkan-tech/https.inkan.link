@@ -5,5 +5,64 @@ french = 'french'
 news = 'News'
 product = 'Product'
 
+# Navigation & UI Elements
+home = "Home"
+articles = "Articles"
+blog = "Blog"
+contacts = "Contacts"
+team = "Team"
+legal = "Legal"
+backToHome = "Back to main menu"
+
+# Common Actions
+readMore = "Read more"
+learnMore = "Learn more"
+viewAll = "View all"
+subscribe = "Subscribe"
+contact = "Contact"
+download = "Download"
+
+# Post & Article Elements
+publishedOn = "Published on"
+author = "Author"
+category = "Category"
+tags = "Tags"
+minuteRead = "min read"
+shareArticle = "Share article"
+relatedPosts = "Related posts"
+
+# Forms & Interactions
+name = "Name"
+email = "Email"
+message = "Message"
+send = "Send"
+required = "Required"
+optional = "Optional"
+
+# Status Messages
+loading = "Loading..."
+error = "Error"
+success = "Success"
+notFound = "Page not found"
+
+# Accessibility
+skipToContent = "Skip to main content"
+openMenu = "Open menu"
+closeMenu = "Close menu"
+darkMode = "Dark mode"
+lightMode = "Light mode"
+
+# Time & Dates
+today = "Today"
+yesterday = "Yesterday"
+week = "week"
+month = "month"
+year = "year"
+
+# SEO & Metadata
+readingTime = "Reading time"
+lastUpdated = "Last updated"
+siteDescription = "Protection against CEO fraud and digital identity theft"
+
 [wordCount]
 other = "{{ .WordCount }} words"

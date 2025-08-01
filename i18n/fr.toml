@@ -5,5 +5,64 @@ french = 'français'
 news = 'Actualités'
 product = 'Produit'
 
+# Navigation & UI Elements
+home = "Accueil"
+articles = "Articles"
+blog = "Blog"
+contacts = "Contacts"
+team = "Équipe"
+legal = "Mentions légales"
+backToHome = "Retour au menu principal"
+
+# Common Actions
+readMore = "Lire la suite"
+learnMore = "En savoir plus"
+viewAll = "Voir tout"
+subscribe = "S'abonner"
+contact = "Contacter"
+download = "Télécharger"
+
+# Post & Article Elements
+publishedOn = "Publié le"
+author = "Auteur"
+category = "Catégorie"
+tags = "Étiquettes"
+minuteRead = "min de lecture"
+shareArticle = "Partager l'article"
+relatedPosts = "Articles connexes"
+
+# Forms & Interactions
+name = "Nom"
+email = "E-mail"
+message = "Message"
+send = "Envoyer"
+required = "Requis"
+optional = "Optionnel"
+
+# Status Messages
+loading = "Chargement..."
+error = "Erreur"
+success = "Succès"
+notFound = "Page non trouvée"
+
+# Accessibility
+skipToContent = "Aller au contenu principal"
+openMenu = "Ouvrir le menu"
+closeMenu = "Fermer le menu"
+darkMode = "Mode sombre"
+lightMode = "Mode clair"
+
+# Time & Dates
+today = "Aujourd'hui"
+yesterday = "Hier"
+week = "semaine"
+month = "mois"
+year = "année"
+
+# SEO & Metadata
+readingTime = "Temps de lecture"
+lastUpdated = "Dernière mise à jour"
+siteDescription = "Protection contre la fraude au président et l'usurpation d'identité numérique"
+
 [wordCount]
 other = "{{ .WordCount }} mots"
