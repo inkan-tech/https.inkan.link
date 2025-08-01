@@ -1,0 +1,192 @@
+{{/* Enhanced SEO Schema with comprehensive structured data */}}
+{{- $schemaType := "WebSite" -}}
+{{- $isArticle := false -}}
+{{- $isHome := .IsHome -}}
+{{- $isBlog := eq .Type "posts" -}}
+
+{{- if $isBlog -}}
+  {{- $schemaType = "Article" -}}
+  {{- $isArticle = true -}}
+{{- else if $isHome -}}
+  {{- $schemaType = "WebSite" -}}
+{{- else -}}
+  {{- $schemaType = "WebPage" -}}
+{{- end -}}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "{{ .Site.BaseURL }}#organization",
+      "name": "{{ .Site.Title }}",
+      "url": "{{ .Site.BaseURL }}",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "{{ .Site.BaseURL }}{{ .Site.Params.og_image }}",
+        "width": 512,
+        "height": 512
+      },
+      "description": "{{ .Site.Params.description }}",
+      "foundingDate": "2023",
+      "sameAs": [
+        "{{ .Site.Params.github }}",
+        "https://www.linkedin.com/company/inkan-link/",
+        "https://twitter.com/{{ strings.TrimPrefix "@" .Site.Params.twitter }}"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Customer Service",
+        "email": "contact@inkan.link"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "{{ .Site.BaseURL }}#website",
+      "url": "{{ .Site.BaseURL }}",
+      "name": "{{ .Site.Title }}",
+      "description": "{{ .Site.Params.description }}",
+      "publisher": {
+        "@id": "{{ .Site.BaseURL }}#organization"
+      },
+      "inLanguage": ["fr-FR", "en-US"],
+      {{- if $isHome }}
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "{{ .Site.BaseURL }}search?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      },
+      {{- end }}
+      "mainEntity": {
+        "@id": "{{ .Permalink }}#main-entity"
+      }
+    }
+    {{- if $isArticle }},
+    {
+      "@type": "Article",
+      "@id": "{{ .Permalink }}#article",
+      "headline": "{{ .Title }}",
+      "description": "{{ if .Description }}{{ .Description }}{{ else }}{{ .Summary }}{{ end }}",
+      "image": {
+        "@type": "ImageObject",
+        "url": "{{ if .Params.featured_image }}{{ .Site.BaseURL }}{{ .Params.featured_image | relURL }}{{ else }}{{ .Site.BaseURL }}{{ .Site.Params.og_image }}{{ end }}",
+        {{- if .Params.og_image_alt }}
+        "caption": "{{ .Params.og_image_alt }}"
+        {{- end }}
+      },
+      "author": {
+        "@type": "Person",
+        "name": "{{ if .Params.author }}{{ .Params.author }}{{ else }}{{ .Site.Params.author }}{{ end }}",
+        {{- if .Params.authorimage }}
+        "image": {
+          "@type": "ImageObject",
+          "url": "{{ .Site.BaseURL }}{{ .Params.authorimage | relURL }}"
+        }
+        {{- end }}
+      },
+      "publisher": {
+        "@id": "{{ .Site.BaseURL }}#organization"
+      },
+      "datePublished": "{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}",
+      "dateModified": "{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{ .Permalink }}"
+      },
+      "url": "{{ .Permalink }}",
+      "wordCount": {{ .WordCount }},
+      "inLanguage": "{{ .Language.Lang }}",
+      {{- if .Params.tags }}
+      "keywords": [
+        {{- range $i, $tag := .Params.tags -}}
+          {{- if $i }}, {{ end }}"{{ $tag }}"
+        {{- end -}}
+      ],
+      {{- end }}
+      "articleSection": "{{ if .Params.categories }}{{ index .Params.categories 0 }}{{ else }}{{ .Section }}{{ end }}",
+      "isPartOf": {
+        "@id": "{{ .Site.BaseURL }}#website"
+      }
+    }
+    {{- else if not $isHome }},
+    {
+      "@type": "WebPage",
+      "@id": "{{ .Permalink }}#webpage",
+      "url": "{{ .Permalink }}",
+      "name": "{{ .Title }}",
+      "description": "{{ if .Description }}{{ .Description }}{{ else }}{{ .Summary }}{{ end }}",
+      "inLanguage": "{{ .Language.Lang }}",
+      "isPartOf": {
+        "@id": "{{ .Site.BaseURL }}#website"
+      },
+      "datePublished": "{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}",
+      "dateModified": "{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}"
+    }
+    {{- end }}
+  ]
+}
+</script>
+
+{{/* Breadcrumb structured data */}}
+{{- if not .IsHome }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Accueil",
+      "item": "{{ .Site.BaseURL }}"
+    }
+    {{- if .Section }},
+    {
+      "@type": "ListItem", 
+      "position": 2,
+      "name": "{{ humanize .Section }}",
+      "item": "{{ .Site.BaseURL }}{{ .Section }}/"
+    }
+    {{- end }}
+    {{- if not .IsSection }},
+    {
+      "@type": "ListItem",
+      "position": {{ if .Section }}3{{ else }}2{{ end }},
+      "name": "{{ .Title }}",
+      "item": "{{ .Permalink }}"
+    }
+    {{- end }}
+  ]
+}
+</script>
+{{- end }}
+
+{{/* FAQ Schema for blog posts with questions */}}
+{{- if and $isArticle (findRE "\\?" .Content) }}
+{{- $questions := findRE "(?i)#{2,4}\\s*(.+\\?)" .Content }}
+{{- if gt (len $questions) 0 }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {{- range $index, $question := $questions }}
+    {{- if $index }}, {{ end }}
+    {
+      "@type": "Question",
+      "name": "{{ $question | replaceRE "#{2,4}\\s*" "" | plainify }}",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Consultez notre article pour une réponse détaillée."
+      }
+    }
+    {{- end }}
+  ]
+}
+</script>
+{{- end }}
+{{- end }}

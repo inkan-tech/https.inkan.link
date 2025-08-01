@@ -1,0 +1,59 @@
+{{/* Breadcrumb navigation for SEO and UX */}}
+{{- if not .IsHome -}}
+<nav aria-label="{{ if eq .Language.Lang "fr" }}Fil d'Ariane{{ else }}Breadcrumb{{ end }}" class="breadcrumb py-2 text-sm text-neutral-600 dark:text-neutral-400">
+  <ol class="flex items-center space-x-2" itemscope itemtype="https://schema.org/BreadcrumbList">
+    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+      <a href="{{ .Site.BaseURL }}" class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors" itemprop="item">
+        <span itemprop="name">{{ if eq .Language.Lang "fr" }}Accueil{{ else }}Home{{ end }}</span>
+      </a>
+      <meta itemprop="position" content="1" />
+    </li>
+    
+    {{- if .Section -}}
+    <li class="flex items-center">
+      <svg class="w-4 h-4 mx-1" fill="currentColor" viewBox="0 0 20 20">
+        <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+      </svg>
+    </li>
+    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+      <a href="{{ .Site.BaseURL }}{{ .Section }}/" class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors" itemprop="item">
+        <span itemprop="name">
+          {{- if eq .Section "posts" -}}
+            {{ if eq .Language.Lang "fr" }}Articles{{ else }}Articles{{ end }}
+          {{- else -}}
+            {{ humanize .Section }}
+          {{- end -}}
+        </span>
+      </a>
+      <meta itemprop="position" content="2" />
+    </li>
+    {{- end -}}
+    
+    {{- if and .Section (not .IsSection) -}}
+    <li class="flex items-center">
+      <svg class="w-4 h-4 mx-1" fill="currentColor" viewBox="0 0 20 20">
+        <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+      </svg>
+    </li>
+    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+      <span class="text-neutral-500 dark:text-neutral-500" itemprop="item">
+        <span itemprop="name">{{ .Title }}</span>
+      </span>
+      <meta itemprop="position" content="3" />
+    </li>
+    {{- else if not .Section -}}
+    <li class="flex items-center">
+      <svg class="w-4 h-4 mx-1" fill="currentColor" viewBox="0 0 20 20">
+        <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+      </svg>
+    </li>
+    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+      <span class="text-neutral-500 dark:text-neutral-500" itemprop="item">
+        <span itemprop="name">{{ .Title }}</span>
+      </span>
+      <meta itemprop="position" content="2" />
+    </li>
+    {{- end -}}
+  </ol>
+</nav>
+{{- end -}}

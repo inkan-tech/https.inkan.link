@@ -1,3 +1,20 @@
 User-agent: *
 Allow: /
+
+# Allow all search engines to index content
+Crawl-delay: 1
+
+# Block sensitive paths
+Disallow: /admin/
+Disallow: /.well-known/
+Disallow: /api/
+Disallow: /.env
+Disallow: /config/
+
+# Sitemaps
 Sitemap: https://inkan.link/sitemap.xml
+Sitemap: https://inkan.link/en/sitemap.xml
+
+# Additional information
+# Website: https://inkan.link
+# Contact: contact@inkan.link

@@ -61,6 +61,13 @@ twitter = "@SealfieApp"
 twitter_site = "@SealfieApp"
 twitter_creator = "@SealfieApp"
 description = "Inkan.link have confidence in who you are communicating with"
+
+# Enhanced SEO parameters
+keywords = "cybersécurité, fraude président, usurpation identité, blockchain, sécurité entreprise, deepfakes, authentification"
+og_image_alt = "Inkan.link - Protection avancée contre la fraude au président et l'usurpation d'identité"
+company_founded = "2023"
+company_email = "contact@inkan.link"
+company_phone = "+33183643971"
 [params.navigation]
       about = 'About'
       team = 'Team'      
@@ -93,6 +100,11 @@ category = "Categories"
 tag = "Tags"
 [permalinks]
     post = "/blog/:title/"
+
+[sitemap]
+  changefreq = "weekly"
+  priority = 0.5
+  filename = "sitemap.xml"
 
 [privacy]
 [privacy.disqus]

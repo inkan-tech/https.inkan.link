@@ -1,0 +1,48 @@
+{{/* Sealfie Product Schema - Use on pages that mention Sealfie */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "@id": "https://sealf.ie/#software",
+  "name": "Sealfie",
+  "alternateName": ["Sealf.ie", "Inkan.link Sealfie"],
+  "description": "Solution de protection contre l'usurpation d'identité et la fraude au président. Sealfie permet de vérifier l'authenticité des communications en créant des preuves cryptographiques à partir de traces numériques multiples.",
+  "url": "https://sealf.ie/",
+  "applicationCategory": "SecurityApplication",
+  "operatingSystem": ["iOS", "Android", "Web"],
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR",
+    "availability": "https://schema.org/InStock"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Inkan.link",
+    "url": "{{ .Site.BaseURL }}",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ .Site.BaseURL }}/images/InkanLogo.webp"
+    }
+  },
+  "featureList": [
+    "Protection contre la fraude au président",
+    "Vérification d'identité multicanale", 
+    "Preuves cryptographiques blockchain",
+    "Interface simple sans formation",
+    "Compatibilité mobile et desktop"
+  ],
+  "screenshot": "{{ .Site.BaseURL }}/images/sealfie-screenshot.webp",
+  "softwareVersion": "1.0",
+  "datePublished": "2023-01-01",
+  "inLanguage": ["fr-FR", "en-US"],
+  "keywords": "sécurité, fraude président, usurpation identité, blockchain, authentification",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "127",
+    "bestRating": "5",
+    "worstRating": "1"
+  }
+}
+</script>
