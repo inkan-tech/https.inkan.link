@@ -7,6 +7,9 @@ summary: Découvrez Inkan.link, startup innovante en cybersécurité offrant des
 description: Inkan.link, startup spécialisée en cybersécurité, propose des services de certification numérique grâce à des attestations chaînées. Découvrez notre équipe d'experts et les solutions innovantes offertes pour protéger vos données et renforcer la confiance en ligne.
 featured_image: images/featured/SquircleLogoInkan.webp
 categories: Site
+og_image_alt: "Équipe Inkan.link - Experts en cybersécurité et spécialistes de l'innovation blockchain"
+twitter_site: "@SealfieApp"
+twitter_creator: "@SealfieApp"
 ---
 
 ## L'équipe

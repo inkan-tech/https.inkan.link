@@ -11,6 +11,9 @@ author: Nicolas Thomas
 authorimage: images/global/NicolasHeadShot.webp
 categories: blog
 tags: [IAGenerative, CEO Fraud, GPT, Cybersecurity, Voice Cloning, IdentityTheft]
+og_image_alt: "FBI IC3 chart - Business Email Compromise statistics showing $5 billion stolen annually"
+twitter_site: "@SealfieApp"
+twitter_creator: "@SealfieApp"
 ---
 ## CEO Fraud: A $5 Billion Annual Threat
 

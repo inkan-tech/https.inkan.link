@@ -11,6 +11,9 @@ author: Nicolas Thomas
 authorimage: images/global/NicolasHeadShot.webp
 categories: blog
 tags: [ BEC, GPT, Cybersecurity,LLM,IdentityTheft]
+og_image_alt: "GPT-generated email - Illustration of an AI-generated email used in CEO fraud schemes"
+twitter_site: "@SealfieApp"
+twitter_creator: "@SealfieApp"
 ---
 # My Boss is an AI (Part 2)
 
@@ -36,4 +39,3 @@ In the face of these challenges, companies can turn to solutions like [Sealfie](
 
 Don't wait the criminals now have their own LLM [wormGPT](https://thehackernews.com/2023/07/wormgpt-new-ai-tool-allows.html) which is best known to help in the business email compromise fraud.
 Only by adopting proactive and sophisticated solutions like Sealfie can companies stay one step ahead of cybercriminals and protect their valuable digital assets. The innovative approach of [Inkan.link](https://inkan.link/en/posts/blog-my-boss-is-an-ai/), labeled deeptech and radically simple to use, makes the lives of criminals more complex, while simplifying cybersecurity protection for businesses.
-

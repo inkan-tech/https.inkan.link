@@ -30,7 +30,31 @@
 <meta property="og:image" content="{{ .Params.Site.BaseURL }}{{ .Site.Params.og_image | relURL }}" />
 <meta property="og:image:secure_url" content="{{ .Site.Params.og_image | absURL }}" />
 {{ end }}
-<meta property="og:type" content="website" />
+<meta property="og:type" content="{{ if eq .Type "posts" }}article{{ else }}website{{ end }}" />
+<meta property="og:url" content="{{ .Permalink }}" />
+{{ if .Params.og_image_alt }}
+<meta property="og:image:alt" content="{{ .Params.og_image_alt }}" />
+{{ else if .Site.Params.og_image_alt }}
+<meta property="og:image:alt" content="{{ .Site.Params.og_image_alt }}" />
+{{ end }}
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+{{ if .Site.Params.twitter_site }}
+<meta name="twitter:site" content="{{ .Site.Params.twitter_site }}" />
+{{ end }}
+{{ if .Params.twitter_creator }}
+<meta name="twitter:creator" content="{{ .Params.twitter_creator }}" />
+{{ else if .Site.Params.twitter_creator }}
+<meta name="twitter:creator" content="{{ .Site.Params.twitter_creator }}" />
+{{ end }}
+<meta name="twitter:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Params.og_description }}{{ end }}" />
+{{ if .Params.og_image }}
+<meta name="twitter:image" content="{{ .Params.Site.BaseURL }}{{ .Params.og_image | relURL }}" />
+{{ else }}
+<meta name="twitter:image" content="{{ .Site.Params.BaseURL }}{{ .Site.Params.og_image | relURL }}" />
+{{ end }}
+
 <!-- SEO -->
 <meta name="robots" content="index,follow" />
 <meta name="googlebot" content="index,follow" />

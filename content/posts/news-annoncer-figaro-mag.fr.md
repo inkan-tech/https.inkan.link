@@ -10,6 +10,9 @@ author: Inkan.link
 authorimage: images/featured/SquircleLogoInkan.webp 
 categories: news
 tags: [news ,sealfie, sécurité ,identité ,fraude ,fauxprésident ,interview ,protection ,simplicité]
+og_image_alt: "Le Figaro Magazine - Interview du fondateur d'Inkan.link sur Sealfie et la protection contre la fraude"
+twitter_site: "@SealfieApp"
+twitter_creator: "@SealfieApp"
 ---
 ## 🛡️ Optimisez votre sécurité, protégez votre identité - Sealfie, la solution simple et efficace
 
@@ -32,4 +35,3 @@ Si vous êtes dirigeant, investisseur ou responsable financier, vous savez combi
 Pour en savoir plus sur notre solution et notre focus sur la fraude au faux président, retrouvez notre PDG en interview dans [Itinéraire Entreprise sur le site du Figaro](https://www.lefigaro.fr/economie/inkan-link-optimisez-votre-securite-protegez-votre-identite-20230330) ou lisez notre blog sur la [fraude au faux président](../news-fraude-faux-president)
 
 Découvrez comment nous répondons aux défis actuels en matière de sécurité et d'identité pour protéger les entreprises et prévenir les risques de faillite.
-

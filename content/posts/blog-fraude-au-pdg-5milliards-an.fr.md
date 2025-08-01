@@ -11,6 +11,9 @@ author: Nicolas Thomas
 authorimage: images/global/NicolasHeadShot.webp
 categories: blog
 tags: [IAGenerative, FOVI, GPT, Cybersécurité,ClonageDeVoix,UsurpationDidentité]
+og_image_alt: "Graphique IC3 FBI - Statistiques de fraude au faux président montrant 5 milliards de dollars volés annuellement"
+twitter_site: "@SealfieApp"
+twitter_creator: "@SealfieApp"
 ---
 ## Vol de 5 milliards par an
 

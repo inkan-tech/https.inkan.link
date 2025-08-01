@@ -11,6 +11,9 @@ author: Nicolas Thomas
 authorimage: images/global/NicolasHeadShot.webp
 categories: blog
 tags: [ BEC, GPT, Cybersecurity,VoiceCloning,IdentityTheft]
+og_image_alt: "Cyborg CEO - Illustration of a robotic business leader symbolizing AI in corporate leadership"
+twitter_site: "@SealfieApp"
+twitter_creator: "@SealfieApp"
 ---
 
 ## Do you remember the CEO who is an AI in China?

@@ -17,9 +17,12 @@ tags:
   - validation des échanges
   - environnement numérique fiable
   - Techniques de l'Ingénieur
+og_image_alt: "Techniques de l'Ingénieur - Article sur Sealfie et la blockchain pour la sécurité numérique"
+twitter_site: "@SealfieApp"
+twitter_creator: "@SealfieApp"
 ---
 
-## Découvrez Notre Interview Exclusive dans Techniques de l'Ingénieur
+## Découvrez Notre Interview Exclusive dans Techniques de l’ingénieur
 
 Chers membres de la communauté Inkan.link,
 

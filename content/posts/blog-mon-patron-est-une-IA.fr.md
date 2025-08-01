@@ -11,6 +11,9 @@ author: Nicolas Thomas
 authorimage: images/global/NicolasHeadShot.webp
 categories: blog
 tags: [IAGenerative, FOVI, GPT, Cybersécurité,ClonageDeVoix,UsurpationDidentité]
+og_image_alt: "P.D.G. cyborg - Illustration d'un dirigeant d'entreprise roboté symbolisant l'IA dans le leadership"
+twitter_site: "@SealfieApp"
+twitter_creator: "@SealfieApp"
 ---
 
 ## Vous vous souvenez de la CEO qui est une IA en Chine ?

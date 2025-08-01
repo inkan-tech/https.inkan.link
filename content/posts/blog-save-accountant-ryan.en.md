@@ -11,6 +11,9 @@ author: Nicolas Thomas
 authorimage: images/global/NicolasHeadShot.webp
 categories: blog
 tags: [blog ,sealfie]
+og_image_alt: "Accountant on the frontlines - Illustration of a finance professional facing wire transfer fraud risks"
+twitter_site: "@SealfieApp"
+twitter_creator: "@SealfieApp"
 ---
 
 

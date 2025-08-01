@@ -10,6 +10,9 @@ author: Inkan.link
 authorimage: images/featured/SquircleLogoInkan.webp 
 categories: blog
 tags: [blog ,sealfie]
+og_image_alt: "Valeur légale - Illustration sur les aspects juridiques de la preuve numérique et la certification blockchain"
+twitter_site: "@SealfieApp"
+twitter_creator: "@SealfieApp"
 ---
 
 

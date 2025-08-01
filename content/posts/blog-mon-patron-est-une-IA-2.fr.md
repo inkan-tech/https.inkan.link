@@ -11,6 +11,9 @@ author: Nicolas Thomas
 authorimage: images/global/NicolasHeadShot.webp
 categories: blog
 tags: [IAGenerative, FOVI, GPT, Cybersécurité,ClonageDeVoix,UsurpationDidentité]
+og_image_alt: "Email GPT - Illustration d'un email généré par intelligence artificielle pour la fraude au faux président"
+twitter_site: "@SealfieApp"
+twitter_creator: "@SealfieApp"
 ---
 # Mon Patron est une IA (2ème Partie)
 
@@ -35,5 +38,3 @@ Face à ces défis, les entreprises peuvent se tourner vers des solutions comme 
 ## Conclusion
 
 Seulement en adoptant des solutions proactives et sophistiquées comme Sealfie, les entreprises pourront rester un pas en avant des criminels informatiques et protéger leurs actifs numériques précieux. L'approche innovante de [Inkan.link](https://inkan.link/posts/blog-mon-patron-est-une-ia/), labélisée deeptech et radicalement simple d'utilisation, rend la vie des criminels plus complexe, tout en simplifiant la protection de la cybersécurité pour les entreprises.
-
-

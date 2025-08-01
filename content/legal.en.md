@@ -7,6 +7,9 @@ summary: Legal mentions
 description: About Us
 #featured_image: images/featured/SquircleLogoInkan.webp
 categories: Site
+og_image_alt: "Inkan.link legal information - French S.A.S. company details and terms"
+twitter_site: "@SealfieApp"
+twitter_creator: "@SealfieApp"
 ---
 
 ## Legal Mentions

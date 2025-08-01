@@ -16,6 +16,9 @@ tags:
   - Security
   - Sealfie
   - 
+og_image_alt: "PEBKAC et cybersécurité - Analyse des erreurs utilisateur face aux menaces numériques modernes"
+twitter_site: "@SealfieApp"
+twitter_creator: "@SealfieApp"
 ---
 
 __Advertisement :smile:__

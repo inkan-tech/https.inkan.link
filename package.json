@@ -23,7 +23,13 @@
     "watch:tw": "npx  @tailwindcss/cli  -i ./assets/css/main.css -o ./assets/css/style.css --watch",
     "watch:hugo": "hugo server -O",
     "build": "hugo --minify",
-    "test": "hugo"
+    "test": "hugo",
+    "analyze": "chmod +x analyze-website.sh && ./analyze-website.sh",
+    "analyze:quick": "chmod +x analyze-website.sh && ./analyze-website.sh --quick",
+    "lighthouse": "lighthouse https://inkan.link --config-path=./lighthouse-config.js --output html --output json --output-path=./lighthouse-report",
+    "lighthouse:local": "hugo server & sleep 3 && lighthouse http://localhost:1313 --config-path=./lighthouse-config.js --output html --output json --output-path=./lighthouse-local && pkill hugo",
+    "accessibility": "axe https://inkan.link --save ./accessibility-report.json",
+    "setup:analysis": "npm install -g lighthouse @axe-core/cli pa11y playwright && playwright install chromium"
   },
   "repository": {
     "type": "git",

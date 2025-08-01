@@ -13,6 +13,9 @@ tags:
   - News
   - DeepTech
   - L3i
+og_image_alt: "Bourse DeepTech Emergence - Partenariat L3i et Inkan.link pour l'innovation blockchain entreprise"
+twitter_site: "@SealfieApp"
+twitter_creator: "@SealfieApp"
 ---
 
 ## [L3i](https://l3i.univ-larochelle.fr/) et Inkan.link reçoivent une bourse Deeptech Emergence de la BPI pour lever les verrous de l'attractivité des blockchains ouvertes pour les entreprises
@@ -26,7 +29,3 @@ De son côté, Inkan.link est une entreprise innovante qui se concentre sur l'au
 Cette bourse va permettre à ces deux entités de travailler ensemble pour développer des solutions qui lèvent les verrous de l'attractivité des blockchains ouvertes pour les entreprises. Cela pourrait transformer la façon dont les entreprises interagissent avec les blockchains, en augmentant la confiance et en réduisant les obstacles à l'adoption.
 
 Restez à l'écoute pour plus d'informations sur les progrès de ce projet passionnant !
-
-
-
-

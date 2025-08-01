@@ -19,7 +19,9 @@ github = "https://github.com/inkan-tech"
 facebook = "https://facebook.com/"
 og_image = "/images/InkanLogo.webp"
 sitename = "Inkan.link"
-twitter = "@inkan.link"
+twitter = "@SealfieApp"
+twitter_site = "@SealfieApp"
+twitter_creator = "@SealfieApp"
 description = "Inkan.link have confidence in who you are communicating with"
 [params.navigation]
       about = 'About'

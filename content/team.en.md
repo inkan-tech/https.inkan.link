@@ -7,6 +7,9 @@ summary: The Inkan.link team
 description: The team
 featured_image: images/featured/SquircleLogoInkan.webp
 categories: Site
+og_image_alt: "Inkan.link team - Cybersecurity experts and blockchain innovation specialists"
+twitter_site: "@SealfieApp"
+twitter_creator: "@SealfieApp"
 ---
 
 ## The Team

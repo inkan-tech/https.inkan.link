@@ -5,6 +5,9 @@ draft: false
 language: fr
 featured_image: images/featured/contact-us.jpeg
 categories: Site
+og_image_alt: "Contacter Inkan.link - Équipe professionnelle prête à vous accompagner dans vos solutions de cybersécurité"
+twitter_site: "@SealfieApp"
+twitter_creator: "@SealfieApp"
 ---
 ## Nous contacter
 

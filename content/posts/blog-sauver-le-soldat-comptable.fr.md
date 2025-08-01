@@ -11,6 +11,9 @@ author: Nicolas Thomas
 authorimage: images/global/NicolasHeadShot.webp
 categories: blog
 tags: [blog ,sealfie]
+og_image_alt: "Comptable en première ligne - Illustration d'un professionnel financier face aux risques de fraude au virement"
+twitter_site: "@SealfieApp"
+twitter_creator: "@SealfieApp"
 ---
 
 Dans le film emblématique "Il faut sauver le soldat Ryan", un groupe de soldats est envoyé en mission pour trouver et sauver un parachutiste nommé Ryan. Le film explore des thèmes de courage, de sacrifice et de l'impact de la guerre sur l'individu. Bien que les enjeux ne soient pas aussi élevés dans le monde de la comptabilité, l'impact émotionnel et psychologique de tomber victime de la fraude par Faux Ordre de Virement International (FOVI) peut être dévastateur pour les comptables et les contrôleurs financiers. Tout comme le soldat Ryan, ces professionnels ont besoin de protection et de soutien. Dans cet article de blog, nous établirons des parallèles entre l'histoire du film et les expériences des comptables comme "Ryan" qui sont victimes d'escroqueries FOVI, et présenterons Sealfie, une solution conçue pour être l'escouade de première ligne offrant soutien et protection contre ces menaces.

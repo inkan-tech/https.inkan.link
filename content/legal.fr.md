@@ -5,6 +5,9 @@ draft: false
 language: fr
 #featured_image: images/featured/SquircleLogoInkan.webp
 categories: Site
+og_image_alt: "Mentions légales Inkan.link - Informations de la société S.A.S. et conditions d'utilisation"
+twitter_site: "@SealfieApp"
+twitter_creator: "@SealfieApp"
 ---
 
 ## Mentions légales
