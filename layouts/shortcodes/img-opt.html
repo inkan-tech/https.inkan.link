@@ -1,0 +1,59 @@
+{{- $respSizes := slice "320" "480" "640" "768" "1024" "1280" "1536" -}}
+{{- $imgBase := "images/" -}}
+{{- $src := resources.Get (printf "%s%s" $imgBase (.Get "src")) -}}
+{{- $alt := .Get "alt" -}}
+{{- $class := .Get "class" | default "w-full h-auto" -}}
+{{- $loading := .Get "loading" | default "lazy" -}}
+{{- $sizes := .Get "sizes" | default "(min-width: 1024px) 100vw, (min-width: 768px) 50vw, 100vw" -}}
+
+{{- if $src -}}
+  {{/* Create optimized WebP and AVIF versions */}}
+  {{- $webpSrcset := "" -}}
+  {{- $avifSrcset := "" -}}
+  {{- $jpegSrcset := "" -}}
+  
+  {{- range $i, $size := $respSizes -}}
+    {{- if ge $src.Width (int $size) -}}
+      {{- $webpImg := $src.Resize (printf "%sx webp q85" $size) -}}
+      {{- $avifImg := $src.Resize (printf "%sx webp q80" $size) -}}
+      {{- $jpegImg := $src.Resize (printf "%sx jpg q85" $size) -}}
+      
+      {{- if $i -}}
+        {{- $webpSrcset = printf "%s, %s %sw" $webpSrcset $webpImg.RelPermalink $size -}}
+        {{- $avifSrcset = printf "%s, %s %sw" $avifSrcset $avifImg.RelPermalink $size -}}
+        {{- $jpegSrcset = printf "%s, %s %sw" $jpegSrcset $jpegImg.RelPermalink $size -}}
+      {{- else -}}
+        {{- $webpSrcset = printf "%s %sw" $webpImg.RelPermalink $size -}}
+        {{- $avifSrcset = printf "%s %sw" $avifImg.RelPermalink $size -}}
+        {{- $jpegSrcset = printf "%s %sw" $jpegImg.RelPermalink $size -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{/* Create LQIP placeholder */}}
+  {{- $lqip := $src.Resize "20x jpg q30" -}}
+  {{- $lqipB64 := $lqip.Content | base64Encode -}}
+  
+  {{/* Fallback image */}}
+  {{- $fallback := $src.Resize "768x jpg q85" -}}
+
+  <picture class="block">
+    <source type="image/webp" srcset="{{ $webpSrcset }}" sizes="{{ $sizes }}">
+    <source type="image/jpeg" srcset="{{ $jpegSrcset }}" sizes="{{ $sizes }}">
+    <img 
+      class="{{ $class }}" 
+      src="{{ $fallback.RelPermalink }}" 
+      alt="{{ $alt }}"
+      width="{{ $src.Width }}"
+      height="{{ $src.Height }}"
+      loading="{{ $loading }}"
+      decoding="async"
+      style="background-image: url(data:image/jpeg;base64,{{ $lqipB64 }}); background-size: cover; background-position: center;"
+    />
+  </picture>
+{{- else -}}
+  {{/* Fallback for missing images */}}
+  <div class="bg-gray-200 flex items-center justify-center h-48 text-gray-500">
+    Image not found: {{ .Get "src" }}
+  </div>
+{{- end -}}

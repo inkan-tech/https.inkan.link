@@ -1,13 +1,20 @@
-<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- DNS Prefetch for performance -->
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//chimpstatic.com">
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+
+<!-- Optimized favicon links with preload hints -->
 <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
 <link rel="manifest" href="/favicon/site.webmanifest">
 <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5">
 <meta name="msapplication-TileColor" content="#da532c">
-<meta name="theme-color" content="bg-primary-100">
+<meta name="theme-color" content="var(--color-secondary)">
 {{ partial "meta.html" . }}
 <script>
     // On page load or when changing themes, best to add inline in `head` to avoid FOUC
@@ -29,5 +36,22 @@
 	<link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}" title="{{ .Language.LanguageName }}">
 	{{ end }}
 {{ end }}
-<!-- Add the popup banner from mailchimp -->
-<script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/716e8fcfd71b495b7e4af1e92/7d6a8d46f1cd984f77d19489f.js");</script>
+<!-- Critical CSS inline for above-the-fold content -->
+<style>
+  /* Critical styles for initial paint */
+  body { margin: 0; font-family: system-ui, -apple-system, sans-serif; }
+  .preload-hidden { opacity: 0; }
+  .fade-in { opacity: 1; transition: opacity 0.3s ease-in-out; }
+</style>
+
+<!-- Defer non-critical JavaScript -->
+<script>
+  // Load Mailchimp script after page load
+  window.addEventListener('load', function() {
+    const script = document.createElement('script');
+    script.id = 'mcjs';
+    script.src = 'https://chimpstatic.com/mcjs-connected/js/users/716e8fcfd71b495b7e4af1e92/7d6a8d46f1cd984f77d19489f.js';
+    script.async = true;
+    document.head.appendChild(script);
+  });
+</script>

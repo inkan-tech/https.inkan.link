@@ -12,6 +12,44 @@ pagination.pagerSize = 12
 darkmode_js = ["assets/js/darkmode.js"]
 enableInlineShortcodes = true
 
+# Performance optimizations
+disableLiveReload = false
+timeout = "30s"
+
+[caches]
+  [caches.getjson]
+    dir = ":cacheDir/:project"
+    maxAge = "10m"
+  [caches.getcsv]  
+    dir = ":cacheDir/:project"
+    maxAge = "10m"
+  [caches.getresource]
+    dir = ":cacheDir/:project"
+    maxAge = "10m"
+  [caches.images]
+    dir = ":resourceDir/_gen"
+    maxAge = "1440m"
+  [caches.assets]
+    dir = ":resourceDir/_gen"  
+    maxAge = "1440m"
+  [caches.modules]
+    dir = ":cacheDir/modules"
+    maxAge = "1440m"
+
+[minify]
+  disableCSS = false
+  disableHTML = false
+  disableJS = false
+  disableJSON = false
+  disableSVG = false
+  disableXML = false
+  [minify.tdewolff]
+    [minify.tdewolff.html]
+      keepDocumentTags = true
+      keepEndTags = true
+      keepQuotes = false
+      keepWhitespace = false
+
 [params]
 author = "Inkan.link"
 authorimage = "../assets/images/global/SquircleLogoInkan.webp"
@@ -28,10 +66,27 @@ description = "Inkan.link have confidence in who you are communicating with"
       team = 'Team'      
       contacts = 'Contacts'
       legal = 'Legal'
+[imaging]
+  resampleFilter = "Lanczos"
+  quality = 85
+  anchor = "Smart"
+  [imaging.exif]
+    includeFields = ""
+    excludeFields = "GPS|Exif|IPTC|IFD0|IFD1"
+    disableDate = false
+    disableLatLong = true
+
 [markup]
 [markup.goldmark]
 [markup.goldmark.renderer]
 unsafe = true
+[markup.goldmark.parser]
+  autoHeadingID = true
+  autoHeadingIDType = "github"
+[markup.tableOfContents]
+  endLevel = 3
+  ordered = false
+  startLevel = 2
 
 [taxonomies]
 category = "Categories"

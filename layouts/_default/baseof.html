@@ -8,26 +8,33 @@
     <meta name="description" content="{{ site.Params.Description }}" />
     {{- end }}
     
-    <!-- Matomo -->
-<script>
-    var _paq = window._paq = window._paq || [];
-    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-    _paq.push(['trackPageView']);
-    _paq.push(['enableLinkTracking']);
-    (function() {
-      var u="https://sealfie.matomo.cloud/";
-      _paq.push(['setTrackerUrl', u+'matomo.php']);
-      _paq.push(['setSiteId', '2']);
-      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-      g.async=true; g.src='https://cdn.matomo.cloud/sealfie.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
-    })();
-  </script>
-<script>
-    var _mtm = window._mtm = window._mtm || [];
-    _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
-    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.async=true; g.src='https://cdn.matomo.cloud/sealfie.matomo.cloud/container_yiFlgfbh.js'; s.parentNode.insertBefore(g,s);
-    </script> <!-- End Matomo Code -->
+    <!-- Deferred Matomo Analytics -->
+    <script>
+      // Initialize Matomo after page load for better performance
+      window.addEventListener('load', function() {
+        var _paq = window._paq = window._paq || [];
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        
+        (function() {
+          var u="https://sealfie.matomo.cloud/";
+          _paq.push(['setTrackerUrl', u+'matomo.php']);
+          _paq.push(['setSiteId', '2']);
+          var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+          g.async=true; 
+          g.src='https://cdn.matomo.cloud/sealfie.matomo.cloud/matomo.js'; 
+          s.parentNode.insertBefore(g,s);
+        })();
+        
+        // Matomo Tag Manager
+        var _mtm = window._mtm = window._mtm || [];
+        _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.async=true; 
+        g.src='https://cdn.matomo.cloud/sealfie.matomo.cloud/container_yiFlgfbh.js'; 
+        s.parentNode.insertBefore(g,s);
+      });
+    </script>
 
 
 </head>
@@ -36,6 +43,9 @@
     {{ partial "nav.html" . }}
     {{ block "main" . }}{{ end }}
     {{ partial "footer" . }}
+    
+    {{/* Load performance optimizations at the end */}}
+    {{ partial "performance.html" . }}
 </body>
 
 </html>

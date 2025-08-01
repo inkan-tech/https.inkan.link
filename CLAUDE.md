@@ -170,6 +170,15 @@ tags: [Tag1, Tag2]
 - All image assets should be WebP format for optimal performance
 - French is the default language, English requires explicit `.en.md` files
 
+### Coding Standards
+
+#### CSS and Color Usage
+- **NEVER hardcode colors in HTML or templates** - Always use CSS custom properties (CSS variables)
+- Use TailwindCSS color classes: `bg-primary-500`, `text-secondary-600`, etc.
+- For dynamic values, reference CSS variables: `var(--color-primary)`, `var(--color-secondary)`
+- Example: ❌ `content="#192F60"` ✅ `content="var(--color-secondary)"`
+- This ensures consistent theming, easy maintenance, and proper dark mode support
+
 ## Website Analysis & Performance Monitoring
 
 ### Analysis Tools Setup

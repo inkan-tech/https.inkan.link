@@ -1,0 +1,74 @@
+{{/* Performance optimization script for lazy loading and resource hints */}}
+<script>
+  // Intersection Observer for lazy loading elements
+  if ('IntersectionObserver' in window) {
+    const lazyObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const target = entry.target;
+          
+          // Lazy load images
+          if (target.dataset.src) {
+            target.src = target.dataset.src;
+            target.removeAttribute('data-src');
+          }
+          
+          // Lazy load background images
+          if (target.dataset.bg) {
+            target.style.backgroundImage = `url(${target.dataset.bg})`;
+            target.removeAttribute('data-bg');
+          }
+          
+          // Add fade-in effect
+          target.classList.add('fade-in');
+          target.classList.remove('preload-hidden');
+          
+          lazyObserver.unobserve(target);
+        }
+      });
+    }, {
+      rootMargin: '50px 0px',
+      threshold: 0.1
+    });
+
+    // Observe all lazy elements
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('[data-src], [data-bg], .lazy-load').forEach(el => {
+        lazyObserver.observe(el);
+      });
+    });
+  }
+
+  // Preload critical resources based on user interaction
+  let interactionStarted = false;
+  
+  function preloadCritical() {
+    if (interactionStarted) return;
+    interactionStarted = true;
+    
+    // Preload likely next pages
+    const criticalLinks = document.querySelectorAll('a[href^="/"], a[href^="{{ .Site.BaseURL }}"]');
+    criticalLinks.forEach((link, index) => {
+      if (index < 3) { // Only preload first 3 internal links
+        const prefetchLink = document.createElement('link');
+        prefetchLink.rel = 'prefetch';
+        prefetchLink.href = link.href;
+        document.head.appendChild(prefetchLink);
+      }
+    });
+  }
+  
+  // Trigger preloading on first user interaction
+  ['mousedown', 'touchstart', 'keydown'].forEach(event => {
+    document.addEventListener(event, preloadCritical, { once: true, passive: true });
+  });
+
+  // Service Worker registration for caching (if available)
+  if ('serviceWorker' in navigator && location.protocol === 'https:') {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js').catch(() => {
+        // Silent fail - service worker is optional
+      });
+    });
+  }
+</script>
