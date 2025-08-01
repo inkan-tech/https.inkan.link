@@ -1,0 +1,87 @@
+{{/* Enhanced Language Switcher with navigation styling */}}
+<div class="relative inline-block text-left" x-data="{ open: false }" @click.away="open = false">
+  <div>
+    <button type="button" 
+            class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-white text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 md:ml-4 hover:text-white focus:text-white hover:bg-primary-600 focus:bg-primary-600 focus:outline-none focus:shadow-outline transition-colors duration-200"
+            id="language-menu-button" 
+            aria-expanded="false" 
+            aria-haspopup="true"
+            :aria-expanded="open"
+            @click="open = !open">
+      
+      {{/* Current language name */}}
+      <span>{{ i18n "languages" }}</span>
+      
+      {{/* Dropdown arrow */}}
+      <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}"
+        class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1">
+        <path fill-rule="evenodd"
+          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </button>
+  </div>
+
+  {{/* Dropdown menu */}}
+  <div x-show="open"
+       x-transition:enter="transition ease-out duration-100"
+       x-transition:enter-start="transform opacity-0 scale-95"
+       x-transition:enter-end="transform opacity-100 scale-100"
+       x-transition:leave="transition ease-in duration-75"
+       x-transition:leave-start="transform opacity-100 scale-100"
+       x-transition:leave-end="transform opacity-0 scale-95"
+       class="absolute right-0 z-30 w-full mt-2 origin-top-right rounded-md shadow-lg"
+       role="menu" 
+       aria-orientation="vertical" 
+       aria-labelledby="language-menu-button">
+    
+    <div class="px-2 py-2 text-white bg-primary-900 rounded-md shadow" role="none">
+      {{/* Language options */}}
+      {{ range $.Site.Home.AllTranslations }}
+      <a href="{{ .Permalink }}" 
+         class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 hover:text-white focus:text-white hover:bg-primary-600 focus:bg-primary-600 focus:outline-none focus:shadow-outline {{ if eq $.Language.Lang .Language.Lang }}text-primary-300 bg-primary-700{{ else }}text-white{{ end }}"
+         role="menuitem"
+         {{ if eq $.Language.Lang .Language.Lang }}aria-current="page"{{ end }}>
+        
+        {{/* Language name only, like other nav items */}}
+        {{- if eq .Language.Lang "fr" }}
+        {{ i18n "french" }}
+        {{- else }}
+        {{ i18n "english" }}
+        {{- end }}
+      </a>
+      {{ end }}
+    </div>
+  </div>
+</div>
+
+{{/* Add language detection and preference storage */}}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Store language preference
+  const languageLinks = document.querySelectorAll('[role="menuitem"]');
+  languageLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      const url = new URL(this.href);
+      const lang = url.pathname.startsWith('/en/') ? 'en' : 'fr';
+      localStorage.setItem('preferred-language', lang);
+    });
+  });
+
+  // Auto-redirect based on browser language (only on first visit)
+  if (!localStorage.getItem('language-detected') && !localStorage.getItem('preferred-language')) {
+    const browserLang = navigator.language.slice(0, 2);
+    const currentPath = window.location.pathname;
+    const isHomePage = currentPath === '/' || currentPath === '/en/';
+    
+    if (isHomePage && browserLang === 'en' && !currentPath.startsWith('/en')) {
+      localStorage.setItem('language-detected', 'true');
+      window.location.href = '/en/';
+    } else if (isHomePage && browserLang !== 'en' && currentPath.startsWith('/en')) {
+      localStorage.setItem('language-detected', 'true');
+      window.location.href = '/';
+    }
+    localStorage.setItem('language-detected', 'true');
+  }
+});
+</script>

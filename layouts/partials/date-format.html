@@ -1,0 +1,29 @@
+{{/* Language-specific date formatting */}}
+{{- $date := .Date -}}
+{{- $lang := .Language.Lang -}}
+
+{{- if eq $lang "fr" -}}
+  {{/* French date format: "2 janvier 2024" */}}
+  <time datetime="{{ $date.Format "2006-01-02" }}">
+    {{ $date.Day }}
+    {{- if eq ($date.Month.String) "January" }} janvier
+    {{- else if eq ($date.Month.String) "February" }} février
+    {{- else if eq ($date.Month.String) "March" }} mars
+    {{- else if eq ($date.Month.String) "April" }} avril
+    {{- else if eq ($date.Month.String) "May" }} mai
+    {{- else if eq ($date.Month.String) "June" }} juin
+    {{- else if eq ($date.Month.String) "July" }} juillet
+    {{- else if eq ($date.Month.String) "August" }} août
+    {{- else if eq ($date.Month.String) "September" }} septembre
+    {{- else if eq ($date.Month.String) "October" }} octobre
+    {{- else if eq ($date.Month.String) "November" }} novembre
+    {{- else if eq ($date.Month.String) "December" }} décembre
+    {{- end }}
+    {{ $date.Year }}
+  </time>
+{{- else -}}
+  {{/* English date format: "January 2, 2024" */}}
+  <time datetime="{{ $date.Format "2006-01-02" }}">
+    {{ $date.Format "January 2, 2006" }}
+  </time>
+{{- end -}}
