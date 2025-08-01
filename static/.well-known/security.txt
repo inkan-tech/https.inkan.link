@@ -1,0 +1,21 @@
+Contact: security@inkan.link
+Contact: https://github.com/inkan-tech/landing-page-mobile/security/advisories/new
+Expires: 2026-08-01T12:00:00.000Z
+Acknowledgments: https://inkan.link/security-acknowledgments
+Preferred-Languages: en, fr
+Canonical: https://inkan.link/.well-known/security.txt
+Policy: https://inkan.link/security-policy
+
+# Security Policy for Inkan.link
+# 
+# We take security seriously and welcome responsible disclosure of security vulnerabilities.
+# Please report security issues to security@inkan.link or through our GitHub Security Advisories.
+# 
+# When reporting vulnerabilities, please include:
+# - A description of the vulnerability
+# - Steps to reproduce the issue
+# - Your assessment of the impact
+# - Any suggested remediation
+#
+# We will acknowledge receipt within 48 hours and provide updates on our progress.
+# We may offer recognition for valid security reports in our acknowledgments page.

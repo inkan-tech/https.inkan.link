@@ -179,6 +179,14 @@ tags: [Tag1, Tag2]
 - Example: ❌ `content="#192F60"` ✅ `content="var(--color-secondary)"`
 - This ensures consistent theming, easy maintenance, and proper dark mode support
 
+#### Security Standards
+- **Content Security Policy (CSP)** implemented in `static/_headers`
+- **Security headers** configured for all file types and routes
+- **Permissions Policy** restricts access to sensitive APIs
+- **Security.txt** available at `/.well-known/security.txt` for responsible disclosure
+- All external scripts and resources must be whitelisted in CSP
+- Sensitive paths (`/admin/*`, `/.env*`, `/config/*`) have maximum security restrictions
+
 ## Website Analysis & Performance Monitoring
 
 ### Analysis Tools Setup
