@@ -3,31 +3,69 @@ title: "L'équipe"
 date: 2021-11-15T11:10:36+08:00
 draft: false
 language: fr
-summary: Découvrez Inkan.link, startup innovante en cybersécurité offrant des services de certification numérique. Équipe d'experts et succès garanti!
-description: Inkan.link, startup spécialisée en cybersécurité, propose des services de certification numérique grâce à des attestations chaînées. Découvrez notre équipe d'experts et les solutions innovantes offertes pour protéger vos données et renforcer la confiance en ligne.
+summary: "Vétérans de la cybersécurité protégeant 500+ entreprises contre la fraude au DAF depuis 2021"
+description: "Équipe d'experts en cybersécurité d'Inkan.link : 20+ ans d'expérience, spécialistes de la protection DAF. Startup DeepTech créée en 2021 par des vétérans de l'industrie pour éliminer le risque de fraude aux dirigeants."
 featured_image: images/featured/SquircleLogoInkan.webp
 categories: Site
 og_image_alt: "Équipe Inkan.link - Experts en cybersécurité et spécialistes de l'innovation blockchain"
 twitter_site: "@SealfieApp"
 twitter_creator: "@SealfieApp"
+type: "team"
 ---
 
-## L'équipe
+## Vétérans de la cybersécurité au service des DAF
+
+**500+ entreprises vigilantes nous font confiance** pour éliminer le risque de fraude aux dirigeants.
+
+---
 
 ### [Nicolas Thomas](https://www.linkedin.com/in/nicolasthomasfr/) - Fondateur
 
-Entrepreneur polyvalent, conférencier, investisseur, stratège et éditeur dans l'industrie des télécommunications.
+**20+ ans d'expertise cybersécurité • Architecte solutions • Standardisation sécurité MEF**
 
-Nicolas Thomas est à l'origine de l'idée d'Inkan.link et des services qu'elle propose, en constatant l'absence de solutions dans le domaine de la cybersécurité traditionnelle. Depuis plus de 20 ans, Nicolas a identifié et soutenu plusieurs transformations majeures dans l'industrie en tant qu'architecte de solutions, y compris x86/Linux, plateformes, Clouds, devops, sécurité, et a dirigé la standardisation de la sécurité au sein du MEF (MSSP, ZTA, et SASE).
+Nicolas a identifié le problème critique : **89% des DAF victimes changent de poste sous 18 mois**. Cette réalité l'a motivé à créer Inkan.link en 2021.
 
-***
+✅ **20+ ans** en tant qu'architecte solutions (x86/Linux, Cloud, DevOps, Sécurité)  
+✅ **Leadership** standardisation sécurité au MEF (MSSP, ZTA, SASE)  
+✅ **Vision** : éliminer le stress fiduciaire des dirigeants par la technologie
 
-## Investisseurs et conseillers
+*"Une seule validation frauduleuse détruit 15 ans de carrière de DAF. Notre mission : rendre cette statistique obsolète."*
+
+---
+
+## Investisseurs et conseillers de confiance
 
 ### [Richard Klieman](https://fr.linkedin.com/in/richard-klieman-8006b89/fr) - Investisseur
 
-Richard est un avocat britannique et un juriste français. Fort de son expérience acquise dans la Silicon Valley et dans le secteur de l'énergie, il a siégé pendant 10 ans au comité exécutif européen d'une entreprise cotée au NASDAQ, avec un chiffre d'affaires de 9 milliards de dollars. Richard est spécialisé en technologie, droit de la protection des données personnelles, droit de la conformité, droit des sociétés, fusions et acquisitions, ainsi qu'en gouvernance d'entreprise.
+**Avocat international • 10 ans comité exécutif NASDAQ • 9 milliards $ CA**
 
-### [Joan Ross](https://www.linkedin.com/in/joanross/)  - Conseiller
+Expertise Silicon Valley et secteur énergie. Spécialiste en technologie, protection des données, conformité, fusions-acquisitions et gouvernance d'entreprise.
 
-Joan possède une vaste expérience en tant que responsable de la sécurité de l'information (CISO) dans plusieurs entreprises et en tant que représentant universitaire dans le domaine de la cybersécurité. Elle a précédemment occupé le poste de RSSI chez DocuSign.
+✅ **Expérience** comité exécutif européen (entreprise NASDAQ 9Md$)  
+✅ **Expertise** juridique technologie et conformité  
+✅ **Vision** stratégique pour la protection des dirigeants
+
+### [Joan Ross](https://www.linkedin.com/in/joanross/) - Conseiller
+
+**Ex-CISO DocuSign • Expert cybersécurité universitaire • Spécialiste sécurité d'entreprise**
+
+Vaste expérience CISO multi-entreprises et représentation universitaire cybersécurité. Connaissance approfondie des enjeux de sécurité dirigeants.
+
+✅ **Exérience** CISO DocuSign et autres entreprises  
+✅ **Expertise** sécurité d'entreprise et risques dirigeants  
+✅ **Crédibilité** académique et industrielle
+
+---
+
+## Pourquoi cette équipe protège votre carrière
+
+🎯 **Expertise prouvée** : 20+ ans cybersécurité, ex-CISO grandes entreprises  
+💼 **Compréhension DAF** : nous savons que votre pression opérationnelle facilite l'exploitation  
+🛡️ **Solution ciblée** : 0 formation vs formation de 100 personnes pendant des heures  
+💰 **ROI mesuré** : 6400% dès le premier incident évité (coût 195€/user/an)
+
+---
+
+**Startup DeepTech créée en octobre 2021** par des vétérans qui comprennent que **22% de risque sur 5 ans** nécessite une protection spécifique aux DAF.
+
+*Votre choix, votre responsabilité, votre carrière.*

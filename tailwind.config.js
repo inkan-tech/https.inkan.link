@@ -82,20 +82,20 @@ module.exports = {
           950: '#080808',
         },
 
-        // Nando - Dark Navy (Secondary)
+        // Shu - Japanese Red (Secondary)
         secondary: {
-          DEFAULT: '#192F60',
-          50: '#E8ECF5',
-          100: '#D1D9EB',
-          200: '#A3B3D7',
-          300: '#758EC3',
-          400: '#4768AF',
-          500: '#2F4780',
-          600: '#192F60',
-          700: '#142751',
-          800: '#0F1F42',
-          900: '#0A1732',
-          950: '#051023',
+          DEFAULT: '#BC002D',
+          50: '#FEECEF',
+          100: '#FDD8DE',
+          200: '#FBAEC1',
+          300: '#F984A3',
+          400: '#F35A86',
+          500: '#BC002D',
+          600: '#A30027',
+          700: '#8A0021',
+          800: '#70001B',
+          900: '#570015',
+          950: '#3D000F',
         },
         
         // Additional Japanese colors

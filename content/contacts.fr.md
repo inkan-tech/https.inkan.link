@@ -9,12 +9,37 @@ og_image_alt: "Contacter Inkan.link - Équipe professionnelle prête à vous acc
 twitter_site: "@SealfieApp"
 twitter_creator: "@SealfieApp"
 ---
-## Nous contacter
 
-Par e-mail: contact@inkan.link
+## DAF : Protégez votre carrière en 15 minutes
 
-Téléphone: [+33183643971](tel:+33183643971)
+**89% des DAF victimes changent de poste sous 18 mois.** Ne laissez pas une fraude détruire 15 ans de carrière.
 
-## Suivez nous sur LinkedIn
+### Échangeons sur votre protection
 
-[Inkan.link sur LinkedIn](https://www.linkedin.com/company/inkan-link/)
+📞 **Urgence DAF** : [+33183643971](tel:+33183643971)  
+*Ligne directe pour discussion immédiate*
+
+📧 **Analyse personnalisée** : contact@inkan.link  
+*Recevez votre audit de risque sous 24h*
+
+---
+
+### Pourquoi nous contacter maintenant ?
+
+✅ **22% de risque sur 5 ans** pour vous spécifiquement  
+✅ **ROI 6400%** dès le premier incident évité  
+✅ **Protection 195€/an** vs millions de risque  
+✅ **Intégration 20 minutes** - même votre comptable de 60 ans y arrive
+
+---
+
+### Startup DeepTech depuis 2021
+
+500+ entreprises vigilantes nous font confiance pour sécuriser leur trésorerie.
+
+**[Suivez-nous sur LinkedIn](https://www.linkedin.com/company/inkan-link/)** pour les dernières actualités sur les menaces DAF.
+
+---
+
+**Une seule validation frauduleuse détruit 15 ans de carrière de DAF.**  
+*Votre choix, votre responsabilité, votre carrière.*
