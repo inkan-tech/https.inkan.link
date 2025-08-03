@@ -1,0 +1,162 @@
+/* Video Lazy Loading Styles */
+
+.lazy-video-container {
+  position: relative;
+  overflow: hidden;
+}
+
+/* 15% larger video container styling */
+.lazy-video-container.transform.scale-115 {
+  transform: scale(1.15);
+  transform-origin: center center;
+  margin: 0.75rem; /* Add margin to prevent overflow */
+}
+
+.video-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+  color: #6b7280;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.dark .video-placeholder {
+  background: linear-gradient(135deg, #374151 0%, #1f2937 100%);
+  color: #9ca3af;
+}
+
+/* Loading states */
+.lazy-video-container.lazy-loading .video-placeholder {
+  background: linear-gradient(135deg, #ddd6fe 0%, #c4b5fd 100%);
+}
+
+.dark .lazy-video-container.lazy-loading .video-placeholder {
+  background: linear-gradient(135deg, #4c1d95 0%, #3730a3 100%);
+}
+
+/* Loading spinner */
+.lazy-video-container.lazy-loading .video-placeholder::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 32px;
+  height: 32px;
+  border: 3px solid rgba(139, 92, 246, 0.3);
+  border-top: 3px solid #8b5cf6;
+  border-radius: 50%;
+  animation: lazy-spin 1s linear infinite;
+  z-index: 10;
+}
+
+/* Loading text */
+.lazy-video-container.lazy-loading .video-placeholder::after {
+  content: 'Loading video...';
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.875rem;
+  opacity: 0.8;
+  background: rgba(0, 0, 0, 0.1);
+  padding: 4px 8px;
+  border-radius: 4px;
+  backdrop-filter: blur(4px);
+}
+
+/* Loaded state */
+.lazy-video-container.lazy-loaded .video-placeholder {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Error state */
+.lazy-video-container.lazy-error .video-placeholder {
+  background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+  color: #dc2626;
+}
+
+.dark .lazy-video-container.lazy-error .video-placeholder {
+  background: linear-gradient(135deg, #7f1d1d 0%, #991b1b 100%);
+  color: #fca5a5;
+}
+
+.lazy-video-container.lazy-error .video-placeholder::before {
+  content: '⚠️';
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.lazy-video-container.lazy-error .video-placeholder::after {
+  content: 'Video failed to load';
+  font-size: 0.875rem;
+  opacity: 0.8;
+}
+
+/* Video hover effects */
+.lazy-video-container:hover video {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
+}
+
+/* Loading animation */
+@keyframes lazy-spin {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* Shimmer effect for loading */
+.lazy-video-container.lazy-loading .video-placeholder {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: lazy-shimmer 1.5s infinite;
+}
+
+.dark .lazy-video-container.lazy-loading .video-placeholder {
+  background: linear-gradient(90deg, #374151 25%, #4b5563 50%, #374151 75%);
+  background-size: 200% 100%;
+  animation: lazy-shimmer 1.5s infinite;
+}
+
+@keyframes lazy-shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Performance optimizations */
+.lazy-video-container video {
+  will-change: transform;
+  transform: translateZ(0); /* Force hardware acceleration */
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .lazy-video-container.lazy-loading .video-placeholder {
+    animation: none;
+  }
+  
+  .lazy-video-container.lazy-loading .video-placeholder::before {
+    animation: none;
+    border: 3px solid #8b5cf6;
+    border-top: 3px solid rgba(139, 92, 246, 0.3);
+  }
+  
+  .lazy-video-container:hover video {
+    transform: none;
+    transition: none;
+  }
+}
