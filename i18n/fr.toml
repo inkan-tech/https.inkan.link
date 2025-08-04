@@ -50,6 +50,7 @@ skipToContent = "Aller au contenu principal"
 openMenu = "Ouvrir le menu"
 closeMenu = "Fermer le menu"
 darkMode = "Mode sombre"
+themeToggle = "Basculer le thème"
 lightMode = "Mode clair"
 
 # Time & Dates

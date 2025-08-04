@@ -24,6 +24,27 @@
   --color-validation-success: #10B981; /* Validation green */
 }
 
+/* Dark theme variations */
+.dark {
+  --color-shu-modern: #E34234;        /* Muted primary */
+  --color-enji-modern: #B91C1C;       /* Dark secondary */
+  --color-sango: #F87171;             /* Soft coral */
+}
+
+/* Dark mode background patterns - use black tones with subtle patterns */
+.dark-bg-pattern {
+  background-color: var(--tw-dark-500, #1A1A1A);
+  background-image: url('/assets/images/patterns/washi-texture.webp');
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  background-blend-mode: overlay;
+}
+
+.dark .dark-bg-pattern {
+  background-color: #0D0D0D; /* darker for better contrast */
+  opacity: 0.8;
+}
+
 /* Line clamping utility */
 .line-clamp-3 {
   display: -webkit-box;
@@ -95,6 +116,44 @@
 .dark .inkan-button:focus {
   --tw-ring-color: var(--color-primary-light-400);
 }
+
+/* Enterprise card hover effects */
+.shadow-lg:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+/* Loading pulse for validation indicator */
+@keyframes validationPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.validation-active {
+  animation: validationPulse 2s ease-in-out infinite;
+}
+
+/* Enhance existing inkan-button */
+.inkan-button:hover {
+  transform: translateY(-1px) rotate(-1deg);
+  box-shadow: 0 4px 12px rgba(208, 90, 110, 0.25);
+  transition: all 0.2s ease;
+}
+
+/* Professional gradient backgrounds using existing colors */
+.gradient-primary {
+  background: linear-gradient(135deg, 
+    rgb(208, 90, 110) 0%,    /* existing primary-500 */
+    rgb(25, 47, 96) 100%);   /* existing secondary-500 */
+}
+
+.gradient-validation {
+  background: linear-gradient(135deg, 
+    var(--color-shu-modern) 0%, 
+    var(--color-enji-modern) 100%);
+}
+
 /* Dark Mode Styles */
 .dark .inkan-button {
   /* Handled in inkan-button class */
