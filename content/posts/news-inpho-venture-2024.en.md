@@ -1,6 +1,6 @@
 ---
-title: "Inkan.link Tackles Deepfake Threats at Prestigious Inpho Venture Summit 2024"
-fronttitle: "Inkan.link Showcases Deepfake Protection Solutions at Inpho Venture 2024"
+title: "Inkan.link tackles deepfake threats at prestigious Inpho Venture Summit 2024"
+fronttitle: "Inkan.link showcases deepfake protection solutions at Inpho Venture 2024"
 date: 2024-10-25T10:41:33+02:00
 draft: false
 language: en

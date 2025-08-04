@@ -1,6 +1,6 @@
 ---
-title: Business email compromise - A 5 billion annual theft
-fronttitle: "The Alarming Scale of fake CEO Fraud: $5 Billion Stolen Every Year"
+title: Business email compromise - a 5 billion annual theft
+fronttitle: "The alarming scale of fake CEO fraud: $5 billion stolen every year"
 date: 2024-09-17T10:41:33+02:00
 draft: false
 language: en
