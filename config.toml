@@ -16,6 +16,16 @@ enableInlineShortcodes = true
 disableLiveReload = false
 timeout = "30s"
 
+# Development server settings
+[server]
+  [[server.headers]]
+    for = "/**"
+    [server.headers.values]
+      X-Frame-Options = "DENY"
+      X-XSS-Protection = "1; mode=block"
+      X-Content-Type-Options = "nosniff"
+      Referrer-Policy = "strict-origin-when-cross-origin"
+
 [caches]
   [caches.getjson]
     dir = ":cacheDir/:project"

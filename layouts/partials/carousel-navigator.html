@@ -1,0 +1,283 @@
+{{/* 
+Carousel Navigator Component - Similar to landing-page-mobile BEC carousel
+Usage: {{ partial "carousel-navigator.html" (dict "context" . "cards" $cards "title" "Title" "subtitle" "Subtitle") }}
+
+$cards should be an array of objects with:
+- .title: Card title
+- .subtitle: Card subtitle (optional) 
+- .description: Card description
+- .image: Image path
+- .link: URL to link to
+- .source: Source attribution (optional)
+- .number: Display number (optional)
+
+*/}}
+
+{{ $context := .context }}
+{{ $cards := .cards | default slice }}
+{{ $title := .title | default "Featured Content" }}
+{{ $subtitle := .subtitle | default "" }}
+{{ $carouselId := .id | default "carousel" }}
+{{ $lang := $context.Site.Language.Lang }}
+
+{{/* Carousel Section */}}
+<div class="carousel-navigator-section relative bg-white dark:bg-secondary-900 py-12 overflow-hidden" data-carousel="navigator" id="carousel-{{ $carouselId }}">
+    <div class="max-w-7xl mx-auto px-4">
+        {{/* Section Header */}}
+        <div class="text-center mb-8">
+            <h2 class="section-title text-3xl font-black tracking-tight text-white dark:text-white sm:text-4xl mb-4">
+                {{ $title }}
+            </h2>
+            {{ if $subtitle }}
+            <p class="section-subtitle text-lg text-neutral-600 dark:text-neutral-300">
+                {{ $subtitle }}
+            </p>
+            {{ end }}
+        </div>
+        
+        {{/* Carousel Container */}}
+        <div class="carousel-container relative overflow-hidden border-radius-16 bg-neutral-50 dark:bg-secondary-800 border border-neutral-200 dark:border-secondary-700 shadow-xl">
+            {{/* Carousel Track */}}
+            <div class="carousel-track flex transition-transform duration-600 ease-out" 
+                 x-data="carouselNavigator({{ len $cards }})"
+                 x-init="init()"
+                 :style="`transform: translateX(-${currentSlide * 100}%)`">
+                
+                {{/* Generate Slides */}}
+                {{ range $index, $card := $cards }}
+                <div class="carousel-slide w-full flex-shrink-0 p-5 flex items-center justify-center"
+                     :class="{ 'active': currentSlide === {{ $index }} }">
+                    {{/* Enhanced Trend Card */}}
+                    <div class="trend-card block text-decoration-none max-w-lg mx-auto bg-white dark:bg-secondary-800 rounded-2xl border border-neutral-200 dark:border-secondary-700 overflow-hidden shadow-lg transition-all duration-400 hover:shadow-2xl hover:scale-105"
+                         {{ if $card.link }}onclick="window.open('{{ $card.link }}', '_blank')" role="button" tabindex="0"{{ end }}>
+                        
+                        {{/* Image Container */}}
+                        {{ if $card.image }}
+                        <div class="trend-image relative w-full aspect-w-16 aspect-h-9 overflow-hidden bg-white">
+                            {{ with resources.Get $card.image }}
+                            {{ $processed := (.Resize "600x338 webp q85").RelPermalink }}
+                            <img src="{{ $processed }}" 
+                                 class="w-full h-full object-cover transition-transform duration-400 hover:scale-105"
+                                 loading="lazy" 
+                                 alt="{{ $card.title }}" />
+                            {{ end }}
+                            {{ if $card.link }}
+                            <div class="trend-link-indicator absolute top-4 right-4 flex items-center gap-2 bg-white/90 dark:bg-secondary-800/90 px-3 py-1 rounded-full text-xs font-semibold text-primary-600 dark:text-primary-light-500 opacity-0 transform translate-y-1 transition-all duration-300 backdrop-blur-sm border border-primary-200 dark:border-primary-light-700">
+                                <i class="fas fa-external-link-alt"></i>
+                                <span>{{ if eq $lang "fr" }}Lire plus{{ else }}Read more{{ end }}</span>
+                            </div>
+                            {{ end }}
+                        </div>
+                        {{ end }}
+                        
+                        {{/* Content Container */}}
+                        <div class="trend-content p-6 bg-white dark:bg-secondary-800">
+                            {{/* Header Section */}}
+                            <div class="trend-header flex flex-col gap-1 mb-3">
+                                {{ if $card.number }}
+                                <div class="trend-number text-4xl font-bold text-primary-600 dark:text-primary-light-500 leading-none">
+                                    {{ $card.number }}
+                                </div>
+                                {{ end }}
+                                <h3 class="trend-label text-xl font-semibold text-primary-900 dark:text-white leading-tight">
+                                    {{ $card.title }}
+                                </h3>
+                                {{ if $card.subtitle }}
+                                <div class="trend-subtitle text-sm text-primary-600 dark:text-primary-light-500 font-medium bg-primary-100 dark:bg-primary-900/20 px-2 py-1 rounded inline-block w-fit">
+                                    {{ $card.subtitle }}
+                                </div>
+                                {{ end }}
+                            </div>
+                            
+                            {{/* Description */}}
+                            <p class="trend-description text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed mb-4">
+                                {{ $card.description }}
+                            </p>
+                            
+                            {{/* Source Attribution */}}
+                            {{ if $card.source }}
+                            <p class="trend-source text-xs text-neutral-500 dark:text-neutral-400 font-medium pt-3 border-t border-neutral-200 dark:border-secondary-700">
+                                {{ if eq $lang "fr" }}Source:{{ else }}Source:{{ end }} {{ $card.source }}
+                            </p>
+                            {{ end }}
+                        </div>
+                    </div>
+                </div>
+                {{ end }}
+            </div>
+            
+            {{/* Carousel Controls */}}
+            <div class="carousel-controls flex items-center justify-between max-w-lg mx-auto p-4 bg-neutral-100 dark:bg-secondary-900 border-t border-neutral-200 dark:border-secondary-700">
+                {{/* Previous Button */}}
+                <button @click="prev()" 
+                        class="carousel-prev bg-white dark:bg-secondary-800 border-2 border-primary-600 dark:border-primary-light-500 rounded-full w-10 h-10 flex items-center justify-center text-primary-600 dark:text-primary-light-500 hover:bg-primary-600 dark:hover:bg-primary-light-500 hover:text-white transition-all duration-200 shadow-md hover:shadow-lg disabled:opacity-40 disabled:cursor-not-allowed"
+                        :disabled="currentSlide === 0">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                </button>
+                
+                {{/* Indicators */}}
+                <div class="carousel-indicators flex justify-center items-center gap-2 flex-1 mx-4">
+                    {{ range $index, $card := $cards }}
+                    <button @click="goToSlide({{ $index }})" 
+                            class="indicator w-2 h-2 rounded-full transition-all duration-200 cursor-pointer"
+                            :class="currentSlide === {{ $index }} ? 'bg-primary-600 dark:bg-primary-light-500 w-8' : 'bg-neutral-400 dark:bg-neutral-600 hover:bg-neutral-500 dark:hover:bg-neutral-500'">
+                    </button>
+                    {{ end }}
+                </div>
+                
+                {{/* Next Button */}}
+                <button @click="next()" 
+                        class="carousel-next bg-white dark:bg-secondary-800 border-2 border-primary-600 dark:border-primary-light-500 rounded-full w-10 h-10 flex items-center justify-center text-primary-600 dark:text-primary-light-500 hover:bg-primary-600 dark:hover:bg-primary-light-500 hover:text-white transition-all duration-200 shadow-md hover:shadow-lg disabled:opacity-40 disabled:cursor-not-allowed"
+                        :disabled="currentSlide >= {{ sub (len $cards) 1 }}">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{/* AlpineJS Carousel Navigator Script */}}
+<script>
+function carouselNavigator(totalSlides) {
+    return {
+        currentSlide: 0,
+        totalSlides: totalSlides,
+        autoAdvanceInterval: null,
+        autoAdvanceDelay: 5000,
+        isAutoAdvancing: true,
+        touchStartX: 0,
+        touchEndX: 0,
+        
+        init() {
+            this.startAutoAdvance();
+            this.setupEventListeners();
+            this.setupIntersectionObserver();
+        },
+        
+        setupEventListeners() {
+            // Touch/swipe support
+            this.$el.addEventListener('touchstart', (e) => this.handleTouchStart(e), { passive: true });
+            this.$el.addEventListener('touchend', (e) => this.handleTouchEnd(e), { passive: true });
+            
+            // Keyboard navigation
+            this.$el.addEventListener('keydown', (e) => this.handleKeyDown(e));
+            
+            // Pause on hover
+            this.$el.addEventListener('mouseenter', () => this.pauseAutoAdvance());
+            this.$el.addEventListener('mouseleave', () => this.resumeAutoAdvance());
+        },
+        
+        setupIntersectionObserver() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        this.resumeAutoAdvance();
+                    } else {
+                        this.pauseAutoAdvance();
+                    }
+                });
+            }, { threshold: 0.3 });
+            
+            observer.observe(this.$el);
+        },
+        
+        prev() {
+            if (this.currentSlide > 0) {
+                this.currentSlide--;
+            } else {
+                this.currentSlide = this.totalSlides - 1; // Loop to end
+            }
+            this.resetAutoAdvance();
+        },
+        
+        next() {
+            if (this.currentSlide < this.totalSlides - 1) {
+                this.currentSlide++;
+            } else {
+                this.currentSlide = 0; // Loop to start
+            }
+            this.resetAutoAdvance();
+        },
+        
+        goToSlide(index) {
+            if (index >= 0 && index < this.totalSlides) {
+                this.currentSlide = index;
+                this.resetAutoAdvance();
+            }
+        },
+        
+        startAutoAdvance() {
+            if (!this.isAutoAdvancing || this.totalSlides <= 1) return;
+            
+            this.autoAdvanceInterval = setInterval(() => {
+                this.next();
+            }, this.autoAdvanceDelay);
+        },
+        
+        pauseAutoAdvance() {
+            if (this.autoAdvanceInterval) {
+                clearInterval(this.autoAdvanceInterval);
+                this.autoAdvanceInterval = null;
+            }
+        },
+        
+        resumeAutoAdvance() {
+            if (this.isAutoAdvancing && !this.autoAdvanceInterval) {
+                this.startAutoAdvance();
+            }
+        },
+        
+        resetAutoAdvance() {
+            this.pauseAutoAdvance();
+            setTimeout(() => this.resumeAutoAdvance(), 2000);
+        },
+        
+        handleTouchStart(e) {
+            this.touchStartX = e.changedTouches[0].screenX;
+        },
+        
+        handleTouchEnd(e) {
+            this.touchEndX = e.changedTouches[0].screenX;
+            this.handleSwipeGesture();
+        },
+        
+        handleSwipeGesture() {
+            const swipeThreshold = 50;
+            const swipeDistance = this.touchStartX - this.touchEndX;
+            
+            if (Math.abs(swipeDistance) > swipeThreshold) {
+                if (swipeDistance > 0) {
+                    this.next(); // Swipe left - next slide
+                } else {
+                    this.prev(); // Swipe right - previous slide
+                }
+            }
+        },
+        
+        handleKeyDown(e) {
+            switch (e.key) {
+                case 'ArrowLeft':
+                    e.preventDefault();
+                    this.prev();
+                    break;
+                case 'ArrowRight':
+                    e.preventDefault();
+                    this.next();
+                    break;
+                case 'Home':
+                    e.preventDefault();
+                    this.goToSlide(0);
+                    break;
+                case 'End':
+                    e.preventDefault();
+                    this.goToSlide(this.totalSlides - 1);
+                    break;
+            }
+        }
+    }
+}
+</script>
