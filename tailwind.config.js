@@ -120,6 +120,32 @@ module.exports = {
         kinari: {
           DEFAULT: '#F8F4E6',
         },
+        
+        // Modern Japanese theme variants - complement existing colors
+        'shu-modern': {
+          // Modern interpretation of Traditional Shu-iro
+          DEFAULT: '#FF3500',  // Traditional Vermillion
+          50: '#FFF1F0',
+          100: '#FFE4E1', 
+          500: '#FF3500',     // Primary modern red
+          600: '#E62E00',
+          700: '#CC2800',
+          dark: '#E34234',    // Muted for dark theme
+        },
+        'enji-modern': {
+          // Modern interpretation of Enji-iro
+          DEFAULT: '#C93338',  // Modern Crimson
+          500: '#C93338',     // Secondary modern red
+          600: '#B91C1C',     // For dark theme
+          dark: '#B91C1C',
+        },
+        'sango': {
+          // Coral accent (new addition)
+          DEFAULT: '#F8674F',  // Light theme coral
+          400: '#F8674F',     
+          500: '#F87171',     // Dark theme coral
+          600: '#EF4444',
+        },
       },
 
       fontFamily: {

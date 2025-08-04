@@ -17,6 +17,12 @@ layer(utilities);
   
   /* UK Flag Colors */
   --color-flag-uk-blue: #012169;
+  
+  /* Modern Japanese Colors - Enterprise Theme */
+  --color-shu-modern: #FF3500;        /* Traditional Vermillion */
+  --color-enji-modern: #C93338;       /* Modern Crimson */
+  --color-sango: #F8674F;             /* Coral accent */
+  --color-validation-success: #10B981; /* Validation green */
 }
 
 /*
@@ -3025,4 +3031,50 @@ html {
     line-height: 1.75rem;
   }
 }
+
+/* Enterprise Theme Enhancements */
+
+/* Dark theme variations for modern Japanese colors */
+.dark {
+  --color-shu-modern: #E34234;        /* Muted primary */
+  --color-enji-modern: #B91C1C;       /* Dark secondary */
+  --color-sango: #F87171;             /* Soft coral */
+}
+
+/* Loading pulse animation for validation indicator */
+@keyframes validationPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.validation-active {
+  animation: validationPulse 2s ease-in-out infinite;
+}
+
+/* Enterprise card hover effects */
+.shadow-lg:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+/* Enhanced inkan-button hover state */
+.inkan-button:hover {
+  transform: translateY(-1px) rotate(-1deg);
+  box-shadow: 0 4px 12px rgba(208, 90, 110, 0.25);
+}
+
+/* Professional gradient backgrounds */
+.gradient-primary {
+  background: linear-gradient(135deg, 
+    rgb(208, 90, 110) 0%,    /* existing primary-500 */
+    rgb(25, 47, 96) 100%);   /* existing secondary-500 */
+}
+
+.gradient-validation {
+  background: linear-gradient(135deg, 
+    var(--color-shu-modern) 0%, 
+    var(--color-enji-modern) 100%);
+}
+
 /* Custom CSS end */
