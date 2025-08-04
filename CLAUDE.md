@@ -19,6 +19,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ### Approved Design Elements
 - ✅ Clean typography with proper hierarchy
+- ✅ **SENTENCE CASE TITLES**: Use sentence case, not Title Case ("Real performance" not "Real Performance")
 - ✅ Subtle shadows and borders  
 - ✅ Simple, functional animations (hover states, transitions)
 - ✅ Professional color usage (primary/secondary from theme)
@@ -33,6 +34,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - ❌ Complex layered visual effects
 - ❌ Flashy or gimmicky UI elements
 - ❌ Inconsistent styling or one-off design patterns
+- ❌ **TITLE CASE CAPITALIZATION**: Never use "Every Word Capitalized" titles
 
 ### Code Quality Standards
 - **Hugo Best Practices**: Follow Hugo's templating conventions

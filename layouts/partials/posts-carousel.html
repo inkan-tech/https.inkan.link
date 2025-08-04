@@ -1,7 +1,8 @@
 {{/* Posts Carousel Component */}}
 {{ $lang := .Site.Language.Lang }}
 {{ $allPosts := where .Site.RegularPages "Type" "posts" }}
-{{ $posts := where $allPosts ".Language.Lang" $lang }}
+{{ $publishedPosts := where $allPosts "Draft" "!=" true }}
+{{ $posts := where $publishedPosts ".Language.Lang" $lang }}
 
 {{/* Combine news and blog posts, sorted by date */}}
 {{ $combinedPosts := slice }}
@@ -19,7 +20,7 @@
     <div class="max-w-7xl mx-auto px-4">
         <div class="text-center mb-8">
             <h2 class="text-3xl font-black tracking-tight text-primary-900 dark:text-white sm:text-4xl">
-                {{ if eq $lang "fr" }}Actualités & Analyses Récentes{{ else }}Recent News & Analysis{{ end }}
+                {{ if eq $lang "fr" }}Actualités et analyses récentes{{ else }}Recent news and analysis{{ end }}
             </h2>
             <p class="mt-4 text-lg text-neutral-600 dark:text-neutral-300">
                 {{ if eq $lang "fr" }}Découvrez nos derniers articles sur la cybersécurité et la protection contre les deepfakes{{ else }}Discover our latest articles on cybersecurity and deepfake protection{{ end }}
@@ -49,10 +50,10 @@
                             <a href="{{ .Permalink }}" class="block relative overflow-hidden">
                                 {{ with .Params.featured_image }}
                                 {{ with resources.Get . }}
-                                {{ $postimage := (.Resize "600x338 webp q85").RelPermalink }}
+                                {{ $postimage := (.Resize "600x webp q85").RelPermalink }}
                                 <div class="w-full h-48 bg-neutral-100 dark:bg-secondary-700 flex items-center justify-center overflow-hidden">
                                     <img src="{{ $postimage }}" 
-                                         class="w-full h-full object-contain hover:scale-105 transition-transform duration-300"
+                                         class="max-w-full max-h-full object-contain hover:scale-105 transition-transform duration-300"
                                          loading="lazy" 
                                          alt="{{ $.Title }}" />
                                 </div>
