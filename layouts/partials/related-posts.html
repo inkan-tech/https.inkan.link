@@ -1,6 +1,7 @@
 {{/* Related posts partial for better content discovery */}}
 {{- $related := .Site.RegularPages.Related . | first 3 -}}
-{{- $sameLang := where $related "Language.Lang" .Language.Lang -}}
+{{- $publishedRelated := where $related "Draft" "!=" true -}}
+{{- $sameLang := where $publishedRelated "Language.Lang" .Language.Lang -}}
 
 {{ if $sameLang }}
 <section class="mt-12 py-8 border-t border-neutral-200 dark:border-neutral-700">

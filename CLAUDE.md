@@ -2,6 +2,47 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## ⚠️ CRITICAL DESIGN PRINCIPLES - ALWAYS FOLLOW
+
+### UI/UX Design Standards - MANDATORY
+- **CLEAN & MINIMAL**: Always prefer clean, minimal designs over busy, flashy ones
+- **NO EXCESSIVE EFFECTS**: Avoid heavy animations, multiple gradients, excessive shadows, or over-engineered hover effects
+- **PROFESSIONAL TONE**: This is a corporate cybersecurity site - maintain professional, enterprise-ready aesthetics
+- **SUBTLE ENHANCEMENTS**: Use subtle improvements rather than dramatic visual changes
+- **CONSISTENCY FIRST**: Maintain consistency with existing design patterns before adding new ones
+
+### Japanese Design Philosophy - MA (間)
+- **Negative Space**: Embrace whitespace and clean layouts
+- **Simplicity**: Less is more - avoid visual clutter
+- **Balance**: Harmonious proportions and subtle color usage
+- **Restraint**: Resist the urge to add more when less will do
+
+### Approved Design Elements
+- ✅ Clean typography with proper hierarchy
+- ✅ **SENTENCE CASE TITLES**: Use sentence case, not Title Case ("Real performance" not "Real Performance")
+- ✅ Subtle shadows and borders  
+- ✅ Simple, functional animations (hover states, transitions)
+- ✅ Professional color usage (primary/secondary from theme)
+- ✅ Consistent spacing and alignment
+- ✅ Clear navigation and user flow
+
+### FORBIDDEN Design Elements  
+- ❌ Multiple competing gradients
+- ❌ Excessive backdrop filters or blur effects
+- ❌ Over-animated elements (scaling, bouncing, complex transforms)
+- ❌ Busy background patterns or overlays
+- ❌ Complex layered visual effects
+- ❌ Flashy or gimmicky UI elements
+- ❌ Inconsistent styling or one-off design patterns
+- ❌ **TITLE CASE CAPITALIZATION**: Never use "Every Word Capitalized" titles
+
+### Code Quality Standards
+- **Hugo Best Practices**: Follow Hugo's templating conventions
+- **TailwindCSS**: Use utility classes efficiently, avoid custom CSS unless necessary
+- **Performance**: Optimize images, minimize CSS/JS, use lazy loading appropriately
+- **Accessibility**: Ensure proper ARIA labels, semantic HTML, keyboard navigation
+- **SEO**: Maintain proper meta tags, structured data, and semantic markup
+
 ## Project Overview
 
 This is Inkan.link's corporate website, built with Hugo static site generator and TailwindCSS. The site features bilingual content (French/English) focusing on cybersecurity, deepfake protection, and digital authentication solutions. The main product showcased is Sealfie (https://sealf.ie).
@@ -163,6 +204,7 @@ tags: [Tag1, Tag2]
 - **Images not loading**: Check path relative to `assets/` directory
 - **Language switching broken**: Verify `.en.md` and `.fr.md` files exist
 - **Build failures**: Check Hugo version constraints in `config.toml`
+- **Inkan SVG animation missing**: Check fallback text in `<object>` tags hasn't been removed (see Critical SVG Animation Protection above)
 
 ### Development Tips
 - Use `hugo server -O` for open browser on start
@@ -178,6 +220,33 @@ tags: [Tag1, Tag2]
 - For dynamic values, reference CSS variables: `var(--color-primary)`, `var(--color-secondary)`
 - Example: ❌ `content="#192F60"` ✅ `content="var(--color-secondary)"`
 - This ensures consistent theming, easy maintenance, and proper dark mode support
+
+#### Critical SVG Animation Protection
+- **NEVER remove or modify** the Inkan animated SVG in homepage templates
+- **Location**: Both `layouts/index.fr.html` and `layouts/index.en.html` around line 153-156
+- **Critical Code Block** (MUST use img tag with absURL):
+  ```html
+  {{/* CRITICAL: SVG Animation - Must be visible */}}
+  <img src="{{ absURL "/images/inkan-animated-prez.svg" }}" 
+       alt="Inkan illustration animée"    <!-- French version -->
+       alt="Inkan illustrated animation"  <!-- English version -->
+       class="w-full h-auto" 
+       loading="lazy" />
+  ```
+- **IMPORTANT RULES**:
+  - ✅ CORRECT: Use `<img>` tag with `{{ absURL "/images/inkan-animated-prez.svg" }}`
+  - ❌ WRONG: `<object>` tag - browsers block external SVG objects for security
+  - ❌ WRONG: `{{ relURL "/images/inkan-animated-prez.svg" }}` - Relative paths may not work
+  - ❌ WRONG: `/static/images/inkan-animated-prez.svg` - Direct path won't work
+  - ❌ WRONG: `{{ with resources.Get ... }}` - SVG is in /static/, not /assets/
+- **Why img+absURL works**: Browsers load SVG images reliably, animations still work
+- **Why this matters**: This fallback text is essential for accessibility and when SVG fails to load
+- **SVG File**: Located at `/static/images/inkan-animated-prez.svg` - verify exists before editing
+- **Common mistakes**: 
+  - AI assistants often remove fallback text thinking it's redundant
+  - Using wrong path syntax (must use relURL for static files)
+  - Trying to use resources.Get (only works for /assets/ directory)
+- **Protection rule**: When editing homepage templates, ALWAYS preserve the `<object>` tag and its fallback text exactly as-is
 
 #### Security Standards
 - **Content Security Policy (CSP)** implemented in `static/_headers`

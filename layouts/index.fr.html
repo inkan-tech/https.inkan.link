@@ -8,7 +8,7 @@
             <div class="relative sm:py-8 lg:py-0">
                 <div aria-hidden="true" class="hidden sm:block lg:absolute lg:inset-y-0 lg:right-0 lg:w-screen">
                     <div
-                        class="absolute inset-y-0 w-full bg-neutral-100 dark:bg-primary-900/10 right-1/2 rounded-r-3xl lg:right-72">
+                        class="absolute inset-y-0 w-full bg-neutral-100 dark:bg-dark-800 right-1/2 rounded-r-3xl lg:right-72">
                     </div>
                     <svg class="absolute -ml-3 top-8 left-1/2 lg:-right-8 lg:left-auto lg:top-12" width="404"
                         height="392" fill="none" viewBox="0 0 404 392" loading="lazy">
@@ -24,16 +24,26 @@
                 </div>
                 <div class="relative max-w-md px-4 py-6 mx-auto sm:max-w-3xl sm:px-6 lg:max-w-none lg:px-0 lg:py-20">
 
-                    <!-- Testimonial card-->
-                    <div class="relative pt-64 pb-10 overflow-hidden shadow-xl rounded-2xl">
-                        {{ $missionimage := resources.Get "images/pages/sealfie-landscape.png" }}
-                        {{ with $missionimage }}
-                        {{ with .Resize (printf "%dx%d webp q50" .Width .Height) }}
-                        <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}"
-                            class="absolute inset-0 object-cover w-full h-full" alt="Sealfie - Notre produit"
-                            loading="lazy" />
-                        {{ end }}>
-                        {{ end }}
+                    <!-- Carte vidéo trailer avec chargement différé (15% plus grande)-->
+                    <div class="relative overflow-hidden shadow-xl rounded-2xl lazy-video-container transform scale-115" 
+                         style="padding-top: 73.6%; padding-bottom: 11.5px;"
+                         data-video-id="hero-trailer-fr"
+                         data-video-src="{{ with resources.Get "images/pages/video-trailer.fr.webm" }}{{ .RelPermalink }}{{ end }}"
+                         data-load-delay="1500"
+                         data-fallback="{{ with resources.Get "images/pages/sealfie-landscape.png" }}{{ with .Resize "800x webp q80" }}{{ .RelPermalink }}{{ end }}{{ end }}">
+                        
+                        <!-- Contenu de remplacement pendant le chargement -->
+                        <div class="video-placeholder">
+                            <div class="text-center">
+                                <div class="mb-2">
+                                    <svg class="w-12 h-12 mx-auto text-primary-400 opacity-60" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <p class="text-sm font-medium">Bande-annonce Vidéo Sealfie</p>
+                                <p class="text-xs opacity-75 mt-1">Chargement de la bande-annonce...</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -43,38 +53,71 @@
 
                 <div class="md:pt-24 sm:pt-12 lg:pt-20">
                     <h1
-                        class="mb-2 text-4xl font-extrabold leading-2 tracking-tight text-primary-600 md:text-5xl xl:text-6xl dark:text-white hover:underline hover:text-primary-light-600 ">
-                        <a href="https://sealf.ie"
-                            class="block py-4 mx-auto space-x-4 sm:inline-flex md:inline-flex sm:text-center">
-
-                            <p> Sealfie</p>
-                        </a>
-
+                        class="mb-4 text-4xl font-extrabold leading-tight tracking-tight text-primary-900 dark:text-white md:text-5xl xl:text-6xl">
+                        Bloquez automatiquement les fraudes au PDG les plus sophistiquées
                     </h1>
-                    <div class="mt-6 space-y-6 ">
-
-                        <p class="text-lg leading-7">
-                            Votre entreprise est une cible pour les criminels: 5 milliards d'euros volés chaque année.
-                            Les attaques au faux PDG sont indétectables grâce aux nouvelles IA et accessible à toujours plus de criminels!
-
-                        </p>
-                        <p class="text-lg leading-7">
-                            Prenez simplement une photo. Sealfie effectue automatiquement des vérifications
-                            multi-sources, au moment critique, pour garantir la sécurité de vos transactions.
-                        </p>
-                        <p class="text-lg leading-7 hover:underline hover:text-primary-light-600"> <a
-                                href="https://sealf.ie/fr"> Éliminez le stress des attaques au faux PDG en 20 minutes, allez sur https://sealf.ie pour plus de détails.</a>
-                        </p>
+                    <p class="text-xl mb-6 text-neutral-700 dark:text-neutral-300">
+                        Validez les identités quand c'est important. Tandis que d'autres détectent les deepfakes après les dégâts,
+                        <a href="https://sealf.ie/fr" class="font-semibold text-primary-600 hover:text-primary-light-600 hover:underline">Sealfie</a> 
+                        prévient la fraude au moment de la décision.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 mb-6">
+                        <a href="https://sealf.ie/fr" 
+                           class="inline-flex items-center justify-center px-6 py-3 text-base font-medium text-white bg-primary-600 border border-transparent rounded-lg shadow-sm hover:bg-primary-700 hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200">
+                            → Sealfie
+                        </a>
+                        <a href="https://sealf.ie/fr" 
+                           class="inline-flex items-center justify-center px-6 py-3 text-base font-medium text-primary-600 bg-white border border-primary-600 rounded-lg shadow-sm hover:bg-primary-50 hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200 dark:bg-dark-800 dark:text-primary-light-500 dark:border-primary-light-500 dark:hover:bg-dark-700">
+                            En savoir +
+                        </a>
                     </div>
+                    <p class="text-sm text-neutral-500 dark:text-neutral-400">
+                        <span class="inline-flex items-center gap-1">
+                            <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+                            Approuvé par les entreprises. Aucune fraude depuis le déploiement.
+                        </span>
+                    </p>
                 </div>
             </div>
         </div>
     </div>
 
 
+    <!-- Section Problématique -->
+    <section class="bg-red-50 dark:bg-red-950/20 py-16">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold text-red-900 dark:text-red-100 mb-4">
+                Le problème de 5 milliards d'euros que toute entreprise affronte
+            </h2>
+            <p class="text-xl mb-8 text-red-800 dark:text-red-200">
+                La fraude au PDG est une menace mondiale pour toutes les entreprises : 5 milliards d'euros volés annuellement.
+                Les criminels gagnent 48x plus avec l'usurpation d'identité qu'avec les ransomwares. 
+                Combien dépensez-vous pour vous protéger de ces derniers ?
+            </p>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white dark:bg-red-950/30 p-6 rounded-lg shadow-lg">
+                    <div class="text-4xl font-bold text-red-600 dark:text-red-400 mb-2">48x</div>
+                    <p class="text-red-800 dark:text-red-200 font-medium">Plus rentable que les ransomwares</p>
+                    <p class="text-sm text-red-600 dark:text-red-300 mt-1">ROI supérieur pour les criminels</p>
+                </div>
+                <div class="bg-white dark:bg-red-950/30 p-6 rounded-lg shadow-lg">
+                    <div class="text-4xl font-bold text-red-600 dark:text-red-400 mb-2">5M€</div>
+                    <p class="text-red-800 dark:text-red-200 font-medium">Volés annuellement dans le monde</p>
+                    <p class="text-sm text-red-600 dark:text-red-300 mt-1">En croissance année après année</p>
+                </div>
+                <div class="bg-white dark:bg-red-950/30 p-6 rounded-lg shadow-lg">
+                    <div class="text-4xl font-bold text-red-600 dark:text-red-400 mb-2">100%</div>
+                    <p class="text-red-800 dark:text-red-200 font-medium">Des entreprises sont des cibles</p>
+                    <p class="text-sm text-red-600 dark:text-red-300 mt-1">Aucune société n'est immunisée</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
     <!-- Section : inkan.link introduction -->
 
-    <div class="bg-neutral-50 dark:bg-secondary-900">
+    <div class="bg-neutral-50 dark:bg-dark-900">
         <div class="max-w-fit px-4 py-8 mx-auto">
             <div class="grid items-center gap-8 mb-8 sm:mb-0 lg:gap-12 lg:grid-cols-12">
                 <div class="col-span-6 px-4 text-center sm:mb-6 lg:text-left lg:mb-0">
@@ -107,9 +150,11 @@
                         <!-- Testimonial card-->
                         <!-- <img src = "static/images/inkan-animated-prez.svg" alt="Inkan.link presentation"/> -->
 
-                        <object data="/images/inkan-animated-prez.svg" type="image/svg+xml">
-                            Inkan illustration animée
-                        </object>
+                        {{/* CRITICAL: SVG Animation - Must be visible */}}
+                        <img src="{{ absURL "/images/inkan-animated-prez.svg" }}" 
+                             alt="Inkan illustration animée" 
+                             class="w-full h-auto" 
+                             loading="lazy" />
                     </div>
                 </div>
             </div>
@@ -117,60 +162,8 @@
     </div>
 
 
-    <!-- Section news -->
-
-
-    <div class="relative px-1 pt-8 pb-4 bg-transparent lg:px-8 lg:pt-12 lg:mb-4 md:mt-12">
-        <div class="absolute inset-0">
-            <div class="bg-secondary-900 dark:bg-secondary-900/50 h-2/3 sm:h-2/3"></div>
-        </div>
-        <div class="relative px-2 mx-auto max-w-7xl">
-            <div class="text-center">
-                <h2 class="text-3xl font-black tracking-tight text-white capitalize dark:text-white sm:text-4xl">
-                    Actualités
-                </h2>
-                <!-- <p class="max-w-2xl mx-auto mt-3 text-xl text-white sm:mt-4"> Les articles les plus récents de notre blog.</p> -->
-            </div>
-
-            <div class="mx-auto text-neutral-900 max-w-7xl dark:text-primary-50 md:px-1.5">
-                <div class="px-4 text-neutral-900 dark:text-white not-prose">
-                    <div class="grid gap-4 mx-auto mt-12 mb-4 lg:max-w-none md:grid-cols-3">
-
-                        {{ range first 3 (where (where ( .Paginator.Pages ) ".Params.categories" "like" "(N|n)ews")
-                        ".Language.Lang" "fr" )}}
-                        <div
-                            class="flex flex-col overflow-hidden rounded-lg shadow-lg bg-neutral-100 dark:bg-secondary-900">
-                            <a href="{{.Permalink}}">
-                                {{ with .Params.featured_image }}
-                                {{ with resources.Get . }}
-                                {{ $postimage := (.Resize "500x webp q90").RelPermalink }}
-                                <img src="{{ $postimage }}" class="object-fill overflow-hidden rounded-t-lg"
-                                    width="100%" height="" loading="lazy" alt="{{ .Title }}" />
-                                {{ end }}
-                                {{ end }}
-                            </a>
-                            <div class="p-6">
-                                <div class="flex-auto">
-                                    <a href="{{.Permalink}}"
-                                        class="block mt-2 text-2xl font-black text-primary-900 dark:text-neutral-50 hover:text-neutral-600 dark:hover:text-neutral-500 hover:underline">
-                                        {{.Title}}
-                                    </a>
-                                    <p class="mt-3 text-base ">
-                                        {{ .Params.summary }}
-                                    </p>
-                                    <a href="{{.Permalink}}"
-                                        class="block mt-2 text-base  dark:text-neutral-300 hover:text-primary-500 dark:hover:text-white hover:underline">
-                                        En savoir plus...
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        {{ end }}
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <!-- Posts Carousel Section -->
+    {{ partial "posts-carousel.html" . }}
 
     <!-- Our vision section -->
     <div class="relative my-4">
@@ -178,7 +171,7 @@
             <div class="relative sm:py-8 lg:py-0">
                 <div aria-hidden="true" class="hidden sm:block lg:absolute lg:inset-y-0 lg:right-0 lg:w-screen">
                     <div
-                        class="absolute inset-y-0 w-full bg-secondary-900 dark:bg-primary-900/10 right-1/2 rounded-r-3xl lg:right-72">
+                        class="absolute inset-y-0 w-full bg-secondary-900 dark:bg-dark-800 right-1/2 rounded-r-3xl lg:right-72">
                     </div>
                     <svg class="absolute -ml-3 top-8 left-1/2 lg:-right-8 lg:left-auto lg:top-12" width="404"
                         height="392" fill="none" viewBox="0 0 404 392" loading="lazy">
@@ -206,7 +199,7 @@
                         <div class="absolute inset-0 bg-slate-300 mix-blend-multiply"></div>
                         <div class="relative px-8">
                             <div>
-                                <img class="h-12" src="/favicon/favicon.svg" alt="Inkan.link logo">
+                                <img class="h-12" src="{{ relLangURL "/favicon/favicon.svg" }}" alt="Inkan.link logo">
                             </div>
                             <blockquote class="mt-8">
                                 <div class="relative text-lg font-medium text-white bg-primary-500/30 md:flex-grow">
@@ -237,7 +230,7 @@
                 <!-- Content area -->
                 <div class="md:pt-12 sm:pt-6 lg:pt-20">
                     <h2
-                        class="text-3xl font-bold tracking-tight text-primary-900 capitalize dark:text-neutral-50 sm:text-4xl">
+                        class="text-3xl font-bold tracking-tight text-primary-900 dark:text-neutral-50 sm:text-4xl">
                         Notre vision</h2>
                     <div class="mt-6 space-y-6 text-neutral-900 dark:text-white">
                         <p class="text-lg leading-7">
@@ -270,86 +263,48 @@
         </div>
     </div>
 
-    <!-- Title before infinite blog section -->
-    <div class="row relative my-4 bg-secondary-500">
-        <p></p>
-    </div>
-    <!-- Testimonial/stats section -->
-
-    <!-- Inifinte Blog : kept simple on desktop to accomodate mobile better -->
-
-
-    {{ range first 12 (where (where ( .Paginator.Pages ) ".Params.categories" "like" "(B|b)log") ".Language.Lang" "fr"
-    )}}
-
-
-    <div class="row relative my-4">
-        <div class=" lg:mx-auto lg:grid lg:max-w-l lg:grid-cols-2 lg:items-start  ">
-
-            <!-- Content area -->
-            <div class="relative  px-12 mx-4 sm:max-w-4xl sm:px-6 lg:px-0">
-
-
-                <div class="flex-col px-4">
-                    <a href="{{.Permalink}}"
-                        class="block mt-2 text-2xl  text-primary-900 dark:text-neutral-50 hover:text-primary-light-600 dark:hover:text-white  hover:underline">
-                        {{ if isset .Params "fronttitle" }} {{ .Param "fronttitle"}} {{else}} {{ .Title }} {{end}}
-                    </a>
-                    <p class="mt-3 text-lg leading-7 text-neutral-900 dark:text-white">
-                        {{ .Params.summary }}
-                    </p>
-                    <a href="{{.Permalink}}"
-                        class="block mt-2 text-base underline dark:text-neutral-400 hover:text-primary-500 dark:hover:text-white hover:underline">
-                        En savoir plus...
-                    </a>
-                </div>
-
-
+    <!-- Section Métriques - Performance Réelle, Pas de Promesses -->
+    <div class="bg-neutral-50 dark:bg-dark-900 py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-black tracking-tight text-primary-900 dark:text-white sm:text-4xl">
+                    Performance réelle, pas de promesses
+                </h2>
+                <p class="mt-4 text-lg text-neutral-600 dark:text-neutral-300">
+                    <strong class="text-primary-500">Aucune certification derrière laquelle se cacher.</strong> 
+                    Juste des performances transparentes d'utilisation en conditions réelles.
+                </p>
             </div>
-
-
-            <div class=" sm:py-8 lg:py-0">
-                <div aria-hidden="true" class="hidden sm:block lg:relative lg:inset-y-0 lg:right-0 lg:w-screen">
-                    <div
-                        class="absolute inset-y-0  left-1/2 rounded-l-3xl bg-neutral-50 dark:bg-secondary-900/10 lg:left-20 lg:right-0 lg:w-fit">
-                    </div>
-                    <svg class="absolute -mr-1 top-1 right-2/3 lg:left-1 lg:m-12" width="404" height="292" fill="none"
-                        viewBox="0 0 404 292" loading="lazy">
-                        <defs>
-                            <pattern id="837c3e70-6c3a-44e6-8854-cc48c737b659" x="0" y="0" width="20" height="20"
-                                patternUnits="userSpaceOnUse">
-                                <rect x="0" y="0" width="4" height="4"
-                                    class="text-secondary-900 dark:text-secondary-900/60" fill="currentcolor">
-                                </rect>
-                            </pattern>
-                        </defs>
-                        <rect width="404" height="392" fill="url(#837c3e70-6c3a-44e6-8854-cc48c737b659)"></rect>
-                    </svg>
+            
+            <!-- Grille 2x2 -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mx-auto max-w-2xl sm:max-w-4xl">
+                <div class="flex flex-col text-center rounded-lg shadow-lg bg-white dark:bg-dark-800 p-4 min-h-[120px] hover:shadow-xl transition-all duration-300">
+                    <div class="text-3xl font-bold text-shu-modern-500 dark:text-shu-modern-dark mb-2">99,7%</div>
+                    <p class="font-semibold text-primary-900 dark:text-white text-sm mb-1">Précision de Validation</p>
+                    <p class="text-xs text-neutral-500 dark:text-neutral-400">Vérifié multi-sources</p>
                 </div>
-                <div class="relative max-w-md px-4 py-6 mx-auto sm:max-w-3xl sm:px-6 lg:max-w-3xl lg:px-2 lg:py-6"
-                    href="{{ .Permalink }}">
-                    <div class="relative pl-4 mr-0 sm:mx-auto sm:max-w-3xl sm:px-0 lg:h-full lg:max-w-none lg:pl-12">
-                        {{ with .Params.featured_image }}
-                        {{ with resources.Get . }}
-                        {{ $postimage := (.Resize "400x webp q90").RelPermalink }}
-                        <img src="{{ $postimage }}" alt="Illustration: {{ .Title }}"
-                            class="w-fit rounded-lg shadow-xl lg:h-full lg:max-w-fit" loading="lazy" />
-                        {{ end }}
-                        {{ end }}
-
-
-
-                    </div>
+                
+                <div class="flex flex-col text-center rounded-lg shadow-lg bg-white dark:bg-dark-800 p-4 min-h-[120px]">
+                    <div class="text-3xl font-bold text-primary-600 dark:text-primary-light-500 mb-2">&lt;20s</div>
+                    <p class="font-semibold text-primary-900 dark:text-white text-sm mb-1">Temps de Validation</p>
+                    <p class="text-xs text-neutral-500 dark:text-neutral-400">Résultats en temps réel</p>
                 </div>
-
-
-
+                
+                <div class="flex flex-col text-center rounded-lg shadow-lg bg-white dark:bg-dark-800 p-4 min-h-[120px]">
+                    <div class="text-3xl font-bold text-primary-600 dark:text-primary-light-500 mb-2">0€</div>
+                    <p class="font-semibold text-primary-900 dark:text-white text-sm mb-1">Fraude Après Déploiement</p>
+                    <p class="text-xs text-neutral-500 dark:text-neutral-400">Protection complète</p>
+                </div>
+                
+                <div class="flex flex-col text-center rounded-lg shadow-lg bg-white dark:bg-dark-800 p-4 min-h-[120px]">
+                    <div class="text-3xl font-bold text-primary-600 dark:text-primary-light-500 mb-2">24/7</div>
+                    <p class="font-semibold text-primary-900 dark:text-white text-sm mb-1">Toujours Disponible</p>
+                    <p class="text-xs text-neutral-500 dark:text-neutral-400">Quand vous en avez besoin</p>
+                </div>
             </div>
         </div>
+    </div>
 
-
-
-        {{ end }} <!-- end of range -->
 
 
 

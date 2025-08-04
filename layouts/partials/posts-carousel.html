@@ -1,0 +1,202 @@
+{{/* Posts Carousel Component */}}
+{{ $lang := .Site.Language.Lang }}
+{{ $allPosts := where .Site.RegularPages "Type" "posts" }}
+{{ $publishedPosts := where $allPosts "Draft" "!=" true }}
+{{ $posts := where $publishedPosts ".Language.Lang" $lang }}
+
+{{/* Combine news and blog posts, sorted by date */}}
+{{ $combinedPosts := slice }}
+{{ range $posts }}
+  {{ if or (in .Params.categories "news") (in .Params.categories "News") (in .Params.categories "blog") (in .Params.categories "Blog") }}
+    {{ $combinedPosts = $combinedPosts | append . }}
+  {{ end }}
+{{ end }}
+
+{{/* Sort posts by date descending and take first 10 */}}
+{{ $sortedPosts := sort $combinedPosts ".Date" "desc" | first 10 }}
+
+{{/* Carousel Section */}}
+<div x-data="carousel()" class="posts-carousel relative bg-white dark:bg-dark-900 py-12 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center mb-8">
+            <h2 class="text-3xl font-black tracking-tight text-primary-900 dark:text-white sm:text-4xl">
+                {{ if eq $lang "fr" }}Actualités et analyses récentes{{ else }}Recent news and analysis{{ end }}
+            </h2>
+            <p class="mt-4 text-lg text-neutral-600 dark:text-neutral-300">
+                {{ if eq $lang "fr" }}Découvrez nos derniers articles sur la cybersécurité et la protection contre les deepfakes{{ else }}Discover our latest articles on cybersecurity and deepfake protection{{ end }}
+            </p>
+        </div>
+        
+        {{/* Carousel Container */}}
+        <div class="relative">
+            {{/* Previous Button */}}
+            <button @click="prev()" 
+                    class="carousel-nav-button absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white dark:bg-dark-800 rounded-full p-2 shadow-lg hover:shadow-xl -translate-x-4 lg:-translate-x-12"
+                    :class="{ 'opacity-50 cursor-not-allowed': currentIndex === 0 }"
+                    :disabled="currentIndex === 0">
+                <svg class="w-6 h-6 text-primary-600 dark:text-primary-light-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+            </button>
+            
+            {{/* Carousel Track */}}
+            <div class="overflow-hidden mx-12">
+                <div class="carousel-track flex transition-transform duration-300 ease-in-out" 
+                     :style="`transform: translateX(-${currentIndex * slideWidth}%)`">
+                    {{ range $index, $post := $sortedPosts }}
+                    <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
+                        <article class="carousel-card bg-neutral-50 dark:bg-dark-800 rounded-lg shadow-lg overflow-hidden h-full flex flex-col">
+                            {{/* Featured Image */}}
+                            <a href="{{ .Permalink }}" class="block relative overflow-hidden">
+                                {{ with .Params.featured_image }}
+                                {{ with resources.Get . }}
+                                {{ $postimage := (.Resize "600x webp q85").RelPermalink }}
+                                <div class="w-full h-48 bg-neutral-100 dark:bg-secondary-700 flex items-center justify-center overflow-hidden">
+                                    <img src="{{ $postimage }}" 
+                                         class="max-w-full max-h-full object-contain hover:scale-105 transition-transform duration-300"
+                                         loading="lazy" 
+                                         alt="{{ $.Title }}" />
+                                </div>
+                                {{ end }}
+                                {{ end }}
+                                {{/* Category Badge */}}
+                                <span class="category-badge absolute top-3 right-3 px-3 py-1 text-xs font-medium rounded-full {{ if in .Params.categories "news" }}bg-shu-modern-100 text-shu-modern-800 dark:bg-dark-600 dark:text-shu-modern-400{{ else }}bg-green-100 text-green-800 dark:bg-dark-600 dark:text-green-400{{ end }}">
+                                    {{ if in .Params.categories "news" }}{{ if eq $lang "fr" }}Actualité{{ else }}News{{ end }}{{ else }}Blog{{ end }}
+                                </span>
+                            </a>
+                            
+                            {{/* Content */}}
+                            <div class="p-6 flex-1 flex flex-col">
+                                <div class="flex-1">
+                                    <h3 class="text-xl font-bold mb-2">
+                                        <a href="{{ .Permalink }}" class="text-primary-900 dark:text-white hover:text-primary-600 dark:hover:text-primary-light-500 transition-colors">
+                                            {{ if isset .Params "fronttitle" }}{{ .Params.fronttitle }}{{ else }}{{ .Title }}{{ end }}
+                                        </a>
+                                    </h3>
+                                    <p class="text-neutral-600 dark:text-neutral-300 text-sm mb-4 line-clamp-3">
+                                        {{ .Params.summary }}
+                                    </p>
+                                </div>
+                                
+                                {{/* Footer */}}
+                                <div class="flex items-center justify-between mt-auto pt-4 border-t border-neutral-200 dark:border-secondary-700">
+                                    <time class="text-xs text-neutral-500 dark:text-neutral-400" datetime="{{ .Date.Format "2006-01-02" }}">
+                                        {{ if eq $lang "fr" }}
+                                            {{ .Date.Day }} {{ index $.Site.Data.months (printf "%d" .Date.Month) }} {{ .Date.Year }}
+                                        {{ else }}
+                                            {{ .Date.Format "January 2, 2006" }}
+                                        {{ end }}
+                                    </time>
+                                    <a href="{{ .Permalink }}" class="text-sm font-medium text-primary-600 hover:text-primary-500 dark:text-primary-light-500 dark:hover:text-primary-light-400 inline-flex items-center">
+                                        {{ if eq $lang "fr" }}Lire plus{{ else }}Read more{{ end }}
+                                        <svg class="ml-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    {{ end }}
+                </div>
+            </div>
+            
+            {{/* Next Button */}}
+            <button @click="next()" 
+                    class="carousel-nav-button absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white dark:bg-dark-800 rounded-full p-2 shadow-lg hover:shadow-xl translate-x-4 lg:translate-x-12"
+                    :class="{ 'opacity-50 cursor-not-allowed': currentIndex >= maxIndex }"
+                    :disabled="currentIndex >= maxIndex">
+                <svg class="w-6 h-6 text-primary-600 dark:text-primary-light-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+            </button>
+        </div>
+        
+        {{/* Dots Indicator */}}
+        <div class="carousel-dots flex justify-center mt-6 space-x-2">
+            <template x-for="(dot, index) in dots" :key="index">
+                <button @click="goToSlide(index)" 
+                        class="carousel-dot w-2 h-2 rounded-full"
+                        :class="currentIndex === index ? 'bg-primary-600 dark:bg-primary-light-500 w-8' : 'bg-neutral-300 dark:bg-neutral-600 hover:bg-neutral-400 dark:hover:bg-neutral-500'">
+                </button>
+            </template>
+        </div>
+        
+        {{/* View All Link */}}
+        <div class="text-center mt-8">
+            <a href="{{ if eq $lang "fr" }}{{ relLangURL "/posts" }}{{ else }}{{ relLangURL "/posts" }}{{ end }}" 
+               class="inline-flex items-center px-6 py-3 text-base font-medium text-primary-600 bg-white border border-primary-600 rounded-lg shadow-sm hover:bg-primary-50 hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200 dark:bg-dark-800 dark:text-primary-light-500 dark:border-primary-light-500 dark:hover:bg-dark-700">
+                {{ if eq $lang "fr" }}Voir tous les articles{{ else }}View all articles{{ end }}
+                <svg class="ml-2 w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                </svg>
+            </a>
+        </div>
+    </div>
+</div>
+
+{{/* Alpine.js Carousel Script */}}
+<script>
+function carousel() {
+    return {
+        currentIndex: 0,
+        itemsPerView: 1,
+        totalItems: {{ len $sortedPosts }},
+        
+        init() {
+            this.updateItemsPerView();
+            window.addEventListener('resize', () => {
+                this.updateItemsPerView();
+            });
+            
+            // Auto-play carousel
+            setInterval(() => {
+                if (this.currentIndex < this.maxIndex) {
+                    this.next();
+                } else {
+                    this.currentIndex = 0;
+                }
+            }, 5000);
+        },
+        
+        updateItemsPerView() {
+            if (window.innerWidth >= 1024) {
+                this.itemsPerView = 3;
+            } else if (window.innerWidth >= 768) {
+                this.itemsPerView = 2;
+            } else {
+                this.itemsPerView = 1;
+            }
+        },
+        
+        get slideWidth() {
+            return 100 / this.itemsPerView;
+        },
+        
+        get maxIndex() {
+            return Math.max(0, this.totalItems - this.itemsPerView);
+        },
+        
+        get dots() {
+            const dotsCount = Math.ceil(this.totalItems / this.itemsPerView);
+            return Array.from({ length: dotsCount }, (_, i) => i);
+        },
+        
+        prev() {
+            if (this.currentIndex > 0) {
+                this.currentIndex--;
+            }
+        },
+        
+        next() {
+            if (this.currentIndex < this.maxIndex) {
+                this.currentIndex++;
+            }
+        },
+        
+        goToSlide(index) {
+            this.currentIndex = Math.min(index * this.itemsPerView, this.maxIndex);
+        }
+    }
+}
+</script>

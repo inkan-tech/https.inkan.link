@@ -1,0 +1,68 @@
+{
+  "light_theme": {
+    "primary_red": {
+      "name": "Shu-iro (Traditional Vermillion)",
+      "hex": "#FF3500",
+      "rgb": "255, 53, 0",
+      "usage": "Primary brand color, CTAs, important buttons"
+    },
+    "secondary_red": {
+      "name": "Crimson (Enji-iro)",
+      "hex": "#C93338",
+      "rgb": "201, 51, 56",
+      "usage": "Secondary actions, hover states"
+    },
+    "accent_red": {
+      "name": "Coral (Sango-iro)",
+      "hex": "#F8674F",
+      "rgb": "248, 103, 79",
+      "usage": "Highlights, notifications, alerts"
+    },
+    "neutrals": {
+      "white": "#FFFFFF",
+      "light_gray": "#F8FAFC",
+      "medium_gray": "#6B7280",
+      "dark_gray": "#374151",
+      "black": "#111827"
+    },
+    "semantic": {
+      "success": "#10B981",
+      "warning": "#F59E0B",
+      "error": "#EF4444"
+    }
+  },
+  "dark_theme": {
+    "primary_red": {
+      "name": "Muted Shu-iro",
+      "hex": "#E34234",
+      "rgb": "227, 66, 52",
+      "usage": "Primary brand color, CTAs, important buttons"
+    },
+    "secondary_red": {
+      "name": "Dark Enji-iro",
+      "hex": "#B91C1C",
+      "rgb": "185, 28, 28",
+      "usage": "Secondary actions, hover states"
+    },
+    "accent_red": {
+      "name": "Soft Coral",
+      "hex": "#F87171",
+      "rgb": "248, 113, 113",
+      "usage": "Highlights, notifications, alerts"
+    },
+    "neutrals": {
+      "black": "#0F0F23",
+      "dark_surface": "#1E1E2E",
+      "medium_surface": "#313244",
+      "light_surface": "#45475A",
+      "text_primary": "#F8F9FA",
+      "text_secondary": "#A6ADBB",
+      "white": "#FFFFFF"
+    },
+    "semantic": {
+      "success": "#22C55E",
+      "warning": "#FACC15",
+      "error": "#F87171"
+    }
+  }
+}
