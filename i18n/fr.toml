@@ -66,3 +66,48 @@ siteDescription = "Protection contre la fraude au président et l'usurpation d'i
 
 [wordCount]
 other = "{{ .WordCount }} mots"
+
+# Footer Sections
+[footer]
+[footer.navigation]
+[footer.navigation.product]
+title = "Produit"
+[footer.navigation.product.links]
+overview = "Aperçu"
+howItWorks = "Comment ça marche"
+pricing = "Tarifs"
+challenge = "Défi"
+
+[footer.navigation.company]
+title = "Entreprise"
+[footer.navigation.company.links]
+about = "À propos"
+press = "Presse"
+blog = "Blog"
+contact = "Contact"
+
+[footer.navigation.support]
+title = "Support"
+[footer.navigation.support.links]
+help = "Aide"
+documentation = "Documentation"
+privacy = "Confidentialité"
+terms = "Conditions"
+
+[footer.navigation.connect]
+title = "Se connecter"
+[footer.navigation.connect.links]
+newsletter = "Newsletter"
+linkedin = "LinkedIn"
+
+[footer.download]
+title = "Téléchargements"
+subtitle = "Téléchargez Sealfie sur votre appareil mobile"
+appStore = "Télécharger sur l'App Store"
+googlePlay = "Disponible sur Google Play"
+
+[footer.legal]
+copyright = "&copy; 2025 Inkan.link. Tous droits réservés."
+privacy = "Confidentialité"
+terms = "Conditions"
+sources = "Sources & Recherche"

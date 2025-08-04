@@ -66,3 +66,48 @@ siteDescription = "Protection against CEO fraud and digital identity theft"
 
 [wordCount]
 other = "{{ .WordCount }} words"
+
+# Footer Sections
+[footer]
+[footer.navigation]
+[footer.navigation.product]
+title = "Product"
+[footer.navigation.product.links]
+overview = "Overview"
+howItWorks = "How it Works"
+pricing = "Pricing"
+challenge = "Challenge"
+
+[footer.navigation.company]
+title = "Company"
+[footer.navigation.company.links]
+about = "About"
+press = "Press"
+blog = "Blog"
+contact = "Contact"
+
+[footer.navigation.support]
+title = "Support"
+[footer.navigation.support.links]
+help = "Help"
+documentation = "Documentation"
+privacy = "Privacy"
+terms = "Terms"
+
+[footer.navigation.connect]
+title = "Connect"
+[footer.navigation.connect.links]
+newsletter = "Newsletter"
+linkedin = "LinkedIn"
+
+[footer.download]
+title = "Downloads"
+subtitle = "Download Sealfie on your mobile device"
+appStore = "Download on the App Store"
+googlePlay = "Get it on Google Play"
+
+[footer.legal]
+copyright = "&copy; 2025 Inkan.link. All rights reserved."
+privacy = "Privacy"
+terms = "Terms"
+sources = "Sources & Research"

@@ -2,6 +2,45 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## ⚠️ CRITICAL DESIGN PRINCIPLES - ALWAYS FOLLOW
+
+### UI/UX Design Standards - MANDATORY
+- **CLEAN & MINIMAL**: Always prefer clean, minimal designs over busy, flashy ones
+- **NO EXCESSIVE EFFECTS**: Avoid heavy animations, multiple gradients, excessive shadows, or over-engineered hover effects
+- **PROFESSIONAL TONE**: This is a corporate cybersecurity site - maintain professional, enterprise-ready aesthetics
+- **SUBTLE ENHANCEMENTS**: Use subtle improvements rather than dramatic visual changes
+- **CONSISTENCY FIRST**: Maintain consistency with existing design patterns before adding new ones
+
+### Japanese Design Philosophy - MA (間)
+- **Negative Space**: Embrace whitespace and clean layouts
+- **Simplicity**: Less is more - avoid visual clutter
+- **Balance**: Harmonious proportions and subtle color usage
+- **Restraint**: Resist the urge to add more when less will do
+
+### Approved Design Elements
+- ✅ Clean typography with proper hierarchy
+- ✅ Subtle shadows and borders  
+- ✅ Simple, functional animations (hover states, transitions)
+- ✅ Professional color usage (primary/secondary from theme)
+- ✅ Consistent spacing and alignment
+- ✅ Clear navigation and user flow
+
+### FORBIDDEN Design Elements  
+- ❌ Multiple competing gradients
+- ❌ Excessive backdrop filters or blur effects
+- ❌ Over-animated elements (scaling, bouncing, complex transforms)
+- ❌ Busy background patterns or overlays
+- ❌ Complex layered visual effects
+- ❌ Flashy or gimmicky UI elements
+- ❌ Inconsistent styling or one-off design patterns
+
+### Code Quality Standards
+- **Hugo Best Practices**: Follow Hugo's templating conventions
+- **TailwindCSS**: Use utility classes efficiently, avoid custom CSS unless necessary
+- **Performance**: Optimize images, minimize CSS/JS, use lazy loading appropriately
+- **Accessibility**: Ensure proper ARIA labels, semantic HTML, keyboard navigation
+- **SEO**: Maintain proper meta tags, structured data, and semantic markup
+
 ## Project Overview
 
 This is Inkan.link's corporate website, built with Hugo static site generator and TailwindCSS. The site features bilingual content (French/English) focusing on cybersecurity, deepfake protection, and digital authentication solutions. The main product showcased is Sealfie (https://sealf.ie).
