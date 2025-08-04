@@ -204,6 +204,7 @@ tags: [Tag1, Tag2]
 - **Images not loading**: Check path relative to `assets/` directory
 - **Language switching broken**: Verify `.en.md` and `.fr.md` files exist
 - **Build failures**: Check Hugo version constraints in `config.toml`
+- **Inkan SVG animation missing**: Check fallback text in `<object>` tags hasn't been removed (see Critical SVG Animation Protection above)
 
 ### Development Tips
 - Use `hugo server -O` for open browser on start
@@ -219,6 +220,33 @@ tags: [Tag1, Tag2]
 - For dynamic values, reference CSS variables: `var(--color-primary)`, `var(--color-secondary)`
 - Example: ❌ `content="#192F60"` ✅ `content="var(--color-secondary)"`
 - This ensures consistent theming, easy maintenance, and proper dark mode support
+
+#### Critical SVG Animation Protection
+- **NEVER remove or modify** the Inkan animated SVG in homepage templates
+- **Location**: Both `layouts/index.fr.html` and `layouts/index.en.html` around line 153-156
+- **Critical Code Block** (MUST use img tag with absURL):
+  ```html
+  {{/* CRITICAL: SVG Animation - Must be visible */}}
+  <img src="{{ absURL "/images/inkan-animated-prez.svg" }}" 
+       alt="Inkan illustration animée"    <!-- French version -->
+       alt="Inkan illustrated animation"  <!-- English version -->
+       class="w-full h-auto" 
+       loading="lazy" />
+  ```
+- **IMPORTANT RULES**:
+  - ✅ CORRECT: Use `<img>` tag with `{{ absURL "/images/inkan-animated-prez.svg" }}`
+  - ❌ WRONG: `<object>` tag - browsers block external SVG objects for security
+  - ❌ WRONG: `{{ relURL "/images/inkan-animated-prez.svg" }}` - Relative paths may not work
+  - ❌ WRONG: `/static/images/inkan-animated-prez.svg` - Direct path won't work
+  - ❌ WRONG: `{{ with resources.Get ... }}` - SVG is in /static/, not /assets/
+- **Why img+absURL works**: Browsers load SVG images reliably, animations still work
+- **Why this matters**: This fallback text is essential for accessibility and when SVG fails to load
+- **SVG File**: Located at `/static/images/inkan-animated-prez.svg` - verify exists before editing
+- **Common mistakes**: 
+  - AI assistants often remove fallback text thinking it's redundant
+  - Using wrong path syntax (must use relURL for static files)
+  - Trying to use resources.Get (only works for /assets/ directory)
+- **Protection rule**: When editing homepage templates, ALWAYS preserve the `<object>` tag and its fallback text exactly as-is
 
 #### Security Standards
 - **Content Security Policy (CSP)** implemented in `static/_headers`

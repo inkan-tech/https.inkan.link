@@ -149,9 +149,11 @@
                         <!-- Testimonial card-->
                         <!-- <img src = "static/images/inkan-animated-prez.svg" alt="Inkan.link presentation"/> -->
 
-                        <object data="{{ relURL "/images/inkan-animated-prez.svg" }}" type="image/svg+xml" class="w-full h-auto">
-                            Inkan illustrated animation
-                        </object>
+                        {{/* CRITICAL: SVG Animation - Must be visible */}}
+                        <img src="{{ absURL "/images/inkan-animated-prez.svg" }}" 
+                             alt="Inkan illustrated animation" 
+                             class="w-full h-auto" 
+                             loading="lazy" />
                     </div>
                 </div>
             </div>
