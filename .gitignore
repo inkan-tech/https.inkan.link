@@ -24,3 +24,19 @@ accessibility-english.json
 lighthouse-report*
 lighthouse-local*
 COMPREHENSIVE-WEBSITE-ANALYSIS.md
+
+# Playwright test artifacts
+test-results/
+playwright-report/
+tests/screenshots/
+
+# Visual test snapshots - exclude all generated images
+tests/visual/**/*.png
+tests/visual/**/*.jpg
+tests/visual/**/*.jpeg
+tests/visual/**/*.webp
+tests/visual/**/screenshots/
+tests/visual/**/*-actual.png
+tests/visual/**/*-expected.png
+tests/visual/**/*-diff.png
+tests/visual/**/*-screenshot.png

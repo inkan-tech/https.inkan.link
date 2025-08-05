@@ -3,5 +3,25 @@
     "CodeGPT.apiKey": "CodeGPT Plus Beta",
     "CodeGPT.Autocomplete.provider": "Ollama - codestral:latest",
     "CodeGPT.Autocomplete.maxTokens": 760,
-    "CodeGPT.Autocomplete.suggestionDelay": 2500
+    "CodeGPT.Autocomplete.suggestionDelay": 2500,
+    
+    // Playwright Extension Settings
+    "playwright.showTrace": false,
+    "playwright.reuseBrowser": true,
+    "playwright.showBrowser": false,
+    "testing.automaticallyOpenPeekView": "failureInVisibleDocument",
+    
+    // File Explorer
+    "files.exclude": {
+        "**/test-results": true,
+        "**/playwright-report": true,
+        "**/tests/screenshots": true
+    },
+    
+    // Search Exclude
+    "search.exclude": {
+        "**/test-results": true,
+        "**/playwright-report": true,
+        "**/tests/screenshots": true
+    }
 }
