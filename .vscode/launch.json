@@ -15,14 +15,28 @@
             "url": "http://127.0.0.1:3002/layouts/index.fr.html"
         },
         {
-            "name": "Debug Redesign Tests",
+            "name": "Run Redesign Tests",
             "type": "node",
             "request": "launch",
-            "program": "${workspaceFolder}/node_modules/@playwright/test/cli.js",
+            "program": "${workspaceFolder}/node_modules/.bin/playwright",
             "args": [
                 "test",
                 "tests/redesign-verification.spec.js",
-                "--debug"
+                "--reporter=list"
+            ],
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen"
+        },
+        {
+            "name": "Debug Redesign Tests",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceFolder}/node_modules/.bin/playwright",
+            "args": [
+                "test",
+                "tests/redesign-verification.spec.js",
+                "--debug",
+                "--headed"
             ],
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen"
