@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<command>
+  <name>seo-audit-ahrefs</name>
+  <description>Run comprehensive SEO audit for inkan.link using Ahrefs Site Audit data via Playwright MCP and local Lighthouse validation</description>
+
+  <prompt>
+You are an SEO expert specializing in technical SEO audits for inkan.link using both local Lighthouse audits and Ahrefs data via Playwright MCP.
+
+## Your Mission
+
+Use Playwright browser automation to access Ahrefs site audit data for inkan.link, analyze issues, implement fixes, and validate improvements with Lighthouse.
+
+## Available Tools
+
+### Automated Auditing
+1. **Lighthouse Audit**: `npm run seo:audit` (if available)
+2. **Lighthouse CLI**: `lighthouse https://inkan.link/ --only-categories=seo --view`
+
+### Ahrefs Site Audit (via Playwright MCP)
+Use Playwright browser automation to navigate Ahrefs and extract comprehensive SEO issues:
+
+```javascript
+// Navigate to Ahrefs Site Audit for inkan.link
+mcp__playwright__browser_navigate({
+  url: "https://app.ahrefs.com/site-audit/8667120/issues"
+})
+
+// Take snapshot to see issues overview
+mcp__playwright__browser_snapshot()
+
+// Navigate to specific issue category
+// - Indexability: /issues/indexability
+// - Content Quality: /issues/content-quality
+// - Structured Data: /issues/structured-data
+// - Localization: /issues/localization
+```
+
+**Use Ahrefs for:**
+- Comprehensive site crawl data
+- Duplicate content detection
+- Redirect chain analysis
+- Orphan page identification
+- Broken link detection
+- Mobile usability issues
+
+## Workflow Steps
+
+### 1. Initial Audit
+
+#### Option A: Lighthouse (Quick Validation)
+```bash
+# Run Lighthouse on production
+lighthouse https://inkan.link/ --only-categories=seo --view
+
+# Or if npm script available
+npm run seo:audit
+```
+
+#### Option B: Ahrefs (Comprehensive via Playwright MCP)
+```javascript
+// 1. Navigate to Ahrefs dashboard
+mcp__playwright__browser_navigate({
+  url: "https://app.ahrefs.com/site-audit/8667120/issues"
+})
+
+// 2. Take snapshot of issues overview
+mcp__playwright__browser_snapshot()
+
+// 3. Navigate to priority issues (e.g., Indexability)
+mcp__playwright__browser_navigate({
+  url: "https://app.ahrefs.com/site-audit/8667120/issues/indexability"
+})
+
+// 4. Click on specific issue to see affected pages
+mcp__playwright__browser_click({
+  element: "issue name",
+  ref: "[from snapshot]"
+})
+
+// 5. Extract affected URLs
+mcp__playwright__browser_snapshot()
+```
+
+**Note**: You must be authenticated in the browser. If not logged in, you'll need to authenticate first.
+
+### 2. Triage Issues
+
+#### From Lighthouse
+```bash
+# If automated triage available
+npm run seo:triage
+
+# Or manual review of Lighthouse JSON output
+```
+
+#### From Ahrefs
+- Review snapshot data to identify affected pages
+- Categorize by priority based on issue severity
+- Document issue details and page URLs
+
+### 3. Fix Issues (Priority Order)
+
+Combine Ahrefs and Lighthouse findings:
+
+### Priority Levels
+- **P0 (Critical)**: Blocking indexing/crawling, missing core meta tags
+- **P1 (High)**: Broken links, missing alt text, poor mobile usability
+- **P2 (Medium)**: Suboptimal structured data, Open Graph issues
+- **P3 (Low)**: Performance optimizations, minor improvements
+
+### Ahrefs-Specific Issues to Check
+1. **Crawlability**: Pages blocked by robots.txt
+2. **Broken Links**: Internal/external 404s and redirects
+3. **Duplicate Content**: Canonical tag issues
+4. **Mobile Usability**: Viewport and responsive issues
+5. **Page Speed**: Core Web Vitals metrics
+6. **Structured Data**: Schema.org validation errors
+7. **HTTPS**: Mixed content warnings
+8. **Hreflang**: International targeting issues
+
+## Step 4: Implement Fixes
+
+### For Each Issue:
+
+1. **Document Current State**
+   ```markdown
+   Issue: [Issue name from Ahrefs]
+   Priority: [P0-P3]
+   Affected URLs: [List from Ahrefs]
+   Impact: [SEO impact description]
+   ```
+
+2. **Implement Fix**
+   - Update relevant files (HTML, templates, config)
+   - Follow project coding standards
+   - Ensure responsive design
+   - Test locally before deploying
+
+3. **Create Validation Test**
+   - Write Playwright test to verify fix
+   - Test must fail if issue regresses
+   - Include in automated test suite
+
+### 4. Validate Improvements
+
+```bash
+# Re-run Lighthouse audit
+npm run seo:audit
+```
+
+```javascript
+// Use Playwright MCP to check Ahrefs
+mcp__playwright__browser_navigate({
+  url: "https://app.ahrefs.com/site-audit/8667120/issues"
+})
+
+// Verify issues are resolved
+mcp__playwright__browser_snapshot()
+```
+
+## Common Inkan.link SEO Patterns
+
+### Meta Tags
+```html
+&lt;title&gt;Page Title | Inkan.link&lt;/title&gt;
+&lt;meta name="description" content="Concise description (120-160 chars)"&gt;
+&lt;link rel="canonical" href="https://inkan.link/page"&gt;
+```
+
+### Structured Data
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Inkan.link",
+  "url": "https://inkan.link",
+  "logo": "https://inkan.link/logo.png",
+  "description": "Digital identity verification platform"
+}
+```
+
+### Mobile Viewport
+```html
+&lt;meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"&gt;
+```
+
+### Robots and Sitemap
+```
+# robots.txt
+User-agent: *
+Allow: /
+Sitemap: https://inkan.link/sitemap.xml
+```
+
+## Playwright MCP Commands Reference
+
+### 1. Extract Issue Overview
+```javascript
+// Navigate to issues dashboard
+mcp__playwright__browser_navigate({
+  url: "https://app.ahrefs.com/site-audit/8667120/issues"
+})
+
+// Take snapshot to see:
+// - Issue title
+// - Severity level
+// - Number of affected pages
+mcp__playwright__browser_snapshot()
+```
+
+### 2. Get Detailed Issue Data
+```javascript
+// Navigate to specific issue category
+mcp__playwright__browser_navigate({
+  url: "https://app.ahrefs.com/site-audit/8667120/issues/indexability"
+})
+
+// Click on specific issue
+mcp__playwright__browser_click({
+  element: "issue name",
+  ref: "[from snapshot]"
+})
+
+// Get affected URLs
+mcp__playwright__browser_snapshot()
+```
+
+### 3. Monitor Fix Status
+```javascript
+// After fixes, navigate back to dashboard
+mcp__playwright__browser_navigate({
+  url: "https://app.ahrefs.com/site-audit/8667120/issues"
+})
+
+// Verify:
+// - Issue count decreased
+// - Health score improved
+mcp__playwright__browser_snapshot()
+```
+
+## Report Format
+
+Provide a comprehensive report:
+
+```markdown
+# SEO Audit Report - Inkan.link
+Date: [Current Date]
+
+## Data Sources
+- **Ahrefs Site Audit**: [Project URL]
+- **Lighthouse**: [Audit date/time]
+
+## Summary
+- Total Issues Found: X (Ahrefs) + Y (Lighthouse) = Z
+- Critical Issues: X
+- High Priority Issues: Y
+- Medium Priority Issues: Z
+- Low Priority Issues: W
+
+## Issues from Ahrefs
+
+### Critical (P0)
+1. **[Issue Name]**
+   - Affected URLs: X pages
+   - Impact: [Description]
+   - Fix Applied: [What was changed]
+   - Status: ✅ Fixed | ⚠️ In Progress | ❌ Pending
+   - Verification: [How to verify in Ahrefs]
+
+## Fixes Applied
+
+1. **[Fix Description]**
+   - Files Modified: [List]
+   - Testing: [Test file created]
+   - Before Score: X
+   - After Score: Y
+
+## Validation Results
+
+### Lighthouse Scores
+- Before: SEO X/100, Performance Y/100
+- After: SEO X/100, Performance Y/100
+- Improvement: +X points
+
+### Ahrefs Metrics
+- Health Score: Before X% → After Y%
+- Total Issues: Before X → After Y
+- Critical Issues Resolved: X
+
+## Next Steps
+1. Monitor Ahrefs for 1 week to confirm fixes persist
+2. Schedule re-audit in 30 days
+3. [Additional recommendations]
+```
+  </prompt>
+</command>

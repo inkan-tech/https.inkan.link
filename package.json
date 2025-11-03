@@ -4,12 +4,15 @@
   "description": "Inkan.link deepfake proof digital services",
   "main": "index.js",
   "devDependencies": {
+    "@axe-core/playwright": "^4.10.2",
+    "@playwright/test": "^1.54.2",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/forms": "^0.5.10",
     "@tailwindcss/typography": "^0.5.16",
     "alpinejs": "^3.14.9",
     "autoprefixer": "^10.4.20",
     "concurrently": "^9.1.2",
+    "playwright": "^1.54.2",
     "postcss": "^8.4.31",
     "postcss-cli": "^11.0.0",
     "tailwindcss": "^3.4.14"
@@ -30,7 +33,21 @@
     "lighthouse": "lighthouse https://inkan.link --config-path=./lighthouse-config.js --output html --output json --output-path=./lighthouse-report",
     "lighthouse:local": "hugo server & sleep 3 && lighthouse http://localhost:1313 --config-path=./lighthouse-config.js --output html --output json --output-path=./lighthouse-local && pkill hugo",
     "accessibility": "axe https://inkan.link --save ./accessibility-report.json",
-    "setup:analysis": "npm install -g lighthouse @axe-core/cli pa11y playwright && playwright install chromium"
+    "setup:analysis": "npm install -g lighthouse @axe-core/cli pa11y playwright && playwright install chromium",
+    "test:visual": "playwright test tests/visual/",
+    "test:console": "playwright test tests/console-monitor.spec.js",
+    "test:a11y": "playwright test tests/accessibility.spec.js",
+    "test:screenshots": "playwright test tests/screenshot-capture.spec.js",
+    "test:redesign": "playwright test tests/redesign-verification.spec.js",
+    "test:redesign:summary": "playwright test tests/redesign-summary.spec.js",
+    "test:security": "playwright test tests/security-verification.spec.js",
+    "test:sitemap": "playwright test tests/sitemap-coverage.spec.js",
+    "test:all": "playwright test",
+    "test:ui": "playwright test --ui",
+    "test:debug": "playwright test --debug",
+    "test:update": "playwright test --update-snapshots",
+    "playwright:install": "npx playwright install",
+    "playwright:report": "npx playwright show-report"
   },
   "repository": {
     "type": "git",
@@ -51,6 +68,5 @@
   ],
   "author": "Inkan.link SAS",
   "license": "Apache-2.0",
-  "homepage": "https://inkan.link",
-  "dependencies": {}
+  "homepage": "https://inkan.link"
 }

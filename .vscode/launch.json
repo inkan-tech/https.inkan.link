@@ -1,4 +1,5 @@
 {
+    "version": "0.2.0",
     "configurations": [
         {
             "name": "Attach to Chrome",
@@ -12,6 +13,85 @@
             "name": "http://127.0.0.1:3002/layouts/index.fr.html",
             "request": "launch",
             "url": "http://127.0.0.1:3002/layouts/index.fr.html"
+        },
+        {
+            "name": "Run Redesign Tests",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceFolder}/node_modules/.bin/playwright",
+            "args": [
+                "test",
+                "tests/redesign-verification.spec.js",
+                "--reporter=list"
+            ],
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen"
+        },
+        {
+            "name": "Debug Redesign Tests",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceFolder}/node_modules/.bin/playwright",
+            "args": [
+                "test",
+                "tests/redesign-verification.spec.js",
+                "--debug",
+                "--headed"
+            ],
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen"
+        },
+        {
+            "name": "Debug Redesign Summary",
+            "type": "node", 
+            "request": "launch",
+            "program": "${workspaceFolder}/node_modules/@playwright/test/cli.js",
+            "args": [
+                "test",
+                "tests/redesign-summary.spec.js",
+                "--debug"
+            ],
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen"
+        },
+        {
+            "name": "Debug Visual Tests",
+            "type": "node",
+            "request": "launch", 
+            "program": "${workspaceFolder}/node_modules/@playwright/test/cli.js",
+            "args": [
+                "test",
+                "tests/visual/",
+                "--debug"
+            ],
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen"
+        },
+        {
+            "name": "Debug Security Tests",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceFolder}/node_modules/@playwright/test/cli.js",
+            "args": [
+                "test",
+                "tests/security-verification.spec.js",
+                "--debug"
+            ],
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen"
+        },
+        {
+            "name": "Debug Sitemap Coverage",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceFolder}/node_modules/@playwright/test/cli.js",
+            "args": [
+                "test",
+                "tests/sitemap-coverage.spec.js",
+                "--debug"
+            ],
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen"
         }
     ]
 }
