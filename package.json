@@ -42,6 +42,7 @@
     "test:redesign:summary": "playwright test tests/redesign-summary.spec.js",
     "test:security": "playwright test tests/security-verification.spec.js",
     "test:sitemap": "playwright test tests/sitemap-coverage.spec.js",
+    "test:seo": "playwright test tests/seo/ --grep @ahrefs",
     "test:all": "playwright test",
     "test:ui": "playwright test --ui",
     "test:debug": "playwright test --debug",
