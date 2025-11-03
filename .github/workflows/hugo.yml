@@ -82,8 +82,26 @@ jobs:
     runs-on: ubuntu-latest
     needs: deploy
     steps:
-      - name: Notify search engines via IndexNow
-        uses: bojieyang/indexnow-action@v2
-        with:
-          sitemap-location: 'https://inkan.link/sitemap.xml'
-          key: ${{ secrets.INDEXNOW_KEY }}
+      - name: Notify Bing via IndexNow (French sitemap)
+        run: |
+          curl -X GET "https://www.bing.com/indexnow?url=https://inkan.link/fr/sitemap.xml&key=${{ secrets.INDEXNOW_KEY }}"
+
+      - name: Notify Yandex via IndexNow (French sitemap)
+        run: |
+          curl -X GET "https://yandex.com/indexnow?url=https://inkan.link/fr/sitemap.xml&key=${{ secrets.INDEXNOW_KEY }}"
+
+      - name: Notify IndexNow.org (French sitemap)
+        run: |
+          curl -X GET "https://api.indexnow.org/indexnow?url=https://inkan.link/fr/sitemap.xml&key=${{ secrets.INDEXNOW_KEY }}"
+
+      - name: Notify Bing via IndexNow (English sitemap)
+        run: |
+          curl -X GET "https://www.bing.com/indexnow?url=https://inkan.link/en/sitemap.xml&key=${{ secrets.INDEXNOW_KEY }}"
+
+      - name: Notify Yandex via IndexNow (English sitemap)
+        run: |
+          curl -X GET "https://yandex.com/indexnow?url=https://inkan.link/en/sitemap.xml&key=${{ secrets.INDEXNOW_KEY }}"
+
+      - name: Notify IndexNow.org (English sitemap)
+        run: |
+          curl -X GET "https://api.indexnow.org/indexnow?url=https://inkan.link/en/sitemap.xml&key=${{ secrets.INDEXNOW_KEY }}"
