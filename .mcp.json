@@ -1,0 +1,18 @@
+{
+  "mcpServers": {
+    "browsermcp": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@browsermcp/mcp@latest"
+      ]
+    },
+    "docker": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-docker"
+      ]
+    }
+  }
+}
