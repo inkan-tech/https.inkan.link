@@ -40,3 +40,5 @@ tests/visual/**/*-actual.png
 tests/visual/**/*-expected.png
 tests/visual/**/*-diff.png
 tests/visual/**/*-screenshot.png
+# Audit scripts
+audit-*.sh
