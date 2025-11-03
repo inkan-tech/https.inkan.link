@@ -7,18 +7,23 @@
   X-XSS-Protection: 1; mode=block
   Referrer-Policy: strict-origin-when-cross-origin
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
-  
+
   # Enhanced Permissions Policy
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), bluetooth=(), accelerometer=(), gyroscope=(), magnetometer=(), ambient-light-sensor=(), encrypted-media=(), picture-in-picture=()
-  
+
   # Content Security Policy - Production Grade
   Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.matomo.cloud https://chimpstatic.com https://sealfie.matomo.cloud; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: http:; media-src 'self'; object-src 'none'; frame-src 'none'; frame-ancestors 'none'; connect-src 'self' https://sealfie.matomo.cloud https://cdn.matomo.cloud https://api.github.com; base-uri 'self'; form-action 'self'; upgrade-insecure-requests; block-all-mixed-content
-  
+
   # Additional Security Headers
   Cross-Origin-Embedder-Policy: require-corp
   Cross-Origin-Opener-Policy: same-origin
   Cross-Origin-Resource-Policy: same-site
-  
+
+  # Compression Headers
+  Content-Encoding: gzip
+  X-Content-Encoding: gzip
+  Vary: Accept-Encoding
+
   # Performance Headers
   Cache-Control: public, max-age=31536000, immutable
 

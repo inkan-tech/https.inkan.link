@@ -3,30 +3,48 @@
 {{- if or (in .Content "sealfie") (in .Content "Sealfie") (in .Content "sealf.ie") -}}
   {{ partial "sealfie_product_schema" . }}
 {{- end -}}
-{{/* Optimized title tags for better SEO */}}
-<title itemprop="name">
+{{/* Optimized title tags for better SEO with length control (50-60 chars optimal) */}}
+{{ $title := "" }}
 {{- if .IsHome -}}
   {{- if eq .Language.Lang "fr" -}}
-    Inkan.link - Protection contre la fraude au président et l'usurpation d'identité
+    {{ $title = "Inkan.link - Protection contre la fraude au président" }}
   {{- else -}}
-    Inkan.link - Protection against CEO fraud and identity theft
+    {{ $title = "Inkan.link - CEO fraud and identity theft protection" }}
   {{- end -}}
 {{- else if eq .Type "posts" -}}
-  {{ .Title }} | {{ if eq .Language.Lang "fr" }}Blog Cybersécurité{{ else }}Cybersecurity Blog{{ end }} | {{ .Site.Title }}
+  {{ $blogSuffix := cond (eq .Language.Lang "fr") "Blog" "Blog" }}
+  {{ $title = printf "%s | %s" .Title $blogSuffix }}
 {{- else -}}
-  {{ .Title }} | {{ .Site.Title }}
+  {{ $title = printf "%s | %s" .Title .Site.Title }}
 {{- end -}}
-</title>
-{{ if .Description }}
+{{/* Ensure title is within optimal length (50-60 chars) */}}
+{{ if gt (len $title) 60 }}
+  {{ $title = $title | truncate 58 }}
+{{ end }}
+<title itemprop="name">{{ $title }}</title>
 <!-- can force a canonical description as a param in the md -->
 {{- if isset .Params "canonical" -}}
   <link rel="canonical" href="{{ .Params.canonical }}" />
 {{- else -}}
   <link rel="canonical" href="{{ .Permalink }}" />
 {{- end }}
-<meta name="description" content="{{ .Description }}" />
-<meta property="og:description" content="{{ .Description }}" />
-{{end}}
+{{/* Enhanced meta description with smart fallbacks */}}
+{{ $description := "" }}
+{{ if .Description }}
+  {{ $description = .Description }}
+{{ else if .Summary }}
+  {{ $description = .Summary | plainify | truncate 155 }}
+{{ else if .Site.Params.description }}
+  {{ $description = .Site.Params.description }}
+{{ else }}
+  {{ $description = .Title | plainify }}
+{{ end }}
+{{/* Ensure description is within optimal length (120-160 chars) */}}
+{{ if gt (len $description) 160 }}
+  {{ $description = $description | truncate 155 }}
+{{ end }}
+<meta name="description" content="{{ $description }}" />
+<meta property="og:description" content="{{ $description }}" />
 {{/* Enhanced Open Graph and Twitter meta tags */}}
 <meta property="og:title" content="{{ if .IsHome }}{{ if eq .Language.Lang "fr" }}Inkan.link - Protection contre la fraude au président{{ else }}Inkan.link - CEO fraud protection{{ end }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}" />
 <meta name="twitter:title" content="{{ if .IsHome }}{{ if eq .Language.Lang "fr" }}Inkan.link - Protection contre la fraude au président{{ else }}Inkan.link - CEO fraud protection{{ end }}{{ else }}{{ .Title }}{{ end }}" />
@@ -67,7 +85,7 @@
 {{ else if .Site.Params.twitter_creator }}
 <meta name="twitter:creator" content="{{ .Site.Params.twitter_creator }}" />
 {{ end }}
-<meta name="twitter:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ if eq .Language.Lang "fr" }}{{ .Site.Params.description }}{{ else }}Secure your business communications against CEO fraud and identity theft{{ end }}{{ end }}" />
+<meta name="twitter:description" content="{{ $description }}" />
 {{ if .Params.og_image }}
 <meta name="twitter:image" content="{{ .Site.BaseURL }}{{ .Params.og_image | relURL }}" />
 {{ if .Params.og_image_alt }}

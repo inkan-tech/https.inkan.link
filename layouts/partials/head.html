@@ -32,8 +32,23 @@
 <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}" />
 {{ end }}
 {{ if .IsTranslated }}
+	{{/* Self-referencing hreflang - page references itself */}}
+	<link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}" title="{{ .Language.LanguageName }}">
+	{{/* Translations - reciprocal hreflang tags */}}
 	{{ range .Translations }}
 	<link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}" title="{{ .Language.LanguageName }}">
+	{{ end }}
+	{{/* x-default hreflang - fallback to French (default language) */}}
+	{{ if eq .Language.Lang "fr" }}
+	<link rel="alternate" hreflang="x-default" href="{{ .Permalink }}">
+	{{ else }}
+	{{ with .Translations }}
+		{{ range . }}
+			{{ if eq .Language.Lang "fr" }}
+	<link rel="alternate" hreflang="x-default" href="{{ .Permalink }}">
+			{{ end }}
+		{{ end }}
+	{{ end }}
 	{{ end }}
 {{ end }}
 <!-- Critical CSS inline for above-the-fold content -->
