@@ -16,7 +16,7 @@ twitter_creator: "@SealfieApp"
 ---
 
 
-# La Loi
+## La Loi
 
 En France, la preuve peut être apportée par tout moyen, sauf si la loi en dispose autrement (article 1358 du Code civil). Un commencement de preuve par écrit peut être constitué par tout écrit qui rend vraisemblable ce qui est allégué, ainsi que par les déclarations faites par une partie lors de sa comparution personnelle, son refus de répondre ou son absence à la comparution. De plus, la mention d'un écrit authentique ou sous signature privée sur un registre public vaut commencement de preuve par écrit (article 1362 du Code civil). Si l'écrit n'est pas possible, il peut être suppléé par l'aveu judiciaire, le serment décisoire ou un commencement de preuve par écrit corroboré par un autre moyen de preuve (article 1361 du Code civil). La preuve par témoins peut être reçue pour le dépôt nécessaire, même quand il s'agit d'une valeur supérieure au chiffre prévu à l'article 1359 du Code civil (article 1950 du Code civil). Enfin, il incombe à chaque partie de prouver conformément à la loi
 
