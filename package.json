@@ -4,18 +4,18 @@
   "description": "Inkan.link deepfake proof digital services",
   "main": "index.js",
   "devDependencies": {
-    "@axe-core/playwright": "^4.10.2",
-    "@playwright/test": "^1.54.2",
+    "@axe-core/playwright": "^4.11.0",
+    "@playwright/test": "^1.56.1",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/forms": "^0.5.10",
-    "@tailwindcss/typography": "^0.5.16",
-    "alpinejs": "^3.14.9",
-    "autoprefixer": "^10.4.20",
-    "concurrently": "^9.1.2",
+    "@tailwindcss/typography": "^0.5.19",
+    "alpinejs": "^3.15.1",
+    "autoprefixer": "^10.4.21",
+    "concurrently": "^9.2.1",
     "playwright": "^1.54.2",
-    "postcss": "^8.4.31",
-    "postcss-cli": "^11.0.0",
-    "tailwindcss": "^3.4.14"
+    "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.1",
+    "tailwindcss": "^3.4.18"
   },
   "notes": {
     "tailwindcss": "Do not upgrade to 4.x as it requires substantial changes"
