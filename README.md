@@ -18,4 +18,4 @@ Using act to run actions locally (Docker) installed with ```brew install act```
 
 Might come handy for some scripts
 
-```brew install tailwindcss```
+```brew install tailwindcss```# Cache bust Tue Nov  4 08:58:33 CET 2025
