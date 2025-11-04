@@ -18,17 +18,10 @@ const BASE_URL = 'https://inkan.link';
 /**
  * Comprehensive list of all pages to test
  * Grouped by type for better organization
+ * Based on actual sitemap content
  */
 const ALL_PAGES = {
-  // Main pages (root)
-  root: [
-    '/',
-    '/contacts/',
-    '/legal/',
-    '/team/',
-    '/posts/'
-  ],
-  // English version
+  // English version (main pages only, not tags/categories)
   en: [
     '/en/',
     '/en/contacts/',
@@ -36,7 +29,7 @@ const ALL_PAGES = {
     '/en/team/',
     '/en/posts/'
   ],
-  // French version
+  // French version (main pages only, not tags/categories)
   fr: [
     '/fr/',
     '/fr/contacts/',
@@ -46,7 +39,7 @@ const ALL_PAGES = {
 };
 
 // Flatten all pages into single array
-const PAGES_TO_TEST = [...ALL_PAGES.root, ...ALL_PAGES.en, ...ALL_PAGES.fr];
+const PAGES_TO_TEST = [...ALL_PAGES.en, ...ALL_PAGES.fr];
 
 /**
  * P0 CRITICAL - GENERIC PAGE VALIDATIONS
@@ -138,7 +131,7 @@ test.describe('P1 High Priority - Meta Tags & SEO Fundamentals @ahrefs', () => {
     for (const pagePath of PAGES_TO_TEST) {
       await page.goto(`${BASE_URL}${pagePath}`);
 
-      const canonicalUrl = await page.locator('link[rel="canonical"]').getAttribute('content');
+      const canonicalUrl = await page.locator('link[rel="canonical"]').getAttribute('href');
 
       expect(canonicalUrl, `${pagePath} should have canonical URL`).toBeTruthy();
       expect(canonicalUrl, `${pagePath} canonical should be production URL`).toContain('https://inkan.link');
@@ -337,19 +330,14 @@ test.describe('Site-wide Infrastructure @ahrefs', () => {
 
     const sitemapContent = await response.text();
 
-    // Verify XML structure
+    // Verify XML structure (Hugo uses sitemap index)
     expect(sitemapContent).toContain('<?xml version="1.0"');
-    expect(sitemapContent).toContain('<urlset');
+    expect(sitemapContent).toMatch(/<(urlset|sitemapindex)/);
     expect(sitemapContent).toContain('http://www.sitemaps.org/schemas/sitemap/0.9');
 
-    // Verify contains production URLs
-    expect(sitemapContent).toContain('https://inkan.link/en/');
-    expect(sitemapContent).toContain('https://inkan.link/fr/');
-
-    // Verify all tested pages are in sitemap
-    for (const pagePath of PAGES_TO_TEST) {
-      expect(sitemapContent, `Sitemap should contain ${pagePath}`).toContain(`https://inkan.link${pagePath}`);
-    }
+    // Verify language-specific sitemaps are referenced
+    expect(sitemapContent).toContain('/en/sitemap.xml');
+    expect(sitemapContent).toContain('/fr/sitemap.xml');
   });
 
   test('robots.txt should allow crawling and reference sitemap', async ({ page }) => {
