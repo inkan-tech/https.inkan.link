@@ -397,7 +397,7 @@ test.describe('Performance & Best Practices @ahrefs', () => {
       expect(faviconExists, `${pagePath} should have favicon`).toBe(true);
 
       if (faviconExists) {
-        const faviconHref = await favicon.getAttribute('href');
+        const faviconHref = await favicon.first().getAttribute('href');
         expect(faviconHref, `${pagePath} favicon should exist`).toBeTruthy();
       }
     }

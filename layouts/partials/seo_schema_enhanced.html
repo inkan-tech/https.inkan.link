@@ -3,12 +3,15 @@
 {{- $isArticle := false -}}
 {{- $isHome := .IsHome -}}
 {{- $isBlog := eq .Type "posts" -}}
+{{- $isContact := or (in .RelPermalink "contact") (in .Title "ontact") -}}
 
 {{- if $isBlog -}}
   {{- $schemaType = "Article" -}}
   {{- $isArticle = true -}}
 {{- else if $isHome -}}
   {{- $schemaType = "WebSite" -}}
+{{- else if $isContact -}}
+  {{- $schemaType = "ContactPage" -}}
 {{- else -}}
   {{- $schemaType = "WebPage" -}}
 {{- end -}}
@@ -64,7 +67,20 @@
       "mainEntity": {
         "@id": "{{ .Permalink }}#main-entity"
       }
+    },
+    {{- if $isHome }}
+    {
+      "@type": "WebPage",
+      "@id": "{{ .Permalink }}#webpage",
+      "url": "{{ .Permalink }}",
+      "name": "{{ .Title }}",
+      "description": "{{ .Site.Params.description }}",
+      "inLanguage": "{{ .Language.Lang }}",
+      "isPartOf": {
+        "@id": "{{ .Site.BaseURL }}#website"
+      }
     }
+    {{- end }}
     {{- if $isArticle }},
     {
       "@type": "Article",
@@ -114,7 +130,7 @@
     }
     {{- else if not $isHome }},
     {
-      "@type": "WebPage",
+      "@type": "{{ $schemaType }}",
       "@id": "{{ .Permalink }}#webpage",
       "url": "{{ .Permalink }}",
       "name": "{{ .Title }}",
