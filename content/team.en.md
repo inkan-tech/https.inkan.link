@@ -1,10 +1,10 @@
 ---
-title: "The team"
+title: "Our cybersecurity and blockchain team"
 date: 2021-11-15T11:10:36+08:00
 draft: false
 language: en
 summary: The Inkan.link team
-description: The team
+description: Meet the Inkan.link team - cybersecurity experts, blockchain specialists, and advisors dedicated to protecting businesses from CEO fraud and deepfake threats.
 featured_image: images/featured/SquircleLogoInkan.webp
 categories: Site
 og_image_alt: "Inkan.link team - Cybersecurity experts and blockchain innovation specialists"

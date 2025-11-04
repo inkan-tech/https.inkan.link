@@ -70,7 +70,7 @@ sitename = "Inkan.link"
 twitter = "@SealfieApp"
 twitter_site = "@SealfieApp"
 twitter_creator = "@SealfieApp"
-description = "Inkan.link have confidence in who you are communicating with"
+description = "Protect your business from CEO fraud and identity theft with Inkan.link's blockchain-based authentication technology. Stop deepfake scams instantly."
 
 # Enhanced SEO parameters
 keywords = "cybersécurité, fraude président, usurpation identité, blockchain, sécurité entreprise, deepfakes, authentification"
@@ -150,7 +150,7 @@ copyright = 'Inkan.link reserved'
     weight = 1
     [languages.fr.params]
       # linkedin = 'https://linkedin.com/fr/whoever'
-        description = "Inkan.link être sûr de son interlocuteur " 
+        description = "Protégez votre entreprise contre la fraude au président et l'usurpation d'identité avec la technologie blockchain d'Inkan.link. Stoppez les arnaques aux deepfakes instantanément." 
       [languages.fr.params.navigation]
         about = 'A propos'
         team = "L'équipe"      

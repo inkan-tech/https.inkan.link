@@ -1,8 +1,9 @@
 ---
-title: "Contacts"
+title: "Nous contacter - Experts cybersécurité"
 date: 2021-11-15T11:10:36+08:00
 draft: false
 language: fr
+description: Contactez Inkan.link pour des solutions d'authentification blockchain entreprise. Protégez votre activité contre la fraude au président et les deepfakes.
 featured_image: images/featured/contact-us.jpeg
 categories: Site
 og_image_alt: "Contacter Inkan.link - Équipe professionnelle prête à vous accompagner dans vos solutions de cybersécurité"

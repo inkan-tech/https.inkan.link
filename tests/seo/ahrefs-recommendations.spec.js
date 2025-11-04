@@ -21,7 +21,7 @@ const BASE_URL = 'https://inkan.link';
  * Based on actual sitemap content
  */
 const ALL_PAGES = {
-  // English version (main pages only, not tags/categories)
+  // English version (with /en/ prefix)
   en: [
     '/en/',
     '/en/contacts/',
@@ -29,12 +29,13 @@ const ALL_PAGES = {
     '/en/team/',
     '/en/posts/'
   ],
-  // French version (main pages only, not tags/categories)
+  // French version (no prefix - default language)
   fr: [
-    '/fr/',
-    '/fr/contacts/',
-    '/fr/legal/',
-    '/fr/posts/'
+    '/',
+    '/contacts/',
+    '/legal/',
+    '/team/',
+    '/posts/'
   ]
 };
 

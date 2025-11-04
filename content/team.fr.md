@@ -1,5 +1,5 @@
 ---
-title: "L'équipe"
+title: "Notre équipe cybersécurité et blockchain"
 date: 2021-11-15T11:10:36+08:00
 draft: false
 language: fr
