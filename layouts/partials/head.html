@@ -33,10 +33,10 @@
 {{ end }}
 {{ if .IsTranslated }}
 	{{/* Self-referencing hreflang - page references itself */}}
-	<link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}" title="{{ .Language.LanguageName }}">
+	<link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}">
 	{{/* Translations - reciprocal hreflang tags */}}
 	{{ range .Translations }}
-	<link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}" title="{{ .Language.LanguageName }}">
+	<link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}">
 	{{ end }}
 	{{/* x-default hreflang - fallback to English (international audience) */}}
 	{{ if eq .Language.Lang "en" }}
