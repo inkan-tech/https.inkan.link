@@ -356,6 +356,90 @@ test.describe('Site-wide Infrastructure @ahrefs', () => {
 });
 
 /**
+ * CROSS-DOMAIN LINK VERIFICATION
+ * Monitors links to sealf.ie (product site) from inkan.link (corporate site)
+ * Addresses Ahrefs "uncrawled links" issue by verifying all cross-domain links work
+ */
+test.describe('Cross-Domain Links - inkan.link → sealf.ie @ahrefs @cross-domain', () => {
+
+  test('all sealf.ie links should return 200 status', async ({ page }) => {
+    const sealf_links = new Set();
+
+    // Collect all sealf.ie links from inkan.link pages
+    for (const pagePath of PAGES_TO_TEST) {
+      await page.goto(`${BASE_URL}${pagePath}`);
+
+      const links = await page.locator('a[href*="sealf.ie"]').all();
+
+      for (const link of links) {
+        const href = await link.getAttribute('href');
+        // Filter to only HTTP/HTTPS links (exclude mailto:, tel:, etc.)
+        if (href && href.includes('sealf.ie') && (href.startsWith('http://') || href.startsWith('https://'))) {
+          sealf_links.add(href);
+        }
+      }
+    }
+
+    console.log(`\n📊 Found ${sealf_links.size} unique sealf.ie links to verify\n`);
+
+    // Verify each unique sealf.ie link returns 200
+    for (const link of sealf_links) {
+      const response = await page.request.get(link);
+      expect(response.status(), `${link} should return 200`).toBe(200);
+    }
+  });
+
+  test('sealf.ie links should have appropriate anchor text', async ({ page }) => {
+    for (const pagePath of PAGES_TO_TEST) {
+      await page.goto(`${BASE_URL}${pagePath}`);
+
+      const links = await page.locator('a[href*="sealf.ie"]').all();
+
+      for (const link of links) {
+        const href = await link.getAttribute('href');
+        const anchorText = await link.textContent();
+
+        // Anchor text should exist and be descriptive
+        expect(anchorText?.trim(), `Link to ${href} should have anchor text`).toBeTruthy();
+        expect(anchorText?.trim().length, `Link to ${href} should have descriptive anchor (>3 chars)`).toBeGreaterThan(3);
+      }
+    }
+  });
+
+  test('sealf.ie links should not be marked as nofollow', async ({ page }) => {
+    // Since sealf.ie is owned by same company, links should pass PageRank
+    for (const pagePath of PAGES_TO_TEST) {
+      await page.goto(`${BASE_URL}${pagePath}`);
+
+      const nofollowLinks = await page.locator('a[href*="sealf.ie"][rel*="nofollow"]').count();
+
+      expect(nofollowLinks, `${pagePath} should not have nofollow on sealf.ie links (same company)`).toBe(0);
+    }
+  });
+
+  test('sealf.ie link distribution should be balanced across pages', async ({ page }) => {
+    const linkCounts = new Map();
+
+    for (const pagePath of PAGES_TO_TEST) {
+      await page.goto(`${BASE_URL}${pagePath}`);
+
+      const linkCount = await page.locator('a[href*="sealf.ie"]').count();
+      linkCounts.set(pagePath, linkCount);
+    }
+
+    // Every page should have at least one link to product site
+    for (const [pagePath, count] of linkCounts) {
+      expect(count, `${pagePath} should link to sealf.ie at least once`).toBeGreaterThan(0);
+    }
+
+    console.log('\n📊 Sealf.ie link distribution:');
+    for (const [pagePath, count] of linkCounts) {
+      console.log(`  ${pagePath}: ${count} links`);
+    }
+  });
+});
+
+/**
  * PERFORMANCE & BEST PRACTICES
  * Additional optimizations for better rankings
  */

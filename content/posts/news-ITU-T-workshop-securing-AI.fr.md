@@ -53,4 +53,4 @@ Nicolas a conclu en soulignant le besoin crucial de protéger les informations d
 
 Cette présentation sert d'avertissement aux dirigeants d'entreprise, aux professionnels de l'IT et aux experts en cybersécurité. Alors que les activités criminelles alimentées par l'IA deviennent plus sophistiquées et accessibles, il est crucial de rester informé et de développer de nouvelles stratégies pour protéger les identités numériques et maintenir la confiance dans notre monde de plus en plus guidé par l'IA.
 
-Pour plus d'informations sur les solutions innovantes pour combattre la fraude alimentée par l'IA et protéger les identités numériques, visitez <https://inkan.link/fr/>.
+Pour plus d'informations sur les solutions innovantes pour combattre la fraude alimentée par l'IA et protéger les identités numériques, visitez [inkan.link](/fr/).

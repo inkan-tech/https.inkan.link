@@ -54,4 +54,4 @@ Nicolas concluded by emphasizing the critical need to protect personal identity 
 
 This presentation serves as a wake-up call for business leaders, IT professionals, and cybersecurity experts. As AI-powered criminal activities become more sophisticated and accessible, it's crucial to stay informed and develop new strategies to protect digital identities and maintain trust in our increasingly AI-driven world.
 
-For more information on innovative solutions to combat AI-powered fraud and protect digital identities, visit <https://inkan.link/en/>.
+For more information on innovative solutions to combat AI-powered fraud and protect digital identities, visit [inkan.link](/en/).

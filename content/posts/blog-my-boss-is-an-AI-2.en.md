@@ -17,7 +17,7 @@ twitter_creator: "@SealfieApp"
 ---
 # My Boss is an AI (Part 2)
 
-In the first part of this series, ["My Boss is an AI"](https://inkan.link/en/posts/blog-my-boss-is-an-ai/), we explored how artificial intelligence (AI) has facilitated voice cloning and how it has impacted cybersecurity. Today, we delve deeper by examining how cybercriminals can access CEO's emails and use AI to mimic their writing style.
+In the first part of this series, ["My Boss is an AI"](/en/posts/blog-my-boss-is-an-ai/), we explored how artificial intelligence (AI) has facilitated voice cloning and how it has impacted cybersecurity. Today, we delve deeper by examining how cybercriminals can access CEO's emails and use AI to mimic their writing style.
 
 ## How can a criminal gain access to a CEO's email?
 
@@ -38,4 +38,4 @@ In the face of these challenges, companies can turn to solutions like [Sealfie](
 ## Conclusion
 
 Don't wait the criminals now have their own LLM [wormGPT](https://thehackernews.com/2023/07/wormgpt-new-ai-tool-allows.html) which is best known to help in the business email compromise fraud.
-Only by adopting proactive and sophisticated solutions like Sealfie can companies stay one step ahead of cybercriminals and protect their valuable digital assets. The innovative approach of [Inkan.link](https://inkan.link/en/posts/blog-my-boss-is-an-ai/), labeled deeptech and radically simple to use, makes the lives of criminals more complex, while simplifying cybersecurity protection for businesses.
+Only by adopting proactive and sophisticated solutions like Sealfie can companies stay one step ahead of cybercriminals and protect their valuable digital assets. The innovative approach of [Inkan.link](/en/posts/blog-my-boss-is-an-ai/), labeled deeptech and radically simple to use, makes the lives of criminals more complex, while simplifying cybersecurity protection for businesses.
