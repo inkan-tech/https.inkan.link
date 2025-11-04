@@ -3,9 +3,12 @@
 {{- $isArticle := false -}}
 {{- $isHome := .IsHome -}}
 {{- $isBlog := eq .Type "posts" -}}
+{{- $isBlogIndex := and (eq .Type "posts") .IsSection -}}
 {{- $isContact := or (in .RelPermalink "contact") (in .Title "ontact") -}}
 
-{{- if $isBlog -}}
+{{- if $isBlogIndex -}}
+  {{- $schemaType = "Blog" -}}
+{{- else if $isBlog -}}
   {{- $schemaType = "Article" -}}
   {{- $isArticle = true -}}
 {{- else if $isHome -}}

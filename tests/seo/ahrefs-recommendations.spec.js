@@ -73,9 +73,10 @@ test.describe('P0 Critical - Generic Page Health @ahrefs', () => {
       const htmlLang = await page.locator('html').getAttribute('lang');
 
       // Determine expected language from path
-      let expectedLang = 'en'; // default
-      if (pagePath.startsWith('/fr')) {
-        expectedLang = 'fr';
+      // French is default (no prefix), English has /en/ prefix
+      let expectedLang = 'fr'; // default language
+      if (pagePath.startsWith('/en/') || pagePath === '/en') {
+        expectedLang = 'en';
       }
 
       expect(htmlLang, `${pagePath} should have lang="${expectedLang}"`).toBe(expectedLang);
