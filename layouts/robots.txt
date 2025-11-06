@@ -1,5 +1,4 @@
 # AI Crawlers - Answer Engine Optimization (AEO)
-# Explicitly allowed for fast indexing and citation discovery
 User-agent: GPTBot
 Allow: /
 
