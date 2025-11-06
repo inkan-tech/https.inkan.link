@@ -17,11 +17,17 @@
 
   <configuration>
     <ai_crawlers>
-      <crawler name="GPTBot" url="https://platform.openai.com/docs/plugins/bot"/>
-      <crawler name="Claude-Web" url="https://claude.ai"/>
-      <crawler name="PerplexityBot" url="https://perplexity.ai"/>
-      <crawler name="GoogleOther" url="https://developers.google.com/search/docs/crawling-indexing/overview-google-crawlers"/>
-      <crawler name="CCBot" url="https://commoncrawl.org/ccbot"/>
+      <crawler name="GPTBot" platform="OpenAI" url="https://platform.openai.com/docs/plugins/bot"/>
+      <crawler name="ChatGPT-User" platform="OpenAI" url="https://platform.openai.com/docs/plugins/bot"/>
+      <crawler name="OAI-SearchBot" platform="OpenAI SearchGPT" url="https://platform.openai.com/docs/plugins/bot"/>
+      <crawler name="Claude-Web" platform="Anthropic" url="https://claude.ai"/>
+      <crawler name="anthropic-ai" platform="Anthropic" url="https://claude.ai"/>
+      <crawler name="PerplexityBot" platform="Perplexity" url="https://perplexity.ai"/>
+      <crawler name="GoogleOther" platform="Google AI/Gemini" url="https://developers.google.com/search/docs/crawling-indexing/overview-google-crawlers"/>
+      <crawler name="CCBot" platform="Common Crawl" url="https://commoncrawl.org/ccbot"/>
+      <crawler name="Applebot-Extended" platform="Apple Intelligence" url="https://support.apple.com/en-us/119829"/>
+      <crawler name="Meta-ExternalAgent" platform="Meta AI" url="https://developers.facebook.com/docs/sharing/bot"/>
+      <crawler name="Bytespider" platform="ByteDance/TikTok" url="https://www.bytedance.com/en/"/>
     </ai_crawlers>
 
     <schema_types priority="required">
@@ -168,13 +174,25 @@
         <step id="2" name="update_robots_txt">
           <action>update_file</action>
           <file>static/robots.txt</file>
-          <operation>append_if_missing</operation>
+          <operation>replace_or_create</operation>
           <content><![CDATA[
-# AI Crawler Access - Added by AEO Optimizer
+# AI Crawlers - Answer Engine Optimization (AEO)
+# Explicitly allowed for fast indexing and citation discovery
+# CRITICAL: Do NOT add Crawl-delay - it slows AI indexing by 5-10%
+
 User-agent: GPTBot
 Allow: /
 
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
 User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
 Allow: /
 
 User-agent: PerplexityBot
@@ -185,10 +203,31 @@ Allow: /
 
 User-agent: CCBot
 Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+# All other bots
+User-agent: *
+Allow: /
+
+# Block sensitive paths
+Disallow: /admin/
+Disallow: /.well-known/
+Disallow: /api/
+Disallow: /.env
+Disallow: /config/
 ]]></content>
           <validation>
             <check>no_conflicts</check>
             <check>valid_syntax</check>
+            <check>no_crawl_delay</check>
           </validation>
         </step>
 
