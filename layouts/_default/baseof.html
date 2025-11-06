@@ -10,25 +10,57 @@
       // Initialize Matomo after page load for better performance
       window.addEventListener('load', function() {
         var _paq = window._paq = window._paq || [];
+
+        // AEO: Track AI crawler referrals
+        var referrer = document.referrer;
+        var aiEngines = {
+          'chatgpt.com': 'ChatGPT',
+          'perplexity.ai': 'Perplexity',
+          'claude.ai': 'Claude',
+          'gemini.google.com': 'Gemini',
+          'you.com': 'You.com',
+          'bing.com/chat': 'Bing Chat',
+          'brave.com/search': 'Brave AI'
+        };
+
+        for (var domain in aiEngines) {
+          if (referrer.indexOf(domain) !== -1) {
+            _paq.push(['setCustomDimension', 1, aiEngines[domain]]);
+            _paq.push(['trackEvent', 'AEO', 'AI Referral', aiEngines[domain]]);
+            break;
+          }
+        }
+
+        // Track AI crawler user agents
+        var ua = navigator.userAgent;
+        var aiCrawlers = ['GPTBot', 'Claude-Web', 'PerplexityBot', 'anthropic-ai', 'CCBot', 'Applebot'];
+        for (var i = 0; i < aiCrawlers.length; i++) {
+          if (ua.indexOf(aiCrawlers[i]) !== -1) {
+            _paq.push(['setCustomDimension', 2, aiCrawlers[i]]);
+            _paq.push(['trackEvent', 'AEO', 'AI Crawler', aiCrawlers[i]]);
+            break;
+          }
+        }
+
         _paq.push(['trackPageView']);
         _paq.push(['enableLinkTracking']);
-        
+
         (function() {
           var u="https://sealfie.matomo.cloud/";
           _paq.push(['setTrackerUrl', u+'matomo.php']);
           _paq.push(['setSiteId', '2']);
           var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-          g.async=true; 
-          g.src='https://cdn.matomo.cloud/sealfie.matomo.cloud/matomo.js'; 
+          g.async=true;
+          g.src='https://cdn.matomo.cloud/sealfie.matomo.cloud/matomo.js';
           s.parentNode.insertBefore(g,s);
         })();
-        
+
         // Matomo Tag Manager
         var _mtm = window._mtm = window._mtm || [];
         _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
         var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-        g.async=true; 
-        g.src='https://cdn.matomo.cloud/sealfie.matomo.cloud/container_yiFlgfbh.js'; 
+        g.async=true;
+        g.src='https://cdn.matomo.cloud/sealfie.matomo.cloud/container_yiFlgfbh.js';
         s.parentNode.insertBefore(g,s);
       });
     </script>

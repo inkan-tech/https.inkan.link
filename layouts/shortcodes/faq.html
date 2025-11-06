@@ -1,0 +1,41 @@
+{{/* FAQ Shortcode for AEO Optimization
+Usage in markdown:
+{{< faq >}}
+### Question 1?
+Answer to question 1.
+
+### Question 2?
+Answer to question 2.
+{{< /faq >}}
+*/}}
+
+{{- $content := .Inner | markdownify -}}
+{{- $questions := findRE "(?s)<h3[^>]*>(.+?)</h3>\\s*<p>(.+?)</p>" $content -}}
+
+<div class="faq-section bg-white dark:bg-dark-400 rounded-lg p-6 my-8 border border-neutral-200 dark:border-dark-300" itemscope itemtype="https://schema.org/FAQPage">
+  <h2 class="text-2xl font-bold mb-6 text-primary-600 dark:text-primary-400">{{ i18n "faq" | default "Questions fréquentes" }}</h2>
+
+  {{- range $index, $qa := $questions -}}
+  {{- $parts := findRE "(?s)<h3[^>]*>(.+?)</h3>\\s*<p>(.+?)</p>" $qa 1 -}}
+  {{- if $parts -}}
+  {{- $question := index (findRE "(?s)<h3[^>]*>(.+?)</h3>" $qa 1) 0 | replaceRE "</?h3[^>]*>" "" | plainify -}}
+  {{- $answer := index (findRE "(?s)<p>(.+?)</p>" $qa 1) 0 | replaceRE "</?p>" "" -}}
+
+  <div class="faq-item mb-6 last:mb-0" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 class="text-lg font-semibold mb-2 text-secondary-600 dark:text-secondary-400" itemprop="name">
+      {{ $question }}
+    </h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <div itemprop="text" class="text-neutral-700 dark:text-neutral-300">
+        {{ $answer | safeHTML }}
+      </div>
+    </div>
+  </div>
+  {{- end -}}
+  {{- end -}}
+
+  {{- /* Fallback if regex doesn't match - just render content */ -}}
+  {{- if eq (len $questions) 0 -}}
+  {{ $content | safeHTML }}
+  {{- end -}}
+</div>

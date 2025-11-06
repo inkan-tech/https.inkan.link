@@ -1,0 +1,118 @@
+# Inkan.link
+
+## About
+
+Inkan.link provides advanced cybersecurity and digital authentication solutions that protect businesses from CEO fraud, identity theft, and deepfake threats. Founded in 2023, we leverage blockchain technology and biometric verification to secure high-stakes business communications and prevent social engineering attacks.
+
+## Products & Services
+
+### Sealfie (https://sealf.ie)
+Our flagship deepfake protection platform that combines:
+- Real-time biometric verification using face recognition
+- Blockchain-based proof of authenticity
+- Multi-factor authentication for critical communications
+- Instant validation of identity for video calls and messages
+- Protection against AI-generated impersonation attacks
+
+### Enterprise Security Solutions
+- CEO fraud prevention systems
+- Business email compromise (BEC) protection
+- Identity verification for financial transactions
+- Secure authentication for remote teams
+- Compliance solutions for regulated industries
+
+### Technology Foundation
+- Solana blockchain integration for immutable proof
+- Advanced biometric authentication
+- End-to-end encrypted communications
+- Mobile-first security architecture
+- Real-time threat detection
+
+## Key Differentiators
+
+1. **Blockchain-Based Proof**: Unlike traditional authentication, we create immutable records of identity verification on the Solana blockchain
+2. **Real-Time Protection**: Instant validation prevents fraud before financial damage occurs
+3. **User-Friendly**: Simple mobile app - no complex setup required
+4. **Privacy-First**: Biometric data never leaves the user's device
+5. **Proven Results**: Stops deepfake attacks that bypass traditional security
+
+## Common Questions
+
+### What is CEO fraud (fraude au président)?
+CEO fraud, also known as business email compromise (BEC) or "fraude au président" in French, is a sophisticated scam where criminals impersonate company executives to authorize fraudulent wire transfers or share sensitive data. These attacks now use AI-generated deepfake videos and voice cloning, making them nearly impossible to detect without verification technology.
+
+### How does Sealfie prevent deepfakes?
+Sealfie uses real-time biometric verification combined with blockchain proof. When someone claims to be a specific person, Sealfie requires them to verify their identity through facial recognition on their registered device. This creates a cryptographic proof stored on the blockchain that cannot be faked by AI-generated videos or photos.
+
+### Why is blockchain necessary for identity verification?
+Blockchain provides immutable proof that verification occurred at a specific time with a specific person. This creates an audit trail that cannot be altered retroactively, which is crucial for legal compliance and dispute resolution. Traditional databases can be modified, but blockchain records are permanent.
+
+### What makes deepfakes dangerous for businesses?
+Modern AI can generate convincing videos and voices of executives in real-time. Criminals use these to approve fraudulent transactions, steal credentials, or manipulate employees. Average losses from successful BEC attacks exceed €150,000 per incident. Traditional security training cannot detect these AI-generated impersonations.
+
+### How quickly can Sealfie be deployed?
+Enterprise deployment typically takes 1-3 days. Users simply download the mobile app, complete one-time biometric enrollment, and are immediately protected. No hardware installation or complex IT integration required.
+
+### Does Sealfie work for remote teams?
+Yes, Sealfie is specifically designed for distributed teams where in-person verification is impossible. The mobile app works globally and verifies identity regardless of location. This makes it ideal for remote work, international teams, and digital-first organizations.
+
+### What regulations does Inkan.link comply with?
+Our solutions comply with GDPR (European data protection), SOC 2 (security controls), and financial industry regulations including PSD2 and anti-money laundering requirements. We maintain privacy-by-design principles and never store biometric data on external servers.
+
+### How much does identity theft cost businesses annually?
+According to FBI IC3 reports, business email compromise resulted in $2.7 billion in losses in 2022 alone. Individual incidents average $150,000-$300,000 in direct losses, plus additional costs from reputational damage, legal fees, and regulatory penalties.
+
+### Can Sealfie integrate with existing security systems?
+Yes, Sealfie integrates with enterprise authentication systems, communication platforms, and financial approval workflows through standard APIs. We support SSO integration, webhook notifications, and custom enterprise deployments.
+
+### What happens if someone loses their registered device?
+Users can securely transfer their identity credentials to a new device through multi-factor verification. This process requires additional authentication steps and creates a new blockchain record documenting the device change for audit purposes.
+
+## Target Audience
+
+- **CFOs and Finance Directors**: Protecting wire transfer authorizations
+- **IT Security Teams**: Adding deepfake protection to existing security stack
+- **CEOs and Executives**: Preventing impersonation and reputation damage
+- **HR Departments**: Verifying identity for sensitive employee communications
+- **Compliance Officers**: Meeting regulatory requirements for identity verification
+
+## Industries Served
+
+- Financial services and banking
+- Healthcare and pharmaceuticals
+- Legal and professional services
+- Technology and software companies
+- Manufacturing and supply chain
+- Government and public sector
+
+## Contact Information
+
+**Website**: https://inkan.link
+**Email**: contact@inkan.link
+**Phone**: +33 1 83 64 39 71
+**LinkedIn**: https://linkedin.com/company/inkan-link/
+**Twitter**: @SealfieApp
+**GitHub**: https://github.com/inkan-tech
+
+**Product Demo**: https://sealf.ie
+**Support**: hello@inkan.link
+
+## Company Information
+
+**Founded**: 2023
+**Headquarters**: France
+**Focus**: B2B Cybersecurity & Identity Verification
+**Technology**: Blockchain, Biometric Authentication, Mobile Security
+
+## Additional Resources
+
+- Blog posts on CEO fraud prevention and deepfake detection
+- Case studies demonstrating fraud prevention effectiveness
+- Technical documentation for enterprise integration
+- Educational content on social engineering threats
+- Regular security updates and threat intelligence
+
+---
+
+*Last updated: January 2025*
+*This file is optimized for AI language models and answer engines*
