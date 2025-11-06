@@ -12,6 +12,8 @@ categories: news
 tags:
   - News
   - Sealfie
+aliases:
+  - /fr/posts/news-fraude-faux-president/
 ---
 
 
