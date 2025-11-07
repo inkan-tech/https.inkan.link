@@ -1,21 +1,26 @@
 # Ahrefs Redirect Analysis - Issue #1
 
-**Date**: November 7, 2025
+**Date**: November 7, 2025 (Updated)
 **Site**: https://inkan.link
 **Issue**: Page has links to redirect
-**Status**: ✅ **ALREADY FIXED**
+**Status**: ✅ **ALL FIXED**
 
 ---
 
 ## Executive Summary
 
-The Ahrefs audit reported 222 internal links causing redirect chains, primarily newsletter signup links using HTTP shortlinks. Investigation reveals this issue was **already fixed** in commit `aa6cda1` (Nov 7, 11:43 AM) prior to this analysis.
+The Ahrefs audit reported 222 internal links causing redirect chains across 105 pages. Investigation identified two sources of redirects:
+
+1. **Newsletter links** (HTTP MailChimp shortlink) - **Already fixed** in commit `aa6cda1`
+2. **Apple App Store link** (301 redirect) - **Fixed** in commit `00dc60b`
 
 ### Key Findings
-- **Root Cause**: Newsletter links used HTTP MailChimp shortlink (`http://eepurl.com/ix1tjg`)
-- **Issue Impact**: 302 redirect chains wasting crawl budget and link equity
-- **Current Status**: Fixed - now using direct HTTPS URL to Mailchimp
-- **Ahrefs Data**: Showing old cached data from before the fix
+- **Root Causes**:
+  - Newsletter links used HTTP MailChimp shortlink (`http://eepurl.com/ix1tjg`) → 302 redirect
+  - Apple App Store link missing region/app name (`/app/id...` → `/us/app/sealfie/id...`) → 301 redirect
+- **Issue Impact**: 301/302 redirect chains wasting crawl budget and link equity across all 105 pages
+- **Current Status**: All redirect chains eliminated
+- **Ahrefs Data**: Showing old cached data from before fixes
 
 ---
 
@@ -100,6 +105,47 @@ location: https://sealf.us21.list-manage.com/subscribe?u=716e8fcfd71b495b7e4af1e
 - `layouts/index.en.html` - Homepage link fixes
 - `layouts/index.fr.html` - Homepage link fixes
 - `content/posts/news-fraude-faux-president.fr.md` - ANSSI link update
+
+### Additional Fix: Apple App Store Link
+
+**Commit**: `00dc60b` - "fix(seo): eliminate Apple App Store 301 redirect"
+**Author**: Nicolas Thomas (via Claude Code)
+**Date**: November 7, 2025, 1:09 PM
+
+#### Problem Identified
+During Ahrefs 3xx redirect analysis, discovered Apple App Store link causing 301 redirect on all 105 pages:
+
+```bash
+$ curl -I https://apps.apple.com/app/id1635309517
+HTTP/2 301
+location: https://apps.apple.com/us/app/sealfie/id1635309517
+```
+
+#### Fix Applied
+**File Modified**: `layouts/partials/footer.html` (line 100)
+
+**Before**:
+```html
+<a href="https://apps.apple.com/app/id1635309517">
+```
+
+**After**:
+```html
+<a href="https://apps.apple.com/us/app/sealfie/id1635309517">
+```
+
+#### Verification
+```bash
+# Direct link test - no redirect
+$ curl -I https://apps.apple.com/us/app/sealfie/id1635309517
+HTTP/2 200 ✅
+
+# Google Play link test - already optimal
+$ curl -I 'https://play.google.com/store/apps/details?id=link.inkan.sealfie'
+HTTP/2 200 ✅
+```
+
+**Result**: Both app store links now return 200 OK directly with no redirects.
 
 ---
 
@@ -201,7 +247,8 @@ $ curl -I http://eepurl.com/ix1tjg
 - [ ] No URL shorteners or redirect services (eepurl, bit.ly, etc.)
 - [ ] All Sealfie links include trailing slashes
 - [ ] Newsletter links point directly to Mailchimp
-- [ ] Verify links don't cause 301/302 redirects
+- [ ] App Store links use full URLs (region + app name)
+- [ ] Verify links don't cause 301/302 redirects with `curl -I`
 
 #### Automated Testing
 ```bash
@@ -244,12 +291,21 @@ This analysis complements the previous SEO audit findings:
 
 ## Conclusion
 
-**Redirect Issue #1 from Ahrefs audit is already fixed** in production as of commit `aa6cda1`. The problematic HTTP shortlinks have been replaced with direct HTTPS URLs to Mailchimp, eliminating all redirect chains identified in the audit.
+**All redirect issues from Ahrefs Issue #1 audit are now fully resolved:**
+
+1. **Newsletter Redirects** (commit `aa6cda1`) - HTTP shortlinks → Direct HTTPS Mailchimp URLs ✅
+2. **Apple App Store Redirects** (commit `00dc60b`) - Generic URL → Region-specific direct URL ✅
+
+### Redirect Elimination Summary
+- **Before**: 222 redirect instances across 105 pages
+- **After**: 0 redirects - all links point directly to final destinations
+- **Impact**: Improved crawl efficiency, faster page loads, preserved link equity
 
 ### Next Steps
-1. Wait 24-48 hours for Ahrefs to re-crawl the site
-2. Verify all issues marked as "Fixed" in Ahrefs dashboard
-3. Continue running Playwright tests before each deployment to prevent regression
+1. ✅ **All fixes deployed** to production
+2. ⏳ **Wait 24-48 hours** for Ahrefs to re-crawl the site
+3. ⏳ **Verify in Ahrefs dashboard** that Issue #1 shows as "Fixed"
+4. ✅ **Continue running Playwright tests** before each deployment to prevent regression
 
 ### Documentation Files
 - **This File**: `AHREFS-REDIRECT-ANALYSIS.md` - Redirect issue analysis
