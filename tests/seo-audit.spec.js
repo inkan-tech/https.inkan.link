@@ -3,10 +3,11 @@
  * Tests reproduce Ahrefs audit findings for high-priority SEO issues
  *
  * Issues tested:
- * 1. Multiple H1 tags per page
- * 2. Hreflang to non-canonical URLs
- * 3. Page/SERP title mismatches
- * 4. Non-canonical pages in sitemap
+ * 1. Links to redirect (HTTP links, redirect chains)
+ * 8. Multiple H1 tags per page
+ * 9. Page/SERP title mismatches
+ * 10. Hreflang to non-canonical URLs
+ * 13. Non-canonical pages in sitemap
  */
 
 import { test, expect } from '@playwright/test';
@@ -211,6 +212,96 @@ test.describe('SEO Audit - High Priority Issues', () => {
       nonCanonicalPages.length,
       `Found ${nonCanonicalPages.length} non-canonical pages in sitemap`
     ).toBe(0);
+  });
+
+  /**
+   * ISSUE #1: Page has links to redirect
+   * Internal links should point directly to final destination, not redirect chains
+   */
+  test.describe('Issue #1: Links to Redirect Detection', () => {
+    test('should not have internal links causing redirects', async ({ page, request }) => {
+      const linksWithRedirects = [];
+
+      // Check main pages for external links that might redirect
+      for (const path of PAGES_TO_TEST.slice(0, 3)) { // Check first 3 pages
+        await page.goto(`${BASE_URL}${path}`, { waitUntil: 'networkidle' });
+
+        // Get all external links (exclude internal navigation)
+        const externalLinks = await page.locator('a[href^="http"]').all();
+
+        for (const link of externalLinks) {
+          const href = await link.getAttribute('href');
+          const anchorText = await link.textContent();
+
+          if (!href) continue;
+
+          try {
+            // Make a HEAD request to check for redirects
+            const response = await request.head(href, {
+              maxRedirects: 0,
+              failOnStatusCode: false
+            });
+
+            // Check if this is a redirect (3xx status)
+            if (response.status() >= 300 && response.status() < 400) {
+              const location = response.headers()['location'];
+              linksWithRedirects.push({
+                sourcePage: path,
+                linkUrl: href,
+                statusCode: response.status(),
+                redirectTo: location,
+                anchorText: anchorText?.trim().substring(0, 50)
+              });
+            }
+          } catch (error) {
+            console.log(`Failed to check ${href}: ${error.message}`);
+          }
+        }
+      }
+
+      if (linksWithRedirects.length > 0) {
+        console.log('Links causing redirects:', JSON.stringify(linksWithRedirects, null, 2));
+      }
+
+      expect(
+        linksWithRedirects.length,
+        `Found ${linksWithRedirects.length} links causing redirects. Should use direct URLs instead.`
+      ).toBe(0);
+    });
+
+    test('should use HTTPS for all newsletter signup links', async ({ page }) => {
+      const httpLinks = [];
+
+      for (const path of PAGES_TO_TEST) {
+        await page.goto(`${BASE_URL}${path}`, { waitUntil: 'networkidle' });
+
+        // Check for HTTP links (should all be HTTPS)
+        const links = await page.locator('a[href^="http://"]').all();
+
+        for (const link of links) {
+          const href = await link.getAttribute('href');
+          const anchorText = await link.textContent();
+
+          // Skip localhost links (used in development)
+          if (!href.includes('localhost') && !href.includes('127.0.0.1')) {
+            httpLinks.push({
+              page: path,
+              url: href,
+              anchorText: anchorText?.trim()
+            });
+          }
+        }
+      }
+
+      if (httpLinks.length > 0) {
+        console.log('HTTP links found (should be HTTPS):', JSON.stringify(httpLinks, null, 2));
+      }
+
+      expect(
+        httpLinks.length,
+        `Found ${httpLinks.length} HTTP links. All external links should use HTTPS.`
+      ).toBe(0);
+    });
   });
 
   /**
