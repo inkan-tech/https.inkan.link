@@ -39,7 +39,7 @@ Les criminels utilisent de vieilles techniques d'usurpation, ils ont fait leur t
 
 Cette attaque, très ciblée est préparée de longue date, les criminels montent un scenario crédible. L'humain est leur cible principale. Tous les ressorts psychologiques sont utilisés pour convaincre la ou le comptable de faire dans l'urgence un virement. Ces attaques sont quasiment toujours accompagnées d'attaques des systèmes mails pour monter un discours crédible. L'attaque est beaucoup plus élaborée que le phishing de base, type prince nigérian, des professionnels de la cybersécurité peuvent s'y faire prendre.
 
-Pour s'en prémunir l'ANSSI fait des recommandations [ici](https://sisse.entreprises.gouv.fr/files_sisse/files/outils/fiches/fiched6_fovi.pdf) qui se résument comme suit :
+Pour s'en prémunir l'ANSSI fait des recommandations [ici](https://www.entreprises.gouv.fr/service-de-linformation-strategique-et-de-la-securite-economiques-sisse) qui se résument comme suit :
 
 - Rappeler à l'ensemble des collaborateurs Les alerter sur l'importance de ne pas y divulguer d'informations concernant le fonctionnement de l'entreprise sur les réseaux sociaux
 - Sensibiliser régulièrement l'ensemble des employés des services comptables, trésorerie, secrétariats, standards, de ce type d'escroquerie.

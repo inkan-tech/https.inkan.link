@@ -35,7 +35,7 @@
       <div
         class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-medium text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 md:ml-4 hover:text-white focus:text-white hover:bg-primary-600 focus:bg-primary-600 focus:outline-none focus:shadow-outline transition-colors duration-200">
 
-        <a href="https://sealf.ie/">
+        <a href="https://sealf.ie/{{ if eq .Site.Language.Lang "en" }}en{{ else }}fr{{ end }}/">
           {{ i18n "product" }}
         </a>
 
