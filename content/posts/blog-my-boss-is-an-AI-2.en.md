@@ -15,8 +15,6 @@ og_image_alt: "GPT-generated email - Illustration of an AI-generated email used 
 twitter_site: "@SealfieApp"
 twitter_creator: "@SealfieApp"
 ---
-# My Boss is an AI (Part 2)
-
 In the first part of this series, ["My Boss is an AI"](/en/posts/blog-my-boss-is-an-ai/), we explored how artificial intelligence (AI) has facilitated voice cloning and how it has impacted cybersecurity. Today, we delve deeper by examining how cybercriminals can access CEO's emails and use AI to mimic their writing style.
 
 ## How can a criminal gain access to a CEO's email?

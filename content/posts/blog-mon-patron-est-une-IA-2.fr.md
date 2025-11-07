@@ -15,8 +15,6 @@ og_image_alt: "Email GPT - Illustration d'un email généré par intelligence ar
 twitter_site: "@SealfieApp"
 twitter_creator: "@SealfieApp"
 ---
-# Mon Patron est une IA (2ème Partie)
-
 Dans la première partie de cette série, ["Mon Patron est une IA"](/posts/blog-mon-patron-est-une-ia/), nous avons exploré comment l'intelligence artificielle (IA) a facilité le clonage de voix et comment cela a impacté la cybersécurité. Aujourd'hui, nous allons plus loin en examinant comment les criminels informatiques peuvent accéder aux e-mails des PDG et utiliser l'IA pour imiter leur style d'écriture.
 
 ## Comment un criminel peut accéder à l'e-mail d'un PDG ?

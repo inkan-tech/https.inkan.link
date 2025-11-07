@@ -12,8 +12,7 @@
     {{ $title = "Inkan.link - CEO fraud and identity theft protection" }}
   {{- end -}}
 {{- else if eq .Type "posts" -}}
-  {{ $blogSuffix := cond (eq .Language.Lang "fr") "Blog" "Blog" }}
-  {{ $title = printf "%s | %s" .Title $blogSuffix }}
+  {{ $title = printf "%s | %s" .Title .Site.Title }}
 {{- else -}}
   {{ $title = printf "%s | %s" .Title .Site.Title }}
 {{- end -}}
