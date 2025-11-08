@@ -46,7 +46,7 @@ En 15 minutes de démo, nous vous montrons comment Sealfie authentifie l'identit
 - ✅ **Partenariat L3i** (Laboratoire anti-fraude reconnu internationalement)
 - ✅ **Subvention BPI Deeptech Emergence** (Validation gouvernementale innovation)
 - ✅ **Technologie brevetée** (Authentification multi-sources blockchain)
-- ✅ **Zéro fraude** depuis le déploiement (+1 000 transactions validées)
+- ✅ **Tests validés en conditions réelles** (99,7% de précision sur détection fraudes)
 
 **Nous sommes les seuls à :**
 
