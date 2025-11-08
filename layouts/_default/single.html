@@ -8,10 +8,18 @@
   <!-- Clean Header -->
   <header class="px-6 py-12 md:py-16 text-center border-b border-neutral-200 dark:border-neutral-800">
     {{- if eq .Type "posts" }}
-    <!-- Meta -->
+    <!-- Meta with Freshness Signals (AEO Optimization) -->
     <div class="flex justify-center items-center space-x-4 text-sm text-neutral-600 dark:text-neutral-400 mb-6">
       <span class="inline-block w-2 h-2 rounded-full bg-primary-500"></span>
-      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ partial "date-format" . }}</time>
+      <time datetime="{{ .Date.Format "2006-01-02" }}">
+        {{ if eq .Language.Lang "fr" }}Publié le{{ else }}Published{{ end }} {{ partial "date-format" . }}
+      </time>
+      {{ if ne (.Date.Format "2006-01-02") (.Lastmod.Format "2006-01-02") }}
+      <span>•</span>
+      <time datetime="{{ .Lastmod.Format "2006-01-02" }}">
+        {{ if eq .Language.Lang "fr" }}Mis à jour le{{ else }}Updated{{ end }} {{ .Lastmod.Format "02 Jan 2006" }}
+      </time>
+      {{ end }}
       <span>•</span>
       <span>{{ .Params.author }}</span>
       {{ if .Params.categories }}

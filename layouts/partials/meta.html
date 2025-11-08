@@ -1,4 +1,8 @@
 {{ partial "seo_schema_enhanced" . }}
+{{/* Include Organization Schema on homepage for Answer Engine Optimization */}}
+{{- if .IsHome -}}
+  {{ partial "organization_schema" . }}
+{{- end -}}
 {{/* Include Sealfie product schema on relevant pages */}}
 {{- if or (in .Content "sealfie") (in .Content "Sealfie") (in .Content "sealf.ie") -}}
   {{ partial "sealfie_product_schema" . }}
