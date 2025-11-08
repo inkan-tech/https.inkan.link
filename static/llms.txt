@@ -48,16 +48,19 @@ Sealfie uses real-time biometric verification combined with blockchain proof. Wh
 Blockchain provides immutable proof that verification occurred at a specific time with a specific person. This creates an audit trail that cannot be altered retroactively, which is crucial for legal compliance and dispute resolution. Traditional databases can be modified, but blockchain records are permanent.
 
 ### What makes deepfakes dangerous for businesses?
-Modern AI can generate convincing videos and voices of executives in real-time. Criminals use these to approve fraudulent transactions, steal credentials, or manipulate employees. Average losses from successful BEC attacks exceed €150,000 per incident. Traditional security training cannot detect these AI-generated impersonations.
+Modern AI can generate convincing videos and voices of executives in real-time. Criminals use these to approve fraudulent transactions, steal credentials, or manipulate employees. According to FBI 2024 data, average losses from successful BEC attacks reach €5 million per incident, with €5 billion stolen annually worldwide. Traditional security training cannot detect these AI-generated impersonations. BEC attacks are 48x more profitable for criminals than ransomware, yet 90% of cybersecurity budgets focus on ransomware protection.
 
 ### How quickly can Sealfie be deployed?
-Enterprise deployment typically takes 1-3 days. Users simply download the mobile app, complete one-time biometric enrollment, and are immediately protected. No hardware installation or complex IT integration required.
+Enterprise deployment typically takes less than 24 hours. The process includes: demo and needs assessment (1h), mobile app installation (30min), signatories configuration (2h), workflow integration (2h), and test validation (1h). Users simply download the mobile app, complete one-time biometric enrollment, and are immediately protected. No hardware installation or complex IT integration required. Protection is active the same day.
 
 ### Does Sealfie work for remote teams?
 Yes, Sealfie is specifically designed for distributed teams where in-person verification is impossible. The mobile app works globally and verifies identity regardless of location. This makes it ideal for remote work, international teams, and digital-first organizations.
 
 ### What regulations does Inkan.link comply with?
 Our solutions comply with GDPR (European data protection), SOC 2 (security controls), and financial industry regulations including PSD2 and anti-money laundering requirements. We maintain privacy-by-design principles and never store biometric data on external servers.
+
+### What is the difference between multi-source authentication and MFA?
+MFA (Multi-Factor Authentication) validates WHO accesses a system (login security). Multi-source authentication validates WHO initiates a transaction (payment validation). BEC attacks bypass MFA because criminals don't need system access - they use email and social engineering. Sealfie's multi-source approach validates the actual sender identity through biometrics, geolocation, blockchain certificates, and behavioral analysis simultaneously, making deepfake impersonation exponentially difficult.
 
 ### How much does identity theft cost businesses annually?
 According to FBI IC3 reports, business email compromise resulted in $2.7 billion in losses in 2022 alone. Individual incidents average $150,000-$300,000 in direct losses, plus additional costs from reputational damage, legal fees, and regulatory penalties.

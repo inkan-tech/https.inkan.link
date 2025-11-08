@@ -29,6 +29,18 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
+# Claude Web (additional)
+User-agent: Claude-Web
+Allow: /
+
+# Google Other crawlers
+User-agent: GoogleOther
+Allow: /
+
+# Common Crawl (used by many AI systems)
+User-agent: CCBot
+Allow: /
+
 # Sitemap
 Sitemap: https://inkan.link/sitemap.xml
 Sitemap: https://inkan.link/en/sitemap.xml
