@@ -1,41 +1,184 @@
-{{/* FAQ Shortcode for AEO Optimization
+{{/* FAQ Shortcode with Interactive Accordion
 Usage in markdown:
 {{< faq >}}
 ### Question 1?
-Answer to question 1.
+Short answer paragraph.
+
+**Learn more:**
+- Detail 1
+- Detail 2
 
 ### Question 2?
-Answer to question 2.
+Short answer paragraph.
 {{< /faq >}}
 */}}
 
 {{- $content := .Inner | markdownify -}}
-{{- $questions := findRE "(?s)<h3[^>]*>(.+?)</h3>\\s*<p>(.+?)</p>" $content -}}
+
+{{/* Split content by h3 tags */}}
+{{- $sections := split $content "<h3" -}}
 
 <div class="faq-section bg-white dark:bg-dark-400 rounded-lg p-6 my-8 border border-neutral-200 dark:border-dark-300" itemscope itemtype="https://schema.org/FAQPage">
   <h2 class="text-2xl font-bold mb-6 text-primary-600 dark:text-primary-400">{{ i18n "faq" | default "Questions fréquentes" }}</h2>
 
-  {{- range $index, $qa := $questions -}}
-  {{- $parts := findRE "(?s)<h3[^>]*>(.+?)</h3>\\s*<p>(.+?)</p>" $qa 1 -}}
-  {{- if $parts -}}
-  {{- $question := index (findRE "(?s)<h3[^>]*>(.+?)</h3>" $qa 1) 0 | replaceRE "</?h3[^>]*>" "" | plainify -}}
-  {{- $answer := index (findRE "(?s)<p>(.+?)</p>" $qa 1) 0 | replaceRE "</?p>" "" -}}
+  <div class="space-y-4">
+  {{- range $index, $section := $sections -}}
+  {{- if gt (len $section) 10 -}}{{/* Skip empty sections */}}
 
-  <div class="faq-item mb-6 last:mb-0" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 class="text-lg font-semibold mb-2 text-secondary-600 dark:text-secondary-400" itemprop="name">
-      {{ $question }}
-    </h3>
-    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <div itemprop="text" class="text-neutral-700 dark:text-neutral-300">
-        {{ $answer | safeHTML }}
+  {{/* Extract question from h3 tag */}}
+  {{- $questionMatch := findRE "(?s)^[^>]*>(.+?)</h3>" $section 1 -}}
+  {{- if $questionMatch -}}
+  {{- $question := index $questionMatch 0 | replaceRE "(?s)^[^>]*>" "" | replaceRE "</h3>" "" | plainify -}}
+
+  {{/* Extract answer (everything after </h3>) */}}
+  {{- $answerFull := replaceRE "(?s)^[^>]*>(.+?)</h3>" "" $section -}}
+
+  {{/* Split short answer from "Learn more" section */}}
+  {{- $answerParts := split $answerFull "<p><strong>Pour aller plus loin" -}}
+  {{- if eq (len $answerParts) 1 -}}
+    {{- $answerParts = split $answerFull "<p><strong>Learn more" -}}
+  {{- end -}}
+
+  {{- $shortAnswer := index $answerParts 0 -}}
+  {{- $learnMore := "" -}}
+  {{- if gt (len $answerParts) 1 -}}
+    {{- $learnMore = printf "<p><strong>Pour aller plus loin%s" (index $answerParts 1) -}}
+    {{- $learnMore = replaceRE "(?s)^<p><strong>Learn more" "<p><strong>Learn more" $learnMore -}}
+  {{- end -}}
+
+  <div
+    class="faq-item border border-neutral-200 dark:border-dark-300 rounded-lg overflow-hidden transition-all duration-200 hover:border-primary-400 dark:hover:border-primary-500"
+    itemscope
+    itemprop="mainEntity"
+    itemtype="https://schema.org/Question"
+    x-data="{
+      questionOpen: false,
+      detailsOpen: false,
+      faqId: 'faq-{{ $index }}',
+      questionText: '{{ $question | plainify }}'
+    }"
+  >
+    {{/* Question Header - Click to toggle answer */}}
+    <button
+      @click="
+        questionOpen = !questionOpen;
+        if (!questionOpen) detailsOpen = false;
+        if (typeof _paq !== 'undefined') {
+          _paq.push(['trackEvent', 'FAQ', questionOpen ? 'Open Question' : 'Close Question', questionText]);
+        }
+      "
+      class="w-full text-left px-6 py-4 bg-neutral-50 dark:bg-dark-500 hover:bg-neutral-100 dark:hover:bg-dark-400 transition-colors duration-200 flex items-center justify-between group"
+      :aria-expanded="questionOpen"
+      :aria-controls="faqId"
+    >
+      <h3 class="text-base md:text-lg font-semibold text-secondary-700 dark:text-secondary-300 pr-4 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors" itemprop="name">
+        {{ $question }}
+      </h3>
+      <svg
+        class="w-5 h-5 text-secondary-600 dark:text-secondary-400 transform transition-transform duration-200 flex-shrink-0"
+        :class="{ 'rotate-180': questionOpen }"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+      </svg>
+    </button>
+
+    {{/* Answer Container */}}
+    <div
+      x-show="questionOpen"
+      x-collapse
+      :id="faqId"
+      itemscope
+      itemprop="acceptedAnswer"
+      itemtype="https://schema.org/Answer"
+      class="border-t border-neutral-200 dark:border-dark-300"
+    >
+      <div itemprop="text" class="px-6 py-4 text-neutral-700 dark:text-neutral-300 space-y-4">
+        {{/* Short Answer */}}
+        <div class="prose prose-sm md:prose-base dark:prose-invert max-w-none">
+          {{ $shortAnswer | safeHTML }}
+        </div>
+
+        {{/* Learn More Section - Click to expand */}}
+        {{- if $learnMore -}}
+        <div class="mt-4">
+          <button
+            @click="
+              detailsOpen = !detailsOpen;
+              if (typeof _paq !== 'undefined') {
+                _paq.push(['trackEvent', 'FAQ', detailsOpen ? 'Expand Details' : 'Collapse Details', questionText]);
+              }
+            "
+            class="inline-flex items-center gap-2 text-sm font-medium text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors"
+            :aria-expanded="detailsOpen"
+          >
+            <span x-text="detailsOpen ? '{{ i18n "faq.hide_details" | default "Masquer les détails" }}' : '{{ i18n "faq.show_details" | default "Voir les détails" }}'"></span>
+            <svg
+              class="w-4 h-4 transform transition-transform duration-200"
+              :class="{ 'rotate-180': detailsOpen }"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+
+          <div
+            x-show="detailsOpen"
+            x-collapse
+            class="mt-3 prose prose-sm md:prose-base dark:prose-invert max-w-none"
+          >
+            {{ $learnMore | safeHTML }}
+          </div>
+        </div>
+        {{- end -}}
       </div>
     </div>
   </div>
   {{- end -}}
   {{- end -}}
-
-  {{- /* Fallback if regex doesn't match - just render content */ -}}
-  {{- if eq (len $questions) 0 -}}
-  {{ $content | safeHTML }}
   {{- end -}}
+  </div>
 </div>
+
+<style>
+/* FAQ Accordion Animations */
+.faq-item {
+  transition: all 0.2s ease;
+}
+
+.faq-item:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Ensure smooth collapse animations */
+[x-cloak] {
+  display: none !important;
+}
+
+/* Mobile optimizations */
+@media (max-width: 640px) {
+  .faq-item h3 {
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+
+  .faq-item button {
+    padding: 1rem;
+  }
+
+  .faq-item [itemprop="text"] {
+    padding: 1rem;
+  }
+}
+
+/* Desktop hover effects */
+@media (min-width: 768px) {
+  .faq-item:hover {
+    transform: translateY(-1px);
+  }
+}
+</style>

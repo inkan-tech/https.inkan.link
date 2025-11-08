@@ -112,3 +112,16 @@ copyright = "&copy; 2025 Inkan.link. All rights reserved."
 privacy = "Privacy"
 terms = "Terms"
 sources = "Sources & Research"
+
+# FAQ Interactive Elements
+[faq]
+other = "Frequently Asked Questions"
+
+[faq_title]
+other = "Frequently Asked Questions"
+
+[faq_show_details]
+other = "Show details"
+
+[faq_hide_details]
+other = "Hide details"
