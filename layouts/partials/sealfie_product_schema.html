@@ -1,21 +1,41 @@
-{{/* Sealfie Product Schema - Use on pages that mention Sealfie */}}
+{{/* Sealfie Product Schema - Enhanced for Answer Engine Optimization */}}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   "@id": "https://sealf.ie/#software",
   "name": "Sealfie",
-  "alternateName": ["Sealf.ie", "Inkan.link Sealfie"],
-  "description": "Solution de protection contre l'usurpation d'identité et la fraude au président. Sealfie permet de vérifier l'authenticité des communications en créant des preuves cryptographiques à partir de traces numériques multiples.",
+  "alternateName": ["Sealf.ie", "Inkan.link Sealfie", "Payment Authentication Platform"],
+  "description": "Payment Authentication Platform utilisant authentification multi-sources (biométrie + blockchain + géolocalisation) pour prévenir fraude au PDG (BEC) et deepfakes IA. Validation identité émetteur en 30 secondes, 99,7% précision, déploiement <24h.",
   "url": "https://sealf.ie/",
   "applicationCategory": "SecurityApplication",
-  "operatingSystem": ["iOS", "Android", "Web"],
+  "applicationSubCategory": "Payment Authentication",
+  "operatingSystem": ["iOS 14.0+", "Android 10+", "Web"],
+
   "offers": {
     "@type": "Offer",
-    "price": "0",
+    "price": "95",
     "priceCurrency": "EUR",
-    "availability": "https://schema.org/InStock"
+    "priceSpecification": {
+      "@type": "UnitPriceSpecification",
+      "price": "95",
+      "priceCurrency": "EUR",
+      "unitText": "par utilisateur par mois"
+    },
+    "availability": "https://schema.org/InStock",
+    "availableDeliveryMethod": "https://schema.org/DigitalDownload",
+    "businessFunction": "https://schema.org/ProvideService",
+    "eligibleRegion": {
+      "@type": "GeoCircle",
+      "geoMidpoint": {
+        "@type": "GeoCoordinates",
+        "latitude": "48.8566",
+        "longitude": "2.3522"
+      },
+      "geoRadius": "20000000"
+    }
   },
+
   "publisher": {
     "@type": "Organization",
     "name": "Inkan.link",
@@ -23,26 +43,65 @@
     "logo": {
       "@type": "ImageObject",
       "url": "{{ .Site.BaseURL }}/images/InkanLogo.webp"
-    }
+    },
+    "award": [
+      "Subvention BPI France Deeptech Emergence",
+      "Technologie brevetée - Authentification multi-sources blockchain"
+    ],
+    "knowsAbout": [
+      "BEC Prevention",
+      "CEO Fraud Detection",
+      "Deepfake Protection",
+      "Multi-source Authentication"
+    ]
   },
+
   "featureList": [
-    "Protection contre la fraude au président",
-    "Vérification d'identité multicanale", 
-    "Preuves cryptographiques blockchain",
-    "Interface simple sans formation",
-    "Compatibilité mobile et desktop"
+    "Authentification multi-sources (biométrie + blockchain + géolocalisation)",
+    "Validation identité émetteur en 30 secondes (vs 20 minutes manuelles)",
+    "99,7% précision détection fraudes et deepfakes",
+    "Déploiement <24h sans formation requise",
+    "Protection deepfakes IA indiscernables",
+    "Intervention experts cybersécurité 24/7",
+    "Traçabilité blockchain complète",
+    "Intégration ERP non requise",
+    "Interface intuitive (selfie + biométrie)",
+    "Support iOS/Android/Web"
   ],
+
   "screenshot": "{{ .Site.BaseURL }}/images/sealfie-screenshot.webp",
-  "softwareVersion": "1.0",
+  "softwareVersion": "2.0",
   "datePublished": "2023-01-01",
+  "dateModified": "2024-11-08",
   "inLanguage": ["fr-FR", "en-US"],
-  "keywords": "sécurité, fraude président, usurpation identité, blockchain, authentification",
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.8",
-    "reviewCount": "127",
-    "bestRating": "5",
-    "worstRating": "1"
+
+  "keywords": "Payment Authentication, BEC Prevention, CEO Fraud, Deepfake Detection, Multi-source Authentication, Blockchain Authentication, Business Email Compromise, Identity Verification, Biometric Authentication",
+
+  "isAccessibleForFree": false,
+  "installUrl": "https://sealf.ie/",
+  "downloadUrl": "https://sealf.ie/",
+
+  "softwareRequirements": "iOS 14.0+ ou Android 10+ pour app mobile, navigateur moderne pour version web",
+
+  "releaseNotes": "Version 2.0 : Amélioration précision détection (99,7%), ajout support deepfakes vidéo temps réel, intégration experts 24/7",
+
+  "sameAs": [
+    "https://inkan.link",
+    "https://www.linkedin.com/company/inkan-link/",
+    "https://twitter.com/SealfieApp"
+  ],
+
+  "potentialAction": {
+    "@type": "UseAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://sealf.ie/",
+      "actionPlatform": [
+        "https://schema.org/DesktopWebPlatform",
+        "https://schema.org/IOSPlatform",
+        "https://schema.org/AndroidPlatform"
+      ]
+    }
   }
 }
 </script>
