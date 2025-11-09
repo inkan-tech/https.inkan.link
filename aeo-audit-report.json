@@ -1,0 +1,160 @@
+{
+  "timestamp": "2025-11-08T10:44:01.057Z",
+  "score": 70,
+  "maxScore": 100,
+  "sections": {
+    "technical": {
+      "score": 22,
+      "maxScore": 25,
+      "items": [
+        {
+          "name": "AI Crawler Access",
+          "status": "warning",
+          "score": 2,
+          "details": "0/6 AI crawlers allowed: None explicitly allowed"
+        },
+        {
+          "name": "llms.txt File",
+          "status": "pass",
+          "score": 5,
+          "details": "llms.txt present and accessible"
+        },
+        {
+          "name": "HTTPS Enabled",
+          "status": "pass",
+          "score": 5,
+          "details": "Site uses HTTPS"
+        },
+        {
+          "name": "Mobile Responsive",
+          "status": "pass",
+          "score": 5,
+          "details": "Viewport meta tag configured"
+        },
+        {
+          "name": "Page Speed",
+          "status": "pass",
+          "score": 5,
+          "details": "Load time: 151ms"
+        }
+      ]
+    },
+    "content": {
+      "score": 25,
+      "maxScore": 30,
+      "items": [
+        {
+          "name": "FAQ Page Exists",
+          "status": "pass",
+          "score": 5,
+          "details": "FAQ page found at /faq/"
+        },
+        {
+          "name": "FAQPage Schema",
+          "status": "pass",
+          "score": 5,
+          "details": "FAQPage schema markup detected"
+        },
+        {
+          "name": "Heading Structure",
+          "status": "pass",
+          "score": 5,
+          "details": "H1: 1, H2: 6, H3: 10"
+        },
+        {
+          "name": "Structured Content",
+          "status": "pass",
+          "score": 5,
+          "details": "Lists: 4, Tables: 0"
+        },
+        {
+          "name": "Organization Schema",
+          "status": "warning",
+          "score": 0,
+          "details": "Organization schema not found"
+        },
+        {
+          "name": "Content Accessibility",
+          "status": "pass",
+          "score": 5,
+          "details": "No paywalls detected"
+        }
+      ]
+    },
+    "authority": {
+      "score": 10,
+      "maxScore": 20,
+      "items": [
+        {
+          "name": "Author Attribution",
+          "status": "warning",
+          "score": 0,
+          "details": "No clear author attribution"
+        },
+        {
+          "name": "Team/About Page",
+          "status": "pass",
+          "score": 5,
+          "details": "Team or about page exists"
+        },
+        {
+          "name": "External Citations",
+          "status": "pass",
+          "score": 5,
+          "details": "4 external references found"
+        },
+        {
+          "name": "Credentials & Recognition",
+          "status": "warning",
+          "score": 0,
+          "details": "No credentials found"
+        }
+      ]
+    },
+    "citation": {
+      "score": 13,
+      "maxScore": 25,
+      "items": [
+        {
+          "name": "Answer-First Structure",
+          "status": "warning",
+          "score": 3,
+          "details": "First paragraph: 27 characters"
+        },
+        {
+          "name": "Sentence Length",
+          "status": "warning",
+          "score": 3,
+          "details": "Average: 84.0 words/sentence (ideal: 15-25)"
+        },
+        {
+          "name": "Data & Statistics",
+          "status": "pass",
+          "score": 6,
+          "details": "63 numbers/statistics found"
+        },
+        {
+          "name": "Quotations",
+          "status": "warning",
+          "score": 1,
+          "details": "1 quotes/blockquotes found"
+        },
+        {
+          "name": "Freshness Signals",
+          "status": "warning",
+          "score": 0,
+          "details": "No freshness signals found"
+        }
+      ]
+    }
+  },
+  "recommendations": [
+    "Add Organization schema with company details"
+  ],
+  "quickWins": [
+    "Add \"Last updated\" dates to content pages"
+  ],
+  "longTerm": [
+    "Add author bios and credentials to content pages"
+  ]
+}
