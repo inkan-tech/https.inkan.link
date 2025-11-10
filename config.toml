@@ -143,11 +143,15 @@ copyright = 'Inkan.link reserved'
   [languages.en]
     title = 'Inkan.link'
     weight = 1
+    languageCode = 'en'
+    contentDir = 'content'
     # [languages.en.params]
     #   linkedin = 'https://linkedin.com/whoever'
   [languages.fr]
     title =  'Inkan.link'
     weight = 1
+    languageCode = 'fr'
+    contentDir = 'content'
     [languages.fr.params]
       # linkedin = 'https://linkedin.com/fr/whoever'
         description = "Protégez votre entreprise contre la fraude au président avec la technologie blockchain d'Inkan.link. Stoppez les arnaques aux deepfakes." 

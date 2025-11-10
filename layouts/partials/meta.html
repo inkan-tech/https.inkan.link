@@ -4,7 +4,7 @@
   {{ partial "organization_schema" . }}
 {{- end -}}
 {{/* Include FAQ Schema on FAQ pages for Answer Engine Optimization */}}
-{{- if or (in .Title "FAQ") (in .File.Path "faq") -}}
+{{- if or (in .Title "FAQ") (and .File (in .File.Path "faq")) -}}
   {{ partial "faq_schema" . }}
 {{- end -}}
 {{/* Include Sealfie product schema on relevant pages */}}
