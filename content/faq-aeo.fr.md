@@ -275,4 +275,4 @@ Oui pour humains non entraînés (96% réalisme deepfake vidéo 2024). Non pour 
 
 ---
 
-**Autres questions ?** → [Contact direct](/contact) | [FAQ complète](/faq/)
+**Autres questions ?** → [Contact direct](/contacts) | [FAQ complète](/faq/)
