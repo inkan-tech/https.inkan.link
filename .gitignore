@@ -42,3 +42,8 @@ tests/visual/**/*-diff.png
 tests/visual/**/*-screenshot.png
 # Audit scripts
 audit-*.sh
+
+# LLM Detection Analysis - Generated reports
+llm-analysis-results.json
+RAPPORT-ANALYSE-LLM.md
+analyze_site_content.py
