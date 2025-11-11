@@ -1,0 +1,13 @@
+# Redirections for inkan.link
+# GitHub Pages supports Netlify-style _redirects format
+
+# Redirect /fr/ to homepage (French is default language without subfolder)
+/fr/                    /                       301!
+/fr/*                   /:splat                 301!
+
+# Ensure HTTPS
+http://inkan.link/*     https://inkan.link/:splat   301
+
+# Ensure www to non-www
+https://www.inkan.link/*    https://inkan.link/:splat   301
+http://www.inkan.link/*     https://inkan.link/:splat   301
