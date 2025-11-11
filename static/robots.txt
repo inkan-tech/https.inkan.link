@@ -41,6 +41,11 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
+# SEO and Analytics Crawlers
+# Ahrefs SEO Crawler
+User-agent: AhrefsBot
+Allow: /
+
 # Sitemap
 Sitemap: https://inkan.link/sitemap.xml
 Sitemap: https://inkan.link/en/sitemap.xml
