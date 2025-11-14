@@ -5,6 +5,7 @@
     <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
       <a href="{{ .Site.BaseURL }}" class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors" itemprop="item">
         <span itemprop="name">{{ if eq .Language.Lang "fr" }}Accueil{{ else }}Home{{ end }}</span>
+        <meta itemprop="id" content="{{ .Site.BaseURL }}" />
       </a>
       <meta itemprop="position" content="1" />
     </li>
@@ -24,6 +25,7 @@
             {{ humanize .Section }}
           {{- end -}}
         </span>
+        <meta itemprop="id" content="{{ .Site.BaseURL }}{{ .Section }}/" />
       </a>
       <meta itemprop="position" content="2" />
     </li>
@@ -38,6 +40,7 @@
     <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
       <span class="text-neutral-500 dark:text-neutral-500" itemprop="item">
         <span itemprop="name">{{ .Title }}</span>
+        <meta itemprop="id" content="{{ .Permalink }}" />
       </span>
       <meta itemprop="position" content="3" />
     </li>
@@ -50,6 +53,7 @@
     <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
       <span class="text-neutral-500 dark:text-neutral-500" itemprop="item">
         <span itemprop="name">{{ .Title }}</span>
+        <meta itemprop="id" content="{{ .Permalink }}" />
       </span>
       <meta itemprop="position" content="2" />
     </li>
