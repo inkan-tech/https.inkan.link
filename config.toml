@@ -116,6 +116,11 @@ tag = "Tags"
   priority = 0.5
   filename = "sitemap.xml"
 
+# Disable per-language sitemaps to avoid /fr/sitemap.xml issue
+# Since French is at root (defaultContentLanguageInSubdir = false),
+# we use a single unified sitemap
+disableLanguages = []
+
 [privacy]
 [privacy.disqus]
 disable = false
@@ -140,13 +145,6 @@ privacyEnhanced = true
 
 copyright = 'Inkan.link reserved'
 [languages]
-  [languages.en]
-    title = 'Inkan.link'
-    weight = 1
-    languageCode = 'en'
-    contentDir = 'content'
-    # [languages.en.params]
-    #   linkedin = 'https://linkedin.com/whoever'
   [languages.fr]
     title =  'Inkan.link'
     weight = 1
@@ -154,12 +152,19 @@ copyright = 'Inkan.link reserved'
     contentDir = 'content'
     [languages.fr.params]
       # linkedin = 'https://linkedin.com/fr/whoever'
-        description = "Protégez votre entreprise contre la fraude au président avec la technologie blockchain d'Inkan.link. Stoppez les arnaques aux deepfakes." 
+        description = "Protégez votre entreprise contre la fraude au président avec la technologie blockchain d'Inkan.link. Stoppez les arnaques aux deepfakes."
       [languages.fr.params.navigation]
         about = 'A propos'
-        team = "L'équipe"      
+        team = "L'équipe"
         contacts = 'Contacts'
         legal = 'Mentions légales'
+  [languages.en]
+    title = 'Inkan.link'
+    weight = 2
+    languageCode = 'en'
+    contentDir = 'content'
+    # [languages.en.params]
+    #   linkedin = 'https://linkedin.com/whoever'
 
 
 [module]

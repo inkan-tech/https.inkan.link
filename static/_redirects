@@ -1,6 +1,9 @@
 # Redirections for inkan.link
 # GitHub Pages supports Netlify-style _redirects format
 
+# Redirect /fr/sitemap.xml to main sitemap (French content is at root)
+/fr/sitemap.xml         /sitemap.xml            301!
+
 # Redirect /fr/ to homepage (French is default language without subfolder)
 /fr/                    /                       301!
 /fr/*                   /:splat                 301!
