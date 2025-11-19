@@ -6,7 +6,7 @@ description: "Sealfie FAQ - Payment Authentication Platform that reduces manual 
 categories: Site
 ---
 
-# Frequently Asked Questions about Sealfie
+## Frequently Asked Questions about Sealfie
 
 Discover how Sealfie, the Payment Authentication Platform, transforms your financial operations with 80% reduction in manual validation time while protecting against advanced threats.
 

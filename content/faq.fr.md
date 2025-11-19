@@ -6,7 +6,7 @@ description: "FAQ Sealfie - Plateforme d'authentification des paiements qui réd
 categories: Site
 ---
 
-# Questions fréquentes sur Sealfie
+## Questions fréquentes sur Sealfie
 
 Découvrez comment Sealfie, la Payment Authentication Platform, transforme vos opérations financières avec 80% de réduction du temps de validation manuelle tout en protégeant contre les menaces avancées.
 
