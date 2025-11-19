@@ -138,7 +138,7 @@
       "@id": "{{ .Permalink }}#{{ lower $schemaType }}",
       "url": "{{ .Permalink }}",
       "name": "{{ .Title }}",
-      "description": "{{ if .Description }}{{ .Description }}{{ else }}{{ .Summary }}{{ end }}",
+      "description": "{{ if .Description }}{{ .Description }}{{ else if .Summary }}{{ .Summary }}{{ else }}{{ .Title }}{{ end }}",
       "inLanguage": "{{ .Language.Lang }}",
       "isPartOf": {
         "@id": "{{ .Permalink }}#webpage"
@@ -160,7 +160,7 @@
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Accueil",
+      "name": "{{ if eq .Language.Lang "fr" }}Accueil{{ else }}Home{{ end }}",
       "item": "{{ .Site.BaseURL }}"
     }
     {{- if .Section }},
