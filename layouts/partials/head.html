@@ -47,18 +47,18 @@
 		{{- end -}}
 	<link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ $transCanonicalURL }}">
 	{{ end }}
-	{{/* x-default hreflang - fallback to English (international audience) */}}
-	{{ if eq .Language.Lang "en" }}
+	{{/* x-default hreflang - fallback to default language (French) */}}
+	{{ if eq .Language.Lang "fr" }}
 	<link rel="alternate" hreflang="x-default" href="{{ $canonicalURL }}">
 	{{ else }}
 	{{ with .Translations }}
 		{{ range . }}
-			{{ if eq .Language.Lang "en" }}
-				{{- $enCanonicalURL := .Permalink -}}
+			{{ if eq .Language.Lang "fr" }}
+				{{- $frCanonicalURL := .Permalink -}}
 				{{- if isset .Params "canonical" -}}
-					{{- $enCanonicalURL = .Params.canonical -}}
+					{{- $frCanonicalURL = .Params.canonical -}}
 				{{- end -}}
-	<link rel="alternate" hreflang="x-default" href="{{ $enCanonicalURL }}">
+	<link rel="alternate" hreflang="x-default" href="{{ $frCanonicalURL }}">
 			{{ end }}
 		{{ end }}
 	{{ end }}
