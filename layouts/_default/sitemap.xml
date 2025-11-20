@@ -4,8 +4,13 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   {{- range .Data.Pages }}
   {{- if .Permalink }}
+  {{/* Use canonical URL if specified, otherwise use permalink */}}
+  {{- $canonicalURL := .Permalink -}}
+  {{- if isset .Params "canonical" -}}
+    {{- $canonicalURL = .Params.canonical -}}
+  {{- end -}}
   <url>
-    <loc>{{ .Permalink }}</loc>
+    <loc>{{ $canonicalURL }}</loc>
     {{- if not .Lastmod.IsZero }}
     <lastmod>{{ .Lastmod.Format "2006-01-02T15:04:05-07:00" | safeHTML }}</lastmod>
     {{- end }}
@@ -15,14 +20,18 @@
     {{- if ge .Sitemap.Priority 0.0 }}
     <priority>{{ .Sitemap.Priority }}</priority>
     {{- end }}
-    
+
     {{/* Add alternate language versions */}}
     {{- if .IsTranslated }}
     {{- range .Translations }}
-    <xhtml:link 
+    {{- $transCanonicalURL := .Permalink -}}
+    {{- if isset .Params "canonical" -}}
+      {{- $transCanonicalURL = .Params.canonical -}}
+    {{- end -}}
+    <xhtml:link
       rel="alternate"
       hreflang="{{ .Language.Lang }}"
-      href="{{ .Permalink }}" />
+      href="{{ $transCanonicalURL }}" />
     {{- end }}
     {{- end }}
     
