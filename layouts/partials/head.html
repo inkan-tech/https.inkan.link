@@ -31,14 +31,15 @@
 {{ $styles := $styles | minify | fingerprint | resources.PostProcess }}
 <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}" />
 {{ end }}
+{{/* Hreflang tags - ALWAYS include, even for pages without translations */}}
+{{/* Determine canonical URL for hreflang (must match canonical link) */}}
+{{- $canonicalURL := .Permalink -}}
+{{- if isset .Params "canonical" -}}
+	{{- $canonicalURL = .Params.canonical -}}
+{{- end -}}
+{{/* Self-referencing hreflang - page ALWAYS references itself */}}
+<link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ $canonicalURL }}">
 {{ if .IsTranslated }}
-	{{/* Determine canonical URL for hreflang (must match canonical link) */}}
-	{{- $canonicalURL := .Permalink -}}
-	{{- if isset .Params "canonical" -}}
-		{{- $canonicalURL = .Params.canonical -}}
-	{{- end -}}
-	{{/* Self-referencing hreflang - page references itself */}}
-	<link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ $canonicalURL }}">
 	{{/* Translations - reciprocal hreflang tags */}}
 	{{ range .Translations }}
 		{{- $transCanonicalURL := .Permalink -}}
@@ -47,10 +48,12 @@
 		{{- end -}}
 	<link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ $transCanonicalURL }}">
 	{{ end }}
-	{{/* x-default hreflang - fallback to default language (French) */}}
-	{{ if eq .Language.Lang "fr" }}
-	<link rel="alternate" hreflang="x-default" href="{{ $canonicalURL }}">
-	{{ else }}
+{{ end }}
+{{/* x-default hreflang - fallback to default language (French) */}}
+{{ if eq .Language.Lang "fr" }}
+<link rel="alternate" hreflang="x-default" href="{{ $canonicalURL }}">
+{{ else }}
+{{ if .IsTranslated }}
 	{{ with .Translations }}
 		{{ range . }}
 			{{ if eq .Language.Lang "fr" }}
@@ -62,7 +65,10 @@
 			{{ end }}
 		{{ end }}
 	{{ end }}
-	{{ end }}
+{{ else }}
+	{{/* No translation exists - English-only page should point x-default to itself as fallback */}}
+	<link rel="alternate" hreflang="x-default" href="{{ $canonicalURL }}">
+{{ end }}
 {{ end }}
 <!-- Critical CSS inline for above-the-fold content -->
 <style>
