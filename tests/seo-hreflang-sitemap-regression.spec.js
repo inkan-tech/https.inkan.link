@@ -41,9 +41,9 @@ test.describe('SEO Non-Regression: Hreflang & Sitemap Fixes', () => {
     const hreflangEn = normalizeUrl(await page.locator('link[rel="alternate"][hreflang="en"]').getAttribute('href'));
     expect(hreflangEn, 'Hreflang en should point to /en/').toBe('https://inkan.link/en/');
 
-    // Check x-default points to English (international audience)
+    // Check x-default points to French (default language as per config.toml)
     const hreflangDefault = normalizeUrl(await page.locator('link[rel="alternate"][hreflang="x-default"]').getAttribute('href'));
-    expect(hreflangDefault, 'Hreflang x-default should point to English version').toBe('https://inkan.link/en/');
+    expect(hreflangDefault, 'Hreflang x-default should point to French (default language)').toBe('https://inkan.link/');
 
     console.log('✅ French homepage canonical and hreflang verified');
   });
@@ -67,15 +67,41 @@ test.describe('SEO Non-Regression: Hreflang & Sitemap Fixes', () => {
     const hreflangEn = normalizeUrl(await page.locator('link[rel="alternate"][hreflang="en"]').getAttribute('href'));
     expect(hreflangEn, 'Hreflang en should point to /en/').toBe('https://inkan.link/en/');
 
-    // Check x-default points to English
+    // Check x-default points to French (default language as per config.toml)
     const hreflangDefault = normalizeUrl(await page.locator('link[rel="alternate"][hreflang="x-default"]').getAttribute('href'));
-    expect(hreflangDefault, 'Hreflang x-default should point to English version').toBe('https://inkan.link/en/');
+    expect(hreflangDefault, 'Hreflang x-default should point to French (default language)').toBe('https://inkan.link/');
 
     console.log('✅ English homepage canonical and hreflang verified');
   });
 
   /**
-   * Test 3: Hreflang reciprocity
+   * Test 3: /fr/ alias redirect should have correct hreflang
+   * Verifies that the /fr/ alias (redirect to /) has proper hreflang tags
+   * This fixes the Ahrefs issue: "Hreflang to non-canonical" on https://inkan.link/fr/
+   */
+  test('/fr/ alias should have correct hreflang tags', async ({ page }) => {
+    await page.goto(`${BASE_URL}/fr/`, { waitUntil: 'networkidle' });
+
+    // The /fr/ URL is an alias that redirects to /
+    // It should still have proper hreflang tags in the redirect page
+
+    // Check hreflang for French
+    const hreflangFr = normalizeUrl(await page.locator('link[rel="alternate"][hreflang="fr"]').getAttribute('href'));
+    expect(hreflangFr, 'Hreflang fr on /fr/ should point to root').toBe('https://inkan.link/');
+
+    // Check hreflang for English
+    const hreflangEn = normalizeUrl(await page.locator('link[rel="alternate"][hreflang="en"]').getAttribute('href'));
+    expect(hreflangEn, 'Hreflang en on /fr/ should point to /en/').toBe('https://inkan.link/en/');
+
+    // Check x-default points to French (default language)
+    const hreflangDefault = normalizeUrl(await page.locator('link[rel="alternate"][hreflang="x-default"]').getAttribute('href'));
+    expect(hreflangDefault, 'Hreflang x-default on /fr/ should point to French').toBe('https://inkan.link/');
+
+    console.log('✅ /fr/ alias hreflang tags verified');
+  });
+
+  /**
+   * Test 4: Hreflang reciprocity
    * Verifies that hreflang tags are reciprocal (FR points to EN, EN points to FR)
    */
   test('Hreflang tags should be reciprocal between FR and EN', async ({ page }) => {
@@ -113,7 +139,7 @@ test.describe('SEO Non-Regression: Hreflang & Sitemap Fixes', () => {
   });
 
   /**
-   * Test 4: Sitemap redirect for /fr/sitemap.xml
+   * Test 5: Sitemap redirect for /fr/sitemap.xml
    * Verifies that /fr/sitemap.xml redirects to /sitemap.xml (301)
    */
   test('/fr/sitemap.xml should redirect to main sitemap', async ({ page }) => {
@@ -135,7 +161,7 @@ test.describe('SEO Non-Regression: Hreflang & Sitemap Fixes', () => {
   });
 
   /**
-   * Test 5: Sitemap contains only canonical URLs
+   * Test 6: Sitemap contains only canonical URLs
    * Verifies that all URLs in the main sitemap have matching canonical tags
    */
   test('Main sitemap should only contain canonical URLs', async ({ page }) => {
@@ -215,7 +241,7 @@ test.describe('SEO Non-Regression: Hreflang & Sitemap Fixes', () => {
   });
 
   /**
-   * Test 6: Language priority verification
+   * Test 7: Language priority verification
    * Verifies that French (weight 1) comes before English (weight 2) in sitemaps
    */
   test('Sitemap index should list French sitemap first', async ({ page }) => {
@@ -251,7 +277,7 @@ test.describe('SEO Non-Regression: Hreflang & Sitemap Fixes', () => {
   });
 
   /**
-   * Test 7: Self-referencing hreflang validation
+   * Test 8: Self-referencing hreflang validation
    * Each page should reference itself in its own language
    */
   test('Pages should have self-referencing hreflang', async ({ page }) => {
@@ -277,7 +303,7 @@ test.describe('SEO Non-Regression: Hreflang & Sitemap Fixes', () => {
   });
 
   /**
-   * Test 8: Report summary
+   * Test 9: Report summary
    * Generate a summary report of all checks
    */
   test('Generate hreflang and sitemap validation report', async ({ page }) => {
