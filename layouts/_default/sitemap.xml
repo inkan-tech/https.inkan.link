@@ -21,6 +21,13 @@
     <priority>{{ .Sitemap.Priority }}</priority>
     {{- end }}
 
+    {{/* Add hreflang tags - ALWAYS include self-reference */}}
+    {{/* Self-referencing hreflang - every page references itself */}}
+    <xhtml:link
+      rel="alternate"
+      hreflang="{{ .Language.Lang }}"
+      href="{{ $canonicalURL }}" />
+
     {{/* Add alternate language versions */}}
     {{- if .IsTranslated }}
     {{- range .Translations }}
@@ -33,6 +40,35 @@
       hreflang="{{ .Language.Lang }}"
       href="{{ $transCanonicalURL }}" />
     {{- end }}
+    {{- end }}
+
+    {{/* x-default hreflang - fallback to default language (French) */}}
+    {{- if eq .Language.Lang "fr" -}}
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="{{ $canonicalURL }}" />
+    {{- else -}}
+      {{- if .IsTranslated -}}
+        {{- range .Translations -}}
+          {{- if eq .Language.Lang "fr" -}}
+            {{- $frCanonicalURL := .Permalink -}}
+            {{- if isset .Params "canonical" -}}
+              {{- $frCanonicalURL = .Params.canonical -}}
+            {{- end -}}
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="{{ $frCanonicalURL }}" />
+          {{- end -}}
+        {{- end -}}
+      {{- else -}}
+        {{/* No translation exists - English-only page should point x-default to itself as fallback */}}
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="{{ $canonicalURL }}" />
+      {{- end -}}
     {{- end }}
     
     {{/* Add image information */}}
