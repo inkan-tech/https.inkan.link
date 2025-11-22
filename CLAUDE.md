@@ -180,13 +180,30 @@ tags: [Tag1, Tag2]
 
 ### Build Process
 1. TailwindCSS processes `assets/css/main.css` → `assets/css/style.css`
-2. Hugo processes templates, content, and assets
-3. Generates static site in `public/`
-4. Images are automatically optimized to WebP format
+2. **PurgeCSS** removes unused CSS in production (52% reduction: 131KB → 63KB)
+3. Hugo processes templates, content, and assets
+4. Generates static site in `public/`
+5. Images are automatically optimized to WebP format
+
+#### CSS Optimization
+- **Development**: Full TailwindCSS for fast iteration
+- **Production**: PurgeCSS + CSS Nano for optimal file size
+- Run `npm run build` for production build with optimizations
+- Run `npm run build:preview` for preview build without PurgeCSS
+- Configuration: `postcss.config.js` handles CSS processing pipeline
 
 ## Content Guidelines
 
 ### SEO Optimization
+
+#### IndexNow Automatic Submission
+- **IMPORTANT**: IndexNow submission is handled automatically by GitHub Actions
+- The workflow runs after each deployment to submit new/updated URLs to search engines
+- No manual action required - just commit and push changes
+- Supported search engines: Bing, Yandex, Seznam, and others in the IndexNow alliance
+- Pages marked as "Pages to submit to IndexNow" in Ahrefs are handled automatically
+
+### SEO Best Practices
 - All pages have proper meta descriptions
 - OpenGraph images configured
 - Structured data via `layouts/partials/seo_schema.html`
