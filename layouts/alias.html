@@ -1,5 +1,11 @@
 <!DOCTYPE html>
-<html>
+{{/* Detect language from URL pattern for proper lang attribute */}}
+{{- $url := .Permalink -}}
+{{- $lang := "fr" -}}
+{{- if or (strings.Contains $url "/en/") (strings.HasSuffix $url "/en") -}}
+  {{- $lang = "en" -}}
+{{- end -}}
+<html lang="{{ $lang }}" xml:lang="{{ $lang }}">
   <head>
     <title>{{ .Permalink }}</title>
     <link rel="canonical" href="{{ .Permalink }}">
@@ -8,18 +14,12 @@
     <meta charset="utf-8">
     <meta http-equiv="refresh" content="0; url={{ .Permalink }}">
     {{/* Hreflang tags for alias pages */}}
-    {{- $url := .Permalink -}}
     {{/* Extract base URL (protocol + domain) from permalink */}}
     {{- $baseURL := "" -}}
     {{- if strings.HasPrefix $url "http://" -}}
       {{- $baseURL = replaceRE "^(https?://[^/]+).*" "$1" $url -}}
     {{- else if strings.HasPrefix $url "https://" -}}
       {{- $baseURL = replaceRE "^(https?://[^/]+).*" "$1" $url -}}
-    {{- end -}}
-    {{/* Detect language from URL pattern */}}
-    {{- $lang := "fr" -}}
-    {{- if or (strings.Contains $url "/en/") (strings.HasSuffix $url "/en") -}}
-      {{- $lang = "en" -}}
     {{- end -}}
     {{/* Self-referencing hreflang */}}
     <link rel="alternate" hreflang="{{ $lang }}" href="{{ $url }}">

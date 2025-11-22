@@ -47,5 +47,6 @@ User-agent: AhrefsBot
 Allow: /
 
 # Sitemap
+# Note: French content is at root (no /fr/ prefix)
 Sitemap: https://inkan.link/sitemap.xml
 Sitemap: https://inkan.link/en/sitemap.xml
