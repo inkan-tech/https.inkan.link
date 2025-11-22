@@ -12,17 +12,34 @@
     "name" : "{{ .Title }}",
     "headline" : "{{ .Title }}",
     "description" : "{{ if .Description }}{{ .Description }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ end }}{{ end }}",
-    "inLanguage" : {{ .Language.LanguageName }},
-    "author" : "{{ range .Site.Author }}{{ . }}{{ end }}",
-    "creator" : "{{ range .Site.Author }}{{ . }}{{ end }}",
-    "publisher": "{{ range .Site.Author }}{{ . }}{{ end }}",
-    "accountablePerson" : "{{ range .Site.Author }}{{ . }}{{ end }}",
-    "copyrightHolder" : "{{ range .Site.Author }}{{ . }}{{ end }}",
+    "inLanguage" : "{{ .Language.Lang }}",
+    "author" : {
+        "@type": "Person",
+        "name": "{{ .Params.author | default "Inkan.link Team" }}"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Inkan.link",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "{{ .Site.BaseURL }}images/InkanLogo.webp"
+        }
+    },
     "copyrightYear" : "{{ .Date.Format "2006" }}",
     "datePublished": "{{ .Date }}",
     "dateModified" : "{{ .Date }}",
     "url" : "{{ .Permalink }}",
+    {{ if .Params.featured_image }}"image": {
+        "@type": "ImageObject",
+        "url": "{{ .Site.BaseURL }}{{ .Params.featured_image | relURL }}"
+    },{{ else if .Params.og_image }}"image": {
+        "@type": "ImageObject",
+        "url": "{{ .Site.BaseURL }}{{ .Params.og_image | relURL }}"
+    },{{ else }}"image": {
+        "@type": "ImageObject",
+        "url": "{{ .Site.BaseURL }}images/InkanLogo.webp"
+    },{{ end }}
     "wordCount" : "{{ .WordCount }}",
-    "keywords" : [ {{ if isset .Params "tags" }}{{ range .Params.tags }}"{{ . }}",{{ end }}{{ end }}"Blog" ]
+    "keywords" : [ {{ range $i, $e := .Params.tags }}{{ if $i }}, {{ end }}"{{ $e }}"{{ end }} ]
 }
 </script>
