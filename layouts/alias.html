@@ -1,37 +1,42 @@
 <!DOCTYPE html>
 {{/* Detect language from URL pattern for proper lang attribute */}}
-{{- $url := .Permalink -}}
+{{- $aliasURL := .Permalink -}}
+{{- $canonicalURL := .Permalink -}}
 {{- $lang := "fr" -}}
-{{- if or (strings.Contains $url "/en/") (strings.HasSuffix $url "/en") -}}
+{{- if or (strings.Contains $aliasURL "/en/") (strings.HasSuffix $aliasURL "/en") -}}
   {{- $lang = "en" -}}
 {{- end -}}
 <html lang="{{ $lang }}" xml:lang="{{ $lang }}">
   <head>
     <title>{{ .Permalink }}</title>
-    <link rel="canonical" href="{{ .Permalink }}">
+    <link rel="canonical" href="{{ $canonicalURL }}">
     {{/* Changed from noindex to index,follow for SEO - redirects should be followed */}}
     <meta name="robots" content="index,follow">
     <meta charset="utf-8">
     <meta http-equiv="refresh" content="0; url={{ .Permalink }}">
-    {{/* Hreflang tags for alias pages */}}
+    {{/* Hreflang tags for alias pages - MUST point to canonical URLs, not alias URLs */}}
+    {{/* Per Ahrefs: hreflang pointing to non-canonical creates contradictory signals */}}
     {{/* Extract base URL (protocol + domain) from permalink */}}
     {{- $baseURL := "" -}}
-    {{- if strings.HasPrefix $url "http://" -}}
-      {{- $baseURL = replaceRE "^(https?://[^/]+).*" "$1" $url -}}
-    {{- else if strings.HasPrefix $url "https://" -}}
-      {{- $baseURL = replaceRE "^(https?://[^/]+).*" "$1" $url -}}
+    {{- if strings.HasPrefix $canonicalURL "http://" -}}
+      {{- $baseURL = replaceRE "^(https?://[^/]+).*" "$1" $canonicalURL -}}
+    {{- else if strings.HasPrefix $canonicalURL "https://" -}}
+      {{- $baseURL = replaceRE "^(https?://[^/]+).*" "$1" $canonicalURL -}}
     {{- end -}}
-    {{/* Self-referencing hreflang */}}
-    <link rel="alternate" hreflang="{{ $lang }}" href="{{ $url }}">
-    {{/* Add alternate language link */}}
+    {{/* Self-referencing hreflang - points to canonical URL */}}
+    <link rel="alternate" hreflang="{{ $lang }}" href="{{ $canonicalURL }}">
+    {{/* Add alternate language link - points to canonical URLs */}}
+    {{/* For French canonical pages, English version is at /en + canonical path */}}
+    {{/* For English canonical pages, French version is canonical path with /en removed */}}
     {{ if eq $lang "fr" }}
-      {{/* French page - add English alternate */}}
-      {{- $enURL := printf "%s/en/" $baseURL -}}
+      {{/* French canonical page - English version is /en + path */}}
+      {{- $pathOnly := strings.TrimPrefix $baseURL $canonicalURL -}}
+      {{- $enURL := printf "%s/en%s" $baseURL $pathOnly -}}
       <link rel="alternate" hreflang="en" href="{{ $enURL }}">
-      <link rel="alternate" hreflang="x-default" href="{{ $url }}">
+      <link rel="alternate" hreflang="x-default" href="{{ $canonicalURL }}">
     {{ else }}
-      {{/* English page - add French alternate */}}
-      {{- $frURL := strings.Replace $url "/en/" "/" 1 -}}
+      {{/* English canonical page - French version removes /en */}}
+      {{- $frURL := strings.Replace $canonicalURL "/en/" "/" 1 -}}
       <link rel="alternate" hreflang="fr" href="{{ $frURL }}">
       <link rel="alternate" hreflang="x-default" href="{{ $frURL }}">
     {{ end }}
