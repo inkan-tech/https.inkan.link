@@ -214,6 +214,13 @@ tags: [Tag1, Tag2]
 - Proper hreflang implementation
 - Language-specific meta descriptions and titles
 
+### Ahrefs SEO Monitoring
+- **Quick Access**: Use `.claude/notes/ahrefs-monitoring.md` for monitoring workflow
+- **Dashboard URL**: https://app.ahrefs.com/site-audit/8667120/issues
+- **Workflow**: Use browserMCP to navigate to dashboard and check current issues
+- **Priority**: Focus on Localization (hreflang) and Content issues first
+- **Reference**: See monitoring guide for detailed browserMCP workflow
+
 ## Troubleshooting
 
 ### Common Issues
