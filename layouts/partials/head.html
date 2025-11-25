@@ -46,18 +46,17 @@
         <link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ $transCanonicalURL }}">
     {{- end -}}
 
-    {{/* x-default hreflang - fallback to default language (French) */}}
-    {{- if eq .Language.Lang "en" -}}
+    {{/* x-default hreflang - ALWAYS points to default language (French) */}}
+    {{- if eq .Language.Lang "fr" -}}
+        {{/* French page - x-default points to itself */}}
         <link rel="alternate" hreflang="x-default" href="{{ $canonicalURL }}">
     {{- else -}}
-        {{- with .Site.GetPage "en" -}}
-            {{- $frTranslation := .GetPage "fr" -}}
-            {{- if $frTranslation -}}
-                {{- $frCanonicalURL := $frTranslation.Params.canonicalURL | default $frTranslation.Permalink -}}
+        {{/* Non-French page - x-default must point to French translation */}}
+        {{- range .Translations -}}
+            {{- if eq .Language.Lang "fr" -}}
+                {{- $frCanonicalURL := .Params.canonicalURL | default .Permalink -}}
                 <link rel="alternate" hreflang="x-default" href="{{ $frCanonicalURL }}">
             {{- end -}}
-        {{- else -}}
-            <link rel="alternate" hreflang="x-default" href="{{ $canonicalURL }}">
         {{- end -}}
     {{- end -}}
 {{- else -}}
