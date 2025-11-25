@@ -2,7 +2,7 @@
 
 ## Quick Access URL
 
-**All Issues Dashboard:** https://app.ahrefs.com/site-audit/8667120/issues?current=25-11-2025T144534P0100
+**All Issues Dashboard:** https://app.ahrefs.com/site-audit/8667120/issues
 
 ## How to Check Current Issues
 
