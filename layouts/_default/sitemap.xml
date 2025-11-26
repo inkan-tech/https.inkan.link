@@ -74,7 +74,7 @@
     {{/* Add image information */}}
     {{- if .Params.featured_image }}
     <image:image>
-      <image:loc>{{ .Site.BaseURL }}{{ .Params.featured_image | relURL }}</image:loc>
+      <image:loc>{{ .Params.featured_image | absURL }}</image:loc>
       {{- if .Params.og_image_alt }}
       <image:caption>{{ .Params.og_image_alt }}</image:caption>
       {{- else }}
