@@ -168,10 +168,10 @@
     {{- if .Section }},
     {
       "@type": "ListItem",
-      "@id": "{{ .Site.BaseURL }}{{ .Section }}/#listitem",
+      "@id": "{{ .Site.BaseURL }}{{ if ne .Language.Lang "fr" }}{{ .Language.Lang }}/{{ end }}{{ .Section }}/#listitem",
       "position": 2,
-      "name": "{{ humanize .Section }}",
-      "item": "{{ .Site.BaseURL }}{{ .Section }}/"
+      "name": "{{ if eq .Section "posts" }}{{ if eq .Language.Lang "fr" }}Articles{{ else }}Posts{{ end }}{{ else }}{{ humanize .Section }}{{ end }}",
+      "item": "{{ .Site.BaseURL }}{{ if ne .Language.Lang "fr" }}{{ .Language.Lang }}/{{ end }}{{ .Section }}/"
     }
     {{- end }}
     {{- if not .IsSection }},

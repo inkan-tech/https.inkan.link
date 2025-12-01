@@ -17,7 +17,8 @@
       </svg>
     </li>
     <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-      <a href="{{ .Site.BaseURL }}{{ .Section }}/" class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors" itemprop="item">
+      {{- $sectionUrl := printf "%s%s%s/" .Site.BaseURL (cond (ne .Language.Lang "fr") (printf "%s/" .Language.Lang) "") .Section -}}
+      <a href="{{ $sectionUrl }}" class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors" itemprop="item">
         <span itemprop="name">
           {{- if eq .Section "posts" -}}
             {{ if eq .Language.Lang "fr" }}Articles{{ else }}Articles{{ end }}
@@ -25,7 +26,7 @@
             {{ humanize .Section }}
           {{- end -}}
         </span>
-        <meta itemprop="id" content="{{ .Site.BaseURL }}{{ .Section }}/" />
+        <meta itemprop="id" content="{{ $sectionUrl }}" />
       </a>
       <meta itemprop="position" content="2" />
     </li>
