@@ -51,7 +51,8 @@ This is Inkan.link's corporate website, built with Hugo static site generator an
 
 ### Technology Stack
 - **Hugo**: Static site generator (v0.130.0 minimum, max v0.155.1)
-- **TailwindCSS**: v4.1.7 for styling (do NOT upgrade to 4.x as noted in package.json)
+- **Bun**: JavaScript runtime and package manager (replaces Node.js/npm)
+- **TailwindCSS**: v3.4.x for styling (do NOT upgrade to 4.x as noted in package.json)
 - **AlpineJS**: v3.14.9 for interactive components
 - **PostCSS**: CSS processing
 - **Matomo**: Analytics tracking
@@ -76,28 +77,28 @@ This is Inkan.link's corporate website, built with Hugo static site generator an
 ```bash
 # Development server with live reload
 hugo server
-# or with npm script
-npm run watch:hugo
+# or with bun script
+bun run watch:hugo
 
 # Build for production
 hugo --minify
 # or
-npm run build
+bun run build
 
 # TailwindCSS compilation
-npx @tailwindcss/cli -i ./assets/css/main.css -o ./assets/css/style.css
+bunx tailwindcss -i ./assets/css/main.css -o ./assets/css/style.css
 
 # Watch TailwindCSS changes
-npm run watch:tw
+bun run watch:tw
 
 # Run both Hugo server and TailwindCSS watch concurrently
-npm start
+bun start
 ```
 
 ### Testing
 ```bash
 # Basic Hugo validation
-npm test
+bun test
 # (runs hugo command to check for errors)
 ```
 
@@ -188,8 +189,8 @@ tags: [Tag1, Tag2]
 #### CSS Optimization
 - **Development**: Full TailwindCSS for fast iteration
 - **Production**: PurgeCSS + CSS Nano for optimal file size
-- Run `npm run build` for production build with optimizations
-- Run `npm run build:preview` for preview build without PurgeCSS
+- Run `bun run build` for production build with optimizations
+- Run `bun run build:preview` for preview build without PurgeCSS
 - Configuration: `postcss.config.js` handles CSS processing pipeline
 
 ## Content Guidelines
@@ -224,7 +225,7 @@ tags: [Tag1, Tag2]
 ## Troubleshooting
 
 ### Common Issues
-- **TailwindCSS not updating**: Run `npm run watch:tw` separately
+- **TailwindCSS not updating**: Run `bun run watch:tw` separately
 - **Images not loading**: Check path relative to `assets/` directory
 - **Language switching broken**: Verify `.en.md` and `.fr.md` files exist
 - **Build failures**: Check Hugo version constraints in `config.toml`
@@ -291,22 +292,22 @@ chmod +x setup-analysis-tools.sh && ./setup-analysis-tools.sh
 ### Available Analysis Commands
 ```bash
 # Full comprehensive website analysis
-npm run analyze
+bun run analyze
 
 # Quick analysis (limited pages, faster)
-npm run analyze:quick
+bun run analyze:quick
 
 # Lighthouse performance audit (production)
-npm run lighthouse
+bun run lighthouse
 
 # Lighthouse on local development server
-npm run lighthouse:local
+bun run lighthouse:local
 
 # Accessibility audit only
-npm run accessibility
+bun run accessibility
 
 # Setup analysis tools
-npm run setup:analysis
+bun run setup:analysis
 ```
 
 ### Analysis Components
