@@ -32,35 +32,29 @@ print_error() {
 
 print_header "🔧 Setting up Website Analysis Tools for Inkan.link"
 
-# Check if Node.js is installed
-if ! command -v node &> /dev/null; then
-    print_error "Node.js is required but not installed."
-    echo "Please install Node.js from https://nodejs.org/"
+# Check if Bun is installed
+if ! command -v bun &> /dev/null; then
+    print_error "Bun is required but not installed."
+    echo "Please install Bun from https://bun.sh/"
+    echo "Run: curl -fsSL https://bun.sh/install | bash"
     exit 1
 fi
 
-# Check if npm is available
-if ! command -v npm &> /dev/null; then
-    print_error "npm is required but not available."
-    exit 1
-fi
-
-print_step "✅ Node.js and npm are available"
-echo "   Node.js version: $(node --version)"
-echo "   npm version: $(npm --version)"
+print_step "✅ Bun is available"
+echo "   Bun version: $(bun --version)"
 
 print_step "1️⃣ Installing core performance analysis tools..."
 
 # Install global tools for performance analysis
-npm install -g lighthouse
-npm install -g @axe-core/cli
-npm install -g pa11y
-npm install -g playwright
+bun install -g lighthouse
+bun install -g @axe-core/cli
+bun install -g pa11y
+bun install -g playwright
 
 print_step "2️⃣ Setting up Playwright browsers..."
 
 # Install only Chromium to save space (sufficient for most testing)
-npx playwright install chromium
+bunx playwright install chromium
 
 print_step "3️⃣ Installing optional development tools..."
 
@@ -147,11 +141,11 @@ print_header "✅ Setup Complete!"
 echo ""
 echo -e "${BLUE}🎯 Available Commands:${NC}"
 echo ""
-echo -e "${GREEN}npm run analyze${NC}              - Full website analysis"
-echo -e "${GREEN}npm run analyze:quick${NC}        - Quick analysis (limited pages)"
-echo -e "${GREEN}npm run lighthouse${NC}           - Lighthouse audit of production site"
-echo -e "${GREEN}npm run lighthouse:local${NC}     - Lighthouse audit of local development"
-echo -e "${GREEN}npm run accessibility${NC}        - Accessibility audit"
+echo -e "${GREEN}bun run analyze${NC}              - Full website analysis"
+echo -e "${GREEN}bun run analyze:quick${NC}        - Quick analysis (limited pages)"
+echo -e "${GREEN}bun run lighthouse${NC}           - Lighthouse audit of production site"
+echo -e "${GREEN}bun run lighthouse:local${NC}     - Lighthouse audit of local development"
+echo -e "${GREEN}bun run accessibility${NC}        - Accessibility audit"
 echo ""
 echo -e "${BLUE}📁 Report Directories:${NC}"
 echo "   analysis-reports/     - Comprehensive analysis results"
@@ -159,7 +153,7 @@ echo "   performance-reports/  - Performance-specific reports"
 echo "   accessibility-reports/ - Accessibility audit results"
 echo ""
 echo -e "${BLUE}🚀 Next Steps:${NC}"
-echo "1. Run 'npm run analyze' to perform a full website analysis"
+echo "1. Run 'bun run analyze' to perform a full website analysis"
 echo "2. Check the generated reports in the respective directories"
 echo "3. Set up a regular analysis schedule (weekly/monthly)"
 echo "4. Share reports with your team for performance tracking"

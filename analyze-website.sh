@@ -65,11 +65,11 @@ if command -v axe &> /dev/null; then
 
 EOF
 else
-    log_warning "axe-core CLI not found. Install with: npm install -g @axe-core/cli"
+    log_warning "axe-core CLI not found. Install with: bun install -g @axe-core/cli"
     cat >> "$REPORT_FILE" << EOF
 ## Accessibility Analysis
 - ⚠️ axe-core CLI not available
-- Install with: \`npm install -g @axe-core/cli\`
+- Install with: \`bun install -g @axe-core/cli\`
 
 EOF
 fi
@@ -105,11 +105,11 @@ if command -v lighthouse &> /dev/null; then
 
 EOF
 else
-    log_warning "Lighthouse CLI not found. Install with: npm install -g lighthouse"
+    log_warning "Lighthouse CLI not found. Install with: bun install -g lighthouse"
     cat >> "$REPORT_FILE" << EOF
 ## Lighthouse Performance Audit
 - ⚠️ Lighthouse CLI not available
-- Install with: \`npm install -g lighthouse\`
+- Install with: \`bun install -g lighthouse\`
 
 EOF
 fi
@@ -183,21 +183,21 @@ fi
 
 # 6. Core Web Vitals Assessment
 log_info "Assessing Core Web Vitals..."
-if command -v node &> /dev/null; then
-    # Create a simple Node.js script to extract CWV from PageSpeed Insights
-    cat > "/tmp/extract_cwv.js" << 'NODEJS'
+if command -v bun &> /dev/null; then
+    # Create a simple script to extract CWV from PageSpeed Insights
+    cat > "/tmp/extract_cwv.js" << 'BUNJS'
 const fs = require('fs');
 
 function extractCoreWebVitals(filePath, strategy) {
     try {
         const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
         const audits = data.lighthouseResult.audits;
-        
+
         const lcp = audits['largest-contentful-paint']?.displayValue || 'N/A';
         const fid = audits['max-potential-fid']?.displayValue || 'N/A';
         const cls = audits['cumulative-layout-shift']?.displayValue || 'N/A';
         const fcp = audits['first-contentful-paint']?.displayValue || 'N/A';
-        
+
         console.log(`## Core Web Vitals (${strategy})`);
         console.log(`- **Largest Contentful Paint (LCP):** ${lcp}`);
         console.log(`- **First Input Delay (FID):** ${fid}`);
@@ -215,16 +215,16 @@ const args = process.argv.slice(2);
 if (args.length >= 2) {
     extractCoreWebVitals(args[0], args[1]);
 }
-NODEJS
+BUNJS
 
     if [ -f "$REPORT_DIR/pagespeed_desktop_$DATE.json" ]; then
-        node /tmp/extract_cwv.js "$REPORT_DIR/pagespeed_desktop_$DATE.json" "Desktop" >> "$REPORT_FILE"
+        bun /tmp/extract_cwv.js "$REPORT_DIR/pagespeed_desktop_$DATE.json" "Desktop" >> "$REPORT_FILE"
     fi
-    
+
     if [ -f "$REPORT_DIR/pagespeed_mobile_$DATE.json" ]; then
-        node /tmp/extract_cwv.js "$REPORT_DIR/pagespeed_mobile_$DATE.json" "Mobile" >> "$REPORT_FILE"
+        bun /tmp/extract_cwv.js "$REPORT_DIR/pagespeed_mobile_$DATE.json" "Mobile" >> "$REPORT_FILE"
     fi
-    
+
     rm -f /tmp/extract_cwv.js
     log_success "Core Web Vitals assessment completed"
 fi
