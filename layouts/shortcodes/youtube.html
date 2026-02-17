@@ -1,0 +1,128 @@
+{{- $id := .Get 0 -}}
+{{- $title := .Get "title" | default (i18n "youtubeVideoTitle" | default "Video") -}}
+{{- $thumbnail := printf "https://img.youtube.com/vi/%s/hqdefault.jpg" $id -}}
+{{- $youtubeURL := printf "https://www.youtube.com/watch?v=%s" $id -}}
+{{- $embedURL := printf "https://www.youtube-nocookie.com/embed/%s" $id -}}
+
+<div class="youtube-fallback-container relative w-full my-6 rounded-xl overflow-hidden shadow-md"
+     style="padding-top: 56.25%;"
+     data-youtube-id="{{ $id }}"
+     data-embed-url="{{ $embedURL }}"
+     data-youtube-url="{{ $youtubeURL }}"
+     data-thumbnail="{{ $thumbnail }}">
+
+  {{/* Thumbnail + play button (shown initially) */}}
+  <div class="youtube-placeholder absolute inset-0 cursor-pointer group" role="button" tabindex="0"
+       aria-label="{{ i18n "youtubePlayVideo" | default "Play video" }}">
+    <img src="{{ $thumbnail }}" alt="{{ $title }}"
+         class="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+    <div class="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors duration-200"></div>
+    {{/* Play button */}}
+    <div class="absolute inset-0 flex items-center justify-center">
+      <div class="w-16 h-16 sm:w-20 sm:h-20 bg-red-600 rounded-xl flex items-center justify-center shadow-lg group-hover:bg-red-700 group-hover:scale-105 transition-all duration-200">
+        <svg class="w-8 h-8 sm:w-10 sm:h-10 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M8 5v14l11-7z"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  {{/* Fallback (shown when YouTube is not accessible) */}}
+  <div class="youtube-fallback absolute inset-0 hidden">
+    <div class="absolute inset-0 bg-neutral-100 dark:bg-neutral-800 flex flex-col items-center justify-center text-center p-4">
+      <svg class="w-10 h-10 text-neutral-400 dark:text-neutral-500 mb-3" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z" />
+      </svg>
+      <p class="text-neutral-600 dark:text-neutral-300 text-sm mb-3">{{ i18n "youtubeUnavailable" | default "Video unavailable" }}</p>
+      <a href="{{ $youtubeURL }}" target="_blank" rel="noopener noreferrer"
+         class="inline-flex items-center gap-2 px-4 py-2 bg-red-600 hover:bg-red-700 text-white text-sm font-medium rounded-lg transition-colors duration-200">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+        </svg>
+        {{ i18n "youtubeWatchOn" | default "Watch on YouTube" }}
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  document.querySelectorAll('.youtube-fallback-container').forEach(function(container) {
+    if (container.dataset.initialized) return;
+    container.dataset.initialized = 'true';
+
+    var placeholder = container.querySelector('.youtube-placeholder');
+    var fallback = container.querySelector('.youtube-fallback');
+    var embedUrl = container.dataset.embedUrl;
+    var thumbnailUrl = container.dataset.thumbnail;
+
+    // Pre-check: verify thumbnail is reachable (detects invalid video IDs and blocked YouTube)
+    fetch(thumbnailUrl, { method: 'HEAD', mode: 'no-cors' }).then(function(response) {
+      // no-cors returns opaque response (status 0), but if YouTube is reachable it succeeds
+      // For a proper check, try loading the image and check its natural dimensions
+      var testImg = new Image();
+      testImg.onload = function() {
+        // YouTube returns a tiny default image (120x90) for invalid video IDs
+        // Valid hqdefault thumbnails are 480x360
+        if (testImg.naturalWidth <= 120) {
+          showFallback();
+        } else {
+          enablePlayback();
+        }
+      };
+      testImg.onerror = function() {
+        showFallback();
+      };
+      testImg.src = thumbnailUrl;
+    }).catch(function() {
+      // Network error — YouTube is blocked or unreachable
+      showFallback();
+    });
+
+    function enablePlayback() {
+      placeholder.addEventListener('click', activate);
+      placeholder.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          activate();
+        }
+      });
+    }
+
+    function activate() {
+      var iframe = document.createElement('iframe');
+      iframe.className = 'absolute inset-0 w-full h-full';
+      iframe.setAttribute('allowfullscreen', '');
+      iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+      iframe.setAttribute('frameborder', '0');
+      iframe.setAttribute('loading', 'lazy');
+      iframe.setAttribute('title', 'YouTube video');
+
+      // Fallback timeout in case iframe loads but YouTube is unreachable
+      var timer = setTimeout(function() {
+        showFallback();
+      }, 10000);
+
+      iframe.addEventListener('load', function() {
+        clearTimeout(timer);
+      });
+
+      iframe.addEventListener('error', function() {
+        clearTimeout(timer);
+        showFallback();
+      });
+
+      iframe.src = embedUrl + '?autoplay=1&rel=0';
+      placeholder.classList.add('hidden');
+      container.appendChild(iframe);
+    }
+
+    function showFallback() {
+      placeholder.classList.add('hidden');
+      var iframe = container.querySelector('iframe');
+      if (iframe) iframe.remove();
+      fallback.classList.remove('hidden');
+    }
+  });
+})();
+</script>

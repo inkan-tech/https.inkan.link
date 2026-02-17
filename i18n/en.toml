@@ -125,3 +125,16 @@ other = "Show details"
 
 [faq_hide_details]
 other = "Hide details"
+
+# YouTube Fallback
+[youtubeVideoTitle]
+other = "Video"
+
+[youtubePlayVideo]
+other = "Play video"
+
+[youtubeUnavailable]
+other = "Video unavailable"
+
+[youtubeWatchOn]
+other = "Watch on YouTube"
