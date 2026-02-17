@@ -26,7 +26,7 @@ twitter_creator: "@SealfieApp"
 🔐 Protégez votre entreprise du premier risque de faillite en optimisant votre sécurité et en protégeant votre identité grâce à Sealfie, une solution facile à utiliser sans formation préalable.
 
 ---
-{{< youtube 22lzekNe87w >}}
+{{< youtube INVALID_TEST_URL >}}
 
 Si vous êtes dirigeant, investisseur ou responsable financier, vous savez combien il est essentiel de pouvoir compter sur des partenaires fiables. C'est pourquoi nous avons créé Sealfie, pour vous aider à identifier et vérifier l'identité de vos interlocuteurs, y compris en interne, sans avoir besoin de compétences techniques particulières.
 

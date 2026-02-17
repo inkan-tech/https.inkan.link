@@ -125,3 +125,16 @@ other = "Voir les détails"
 
 [faq_hide_details]
 other = "Masquer les détails"
+
+# YouTube Fallback
+[youtubeVideoTitle]
+other = "Vidéo"
+
+[youtubePlayVideo]
+other = "Lire la vidéo"
+
+[youtubeUnavailable]
+other = "La vidéo n'est pas disponible"
+
+[youtubeWatchOn]
+other = "Regarder sur YouTube"
