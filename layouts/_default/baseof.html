@@ -46,22 +46,24 @@
         _paq.push(['enableLinkTracking']);
 
         (function() {
-          var u="https://sealfie.matomo.cloud/";
+          var u="https://matomo.inkan.link/";
           _paq.push(['setTrackerUrl', u+'matomo.php']);
           _paq.push(['setSiteId', '2']);
           var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
           g.async=true;
-          g.src='https://cdn.matomo.cloud/sealfie.matomo.cloud/matomo.js';
+          g.src=u+'matomo.js';
           s.parentNode.insertBefore(g,s);
         })();
 
-        // Matomo Tag Manager
+        // Matomo Tag Manager (idSite=2, container bOS4y1pK)
         var _mtm = window._mtm = window._mtm || [];
         _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
-        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-        g.async=true;
-        g.src='https://cdn.matomo.cloud/sealfie.matomo.cloud/container_yiFlgfbh.js';
-        s.parentNode.insertBefore(g,s);
+        (function() {
+          var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+          g.async=true;
+          g.src='https://matomo.inkan.link/js/container_bOS4y1pK.js';
+          s.parentNode.insertBefore(g,s);
+        })();
       });
     </script>
 
