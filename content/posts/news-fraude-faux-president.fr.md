@@ -17,7 +17,7 @@ aliases:
 ---
 
 
-## [Sealfie](https://sealf.ie/fr) la protection contre l'arnaque au faux président
+## [Sealfie](https://sealf.ie) la protection contre l'arnaque au faux président
 
 L'arnaque au faux président est la méthode la plus utilisée dans le top5 des tentatives de fraudes visant les entreprises.
 [![Allianz Trade](/images/Top5AllianzTrade.png )](https://www.allianz-trade.fr/actualites/etude-fraude-2021.html)
@@ -26,7 +26,7 @@ Les entreprises subissent 1/4 des fraudes avérées, 2/3 au moins une tentative 
 <!-- <img src="/images/sealfie-logo.svg"
      alt="Sealfie Logo"
      style="margin-right: 5px; size: 20px;"  /> -->
-[Sealfie](https://sealf.ie/fr) a été créé pour protéger des usurpations d’identité, en premier lieu la fraude au faux président.
+[Sealfie](https://sealf.ie) a été créé pour protéger des usurpations d’identité, en premier lieu la fraude au faux président.
 
 ## L'ampleur de la fraude
 
@@ -48,11 +48,11 @@ Pour s'en prémunir l'ANSSI fait des recommandations [ici](https://www.entrepris
 - Rompre la chaîne des mails pour les courriers se rapportant à des virements internationaux en saisissant soi-même l'adresse habituelle du donneur d'ordre.
 - Maintenir à jour le système de sécurité informatique.
 
-[En 5 ans 2 300 plaintes ont été déposées](https://www.morbihan.gouv.fr/Actions-de-l-Etat/Securite-et-protection-de-la-population/Securite-informatique/L-arnaque-au-president-ou-escroquerie-aux-faux-ordres-de-virement-FOVI), et beaucoup d'autres ont caché les attaques pour préserver leur réputation. La protection par la discipline humaine et la formation ne marche pas sur la durée ou sans efforts constants. C'est pourquoi nous avons créé [Sealfie](https://sealf.ie/fr)
+[En 5 ans 2 300 plaintes ont été déposées](https://www.morbihan.gouv.fr/Actions-de-l-Etat/Securite-et-protection-de-la-population/Securite-informatique/L-arnaque-au-president-ou-escroquerie-aux-faux-ordres-de-virement-FOVI), et beaucoup d'autres ont caché les attaques pour préserver leur réputation. La protection par la discipline humaine et la formation ne marche pas sur la durée ou sans efforts constants. C'est pourquoi nous avons créé [Sealfie](https://sealf.ie)
 
-## [![Sealfie](/images/sealfie-landscape.png)](https://sealf.ie/fr)
+## [![Sealfie](/images/sealfie-landscape.png)](https://sealf.ie)
 
-[Sealfie](https://sealf.ie/fr) est un SaaS et une application mobile. Elle permet de s'assurer et de pouvoir vérifier que les personnes dans la transaction sont autorisés, à chaque fois. L'application est simplissime à utiliser, sans formation, nous nous occupons des aspects technologiques.
+[Sealfie](https://sealf.ie) est un SaaS et une application mobile. Elle permet de s'assurer et de pouvoir vérifier que les personnes dans la transaction sont autorisés, à chaque fois. L'application est simplissime à utiliser, sans formation, nous nous occupons des aspects technologiques.
 
 Quand un ordre de virement est initié une des personnes enregistrées, le pdg ou le comptable, crée une liste d'attestations numériques, prend une photo décrivant la transaction, un selfie et utilise la biométrie. Une autre personne autorisée, vérifie ajoute son selfie et biométrie. Nous nous occupons de collecter les attestations d'autres systèmes si disponibles, comme le wifi de l'entreprise par exemple.
 
@@ -66,4 +66,4 @@ L'approche est de rendre fiable et vérifiable les transactions des personnes l�
 
 Nous survolons les problématiques dans cette introduction, suivez-nous sur [LinkedIn](https://www.linkedin.com/company/inkan-link/) ou ce blog.
 
-Sur le site [Sealf.ie](https://sealf.ie/fr) vous trouverez plus de détails sur l'application mobile, nous contacter pour essayer une version de test et bien sûr acheter la tranquillité d’esprit de ne plus avoir à vous inquiéter d'une faillite soudaine.
+Sur le site [Sealf.ie](https://sealf.ie) vous trouverez plus de détails sur l'application mobile, nous contacter pour essayer une version de test et bien sûr acheter la tranquillité d’esprit de ne plus avoir à vous inquiéter d'une faillite soudaine.

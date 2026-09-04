@@ -208,11 +208,11 @@ Attestation multi-source (selfies + biométrie + certificats numériques + local
 
 ### Comment contacter Inkan.link ou demander une démo ?
 
-Visitez https://inkan.link/contacts pour démo personnalisée. Site produit https://sealf.ie/fr/ ou CES 2025 (Venetian Expo Hall G - 60711). Suivez-nous sur LinkedIn pour actualités.
+Visitez https://inkan.link/contacts pour démo personnalisée. Site produit https://sealf.ie/ ou CES 2025 (Venetian Expo Hall G - 60711). Suivez-nous sur LinkedIn pour actualités.
 
 **Pour aller plus loin:**
 - **Démo produit:** https://inkan.link/contacts (formulaire contact)
-- **Site produit:** https://sealf.ie/fr/
+- **Site produit:** https://sealf.ie/
 - **CES 2025:** Hall G - Stand 60711
 - **Démo inclut:** Évaluation besoins, calcul ROI, démonstration app, Q&A experts, plan déploiement
 
@@ -264,5 +264,5 @@ Oui, Sealfie s'adapte à vos processus de validation existants sans nécessiter 
 
 - [Blog cybersécurité](/categories/blog/) - Conseils prévention fraude et tactiques cybersécurité
 - [Actualités](/categories/news/) - Mises à jour entreprise, participation événements
-- [Site produit Sealfie](https://sealf.ie/fr/)
+- [Site produit Sealfie](https://sealf.ie/)
 - [Nous contacter](/contacts)
