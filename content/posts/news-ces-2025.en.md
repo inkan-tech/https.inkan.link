@@ -1,7 +1,7 @@
 ---
 title: "Inkan.link at CES 2025: Sealfie shown in Las Vegas"
 date: 2026-10-16T22:00:00+02:00
-draft: true
+draft: false
 language: en
 featured_image: images/posts/Daubé-CES-Inkan.png
 summary: "Inkan.link showed Sealfie at CES 2025 in Las Vegas. The launch release and a Biometric Update article report on it."
