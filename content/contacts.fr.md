@@ -91,7 +91,7 @@ Restez informé des nouvelles menaces deepfakes et tactiques criminelles :
 ## Questions fréquentes avant le premier contact
 
 **"Combien ça coûte ?"**
-95€/mois/utilisateur. Même si vous ne faites "que" 10 paiements importants par mois, **un seul vol évité** (votre plus gros virement du trimestre) rembourse 2 à 5 ans d'abonnement.
+Contactez-nous pour l'obtenir, par mail à contact@inkan.link. Même si vous ne faites "que" 10 paiements importants par mois, **un seul vol évité** (votre plus gros virement du trimestre) rembourse 2 à 5 ans d'abonnement.
 
 **"Combien de temps pour déployer ?"**
 <24h. App mobile iOS/Android + configuration signataires = protection active jour même.

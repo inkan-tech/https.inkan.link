@@ -90,7 +90,7 @@ FBI rapporte **$55 milliards** perdus sur 10 ans (2014-2024) via BEC. Entreprise
 - Détection difficile : Pas de malware, juste ingénierie sociale
 
 **Protection rentable :**
-- **Coût Sealfie** : 95€/mois/utilisateur
+- **Coût Sealfie** : tarif sur demande, par mail à contact@inkan.link
 - **ROI >150% année 1** : Temps économisé (15-20h/mois) + fraude évitée
 - **Une seule fraude évitée = 2-5 ans** d'abonnement remboursés
 
@@ -175,7 +175,7 @@ Exécution paiement SI validation OK
 
 **ROI différencié :**
 - **MFA** : Coût faible, protection accès (nécessaire mais insuffisant)
-- **Multi-sources** : Coût 95€/mois/user, protection transaction (bloque BEC)
+- **Multi-sources** : Coût sur demande, protection transaction (bloque BEC)
 - **Complémentarité** : MFA pour quotidien, multi-sources pour critique
 
 **Technologie Sealfie (multi-sources) :**

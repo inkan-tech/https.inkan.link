@@ -40,7 +40,7 @@ ROI >150% dès la première année via trois sources: temps économisé (15-20h/
 - **Temps économisé:** 15-20h/mois × salaire chargé comptable/DAF
 - **Fraude évitée:** Une seule fraude BEC prévenue = 2-5 ans d'abonnement Sealfie
 - **Cycle paiements:** DPO réduit 50% = trésorerie améliorée + discounts
-- **Investissement:** 95€/mois/utilisateur remboursé via gains opérationnels seuls
+- **Investissement:** remboursé via gains opérationnels seuls (tarif sur demande)
 
 ### Combien de temps économisé avec Sealfie ?
 
@@ -132,10 +132,10 @@ Outils IA actuels créent deepfakes email/vocal indiscernables. Conseils "recher
 
 ### Combien coûte Sealfie ?
 
-95€ par mois par utilisateur pour formules standard. Tarification personnalisée pour entreprises selon taille et exigences. ROI >150% année 1 rend investissement rapidement rentable.
+Contactez-nous pour l'obtenir, par mail à contact@inkan.link. Tarification personnalisée pour entreprises selon taille et exigences. ROI >150% année 1 rend investissement rapidement rentable.
 
 **Pour aller plus loin:**
-- **Calcul ROI (équipe 3 personnes):** Coût 3 420€/an, temps économisé 9 000€/an, une fraude évitée = ROI infini
+- **Calcul ROI (équipe 3 personnes):** temps économisé 9 000€/an, une fraude évitée = ROI infini
 - **ROI net:** >150% avant même compter cycle paiements accéléré
 - **Déploiement:** iOS/Android, protection active jour même, évolutivité facile
 
