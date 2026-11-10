@@ -40,7 +40,7 @@ ROI >150% in the first year through three sources: time saved (15-20h/month), fr
 - **Time saved:** 15-20h/month × loaded accountant/CFO rate
 - **Fraud prevented:** One BEC attack prevented = 2-5 years Sealfie subscription
 - **Payment cycles:** DPO reduced 50% = improved cash flow + discounts
-- **Investment:** €95/month/user paid back via operational gains alone
+- **Investment:** paid back via operational gains alone (pricing on request)
 
 ### How much time saved with Sealfie?
 
@@ -132,10 +132,10 @@ Current AI tools create email/voice deepfakes indistinguishable from legitimate 
 
 ### How much does Sealfie cost?
 
-€95 per month per user for standard plans. Customized pricing for enterprises based on size and requirements. ROI >150% year 1 makes investment quickly profitable.
+Contact us to get it, by email at contact@inkan.link. Customized pricing for enterprises based on size and requirements. ROI >150% year 1 makes investment quickly profitable.
 
 **Learn more:**
-- **ROI calculation (3-person team):** Cost €3,420/year, time saved €9,000/year, one fraud prevented = infinite ROI
+- **ROI calculation (3-person team):** time saved €9,000/year, one fraud prevented = infinite ROI
 - **Net ROI:** >150% before even counting accelerated payment cycles
 - **Deployment:** iOS/Android, active protection same day, easy scalability
 
